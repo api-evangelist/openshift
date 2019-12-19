@@ -1,0 +1,57 @@
+{
+    "name": "OpenShift",
+    "description": "OpenShift is an open source container application platform by Red Hat based on top of Docker containers and the Kubernetes container cluster manager for enterprise app development and deployment.",
+    "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/18605-openshift-by-red-hat.jpg",
+    "tags": [
+        "containers",
+        "have api",
+        "paas"
+    ],
+    "created": "2019-12-19",
+    "modified": "2019-12-19",
+    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/openshift\/master\/apis.json",
+    "specificationVersion": "0.14",
+    "apis": [
+        {
+            "name": "OpenShift",
+            "description": null,
+            "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/18605-openshift-by-red-hat.jpg",
+            "humanURL": "https:\/\/www.openshift.com\/",
+            "baseURL": "",
+            "tags": [],
+            "properties": [
+                {
+                    "type": "x-openapi",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/openshift-openapi.json"
+                }
+            ]
+        }
+    ],
+    "include": [],
+    "x-common": [
+        {
+            "type": "Blog",
+            "url": "https:\/\/blog.openshift.com\/"
+        },
+        {
+            "type": "Blog RSS",
+            "url": "https:\/\/blog.openshift.com\/feed\/"
+        },
+        {
+            "type": "Crunchbase",
+            "url": "https:\/\/crunchbase.com\/organization\/openshift"
+        },
+        {
+            "type": "Github",
+            "url": "https:\/\/github.com\/openshift"
+        },
+        {
+            "type": "Twitter",
+            "url": "https:\/\/twitter.com\/openshift"
+        },
+        {
+            "type": "Website",
+            "url": "https:\/\/www.openshift.com\/"
+        }
+    ]
+}
