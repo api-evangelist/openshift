@@ -1,0 +1,120 @@
+name: OpenShift API
+description: A comprehensive API definition for Red Hat OpenShift, the enterprise Kubernetes platform
+image: https://www.redhat.com/cms/managed-files/openshift-logo.png
+created: '2024-01-01'
+modified: '2024-01-01'
+specificationVersion: '0.18'
+url: https://openshift.com/apis.yml
+apis:
+- name: OpenShift REST API
+  description: Main REST API for managing OpenShift clusters, projects, and resources
+  image: https://www.redhat.com/cms/managed-files/openshift-logo.png
+  humanUrl: https://docs.openshift.com/
+  baseUrl: https://api.openshift.com
+  tags:
+  - Kubernetes
+  - Containers
+  - Platform
+  - Cloud
+  properties:
+  - type: Documentation
+    url: https://docs.openshift.com/container-platform/latest/rest_api/index.html
+  - type: OpenAPI
+    url: https://api.openshift.com/api/swagger.json
+  - type: Authentication
+    url: https://docs.openshift.com/container-platform/latest/authentication/index.html
+  - type: Pricing
+    url: https://www.redhat.com/en/technologies/cloud-computing/openshift/pricing
+  - type: Support
+    url: https://access.redhat.com/support
+  - type: Status
+    url: https://status.openshift.com/
+  - type: SDKs
+    url: https://github.com/openshift/client-go
+  - type: RateLimits
+    url: https://docs.openshift.com/container-platform/latest/rest_api/understanding-api-support-tiers.html
+- name: OpenShift OAuth API
+  description: OAuth authentication and authorization API for OpenShift
+  baseUrl: https://oauth-openshift.apps.openshift.com
+  tags:
+  - Authentication
+  - OAuth
+  - Security
+  properties:
+  - type: Documentation
+    url: https://docs.openshift.com/container-platform/latest/authentication/understanding-authentication.html
+  - type: OpenAPI
+    url: https://oauth-openshift.apps.openshift.com/swagger.json
+- name: OpenShift Routes API
+  description: API for managing application routes and ingress
+  baseUrl: https://api.openshift.com/apis/route.openshift.io/v1
+  tags:
+  - Routing
+  - Networking
+  - Ingress
+  properties:
+  - type: Documentation
+    url: https://docs.openshift.com/container-platform/latest/networking/routes/route-configuration.html
+- name: OpenShift Build API
+  description: API for managing application builds and build configurations
+  baseUrl: https://api.openshift.com/apis/build.openshift.io/v1
+  tags:
+  - CI/CD
+  - Builds
+  - Source-to-Image
+  properties:
+  - type: Documentation
+    url: https://docs.openshift.com/container-platform/latest/cicd/builds/understanding-builds.html
+- name: OpenShift Image API
+  description: API for managing container images and image streams
+  baseUrl: https://api.openshift.com/apis/image.openshift.io/v1
+  tags:
+  - Images
+  - Registry
+  - Containers
+  properties:
+  - type: Documentation
+    url: https://docs.openshift.com/container-platform/latest/openshift_images/index.html
+- name: OpenShift Project API
+  description: API for managing OpenShift projects (namespace extensions)
+  baseUrl: https://api.openshift.com/apis/project.openshift.io/v1
+  tags:
+  - Projects
+  - Namespaces
+  - Multi-tenancy
+  properties:
+  - type: Documentation
+    url: https://docs.openshift.com/container-platform/latest/applications/projects/working-with-projects.html
+common:
+- type: GettingStarted
+  url: https://www.openshift.com/try
+- type: Blog
+  url: https://www.openshift.com/blog
+- type: GitHub
+  url: https://github.com/openshift
+- type: Learning
+  url: https://learn.openshift.com/
+- type: Forum
+  url: https://developers.redhat.com/products/openshift/overview
+- type: YouTube
+  url: https://www.youtube.com/c/OpenShift
+- type: Twitter
+  url: https://twitter.com/openshift
+- type: Security
+  url: https://access.redhat.com/security/team/contact/
+- type: Terms
+  url: https://www.redhat.com/en/about/terms-use
+- type: Privacy
+  url: https://www.redhat.com/en/about/privacy-policy
+maintainers:
+- name: Red Hat
+  email: openshift-dev@redhat.com
+  url: https://www.redhat.com
+tags:
+- Kubernetes
+- Containers
+- PaaS
+- Cloud Native
+- DevOps
+- CI/CD
+- Enterprise
