@@ -1,0 +1,255 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "openshift": "https://docs.openshift.com/ns/",
+    "k8s": "https://kubernetes.io/docs/reference/ns/",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dcterms": "http://purl.org/dc/terms/",
+
+    "Route": {
+      "@id": "openshift:Route",
+      "@context": {
+        "host": "schema:url",
+        "path": "openshift:routePath",
+        "subdomain": "openshift:subdomain",
+        "to": {
+          "@id": "openshift:routeTarget",
+          "@type": "@id"
+        },
+        "alternateBackends": {
+          "@id": "openshift:alternateBackends",
+          "@container": "@set"
+        },
+        "port": "openshift:routePort",
+        "tls": "openshift:tlsConfig",
+        "wildcardPolicy": "openshift:wildcardPolicy",
+        "status": "openshift:routeStatus"
+      }
+    },
+
+    "RouteTargetReference": {
+      "@id": "openshift:RouteTargetReference",
+      "@context": {
+        "kind": "openshift:targetKind",
+        "name": "schema:name",
+        "weight": "openshift:trafficWeight"
+      }
+    },
+
+    "TLSConfig": {
+      "@id": "openshift:TLSConfig",
+      "@context": {
+        "termination": "openshift:tlsTermination",
+        "certificate": "openshift:tlsCertificate",
+        "key": "openshift:tlsKey",
+        "caCertificate": "openshift:caCertificate",
+        "destinationCACertificate": "openshift:destinationCACertificate",
+        "insecureEdgeTerminationPolicy": "openshift:insecureEdgeTerminationPolicy"
+      }
+    },
+
+    "Build": {
+      "@id": "openshift:Build",
+      "@context": {
+        "source": "openshift:buildSource",
+        "strategy": "openshift:buildStrategy",
+        "output": "openshift:buildOutput",
+        "triggeredBy": {
+          "@id": "openshift:triggeredBy",
+          "@container": "@set"
+        },
+        "serviceAccount": "openshift:serviceAccount",
+        "completionDeadlineSeconds": "openshift:completionDeadline",
+        "status": "openshift:buildStatus"
+      }
+    },
+
+    "BuildConfig": {
+      "@id": "openshift:BuildConfig",
+      "@context": {
+        "source": "openshift:buildSource",
+        "strategy": "openshift:buildStrategy",
+        "output": "openshift:buildOutput",
+        "triggers": {
+          "@id": "openshift:buildTriggers",
+          "@container": "@set"
+        },
+        "runPolicy": "openshift:runPolicy",
+        "serviceAccount": "openshift:serviceAccount",
+        "successfulBuildsHistoryLimit": "openshift:successfulBuildsHistoryLimit",
+        "failedBuildsHistoryLimit": "openshift:failedBuildsHistoryLimit"
+      }
+    },
+
+    "BuildSource": {
+      "@id": "openshift:BuildSource",
+      "@context": {
+        "type": "openshift:sourceType",
+        "git": "openshift:gitSource",
+        "dockerfile": "openshift:dockerfileContent",
+        "contextDir": "openshift:contextDirectory",
+        "sourceSecret": "openshift:sourceSecret"
+      }
+    },
+
+    "BuildStrategy": {
+      "@id": "openshift:BuildStrategy",
+      "@context": {
+        "type": "openshift:strategyType",
+        "sourceStrategy": "openshift:sourceStrategy",
+        "dockerStrategy": "openshift:dockerStrategy",
+        "customStrategy": "openshift:customStrategy"
+      }
+    },
+
+    "BuildStatus": {
+      "@id": "openshift:BuildStatus",
+      "@context": {
+        "phase": "openshift:phase",
+        "cancelled": "openshift:isCancelled",
+        "message": "schema:description",
+        "reason": "openshift:statusReason",
+        "startTimestamp": {
+          "@id": "openshift:startTimestamp",
+          "@type": "xsd:dateTime"
+        },
+        "completionTimestamp": {
+          "@id": "openshift:completionTimestamp",
+          "@type": "xsd:dateTime"
+        },
+        "duration": "openshift:durationNanos",
+        "outputDockerImageReference": "openshift:outputImageReference"
+      }
+    },
+
+    "DeploymentConfig": {
+      "@id": "openshift:DeploymentConfig",
+      "@context": {
+        "replicas": "openshift:replicas",
+        "selector": "openshift:labelSelector",
+        "template": "openshift:podTemplate",
+        "strategy": "openshift:deploymentStrategy",
+        "triggers": {
+          "@id": "openshift:deploymentTriggers",
+          "@container": "@set"
+        },
+        "minReadySeconds": "openshift:minReadySeconds",
+        "revisionHistoryLimit": "openshift:revisionHistoryLimit",
+        "paused": "openshift:isPaused",
+        "test": "openshift:isTest",
+        "status": "openshift:deploymentConfigStatus"
+      }
+    },
+
+    "DeploymentStrategy": {
+      "@id": "openshift:DeploymentStrategy",
+      "@context": {
+        "type": "openshift:strategyType",
+        "rollingParams": "openshift:rollingParams",
+        "recreateParams": "openshift:recreateParams",
+        "customParams": "openshift:customParams",
+        "activeDeadlineSeconds": "openshift:activeDeadline"
+      }
+    },
+
+    "DeploymentConfigStatus": {
+      "@id": "openshift:DeploymentConfigStatus",
+      "@context": {
+        "latestVersion": "openshift:latestVersion",
+        "observedGeneration": "openshift:observedGeneration",
+        "replicas": "openshift:currentReplicas",
+        "updatedReplicas": "openshift:updatedReplicas",
+        "availableReplicas": "openshift:availableReplicas",
+        "unavailableReplicas": "openshift:unavailableReplicas",
+        "readyReplicas": "openshift:readyReplicas",
+        "conditions": {
+          "@id": "openshift:conditions",
+          "@container": "@set"
+        }
+      }
+    },
+
+    "Project": {
+      "@id": "openshift:Project",
+      "@context": {
+        "displayName": "schema:name",
+        "description": "schema:description",
+        "status": "openshift:projectStatus",
+        "phase": "openshift:phase"
+      }
+    },
+
+    "ProjectRequest": {
+      "@id": "openshift:ProjectRequest",
+      "@context": {
+        "displayName": "schema:name",
+        "description": "schema:description"
+      }
+    },
+
+    "ObjectMeta": {
+      "@id": "k8s:ObjectMeta",
+      "@context": {
+        "name": "schema:name",
+        "namespace": "openshift:namespace",
+        "uid": "schema:identifier",
+        "resourceVersion": "openshift:resourceVersion",
+        "generation": "openshift:generation",
+        "creationTimestamp": {
+          "@id": "dcterms:created",
+          "@type": "xsd:dateTime"
+        },
+        "deletionTimestamp": {
+          "@id": "openshift:deletionTimestamp",
+          "@type": "xsd:dateTime"
+        },
+        "labels": "openshift:labels",
+        "annotations": "openshift:annotations",
+        "ownerReferences": {
+          "@id": "openshift:ownerReferences",
+          "@container": "@set"
+        },
+        "finalizers": {
+          "@id": "openshift:finalizers",
+          "@container": "@set"
+        }
+      }
+    },
+
+    "Container": {
+      "@id": "k8s:Container",
+      "@context": {
+        "name": "schema:name",
+        "image": "schema:image",
+        "command": "openshift:command",
+        "args": "openshift:args",
+        "env": {
+          "@id": "openshift:environmentVariables",
+          "@container": "@set"
+        },
+        "ports": {
+          "@id": "openshift:containerPorts",
+          "@container": "@set"
+        },
+        "resources": "openshift:resourceRequirements",
+        "imagePullPolicy": "openshift:imagePullPolicy"
+      }
+    },
+
+    "Service": {
+      "@id": "k8s:Service",
+      "@context": {
+        "name": "schema:name",
+        "namespace": "openshift:namespace",
+        "selector": "openshift:labelSelector",
+        "ports": {
+          "@id": "openshift:servicePorts",
+          "@container": "@set"
+        },
+        "clusterIP": "openshift:clusterIP",
+        "type": "openshift:serviceType"
+      }
+    }
+  }
+}

@@ -1,0 +1,344 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openshift.com/schemas/openshift/route.json",
+  "title": "OpenShift Route",
+  "description": "A Route resource exposes an OpenShift service at a hostname so that external clients can reach it by name. Routes support TLS termination strategies including edge, passthrough, and re-encrypt, as well as traffic splitting across multiple backends for A/B deployments.",
+  "type": "object",
+  "required": ["apiVersion", "kind", "spec"],
+  "properties": {
+    "apiVersion": {
+      "type": "string",
+      "const": "route.openshift.io/v1",
+      "description": "The API version for the Route resource."
+    },
+    "kind": {
+      "type": "string",
+      "const": "Route",
+      "description": "The resource kind, always Route."
+    },
+    "metadata": {
+      "$ref": "#/$defs/ObjectMeta"
+    },
+    "spec": {
+      "$ref": "#/$defs/RouteSpec"
+    },
+    "status": {
+      "$ref": "#/$defs/RouteStatus"
+    }
+  },
+  "$defs": {
+    "ObjectMeta": {
+      "type": "object",
+      "description": "Standard Kubernetes object metadata including name, namespace, labels, and annotations.",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "The name of the route, unique within a namespace.",
+          "pattern": "^[a-z0-9]([a-z0-9\\-]*[a-z0-9])?$",
+          "maxLength": 253
+        },
+        "namespace": {
+          "type": "string",
+          "description": "The namespace (project) in which the route resides.",
+          "pattern": "^[a-z0-9]([a-z0-9\\-]*[a-z0-9])?$",
+          "maxLength": 63
+        },
+        "uid": {
+          "type": "string",
+          "format": "uuid",
+          "description": "A unique identifier for the route set by the server on creation."
+        },
+        "resourceVersion": {
+          "type": "string",
+          "description": "An opaque value representing the internal version of the object, used for optimistic concurrency control."
+        },
+        "generation": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "A sequence number representing a specific generation of the desired state."
+        },
+        "creationTimestamp": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Timestamp representing when the route was created in the cluster."
+        },
+        "deletionTimestamp": {
+          "type": ["string", "null"],
+          "format": "date-time",
+          "description": "Timestamp at which the route will be deleted. Set by the server when a graceful deletion is requested."
+        },
+        "labels": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          },
+          "description": "Map of string keys and values used to organize and categorize the route."
+        },
+        "annotations": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          },
+          "description": "Unstructured key-value map stored with the route for arbitrary metadata. Commonly used for router-specific configuration such as haproxy.router.openshift.io/timeout."
+        },
+        "ownerReferences": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/OwnerReference"
+          },
+          "description": "List of objects that own this route. If all owners are deleted, the route is garbage collected."
+        },
+        "finalizers": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Finalizers that must complete before the route is removed from the registry."
+        }
+      }
+    },
+    "OwnerReference": {
+      "type": "object",
+      "description": "Contains information to identify an owning object.",
+      "required": ["apiVersion", "kind", "name", "uid"],
+      "properties": {
+        "apiVersion": {
+          "type": "string",
+          "description": "API version of the referent."
+        },
+        "kind": {
+          "type": "string",
+          "description": "Kind of the referent."
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the referent."
+        },
+        "uid": {
+          "type": "string",
+          "description": "UID of the referent."
+        },
+        "controller": {
+          "type": "boolean",
+          "description": "If true, this reference is the managing controller."
+        },
+        "blockOwnerDeletion": {
+          "type": "boolean",
+          "description": "If true, the owner cannot be deleted until this reference is removed."
+        }
+      }
+    },
+    "RouteSpec": {
+      "type": "object",
+      "description": "Desired state of the Route resource defining the hostname, backend service, TLS configuration, and traffic distribution.",
+      "required": ["to"],
+      "properties": {
+        "host": {
+          "type": "string",
+          "description": "The desired hostname for the route. If not specified, a hostname is generated using the route name and the router's default subdomain. Must conform to DNS label rules.",
+          "format": "hostname",
+          "examples": ["myapp.apps.openshift.example.com"]
+        },
+        "path": {
+          "type": "string",
+          "description": "The path that the router watches to route traffic to the backend service. Only used with edge or re-encrypt TLS termination. Must begin with a forward slash.",
+          "pattern": "^/",
+          "examples": ["/api", "/v1/health"]
+        },
+        "subdomain": {
+          "type": "string",
+          "description": "A DNS subdomain request. If set, the route hostname is composed using this value combined with the ingress domain."
+        },
+        "to": {
+          "$ref": "#/$defs/RouteTargetReference",
+          "description": "The primary backend service that the route sends traffic to."
+        },
+        "alternateBackends": {
+          "type": "array",
+          "description": "Up to 3 additional backends for A/B testing. Traffic is split among the primary and alternate backends according to their relative weights.",
+          "items": {
+            "$ref": "#/$defs/RouteTargetReference"
+          },
+          "maxItems": 3
+        },
+        "port": {
+          "$ref": "#/$defs/RoutePort"
+        },
+        "tls": {
+          "$ref": "#/$defs/TLSConfig"
+        },
+        "wildcardPolicy": {
+          "type": "string",
+          "description": "The wildcard policy for the hostname. None disallows wildcard routes. Subdomain allows routes to match any subdomain of the specified host.",
+          "enum": ["None", "Subdomain"],
+          "default": "None"
+        }
+      }
+    },
+    "RouteTargetReference": {
+      "type": "object",
+      "description": "Specifies the target backend service that traffic is routed to. Weight controls the proportion of traffic sent to this backend relative to other backends.",
+      "required": ["kind", "name"],
+      "properties": {
+        "kind": {
+          "type": "string",
+          "description": "The kind of target. Must be Service.",
+          "const": "Service"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the target Service that receives traffic.",
+          "pattern": "^[a-z0-9]([a-z0-9\\-]*[a-z0-9])?$"
+        },
+        "weight": {
+          "type": "integer",
+          "description": "Relative weight for traffic distribution across backends (0-256). A zero weight causes no traffic to be sent to this backend. The proportion of traffic is calculated as this backend's weight divided by the sum of all backend weights.",
+          "minimum": 0,
+          "maximum": 256,
+          "default": 100
+        }
+      }
+    },
+    "RoutePort": {
+      "type": "object",
+      "description": "Route port configuration that specifies which service port the route points to.",
+      "required": ["targetPort"],
+      "properties": {
+        "targetPort": {
+          "oneOf": [
+            {
+              "type": "string",
+              "description": "Named port on the target service (e.g., 'http', 'https', '8080-tcp')."
+            },
+            {
+              "type": "integer",
+              "description": "Numeric port on the target pods.",
+              "minimum": 1,
+              "maximum": 65535
+            }
+          ],
+          "description": "The target port on pods selected by the service this route points to. Can be a named port or a port number."
+        }
+      }
+    },
+    "TLSConfig": {
+      "type": "object",
+      "description": "TLS configuration for the route. Determines how TLS connections are handled at the router, including termination type, certificates, and insecure traffic policy.",
+      "required": ["termination"],
+      "properties": {
+        "termination": {
+          "type": "string",
+          "description": "Indicates where TLS termination occurs. Edge terminates TLS at the router and forwards unencrypted traffic to the backend. Passthrough forwards the encrypted connection directly to the backend pod. Reencrypt terminates TLS at the router and re-encrypts communication to the backend.",
+          "enum": ["edge", "passthrough", "reencrypt"]
+        },
+        "certificate": {
+          "type": "string",
+          "description": "PEM-encoded certificate for serving the route. Required for edge and re-encrypt termination when not using a default wildcard certificate."
+        },
+        "key": {
+          "type": "string",
+          "description": "PEM-encoded private key corresponding to the certificate."
+        },
+        "caCertificate": {
+          "type": "string",
+          "description": "PEM-encoded CA certificate chain used to verify client certificates for mutual TLS."
+        },
+        "destinationCACertificate": {
+          "type": "string",
+          "description": "PEM-encoded CA certificate used to verify the backend server's certificate. Only applicable for re-encrypt termination."
+        },
+        "insecureEdgeTerminationPolicy": {
+          "type": "string",
+          "description": "Policy for handling insecure (HTTP) traffic when TLS is configured. None disables insecure traffic, Allow permits both HTTP and HTTPS, Redirect sends a 301 redirect to the HTTPS URL.",
+          "enum": ["None", "Allow", "Redirect"]
+        }
+      },
+      "if": {
+        "properties": {
+          "termination": { "const": "passthrough" }
+        }
+      },
+      "then": {
+        "properties": {
+          "certificate": false,
+          "key": false,
+          "caCertificate": false,
+          "destinationCACertificate": false
+        }
+      }
+    },
+    "RouteStatus": {
+      "type": "object",
+      "description": "Current observed state of the Route, including ingress points where the route is exposed.",
+      "properties": {
+        "ingress": {
+          "type": "array",
+          "description": "Status entries for each router that has admitted (accepted) the route.",
+          "items": {
+            "$ref": "#/$defs/RouteIngress"
+          }
+        }
+      }
+    },
+    "RouteIngress": {
+      "type": "object",
+      "description": "Holds information about a specific router's admission of the route.",
+      "properties": {
+        "host": {
+          "type": "string",
+          "description": "The hostname assigned to the route by the admitting router."
+        },
+        "routerName": {
+          "type": "string",
+          "description": "The name of the router that admitted this route (e.g., 'default')."
+        },
+        "conditions": {
+          "type": "array",
+          "description": "Conditions describing the current state of the route ingress.",
+          "items": {
+            "$ref": "#/$defs/RouteIngressCondition"
+          }
+        },
+        "wildcardPolicy": {
+          "type": "string",
+          "description": "The wildcard policy applied by the router.",
+          "enum": ["None", "Subdomain"]
+        },
+        "routerCanonicalHostname": {
+          "type": "string",
+          "description": "The canonical hostname of the external host for the router. Used for external DNS CNAME targets."
+        }
+      }
+    },
+    "RouteIngressCondition": {
+      "type": "object",
+      "description": "Describes the state of a route ingress at a point in time.",
+      "required": ["type", "status"],
+      "properties": {
+        "type": {
+          "type": "string",
+          "description": "The type of condition (e.g., Admitted, UnservableInFutureVersions).",
+          "examples": ["Admitted"]
+        },
+        "status": {
+          "type": "string",
+          "description": "Status of the condition.",
+          "enum": ["True", "False", "Unknown"]
+        },
+        "reason": {
+          "type": "string",
+          "description": "Machine-readable reason for the condition's last transition."
+        },
+        "message": {
+          "type": "string",
+          "description": "Human-readable message with details about the last transition."
+        },
+        "lastTransitionTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Timestamp of the last change to this condition."
+        }
+      }
+    }
+  }
+}
