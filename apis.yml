@@ -1,5 +1,5 @@
 aid: openshift
-name: OpenShift API
+name: OpenShift
 description: A comprehensive API definition for Red Hat OpenShift, the enterprise Kubernetes platform
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 created: '2024-01-01'
