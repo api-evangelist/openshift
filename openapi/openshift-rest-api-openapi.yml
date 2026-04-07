@@ -67,7 +67,7 @@ paths:
   /apis/route.openshift.io/v1/routes:
     get:
       operationId: listRouteForAllNamespaces
-      summary: List routes across all namespaces
+      summary: OpenShift List routes across all namespaces
       description: >-
         List or watch Route objects across all namespaces. Requires
         cluster-level read access to routes.
@@ -95,7 +95,7 @@ paths:
   /apis/route.openshift.io/v1/namespaces/{namespace}/routes:
     get:
       operationId: listNamespacedRoute
-      summary: List routes in a namespace
+      summary: OpenShift List routes in a namespace
       description: >-
         List or watch Route objects in the specified namespace.
       tags:
@@ -121,7 +121,7 @@ paths:
           description: Unauthorized
     post:
       operationId: createNamespacedRoute
-      summary: Create a route
+      summary: OpenShift Create a route
       description: >-
         Create a Route in the specified namespace. A route exposes a service
         at an externally reachable hostname.
@@ -163,7 +163,7 @@ paths:
   /apis/route.openshift.io/v1/namespaces/{namespace}/routes/{name}:
     get:
       operationId: readNamespacedRoute
-      summary: Read a route
+      summary: OpenShift Read a route
       description: >-
         Read the specified Route in the given namespace.
       tags:
@@ -183,7 +183,7 @@ paths:
           description: Unauthorized
     put:
       operationId: replaceNamespacedRoute
-      summary: Replace a route
+      summary: OpenShift Replace a route
       description: >-
         Replace the specified Route in the given namespace.
       tags:
@@ -217,7 +217,7 @@ paths:
           description: Unauthorized
     patch:
       operationId: patchNamespacedRoute
-      summary: Patch a route
+      summary: OpenShift Patch a route
       description: >-
         Partially update the specified Route in the given namespace.
       tags:
@@ -248,7 +248,7 @@ paths:
           description: Unauthorized
     delete:
       operationId: deleteNamespacedRoute
-      summary: Delete a route
+      summary: OpenShift Delete a route
       description: >-
         Delete the specified Route from the given namespace.
       tags:
@@ -279,7 +279,7 @@ paths:
   /apis/route.openshift.io/v1/namespaces/{namespace}/routes/{name}/status:
     get:
       operationId: readNamespacedRouteStatus
-      summary: Read status of a route
+      summary: OpenShift Read status of a route
       description: >-
         Read the status of the specified Route.
       tags:
@@ -299,7 +299,7 @@ paths:
           description: Unauthorized
     put:
       operationId: replaceNamespacedRouteStatus
-      summary: Replace status of a route
+      summary: OpenShift Replace status of a route
       description: >-
         Replace the status of the specified Route.
       tags:
@@ -339,7 +339,7 @@ paths:
   /apis/build.openshift.io/v1/builds:
     get:
       operationId: listBuildForAllNamespaces
-      summary: List builds across all namespaces
+      summary: OpenShift List builds across all namespaces
       description: >-
         List or watch Build objects across all namespaces.
       tags:
@@ -366,7 +366,7 @@ paths:
   /apis/build.openshift.io/v1/namespaces/{namespace}/builds:
     get:
       operationId: listNamespacedBuild
-      summary: List builds in a namespace
+      summary: OpenShift List builds in a namespace
       description: >-
         List or watch Build objects in the specified namespace.
       tags:
@@ -392,7 +392,7 @@ paths:
           description: Unauthorized
     post:
       operationId: createNamespacedBuild
-      summary: Create a build
+      summary: OpenShift Create a build
       description: >-
         Create a Build in the specified namespace. A Build represents a single
         execution of a build process that transforms source into a container image.
@@ -434,7 +434,7 @@ paths:
   /apis/build.openshift.io/v1/namespaces/{namespace}/builds/{name}:
     get:
       operationId: readNamespacedBuild
-      summary: Read a build
+      summary: OpenShift Read a build
       description: >-
         Read the specified Build in the given namespace.
       tags:
@@ -454,7 +454,7 @@ paths:
           description: Unauthorized
     put:
       operationId: replaceNamespacedBuild
-      summary: Replace a build
+      summary: OpenShift Replace a build
       description: >-
         Replace the specified Build in the given namespace.
       tags:
@@ -488,7 +488,7 @@ paths:
           description: Unauthorized
     delete:
       operationId: deleteNamespacedBuild
-      summary: Delete a build
+      summary: OpenShift Delete a build
       description: >-
         Delete the specified Build from the given namespace.
       tags:
@@ -519,7 +519,7 @@ paths:
   /apis/build.openshift.io/v1/namespaces/{namespace}/builds/{name}/log:
     get:
       operationId: readNamespacedBuildLog
-      summary: Read build log
+      summary: OpenShift Read build log
       description: >-
         Read the log output from the specified Build.
       tags:
@@ -573,7 +573,7 @@ paths:
   /apis/build.openshift.io/v1/buildconfigs:
     get:
       operationId: listBuildConfigForAllNamespaces
-      summary: List build configs across all namespaces
+      summary: OpenShift List build configs across all namespaces
       description: >-
         List or watch BuildConfig objects across all namespaces.
       tags:
@@ -600,7 +600,7 @@ paths:
   /apis/build.openshift.io/v1/namespaces/{namespace}/buildconfigs:
     get:
       operationId: listNamespacedBuildConfig
-      summary: List build configs in a namespace
+      summary: OpenShift List build configs in a namespace
       description: >-
         List or watch BuildConfig objects in the specified namespace.
       tags:
@@ -626,7 +626,7 @@ paths:
           description: Unauthorized
     post:
       operationId: createNamespacedBuildConfig
-      summary: Create a build config
+      summary: OpenShift Create a build config
       description: >-
         Create a BuildConfig in the specified namespace. A BuildConfig defines
         the build strategy and source to produce container images.
@@ -668,7 +668,7 @@ paths:
   /apis/build.openshift.io/v1/namespaces/{namespace}/buildconfigs/{name}:
     get:
       operationId: readNamespacedBuildConfig
-      summary: Read a build config
+      summary: OpenShift Read a build config
       description: >-
         Read the specified BuildConfig in the given namespace.
       tags:
@@ -688,7 +688,7 @@ paths:
           description: Unauthorized
     put:
       operationId: replaceNamespacedBuildConfig
-      summary: Replace a build config
+      summary: OpenShift Replace a build config
       description: >-
         Replace the specified BuildConfig in the given namespace.
       tags:
@@ -722,7 +722,7 @@ paths:
           description: Unauthorized
     delete:
       operationId: deleteNamespacedBuildConfig
-      summary: Delete a build config
+      summary: OpenShift Delete a build config
       description: >-
         Delete the specified BuildConfig from the given namespace.
       tags:
@@ -753,7 +753,7 @@ paths:
   /apis/build.openshift.io/v1/namespaces/{namespace}/buildconfigs/{name}/instantiate:
     post:
       operationId: createNamespacedBuildConfigInstantiate
-      summary: Instantiate a build from a build config
+      summary: OpenShift Instantiate a build from a build config
       description: >-
         Trigger a new build from the specified BuildConfig.
       tags:
@@ -793,7 +793,7 @@ paths:
   /apis/apps.openshift.io/v1/deploymentconfigs:
     get:
       operationId: listDeploymentConfigForAllNamespaces
-      summary: List deployment configs across all namespaces
+      summary: OpenShift List deployment configs across all namespaces
       description: >-
         List or watch DeploymentConfig objects across all namespaces.
       tags:
@@ -820,7 +820,7 @@ paths:
   /apis/apps.openshift.io/v1/namespaces/{namespace}/deploymentconfigs:
     get:
       operationId: listNamespacedDeploymentConfig
-      summary: List deployment configs in a namespace
+      summary: OpenShift List deployment configs in a namespace
       description: >-
         List or watch DeploymentConfig objects in the specified namespace.
       tags:
@@ -846,7 +846,7 @@ paths:
           description: Unauthorized
     post:
       operationId: createNamespacedDeploymentConfig
-      summary: Create a deployment config
+      summary: OpenShift Create a deployment config
       description: >-
         Create a DeploymentConfig in the specified namespace. A
         DeploymentConfig defines the template for a pod and manages deploying
@@ -889,7 +889,7 @@ paths:
   /apis/apps.openshift.io/v1/namespaces/{namespace}/deploymentconfigs/{name}:
     get:
       operationId: readNamespacedDeploymentConfig
-      summary: Read a deployment config
+      summary: OpenShift Read a deployment config
       description: >-
         Read the specified DeploymentConfig in the given namespace.
       tags:
@@ -909,7 +909,7 @@ paths:
           description: Unauthorized
     put:
       operationId: replaceNamespacedDeploymentConfig
-      summary: Replace a deployment config
+      summary: OpenShift Replace a deployment config
       description: >-
         Replace the specified DeploymentConfig in the given namespace.
       tags:
@@ -943,7 +943,7 @@ paths:
           description: Unauthorized
     patch:
       operationId: patchNamespacedDeploymentConfig
-      summary: Patch a deployment config
+      summary: OpenShift Patch a deployment config
       description: >-
         Partially update the specified DeploymentConfig in the given namespace.
       tags:
@@ -974,7 +974,7 @@ paths:
           description: Unauthorized
     delete:
       operationId: deleteNamespacedDeploymentConfig
-      summary: Delete a deployment config
+      summary: OpenShift Delete a deployment config
       description: >-
         Delete the specified DeploymentConfig from the given namespace.
       tags:
@@ -1005,7 +1005,7 @@ paths:
   /apis/apps.openshift.io/v1/namespaces/{namespace}/deploymentconfigs/{name}/status:
     get:
       operationId: readNamespacedDeploymentConfigStatus
-      summary: Read status of a deployment config
+      summary: OpenShift Read status of a deployment config
       description: >-
         Read the status of the specified DeploymentConfig.
       tags:
@@ -1025,7 +1025,7 @@ paths:
           description: Unauthorized
     put:
       operationId: replaceNamespacedDeploymentConfigStatus
-      summary: Replace status of a deployment config
+      summary: OpenShift Replace status of a deployment config
       description: >-
         Replace the status of the specified DeploymentConfig.
       tags:
@@ -1061,7 +1061,7 @@ paths:
   /apis/apps.openshift.io/v1/namespaces/{namespace}/deploymentconfigs/{name}/scale:
     get:
       operationId: readNamespacedDeploymentConfigScale
-      summary: Read scale of a deployment config
+      summary: OpenShift Read scale of a deployment config
       description: >-
         Read the scale of the specified DeploymentConfig.
       tags:
@@ -1081,7 +1081,7 @@ paths:
           description: Unauthorized
     put:
       operationId: replaceNamespacedDeploymentConfigScale
-      summary: Replace scale of a deployment config
+      summary: OpenShift Replace scale of a deployment config
       description: >-
         Replace the scale of the specified DeploymentConfig to adjust the
         number of running replicas.
@@ -1118,7 +1118,7 @@ paths:
   /apis/apps.openshift.io/v1/namespaces/{namespace}/deploymentconfigs/{name}/rollback:
     post:
       operationId: createNamespacedDeploymentConfigRollback
-      summary: Rollback a deployment config
+      summary: OpenShift Rollback a deployment config
       description: >-
         Create a rollback request for the specified DeploymentConfig to revert
         to a previous deployment revision.
@@ -1155,7 +1155,7 @@ paths:
   /apis/apps.openshift.io/v1/namespaces/{namespace}/deploymentconfigs/{name}/log:
     get:
       operationId: readNamespacedDeploymentConfigLog
-      summary: Read deployment config log
+      summary: OpenShift Read deployment config log
       description: >-
         Read the log output from the latest deployment of the specified
         DeploymentConfig.
@@ -1216,7 +1216,7 @@ paths:
   /apis/project.openshift.io/v1/projects:
     get:
       operationId: listProject
-      summary: List projects
+      summary: OpenShift List projects
       description: >-
         List or watch Project objects. Projects are OpenShift's extension of
         Kubernetes namespaces providing multi-tenant isolation.
@@ -1244,7 +1244,7 @@ paths:
   /apis/project.openshift.io/v1/projects/{name}:
     get:
       operationId: readProject
-      summary: Read a project
+      summary: OpenShift Read a project
       description: >-
         Read the specified Project.
       tags:
@@ -1263,7 +1263,7 @@ paths:
           description: Unauthorized
     put:
       operationId: replaceProject
-      summary: Replace a project
+      summary: OpenShift Replace a project
       description: >-
         Replace the specified Project.
       tags:
@@ -1296,7 +1296,7 @@ paths:
           description: Unauthorized
     delete:
       operationId: deleteProject
-      summary: Delete a project
+      summary: OpenShift Delete a project
       description: >-
         Delete the specified Project and all of its resources.
       tags:
@@ -1326,7 +1326,7 @@ paths:
   /apis/project.openshift.io/v1/projectrequests:
     get:
       operationId: listProjectRequest
-      summary: List project requests
+      summary: OpenShift List project requests
       description: >-
         List ProjectRequest objects. Returns the project request template
         status.
@@ -1345,7 +1345,7 @@ paths:
           description: Unauthorized
     post:
       operationId: createProjectRequest
-      summary: Create a project request
+      summary: OpenShift Create a project request
       description: >-
         Create a ProjectRequest to provision a new project. This is the
         preferred mechanism for project creation as it respects cluster
