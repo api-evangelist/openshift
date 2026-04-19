@@ -1,0 +1,9 @@
+{
+  "replicas": 10,
+  "selector": "example_value",
+  "triggers": [],
+  "minReadySeconds": 10,
+  "revisionHistoryLimit": 10,
+  "paused": true,
+  "test": true
+}

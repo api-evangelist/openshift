@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "OwnerReference",
+  "type": "object",
+  "description": "Contains information to identify an owning object.",
+  "properties": {
+    "apiVersion": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "uid": {
+      "type": "string"
+    },
+    "controller": {
+      "type": "boolean"
+    },
+    "blockOwnerDeletion": {
+      "type": "boolean"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EnvVar",
+  "type": "object",
+  "description": "An environment variable to set in a container.",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "The environment variable name."
+    },
+    "value": {
+      "type": "string",
+      "description": "The environment variable value."
+    }
+  }
+}

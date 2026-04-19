@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "DeploymentConfig",
+  "type": "object",
+  "description": "A DeploymentConfig describes the desired state of a particular application deployment. It creates ReplicationControllers to manage pods and supports rolling, recreate, and custom deployment strategies with automatic rollback.",
+  "properties": {
+    "apiVersion": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string"
+    }
+  }
+}

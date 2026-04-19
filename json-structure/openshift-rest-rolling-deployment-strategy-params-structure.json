@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-structure.org/draft/2020-12/schema",
+  "name": "RollingDeploymentStrategyParams",
+  "type": "object",
+  "properties": {
+    "updatePeriodSeconds": {
+      "type": "integer"
+    },
+    "intervalSeconds": {
+      "type": "integer"
+    },
+    "timeoutSeconds": {
+      "type": "integer"
+    },
+    "maxUnavailable": {
+      "type": "string"
+    },
+    "maxSurge": {
+      "type": "string"
+    }
+  }
+}

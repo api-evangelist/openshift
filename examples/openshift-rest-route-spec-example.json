@@ -1,0 +1,7 @@
+{
+  "host": "example_value",
+  "path": "example_value",
+  "subdomain": "example_value",
+  "alternateBackends": [],
+  "wildcardPolicy": "example_value"
+}

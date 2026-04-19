@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-structure.org/draft/2020-12/schema",
+  "name": "RouteIngress",
+  "type": "object",
+  "properties": {
+    "host": {
+      "type": "string"
+    },
+    "routerName": {
+      "type": "string"
+    },
+    "conditions": {
+      "type": "array"
+    },
+    "wildcardPolicy": {
+      "type": "string"
+    }
+  }
+}

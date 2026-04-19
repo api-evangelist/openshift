@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "CustomBuildStrategy",
+  "type": "object",
+  "description": "Custom build strategy that uses a custom builder image to execute an arbitrary build process.",
+  "properties": {
+    "env": {
+      "type": "array"
+    },
+    "exposeDockerSocket": {
+      "type": "boolean",
+      "description": "If true, the Docker socket is exposed inside the build container."
+    },
+    "forcePull": {
+      "type": "boolean",
+      "description": "Forces a pull of the custom builder image before the build."
+    }
+  }
+}

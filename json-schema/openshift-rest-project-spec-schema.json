@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ProjectSpec",
+  "type": "object",
+  "description": "Specification for the desired project state.",
+  "properties": {
+    "finalizers": {
+      "type": "array",
+      "description": "Finalizers that must complete before the project is deleted."
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "BuildConfigList",
+  "type": "object",
+  "description": "A list of BuildConfig objects.",
+  "properties": {
+    "apiVersion": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string"
+    },
+    "items": {
+      "type": "array"
+    }
+  }
+}

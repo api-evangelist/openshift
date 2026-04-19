@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-structure.org/draft/2020-12/schema",
+  "name": "CustomBuildStrategy",
+  "type": "object",
+  "properties": {
+    "env": {
+      "type": "array"
+    },
+    "exposeDockerSocket": {
+      "type": "boolean"
+    },
+    "forcePull": {
+      "type": "boolean"
+    }
+  }
+}

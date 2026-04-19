@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "BuildConfig",
+  "type": "object",
+  "description": "A BuildConfig defines the build strategy and source used to produce new container images. Builds can be triggered automatically by webhooks, image changes, or configuration changes.",
+  "properties": {
+    "apiVersion": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "DockerBuildStrategy",
+  "type": "object",
+  "description": "Docker build strategy that uses a Dockerfile to build images.",
+  "properties": {
+    "dockerfilePath": {
+      "type": "string",
+      "description": "Path of the Dockerfile relative to the context directory."
+    },
+    "env": {
+      "type": "array"
+    },
+    "noCache": {
+      "type": "boolean",
+      "description": "If true, Docker build caching is disabled."
+    },
+    "forcePull": {
+      "type": "boolean",
+      "description": "Forces a pull of the base image before the build."
+    },
+    "buildArgs": {
+      "type": "array",
+      "description": "Specifies build arguments to pass to Docker."
+    }
+  }
+}

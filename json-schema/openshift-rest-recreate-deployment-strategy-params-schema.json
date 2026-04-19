@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "RecreateDeploymentStrategyParams",
+  "type": "object",
+  "description": "Parameters for a recreate deployment strategy.",
+  "properties": {
+    "timeoutSeconds": {
+      "type": "integer",
+      "description": "The time to wait for pods to terminate before giving up."
+    }
+  }
+}

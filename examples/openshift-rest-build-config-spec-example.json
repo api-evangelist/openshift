@@ -1,0 +1,9 @@
+{
+  "triggers": [],
+  "runPolicy": "example_value",
+  "serviceAccount": "example_value",
+  "completionDeadlineSeconds": 10,
+  "successfulBuildsHistoryLimit": 10,
+  "failedBuildsHistoryLimit": 10,
+  "nodeSelector": "example_value"
+}

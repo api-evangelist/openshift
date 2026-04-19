@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "DeploymentConfigStatus",
+  "type": "object",
+  "description": "Status of the DeploymentConfig.",
+  "properties": {
+    "latestVersion": {
+      "type": "integer",
+      "description": "The version of the most recent deployment."
+    },
+    "observedGeneration": {
+      "type": "integer",
+      "description": "The most recent generation observed by the deployment controller."
+    },
+    "replicas": {
+      "type": "integer",
+      "description": "Total number of non-terminated pods targeted by this deployment."
+    },
+    "updatedReplicas": {
+      "type": "integer",
+      "description": "Total number of non-terminated pods that have the desired template spec."
+    },
+    "availableReplicas": {
+      "type": "integer",
+      "description": "Total number of available pods targeted by this deployment."
+    },
+    "unavailableReplicas": {
+      "type": "integer",
+      "description": "Total number of unavailable pods targeted by this deployment."
+    },
+    "readyReplicas": {
+      "type": "integer",
+      "description": "Total number of ready pods targeted by this deployment."
+    },
+    "conditions": {
+      "type": "array"
+    }
+  }
+}

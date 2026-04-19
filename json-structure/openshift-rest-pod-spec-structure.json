@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-structure.org/draft/2020-12/schema",
+  "name": "PodSpec",
+  "type": "object",
+  "properties": {
+    "containers": {
+      "type": "array"
+    },
+    "initContainers": {
+      "type": "array"
+    },
+    "restartPolicy": {
+      "type": "string"
+    },
+    "serviceAccountName": {
+      "type": "string"
+    },
+    "nodeSelector": {
+      "type": "object"
+    },
+    "volumes": {
+      "type": "array"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "DeploymentStrategy",
+  "type": "object",
+  "description": "Describes how to perform a deployment.",
+  "properties": {
+    "type": {
+      "type": "string",
+      "description": "The deployment strategy type."
+    },
+    "activeDeadlineSeconds": {
+      "type": "integer",
+      "description": "Duration in seconds that the deployer pods may be active before the system retries the deployment."
+    }
+  }
+}

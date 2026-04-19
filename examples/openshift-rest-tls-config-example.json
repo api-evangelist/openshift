@@ -1,0 +1,8 @@
+{
+  "termination": "example_value",
+  "certificate": "example_value",
+  "key": "example_value",
+  "caCertificate": "example_value",
+  "destinationCACertificate": "example_value",
+  "insecureEdgeTerminationPolicy": "example_value"
+}

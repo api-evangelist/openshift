@@ -1,0 +1,13 @@
+name: openshift API Vocabulary
+provider: openshift
+created: '2026-04-18'
+modified: '2026-04-18'
+operations: 42
+schemas: 54
+tags:
+- BuildConfigs
+- Builds
+- DeploymentConfigs
+- ProjectRequests
+- Projects
+- Routes

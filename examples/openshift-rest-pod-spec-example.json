@@ -1,0 +1,8 @@
+{
+  "containers": [],
+  "initContainers": [],
+  "restartPolicy": "example_value",
+  "serviceAccountName": "example_value",
+  "nodeSelector": "example_value",
+  "volumes": []
+}

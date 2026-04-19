@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ProjectStatus",
+  "type": "object",
+  "description": "Current state of the project.",
+  "properties": {
+    "phase": {
+      "type": "string",
+      "description": "The lifecycle phase of the project."
+    },
+    "conditions": {
+      "type": "array"
+    }
+  }
+}

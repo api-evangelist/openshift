@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-structure.org/draft/2020-12/schema",
+  "name": "RouteSpec",
+  "type": "object",
+  "properties": {
+    "host": {
+      "type": "string"
+    },
+    "path": {
+      "type": "string"
+    },
+    "subdomain": {
+      "type": "string"
+    },
+    "alternateBackends": {
+      "type": "array"
+    },
+    "wildcardPolicy": {
+      "type": "string"
+    }
+  }
+}

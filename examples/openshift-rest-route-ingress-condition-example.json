@@ -1,0 +1,7 @@
+{
+  "type": "example_value",
+  "status": "example_value",
+  "reason": "example_value",
+  "message": "example_value",
+  "lastTransitionTime": "example_value"
+}

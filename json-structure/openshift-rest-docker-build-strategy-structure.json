@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-structure.org/draft/2020-12/schema",
+  "name": "DockerBuildStrategy",
+  "type": "object",
+  "properties": {
+    "dockerfilePath": {
+      "type": "string"
+    },
+    "env": {
+      "type": "array"
+    },
+    "noCache": {
+      "type": "boolean"
+    },
+    "forcePull": {
+      "type": "boolean"
+    },
+    "buildArgs": {
+      "type": "array"
+    }
+  }
+}

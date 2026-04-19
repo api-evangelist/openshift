@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Probe",
+  "type": "object",
+  "description": "Describes a health check to be performed against a container.",
+  "properties": {
+    "httpGet": {
+      "type": "object"
+    },
+    "tcpSocket": {
+      "type": "object"
+    },
+    "exec": {
+      "type": "object"
+    },
+    "initialDelaySeconds": {
+      "type": "integer"
+    },
+    "periodSeconds": {
+      "type": "integer"
+    },
+    "timeoutSeconds": {
+      "type": "integer"
+    },
+    "successThreshold": {
+      "type": "integer"
+    },
+    "failureThreshold": {
+      "type": "integer"
+    }
+  }
+}

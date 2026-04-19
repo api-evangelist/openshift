@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-structure.org/draft/2020-12/schema",
+  "name": "ObjectMeta",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "namespace": {
+      "type": "string"
+    },
+    "uid": {
+      "type": "string"
+    },
+    "resourceVersion": {
+      "type": "string"
+    },
+    "generation": {
+      "type": "integer"
+    },
+    "creationTimestamp": {
+      "type": "string"
+    },
+    "deletionTimestamp": {
+      "type": "string"
+    },
+    "labels": {
+      "type": "object"
+    },
+    "annotations": {
+      "type": "object"
+    },
+    "ownerReferences": {
+      "type": "array"
+    },
+    "finalizers": {
+      "type": "array"
+    }
+  }
+}

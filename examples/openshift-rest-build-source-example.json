@@ -1,0 +1,7 @@
+{
+  "type": "example_value",
+  "git": "example_value",
+  "dockerfile": "example_value",
+  "contextDir": "example_value",
+  "sourceSecret": "example_value"
+}

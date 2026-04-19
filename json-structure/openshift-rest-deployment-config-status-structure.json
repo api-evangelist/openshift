@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-structure.org/draft/2020-12/schema",
+  "name": "DeploymentConfigStatus",
+  "type": "object",
+  "properties": {
+    "latestVersion": {
+      "type": "integer"
+    },
+    "observedGeneration": {
+      "type": "integer"
+    },
+    "replicas": {
+      "type": "integer"
+    },
+    "updatedReplicas": {
+      "type": "integer"
+    },
+    "availableReplicas": {
+      "type": "integer"
+    },
+    "unavailableReplicas": {
+      "type": "integer"
+    },
+    "readyReplicas": {
+      "type": "integer"
+    },
+    "conditions": {
+      "type": "array"
+    }
+  }
+}

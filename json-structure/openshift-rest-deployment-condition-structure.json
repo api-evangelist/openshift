@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-structure.org/draft/2020-12/schema",
+  "name": "DeploymentCondition",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "reason": {
+      "type": "string"
+    },
+    "message": {
+      "type": "string"
+    },
+    "lastUpdateTime": {
+      "type": "string"
+    },
+    "lastTransitionTime": {
+      "type": "string"
+    }
+  }
+}

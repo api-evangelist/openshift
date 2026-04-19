@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "DeploymentTriggerPolicy",
+  "type": "object",
+  "description": "A policy that triggers new deployments.",
+  "properties": {
+    "type": {
+      "type": "string",
+      "description": "The type of deployment trigger."
+    },
+    "imageChangeParams": {
+      "type": "object",
+      "description": "Parameters for an ImageChange trigger."
+    }
+  }
+}

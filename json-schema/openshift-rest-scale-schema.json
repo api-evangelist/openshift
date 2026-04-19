@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Scale",
+  "type": "object",
+  "description": "Represents a scaling request for a resource.",
+  "properties": {
+    "apiVersion": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string"
+    },
+    "spec": {
+      "type": "object"
+    },
+    "status": {
+      "type": "object"
+    }
+  }
+}

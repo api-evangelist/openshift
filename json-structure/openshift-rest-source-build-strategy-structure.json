@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-structure.org/draft/2020-12/schema",
+  "name": "SourceBuildStrategy",
+  "type": "object",
+  "properties": {
+    "env": {
+      "type": "array"
+    },
+    "scripts": {
+      "type": "string"
+    },
+    "incremental": {
+      "type": "boolean"
+    },
+    "forcePull": {
+      "type": "boolean"
+    }
+  }
+}

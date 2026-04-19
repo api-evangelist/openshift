@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-structure.org/draft/2020-12/schema",
+  "name": "ListMeta",
+  "type": "object",
+  "properties": {
+    "selfLink": {
+      "type": "string"
+    },
+    "resourceVersion": {
+      "type": "string"
+    },
+    "continue": {
+      "type": "string"
+    },
+    "remainingItemCount": {
+      "type": "integer"
+    }
+  }
+}

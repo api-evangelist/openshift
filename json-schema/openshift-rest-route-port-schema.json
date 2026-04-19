@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "RoutePort",
+  "type": "object",
+  "description": "Route port configuration that specifies which service port the route points to.",
+  "properties": {
+    "targetPort": {
+      "type": "string",
+      "description": "The target port on pods selected by the service this route points to. Can be a port name or number."
+    }
+  }
+}

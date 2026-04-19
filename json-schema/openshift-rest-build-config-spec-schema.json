@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "BuildConfigSpec",
+  "type": "object",
+  "description": "Specification of the desired BuildConfig behavior.",
+  "properties": {
+    "triggers": {
+      "type": "array",
+      "description": "Triggers that cause new builds to be created."
+    },
+    "runPolicy": {
+      "type": "string",
+      "description": "Controls how builds from this config run concurrently."
+    },
+    "serviceAccount": {
+      "type": "string",
+      "description": "The ServiceAccount to run the build pod as."
+    },
+    "completionDeadlineSeconds": {
+      "type": "integer",
+      "description": "Optional duration in seconds builds may be active before being terminated."
+    },
+    "successfulBuildsHistoryLimit": {
+      "type": "integer",
+      "description": "Number of successful builds to retain."
+    },
+    "failedBuildsHistoryLimit": {
+      "type": "integer",
+      "description": "Number of failed builds to retain."
+    },
+    "nodeSelector": {
+      "type": "object"
+    }
+  }
+}

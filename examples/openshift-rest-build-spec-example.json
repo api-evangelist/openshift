@@ -1,0 +1,6 @@
+{
+  "serviceAccount": "example_value",
+  "completionDeadlineSeconds": 10,
+  "nodeSelector": "example_value",
+  "triggeredBy": []
+}

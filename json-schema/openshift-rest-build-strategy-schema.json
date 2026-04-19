@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "BuildStrategy",
+  "type": "object",
+  "description": "Describes how to perform the build.",
+  "properties": {
+    "type": {
+      "type": "string",
+      "description": "The type of build strategy."
+    }
+  }
+}

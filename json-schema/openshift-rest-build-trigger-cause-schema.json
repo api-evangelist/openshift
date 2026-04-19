@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "BuildTriggerCause",
+  "type": "object",
+  "description": "Records which event triggered the build.",
+  "properties": {
+    "message": {
+      "type": "string",
+      "description": "Short human-readable description of the trigger."
+    }
+  }
+}

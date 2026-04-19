@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ProjectRequest",
+  "type": "object",
+  "description": "A request to create a new project. ProjectRequests are processed according to the cluster project request template and may include default resource quotas, limit ranges, and role bindings.",
+  "properties": {
+    "apiVersion": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string"
+    },
+    "displayName": {
+      "type": "string",
+      "description": "A human-readable name for the project, used in the web console."
+    },
+    "description": {
+      "type": "string",
+      "description": "A longer description of the project purpose."
+    }
+  }
+}

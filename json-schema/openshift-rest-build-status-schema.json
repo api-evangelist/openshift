@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "BuildStatus",
+  "type": "object",
+  "description": "Status of the build execution.",
+  "properties": {
+    "phase": {
+      "type": "string",
+      "description": "The current phase of the build."
+    },
+    "cancelled": {
+      "type": "boolean",
+      "description": "Whether the build was cancelled."
+    },
+    "message": {
+      "type": "string",
+      "description": "Human-readable message about the build status."
+    },
+    "reason": {
+      "type": "string",
+      "description": "Brief machine-readable reason for the build status."
+    },
+    "startTimestamp": {
+      "type": "string",
+      "description": "Timestamp when the build started running."
+    },
+    "completionTimestamp": {
+      "type": "string",
+      "description": "Timestamp when the build completed."
+    },
+    "duration": {
+      "type": "integer",
+      "description": "Duration of the build in nanoseconds."
+    },
+    "outputDockerImageReference": {
+      "type": "string",
+      "description": "The Docker image reference of the built image."
+    },
+    "output": {
+      "type": "object",
+      "description": "Build output details."
+    },
+    "logSnippet": {
+      "type": "string",
+      "description": "The last few lines of the build log for failed builds."
+    }
+  }
+}

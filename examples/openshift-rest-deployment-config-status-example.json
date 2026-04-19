@@ -1,0 +1,10 @@
+{
+  "latestVersion": 10,
+  "observedGeneration": 10,
+  "replicas": 10,
+  "updatedReplicas": 10,
+  "availableReplicas": 10,
+  "unavailableReplicas": 10,
+  "readyReplicas": 10,
+  "conditions": []
+}

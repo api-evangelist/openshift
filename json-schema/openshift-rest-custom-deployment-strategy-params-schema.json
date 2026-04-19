@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "CustomDeploymentStrategyParams",
+  "type": "object",
+  "description": "Parameters for a custom deployment strategy.",
+  "properties": {
+    "image": {
+      "type": "string",
+      "description": "The container image that runs the custom deployment logic."
+    },
+    "environment": {
+      "type": "array"
+    },
+    "command": {
+      "type": "array",
+      "description": "The command to execute in the custom deployer container."
+    }
+  }
+}

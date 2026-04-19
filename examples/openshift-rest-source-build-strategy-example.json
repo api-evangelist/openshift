@@ -1,0 +1,6 @@
+{
+  "env": [],
+  "scripts": "example_value",
+  "incremental": true,
+  "forcePull": true
+}

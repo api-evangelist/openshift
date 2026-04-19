@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ObjectMeta",
+  "type": "object",
+  "description": "Standard Kubernetes object metadata. Every resource includes metadata such as name, namespace, labels, and annotations.",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "The name of the resource, unique within a namespace."
+    },
+    "namespace": {
+      "type": "string",
+      "description": "The namespace in which the resource resides."
+    },
+    "uid": {
+      "type": "string",
+      "description": "A unique identifier for the resource set by the server."
+    },
+    "resourceVersion": {
+      "type": "string",
+      "description": "An opaque value representing the internal version of the object."
+    },
+    "generation": {
+      "type": "integer",
+      "description": "A sequence number representing a specific generation of the desired state."
+    },
+    "creationTimestamp": {
+      "type": "string",
+      "description": "Timestamp representing when the object was created."
+    },
+    "deletionTimestamp": {
+      "type": "string",
+      "description": "Timestamp at which the object will be deleted."
+    },
+    "labels": {
+      "type": "object",
+      "description": "Map of string keys and values that can be used to organize and categorize objects."
+    },
+    "annotations": {
+      "type": "object",
+      "description": "Unstructured key-value map stored with a resource for arbitrary metadata."
+    },
+    "ownerReferences": {
+      "type": "array",
+      "description": "List of objects depended by this object."
+    },
+    "finalizers": {
+      "type": "array",
+      "description": "Must be empty before the object is deleted from the registry."
+    }
+  }
+}

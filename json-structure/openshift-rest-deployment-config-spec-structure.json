@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-structure.org/draft/2020-12/schema",
+  "name": "DeploymentConfigSpec",
+  "type": "object",
+  "properties": {
+    "replicas": {
+      "type": "integer"
+    },
+    "selector": {
+      "type": "object"
+    },
+    "triggers": {
+      "type": "array"
+    },
+    "minReadySeconds": {
+      "type": "integer"
+    },
+    "revisionHistoryLimit": {
+      "type": "integer"
+    },
+    "paused": {
+      "type": "boolean"
+    },
+    "test": {
+      "type": "boolean"
+    }
+  }
+}

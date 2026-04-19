@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-structure.org/draft/2020-12/schema",
+  "name": "BuildConfigStatus",
+  "type": "object",
+  "properties": {
+    "lastVersion": {
+      "type": "integer"
+    },
+    "imageChangeTriggers": {
+      "type": "array"
+    }
+  }
+}

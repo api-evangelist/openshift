@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TLSConfig",
+  "type": "object",
+  "description": "TLS configuration for the route. Determines how TLS connections are handled at the router.",
+  "properties": {
+    "termination": {
+      "type": "string",
+      "description": "Indicates termination type. Edge terminates TLS at the router, passthrough forwards encrypted traffic to the backend, and re-encrypt terminates at the router and re-encrypts to the backend."
+    },
+    "certificate": {
+      "type": "string",
+      "description": "PEM-encoded certificate for the route. Required for edge and re-encrypt termination if not using a default certificate."
+    },
+    "key": {
+      "type": "string",
+      "description": "PEM-encoded private key for the route certificate."
+    },
+    "caCertificate": {
+      "type": "string",
+      "description": "PEM-encoded CA certificate chain used to verify client certificates."
+    },
+    "destinationCACertificate": {
+      "type": "string",
+      "description": "PEM-encoded CA certificate used to verify the backend server certificate. Only applicable for re-encrypt termination."
+    },
+    "insecureEdgeTerminationPolicy": {
+      "type": "string",
+      "description": "Policy for handling insecure (HTTP) traffic when TLS is configured. None disables insecure traffic, Allow permits it, Redirect sends a 301 redirect to the HTTPS URL."
+    }
+  }
+}

@@ -20,44 +20,44 @@ info:
     email: openshift-dev@redhat.com
 
 servers:
-  - url: https://api.openshift.com
-    description: OpenShift API Server
+- url: https://api.openshift.com
+  description: OpenShift API Server
 
 externalDocs:
   description: OpenShift Container Platform REST API Reference
   url: https://docs.openshift.com/container-platform/4.17/rest_api/index.html
 
 tags:
-  - name: BuildConfigs
-    description: >-
-      Manage build configuration templates that define how to transform
-      source code into container images using Source, Docker, or Custom
-      build strategies with configurable triggers.
-  - name: Builds
-    description: >-
-      Manage builds and build configurations for source-to-image, Docker,
-      and custom build strategies. Builds compile source code into runnable
-      container images.
-  - name: DeploymentConfigs
-    description: >-
-      Manage OpenShift DeploymentConfigs which provide declarative deployment
-      lifecycle management with rolling, recreate, and custom strategies,
-      plus automatic rollback and deployment triggers.
-  - name: ProjectRequests
-    description: >-
-      Request creation of new projects. ProjectRequests are the mechanism
-      through which users provision new projects subject to cluster policy.
+- name: BuildConfigs
+  description: >-
+    Manage build configuration templates that define how to transform
+    source code into container images using Source, Docker, or Custom
+    build strategies with configurable triggers.
+- name: Builds
+  description: >-
+    Manage builds and build configurations for source-to-image, Docker,
+    and custom build strategies. Builds compile source code into runnable
+    container images.
+- name: DeploymentConfigs
+  description: >-
+    Manage OpenShift DeploymentConfigs which provide declarative deployment
+    lifecycle management with rolling, recreate, and custom strategies,
+    plus automatic rollback and deployment triggers.
+- name: ProjectRequests
+  description: >-
+    Request creation of new projects. ProjectRequests are the mechanism
+    through which users provision new projects subject to cluster policy.
 
-  - name: Projects
-    description: >-
-      Manage OpenShift projects which extend Kubernetes namespaces with
-      additional metadata, access controls, and resource isolation for
-      multi-tenant environments.
-  - name: Routes
-    description: >-
-      Manage application routes that expose services at a hostname. Routes
-      provide external access to services via HTTP/HTTPS, with support for
-      TLS termination strategies including edge, passthrough, and re-encrypt.
+- name: Projects
+  description: >-
+    Manage OpenShift projects which extend Kubernetes namespaces with
+    additional metadata, access controls, and resource isolation for
+    multi-tenant environments.
+- name: Routes
+  description: >-
+    Manage application routes that expose services at a hostname. Routes
+    provide external access to services via HTTP/HTTPS, with support for
+    TLS termination strategies including edge, passthrough, and re-encrypt.
 paths:
 
   # ============================================================
@@ -67,21 +67,21 @@ paths:
   /apis/route.openshift.io/v1/routes:
     get:
       operationId: listRouteForAllNamespaces
-      summary: OpenShift List routes across all namespaces
+      summary: Openshift List Routes Across All Namespaces
       description: >-
         List or watch Route objects across all namespaces. Requires
         cluster-level read access to routes.
       tags:
-        - Routes
+      - Routes
       parameters:
-        - $ref: '#/components/parameters/allowWatchBookmarks'
-        - $ref: '#/components/parameters/continue'
-        - $ref: '#/components/parameters/fieldSelector'
-        - $ref: '#/components/parameters/labelSelector'
-        - $ref: '#/components/parameters/limit'
-        - $ref: '#/components/parameters/pretty'
-        - $ref: '#/components/parameters/resourceVersion'
-        - $ref: '#/components/parameters/watch'
+      - $ref: '#/components/parameters/allowWatchBookmarks'
+      - $ref: '#/components/parameters/continue'
+      - $ref: '#/components/parameters/fieldSelector'
+      - $ref: '#/components/parameters/labelSelector'
+      - $ref: '#/components/parameters/limit'
+      - $ref: '#/components/parameters/pretty'
+      - $ref: '#/components/parameters/resourceVersion'
+      - $ref: '#/components/parameters/watch'
       responses:
         '200':
           description: OK
@@ -92,24 +92,27 @@ paths:
         '401':
           description: Unauthorized
 
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
   /apis/route.openshift.io/v1/namespaces/{namespace}/routes:
     get:
       operationId: listNamespacedRoute
-      summary: OpenShift List routes in a namespace
+      summary: Openshift List Routes in a Namespace
       description: >-
         List or watch Route objects in the specified namespace.
       tags:
-        - Routes
+      - Routes
       parameters:
-        - $ref: '#/components/parameters/namespace'
-        - $ref: '#/components/parameters/allowWatchBookmarks'
-        - $ref: '#/components/parameters/continue'
-        - $ref: '#/components/parameters/fieldSelector'
-        - $ref: '#/components/parameters/labelSelector'
-        - $ref: '#/components/parameters/limit'
-        - $ref: '#/components/parameters/pretty'
-        - $ref: '#/components/parameters/resourceVersion'
-        - $ref: '#/components/parameters/watch'
+      - $ref: '#/components/parameters/namespace'
+      - $ref: '#/components/parameters/allowWatchBookmarks'
+      - $ref: '#/components/parameters/continue'
+      - $ref: '#/components/parameters/fieldSelector'
+      - $ref: '#/components/parameters/labelSelector'
+      - $ref: '#/components/parameters/limit'
+      - $ref: '#/components/parameters/pretty'
+      - $ref: '#/components/parameters/resourceVersion'
+      - $ref: '#/components/parameters/watch'
       responses:
         '200':
           description: OK
@@ -119,19 +122,22 @@ paths:
                 $ref: '#/components/schemas/RouteList'
         '401':
           description: Unauthorized
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
     post:
       operationId: createNamespacedRoute
-      summary: OpenShift Create a route
+      summary: Openshift Create a Route
       description: >-
         Create a Route in the specified namespace. A route exposes a service
         at an externally reachable hostname.
       tags:
-        - Routes
+      - Routes
       parameters:
-        - $ref: '#/components/parameters/namespace'
-        - $ref: '#/components/parameters/pretty'
-        - $ref: '#/components/parameters/dryRun'
-        - $ref: '#/components/parameters/fieldManager'
+      - $ref: '#/components/parameters/namespace'
+      - $ref: '#/components/parameters/pretty'
+      - $ref: '#/components/parameters/dryRun'
+      - $ref: '#/components/parameters/fieldManager'
       requestBody:
         required: true
         content:
@@ -160,18 +166,21 @@ paths:
         '401':
           description: Unauthorized
 
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
   /apis/route.openshift.io/v1/namespaces/{namespace}/routes/{name}:
     get:
       operationId: readNamespacedRoute
-      summary: OpenShift Read a route
+      summary: Openshift Read a Route
       description: >-
         Read the specified Route in the given namespace.
       tags:
-        - Routes
+      - Routes
       parameters:
-        - $ref: '#/components/parameters/name'
-        - $ref: '#/components/parameters/namespace'
-        - $ref: '#/components/parameters/pretty'
+      - $ref: '#/components/parameters/name'
+      - $ref: '#/components/parameters/namespace'
+      - $ref: '#/components/parameters/pretty'
       responses:
         '200':
           description: OK
@@ -181,19 +190,22 @@ paths:
                 $ref: '#/components/schemas/Route'
         '401':
           description: Unauthorized
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
     put:
       operationId: replaceNamespacedRoute
-      summary: OpenShift Replace a route
+      summary: Openshift Replace a Route
       description: >-
         Replace the specified Route in the given namespace.
       tags:
-        - Routes
+      - Routes
       parameters:
-        - $ref: '#/components/parameters/name'
-        - $ref: '#/components/parameters/namespace'
-        - $ref: '#/components/parameters/pretty'
-        - $ref: '#/components/parameters/dryRun'
-        - $ref: '#/components/parameters/fieldManager'
+      - $ref: '#/components/parameters/name'
+      - $ref: '#/components/parameters/namespace'
+      - $ref: '#/components/parameters/pretty'
+      - $ref: '#/components/parameters/dryRun'
+      - $ref: '#/components/parameters/fieldManager'
       requestBody:
         required: true
         content:
@@ -215,19 +227,22 @@ paths:
                 $ref: '#/components/schemas/Route'
         '401':
           description: Unauthorized
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
     patch:
       operationId: patchNamespacedRoute
-      summary: OpenShift Patch a route
+      summary: Openshift Patch a Route
       description: >-
         Partially update the specified Route in the given namespace.
       tags:
-        - Routes
+      - Routes
       parameters:
-        - $ref: '#/components/parameters/name'
-        - $ref: '#/components/parameters/namespace'
-        - $ref: '#/components/parameters/pretty'
-        - $ref: '#/components/parameters/dryRun'
-        - $ref: '#/components/parameters/fieldManager'
+      - $ref: '#/components/parameters/name'
+      - $ref: '#/components/parameters/namespace'
+      - $ref: '#/components/parameters/pretty'
+      - $ref: '#/components/parameters/dryRun'
+      - $ref: '#/components/parameters/fieldManager'
       requestBody:
         required: true
         content:
@@ -246,20 +261,23 @@ paths:
                 $ref: '#/components/schemas/Route'
         '401':
           description: Unauthorized
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
     delete:
       operationId: deleteNamespacedRoute
-      summary: OpenShift Delete a route
+      summary: Openshift Delete a Route
       description: >-
         Delete the specified Route from the given namespace.
       tags:
-        - Routes
+      - Routes
       parameters:
-        - $ref: '#/components/parameters/name'
-        - $ref: '#/components/parameters/namespace'
-        - $ref: '#/components/parameters/pretty'
-        - $ref: '#/components/parameters/dryRun'
-        - $ref: '#/components/parameters/gracePeriodSeconds'
-        - $ref: '#/components/parameters/propagationPolicy'
+      - $ref: '#/components/parameters/name'
+      - $ref: '#/components/parameters/namespace'
+      - $ref: '#/components/parameters/pretty'
+      - $ref: '#/components/parameters/dryRun'
+      - $ref: '#/components/parameters/gracePeriodSeconds'
+      - $ref: '#/components/parameters/propagationPolicy'
       responses:
         '200':
           description: OK
@@ -276,18 +294,21 @@ paths:
         '401':
           description: Unauthorized
 
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
   /apis/route.openshift.io/v1/namespaces/{namespace}/routes/{name}/status:
     get:
       operationId: readNamespacedRouteStatus
-      summary: OpenShift Read status of a route
+      summary: Openshift Read Status of a Route
       description: >-
         Read the status of the specified Route.
       tags:
-        - Routes
+      - Routes
       parameters:
-        - $ref: '#/components/parameters/name'
-        - $ref: '#/components/parameters/namespace'
-        - $ref: '#/components/parameters/pretty'
+      - $ref: '#/components/parameters/name'
+      - $ref: '#/components/parameters/namespace'
+      - $ref: '#/components/parameters/pretty'
       responses:
         '200':
           description: OK
@@ -297,19 +318,22 @@ paths:
                 $ref: '#/components/schemas/Route'
         '401':
           description: Unauthorized
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
     put:
       operationId: replaceNamespacedRouteStatus
-      summary: OpenShift Replace status of a route
+      summary: Openshift Replace Status of a Route
       description: >-
         Replace the status of the specified Route.
       tags:
-        - Routes
+      - Routes
       parameters:
-        - $ref: '#/components/parameters/name'
-        - $ref: '#/components/parameters/namespace'
-        - $ref: '#/components/parameters/pretty'
-        - $ref: '#/components/parameters/dryRun'
-        - $ref: '#/components/parameters/fieldManager'
+      - $ref: '#/components/parameters/name'
+      - $ref: '#/components/parameters/namespace'
+      - $ref: '#/components/parameters/pretty'
+      - $ref: '#/components/parameters/dryRun'
+      - $ref: '#/components/parameters/fieldManager'
       requestBody:
         required: true
         content:
@@ -336,23 +360,26 @@ paths:
   # Builds - build.openshift.io/v1
   # ============================================================
 
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
   /apis/build.openshift.io/v1/builds:
     get:
       operationId: listBuildForAllNamespaces
-      summary: OpenShift List builds across all namespaces
+      summary: Openshift List Builds Across All Namespaces
       description: >-
         List or watch Build objects across all namespaces.
       tags:
-        - Builds
+      - Builds
       parameters:
-        - $ref: '#/components/parameters/allowWatchBookmarks'
-        - $ref: '#/components/parameters/continue'
-        - $ref: '#/components/parameters/fieldSelector'
-        - $ref: '#/components/parameters/labelSelector'
-        - $ref: '#/components/parameters/limit'
-        - $ref: '#/components/parameters/pretty'
-        - $ref: '#/components/parameters/resourceVersion'
-        - $ref: '#/components/parameters/watch'
+      - $ref: '#/components/parameters/allowWatchBookmarks'
+      - $ref: '#/components/parameters/continue'
+      - $ref: '#/components/parameters/fieldSelector'
+      - $ref: '#/components/parameters/labelSelector'
+      - $ref: '#/components/parameters/limit'
+      - $ref: '#/components/parameters/pretty'
+      - $ref: '#/components/parameters/resourceVersion'
+      - $ref: '#/components/parameters/watch'
       responses:
         '200':
           description: OK
@@ -363,24 +390,27 @@ paths:
         '401':
           description: Unauthorized
 
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
   /apis/build.openshift.io/v1/namespaces/{namespace}/builds:
     get:
       operationId: listNamespacedBuild
-      summary: OpenShift List builds in a namespace
+      summary: Openshift List Builds in a Namespace
       description: >-
         List or watch Build objects in the specified namespace.
       tags:
-        - Builds
+      - Builds
       parameters:
-        - $ref: '#/components/parameters/namespace'
-        - $ref: '#/components/parameters/allowWatchBookmarks'
-        - $ref: '#/components/parameters/continue'
-        - $ref: '#/components/parameters/fieldSelector'
-        - $ref: '#/components/parameters/labelSelector'
-        - $ref: '#/components/parameters/limit'
-        - $ref: '#/components/parameters/pretty'
-        - $ref: '#/components/parameters/resourceVersion'
-        - $ref: '#/components/parameters/watch'
+      - $ref: '#/components/parameters/namespace'
+      - $ref: '#/components/parameters/allowWatchBookmarks'
+      - $ref: '#/components/parameters/continue'
+      - $ref: '#/components/parameters/fieldSelector'
+      - $ref: '#/components/parameters/labelSelector'
+      - $ref: '#/components/parameters/limit'
+      - $ref: '#/components/parameters/pretty'
+      - $ref: '#/components/parameters/resourceVersion'
+      - $ref: '#/components/parameters/watch'
       responses:
         '200':
           description: OK
@@ -390,19 +420,22 @@ paths:
                 $ref: '#/components/schemas/BuildList'
         '401':
           description: Unauthorized
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
     post:
       operationId: createNamespacedBuild
-      summary: OpenShift Create a build
+      summary: Openshift Create a Build
       description: >-
         Create a Build in the specified namespace. A Build represents a single
         execution of a build process that transforms source into a container image.
       tags:
-        - Builds
+      - Builds
       parameters:
-        - $ref: '#/components/parameters/namespace'
-        - $ref: '#/components/parameters/pretty'
-        - $ref: '#/components/parameters/dryRun'
-        - $ref: '#/components/parameters/fieldManager'
+      - $ref: '#/components/parameters/namespace'
+      - $ref: '#/components/parameters/pretty'
+      - $ref: '#/components/parameters/dryRun'
+      - $ref: '#/components/parameters/fieldManager'
       requestBody:
         required: true
         content:
@@ -431,18 +464,21 @@ paths:
         '401':
           description: Unauthorized
 
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
   /apis/build.openshift.io/v1/namespaces/{namespace}/builds/{name}:
     get:
       operationId: readNamespacedBuild
-      summary: OpenShift Read a build
+      summary: Openshift Read a Build
       description: >-
         Read the specified Build in the given namespace.
       tags:
-        - Builds
+      - Builds
       parameters:
-        - $ref: '#/components/parameters/name'
-        - $ref: '#/components/parameters/namespace'
-        - $ref: '#/components/parameters/pretty'
+      - $ref: '#/components/parameters/name'
+      - $ref: '#/components/parameters/namespace'
+      - $ref: '#/components/parameters/pretty'
       responses:
         '200':
           description: OK
@@ -452,19 +488,22 @@ paths:
                 $ref: '#/components/schemas/Build'
         '401':
           description: Unauthorized
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
     put:
       operationId: replaceNamespacedBuild
-      summary: OpenShift Replace a build
+      summary: Openshift Replace a Build
       description: >-
         Replace the specified Build in the given namespace.
       tags:
-        - Builds
+      - Builds
       parameters:
-        - $ref: '#/components/parameters/name'
-        - $ref: '#/components/parameters/namespace'
-        - $ref: '#/components/parameters/pretty'
-        - $ref: '#/components/parameters/dryRun'
-        - $ref: '#/components/parameters/fieldManager'
+      - $ref: '#/components/parameters/name'
+      - $ref: '#/components/parameters/namespace'
+      - $ref: '#/components/parameters/pretty'
+      - $ref: '#/components/parameters/dryRun'
+      - $ref: '#/components/parameters/fieldManager'
       requestBody:
         required: true
         content:
@@ -486,20 +525,23 @@ paths:
                 $ref: '#/components/schemas/Build'
         '401':
           description: Unauthorized
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
     delete:
       operationId: deleteNamespacedBuild
-      summary: OpenShift Delete a build
+      summary: Openshift Delete a Build
       description: >-
         Delete the specified Build from the given namespace.
       tags:
-        - Builds
+      - Builds
       parameters:
-        - $ref: '#/components/parameters/name'
-        - $ref: '#/components/parameters/namespace'
-        - $ref: '#/components/parameters/pretty'
-        - $ref: '#/components/parameters/dryRun'
-        - $ref: '#/components/parameters/gracePeriodSeconds'
-        - $ref: '#/components/parameters/propagationPolicy'
+      - $ref: '#/components/parameters/name'
+      - $ref: '#/components/parameters/namespace'
+      - $ref: '#/components/parameters/pretty'
+      - $ref: '#/components/parameters/dryRun'
+      - $ref: '#/components/parameters/gracePeriodSeconds'
+      - $ref: '#/components/parameters/propagationPolicy'
       responses:
         '200':
           description: OK
@@ -516,46 +558,49 @@ paths:
         '401':
           description: Unauthorized
 
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
   /apis/build.openshift.io/v1/namespaces/{namespace}/builds/{name}/log:
     get:
       operationId: readNamespacedBuildLog
-      summary: OpenShift Read build log
+      summary: Openshift Read Build Log
       description: >-
         Read the log output from the specified Build.
       tags:
-        - Builds
+      - Builds
       parameters:
-        - $ref: '#/components/parameters/name'
-        - $ref: '#/components/parameters/namespace'
-        - name: container
-          in: query
-          description: The container for which to stream logs.
-          schema:
-            type: string
-        - name: follow
-          in: query
-          description: Follow the log stream of the build.
-          schema:
-            type: boolean
-        - name: sinceSeconds
-          in: query
-          description: >-
-            A relative time in seconds before the current time from which to
-            show logs.
-          schema:
-            type: integer
-            format: int64
-        - name: tailLines
-          in: query
-          description: Number of lines from the end of the log to show.
-          schema:
-            type: integer
-            format: int64
-        - name: timestamps
-          in: query
-          description: Add RFC3339 timestamps to each log line.
-          schema:
-            type: boolean
+      - $ref: '#/components/parameters/name'
+      - $ref: '#/components/parameters/namespace'
+      - name: container
+        in: query
+        description: The container for which to stream logs.
+        schema:
+          type: string
+      - name: follow
+        in: query
+        description: Follow the log stream of the build.
+        schema:
+          type: boolean
+      - name: sinceSeconds
+        in: query
+        description: >-
+          A relative time in seconds before the current time from which to
+          show logs.
+        schema:
+          type: integer
+          format: int64
+      - name: tailLines
+        in: query
+        description: Number of lines from the end of the log to show.
+        schema:
+          type: integer
+          format: int64
+      - name: timestamps
+        in: query
+        description: Add RFC3339 timestamps to each log line.
+        schema:
+          type: boolean
       responses:
         '200':
           description: OK
@@ -570,23 +615,26 @@ paths:
   # BuildConfigs - build.openshift.io/v1
   # ============================================================
 
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
   /apis/build.openshift.io/v1/buildconfigs:
     get:
       operationId: listBuildConfigForAllNamespaces
-      summary: OpenShift List build configs across all namespaces
+      summary: Openshift List Build Configs Across All Namespaces
       description: >-
         List or watch BuildConfig objects across all namespaces.
       tags:
-        - BuildConfigs
+      - BuildConfigs
       parameters:
-        - $ref: '#/components/parameters/allowWatchBookmarks'
-        - $ref: '#/components/parameters/continue'
-        - $ref: '#/components/parameters/fieldSelector'
-        - $ref: '#/components/parameters/labelSelector'
-        - $ref: '#/components/parameters/limit'
-        - $ref: '#/components/parameters/pretty'
-        - $ref: '#/components/parameters/resourceVersion'
-        - $ref: '#/components/parameters/watch'
+      - $ref: '#/components/parameters/allowWatchBookmarks'
+      - $ref: '#/components/parameters/continue'
+      - $ref: '#/components/parameters/fieldSelector'
+      - $ref: '#/components/parameters/labelSelector'
+      - $ref: '#/components/parameters/limit'
+      - $ref: '#/components/parameters/pretty'
+      - $ref: '#/components/parameters/resourceVersion'
+      - $ref: '#/components/parameters/watch'
       responses:
         '200':
           description: OK
@@ -597,24 +645,27 @@ paths:
         '401':
           description: Unauthorized
 
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
   /apis/build.openshift.io/v1/namespaces/{namespace}/buildconfigs:
     get:
       operationId: listNamespacedBuildConfig
-      summary: OpenShift List build configs in a namespace
+      summary: Openshift List Build Configs in a Namespace
       description: >-
         List or watch BuildConfig objects in the specified namespace.
       tags:
-        - BuildConfigs
+      - BuildConfigs
       parameters:
-        - $ref: '#/components/parameters/namespace'
-        - $ref: '#/components/parameters/allowWatchBookmarks'
-        - $ref: '#/components/parameters/continue'
-        - $ref: '#/components/parameters/fieldSelector'
-        - $ref: '#/components/parameters/labelSelector'
-        - $ref: '#/components/parameters/limit'
-        - $ref: '#/components/parameters/pretty'
-        - $ref: '#/components/parameters/resourceVersion'
-        - $ref: '#/components/parameters/watch'
+      - $ref: '#/components/parameters/namespace'
+      - $ref: '#/components/parameters/allowWatchBookmarks'
+      - $ref: '#/components/parameters/continue'
+      - $ref: '#/components/parameters/fieldSelector'
+      - $ref: '#/components/parameters/labelSelector'
+      - $ref: '#/components/parameters/limit'
+      - $ref: '#/components/parameters/pretty'
+      - $ref: '#/components/parameters/resourceVersion'
+      - $ref: '#/components/parameters/watch'
       responses:
         '200':
           description: OK
@@ -624,19 +675,22 @@ paths:
                 $ref: '#/components/schemas/BuildConfigList'
         '401':
           description: Unauthorized
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
     post:
       operationId: createNamespacedBuildConfig
-      summary: OpenShift Create a build config
+      summary: Openshift Create a Build Config
       description: >-
         Create a BuildConfig in the specified namespace. A BuildConfig defines
         the build strategy and source to produce container images.
       tags:
-        - BuildConfigs
+      - BuildConfigs
       parameters:
-        - $ref: '#/components/parameters/namespace'
-        - $ref: '#/components/parameters/pretty'
-        - $ref: '#/components/parameters/dryRun'
-        - $ref: '#/components/parameters/fieldManager'
+      - $ref: '#/components/parameters/namespace'
+      - $ref: '#/components/parameters/pretty'
+      - $ref: '#/components/parameters/dryRun'
+      - $ref: '#/components/parameters/fieldManager'
       requestBody:
         required: true
         content:
@@ -665,18 +719,21 @@ paths:
         '401':
           description: Unauthorized
 
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
   /apis/build.openshift.io/v1/namespaces/{namespace}/buildconfigs/{name}:
     get:
       operationId: readNamespacedBuildConfig
-      summary: OpenShift Read a build config
+      summary: Openshift Read a Build Config
       description: >-
         Read the specified BuildConfig in the given namespace.
       tags:
-        - BuildConfigs
+      - BuildConfigs
       parameters:
-        - $ref: '#/components/parameters/name'
-        - $ref: '#/components/parameters/namespace'
-        - $ref: '#/components/parameters/pretty'
+      - $ref: '#/components/parameters/name'
+      - $ref: '#/components/parameters/namespace'
+      - $ref: '#/components/parameters/pretty'
       responses:
         '200':
           description: OK
@@ -686,19 +743,22 @@ paths:
                 $ref: '#/components/schemas/BuildConfig'
         '401':
           description: Unauthorized
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
     put:
       operationId: replaceNamespacedBuildConfig
-      summary: OpenShift Replace a build config
+      summary: Openshift Replace a Build Config
       description: >-
         Replace the specified BuildConfig in the given namespace.
       tags:
-        - BuildConfigs
+      - BuildConfigs
       parameters:
-        - $ref: '#/components/parameters/name'
-        - $ref: '#/components/parameters/namespace'
-        - $ref: '#/components/parameters/pretty'
-        - $ref: '#/components/parameters/dryRun'
-        - $ref: '#/components/parameters/fieldManager'
+      - $ref: '#/components/parameters/name'
+      - $ref: '#/components/parameters/namespace'
+      - $ref: '#/components/parameters/pretty'
+      - $ref: '#/components/parameters/dryRun'
+      - $ref: '#/components/parameters/fieldManager'
       requestBody:
         required: true
         content:
@@ -720,20 +780,23 @@ paths:
                 $ref: '#/components/schemas/BuildConfig'
         '401':
           description: Unauthorized
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
     delete:
       operationId: deleteNamespacedBuildConfig
-      summary: OpenShift Delete a build config
+      summary: Openshift Delete a Build Config
       description: >-
         Delete the specified BuildConfig from the given namespace.
       tags:
-        - BuildConfigs
+      - BuildConfigs
       parameters:
-        - $ref: '#/components/parameters/name'
-        - $ref: '#/components/parameters/namespace'
-        - $ref: '#/components/parameters/pretty'
-        - $ref: '#/components/parameters/dryRun'
-        - $ref: '#/components/parameters/gracePeriodSeconds'
-        - $ref: '#/components/parameters/propagationPolicy'
+      - $ref: '#/components/parameters/name'
+      - $ref: '#/components/parameters/namespace'
+      - $ref: '#/components/parameters/pretty'
+      - $ref: '#/components/parameters/dryRun'
+      - $ref: '#/components/parameters/gracePeriodSeconds'
+      - $ref: '#/components/parameters/propagationPolicy'
       responses:
         '200':
           description: OK
@@ -750,20 +813,23 @@ paths:
         '401':
           description: Unauthorized
 
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
   /apis/build.openshift.io/v1/namespaces/{namespace}/buildconfigs/{name}/instantiate:
     post:
       operationId: createNamespacedBuildConfigInstantiate
-      summary: OpenShift Instantiate a build from a build config
+      summary: Openshift Instantiate a Build From a Build Config
       description: >-
         Trigger a new build from the specified BuildConfig.
       tags:
-        - BuildConfigs
+      - BuildConfigs
       parameters:
-        - $ref: '#/components/parameters/name'
-        - $ref: '#/components/parameters/namespace'
-        - $ref: '#/components/parameters/pretty'
-        - $ref: '#/components/parameters/dryRun'
-        - $ref: '#/components/parameters/fieldManager'
+      - $ref: '#/components/parameters/name'
+      - $ref: '#/components/parameters/namespace'
+      - $ref: '#/components/parameters/pretty'
+      - $ref: '#/components/parameters/dryRun'
+      - $ref: '#/components/parameters/fieldManager'
       requestBody:
         required: true
         content:
@@ -790,23 +856,26 @@ paths:
   # DeploymentConfigs - apps.openshift.io/v1
   # ============================================================
 
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
   /apis/apps.openshift.io/v1/deploymentconfigs:
     get:
       operationId: listDeploymentConfigForAllNamespaces
-      summary: OpenShift List deployment configs across all namespaces
+      summary: Openshift List Deployment Configs Across All Namespaces
       description: >-
         List or watch DeploymentConfig objects across all namespaces.
       tags:
-        - DeploymentConfigs
+      - DeploymentConfigs
       parameters:
-        - $ref: '#/components/parameters/allowWatchBookmarks'
-        - $ref: '#/components/parameters/continue'
-        - $ref: '#/components/parameters/fieldSelector'
-        - $ref: '#/components/parameters/labelSelector'
-        - $ref: '#/components/parameters/limit'
-        - $ref: '#/components/parameters/pretty'
-        - $ref: '#/components/parameters/resourceVersion'
-        - $ref: '#/components/parameters/watch'
+      - $ref: '#/components/parameters/allowWatchBookmarks'
+      - $ref: '#/components/parameters/continue'
+      - $ref: '#/components/parameters/fieldSelector'
+      - $ref: '#/components/parameters/labelSelector'
+      - $ref: '#/components/parameters/limit'
+      - $ref: '#/components/parameters/pretty'
+      - $ref: '#/components/parameters/resourceVersion'
+      - $ref: '#/components/parameters/watch'
       responses:
         '200':
           description: OK
@@ -817,24 +886,27 @@ paths:
         '401':
           description: Unauthorized
 
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
   /apis/apps.openshift.io/v1/namespaces/{namespace}/deploymentconfigs:
     get:
       operationId: listNamespacedDeploymentConfig
-      summary: OpenShift List deployment configs in a namespace
+      summary: Openshift List Deployment Configs in a Namespace
       description: >-
         List or watch DeploymentConfig objects in the specified namespace.
       tags:
-        - DeploymentConfigs
+      - DeploymentConfigs
       parameters:
-        - $ref: '#/components/parameters/namespace'
-        - $ref: '#/components/parameters/allowWatchBookmarks'
-        - $ref: '#/components/parameters/continue'
-        - $ref: '#/components/parameters/fieldSelector'
-        - $ref: '#/components/parameters/labelSelector'
-        - $ref: '#/components/parameters/limit'
-        - $ref: '#/components/parameters/pretty'
-        - $ref: '#/components/parameters/resourceVersion'
-        - $ref: '#/components/parameters/watch'
+      - $ref: '#/components/parameters/namespace'
+      - $ref: '#/components/parameters/allowWatchBookmarks'
+      - $ref: '#/components/parameters/continue'
+      - $ref: '#/components/parameters/fieldSelector'
+      - $ref: '#/components/parameters/labelSelector'
+      - $ref: '#/components/parameters/limit'
+      - $ref: '#/components/parameters/pretty'
+      - $ref: '#/components/parameters/resourceVersion'
+      - $ref: '#/components/parameters/watch'
       responses:
         '200':
           description: OK
@@ -844,20 +916,23 @@ paths:
                 $ref: '#/components/schemas/DeploymentConfigList'
         '401':
           description: Unauthorized
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
     post:
       operationId: createNamespacedDeploymentConfig
-      summary: OpenShift Create a deployment config
+      summary: Openshift Create a Deployment Config
       description: >-
         Create a DeploymentConfig in the specified namespace. A
         DeploymentConfig defines the template for a pod and manages deploying
         new images or configuration changes.
       tags:
-        - DeploymentConfigs
+      - DeploymentConfigs
       parameters:
-        - $ref: '#/components/parameters/namespace'
-        - $ref: '#/components/parameters/pretty'
-        - $ref: '#/components/parameters/dryRun'
-        - $ref: '#/components/parameters/fieldManager'
+      - $ref: '#/components/parameters/namespace'
+      - $ref: '#/components/parameters/pretty'
+      - $ref: '#/components/parameters/dryRun'
+      - $ref: '#/components/parameters/fieldManager'
       requestBody:
         required: true
         content:
@@ -886,18 +961,21 @@ paths:
         '401':
           description: Unauthorized
 
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
   /apis/apps.openshift.io/v1/namespaces/{namespace}/deploymentconfigs/{name}:
     get:
       operationId: readNamespacedDeploymentConfig
-      summary: OpenShift Read a deployment config
+      summary: Openshift Read a Deployment Config
       description: >-
         Read the specified DeploymentConfig in the given namespace.
       tags:
-        - DeploymentConfigs
+      - DeploymentConfigs
       parameters:
-        - $ref: '#/components/parameters/name'
-        - $ref: '#/components/parameters/namespace'
-        - $ref: '#/components/parameters/pretty'
+      - $ref: '#/components/parameters/name'
+      - $ref: '#/components/parameters/namespace'
+      - $ref: '#/components/parameters/pretty'
       responses:
         '200':
           description: OK
@@ -907,19 +985,22 @@ paths:
                 $ref: '#/components/schemas/DeploymentConfig'
         '401':
           description: Unauthorized
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
     put:
       operationId: replaceNamespacedDeploymentConfig
-      summary: OpenShift Replace a deployment config
+      summary: Openshift Replace a Deployment Config
       description: >-
         Replace the specified DeploymentConfig in the given namespace.
       tags:
-        - DeploymentConfigs
+      - DeploymentConfigs
       parameters:
-        - $ref: '#/components/parameters/name'
-        - $ref: '#/components/parameters/namespace'
-        - $ref: '#/components/parameters/pretty'
-        - $ref: '#/components/parameters/dryRun'
-        - $ref: '#/components/parameters/fieldManager'
+      - $ref: '#/components/parameters/name'
+      - $ref: '#/components/parameters/namespace'
+      - $ref: '#/components/parameters/pretty'
+      - $ref: '#/components/parameters/dryRun'
+      - $ref: '#/components/parameters/fieldManager'
       requestBody:
         required: true
         content:
@@ -941,19 +1022,22 @@ paths:
                 $ref: '#/components/schemas/DeploymentConfig'
         '401':
           description: Unauthorized
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
     patch:
       operationId: patchNamespacedDeploymentConfig
-      summary: OpenShift Patch a deployment config
+      summary: Openshift Patch a Deployment Config
       description: >-
         Partially update the specified DeploymentConfig in the given namespace.
       tags:
-        - DeploymentConfigs
+      - DeploymentConfigs
       parameters:
-        - $ref: '#/components/parameters/name'
-        - $ref: '#/components/parameters/namespace'
-        - $ref: '#/components/parameters/pretty'
-        - $ref: '#/components/parameters/dryRun'
-        - $ref: '#/components/parameters/fieldManager'
+      - $ref: '#/components/parameters/name'
+      - $ref: '#/components/parameters/namespace'
+      - $ref: '#/components/parameters/pretty'
+      - $ref: '#/components/parameters/dryRun'
+      - $ref: '#/components/parameters/fieldManager'
       requestBody:
         required: true
         content:
@@ -972,20 +1056,23 @@ paths:
                 $ref: '#/components/schemas/DeploymentConfig'
         '401':
           description: Unauthorized
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
     delete:
       operationId: deleteNamespacedDeploymentConfig
-      summary: OpenShift Delete a deployment config
+      summary: Openshift Delete a Deployment Config
       description: >-
         Delete the specified DeploymentConfig from the given namespace.
       tags:
-        - DeploymentConfigs
+      - DeploymentConfigs
       parameters:
-        - $ref: '#/components/parameters/name'
-        - $ref: '#/components/parameters/namespace'
-        - $ref: '#/components/parameters/pretty'
-        - $ref: '#/components/parameters/dryRun'
-        - $ref: '#/components/parameters/gracePeriodSeconds'
-        - $ref: '#/components/parameters/propagationPolicy'
+      - $ref: '#/components/parameters/name'
+      - $ref: '#/components/parameters/namespace'
+      - $ref: '#/components/parameters/pretty'
+      - $ref: '#/components/parameters/dryRun'
+      - $ref: '#/components/parameters/gracePeriodSeconds'
+      - $ref: '#/components/parameters/propagationPolicy'
       responses:
         '200':
           description: OK
@@ -1002,18 +1089,21 @@ paths:
         '401':
           description: Unauthorized
 
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
   /apis/apps.openshift.io/v1/namespaces/{namespace}/deploymentconfigs/{name}/status:
     get:
       operationId: readNamespacedDeploymentConfigStatus
-      summary: OpenShift Read status of a deployment config
+      summary: Openshift Read Status of a Deployment Config
       description: >-
         Read the status of the specified DeploymentConfig.
       tags:
-        - DeploymentConfigs
+      - DeploymentConfigs
       parameters:
-        - $ref: '#/components/parameters/name'
-        - $ref: '#/components/parameters/namespace'
-        - $ref: '#/components/parameters/pretty'
+      - $ref: '#/components/parameters/name'
+      - $ref: '#/components/parameters/namespace'
+      - $ref: '#/components/parameters/pretty'
       responses:
         '200':
           description: OK
@@ -1023,19 +1113,22 @@ paths:
                 $ref: '#/components/schemas/DeploymentConfig'
         '401':
           description: Unauthorized
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
     put:
       operationId: replaceNamespacedDeploymentConfigStatus
-      summary: OpenShift Replace status of a deployment config
+      summary: Openshift Replace Status of a Deployment Config
       description: >-
         Replace the status of the specified DeploymentConfig.
       tags:
-        - DeploymentConfigs
+      - DeploymentConfigs
       parameters:
-        - $ref: '#/components/parameters/name'
-        - $ref: '#/components/parameters/namespace'
-        - $ref: '#/components/parameters/pretty'
-        - $ref: '#/components/parameters/dryRun'
-        - $ref: '#/components/parameters/fieldManager'
+      - $ref: '#/components/parameters/name'
+      - $ref: '#/components/parameters/namespace'
+      - $ref: '#/components/parameters/pretty'
+      - $ref: '#/components/parameters/dryRun'
+      - $ref: '#/components/parameters/fieldManager'
       requestBody:
         required: true
         content:
@@ -1058,18 +1151,21 @@ paths:
         '401':
           description: Unauthorized
 
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
   /apis/apps.openshift.io/v1/namespaces/{namespace}/deploymentconfigs/{name}/scale:
     get:
       operationId: readNamespacedDeploymentConfigScale
-      summary: OpenShift Read scale of a deployment config
+      summary: Openshift Read Scale of a Deployment Config
       description: >-
         Read the scale of the specified DeploymentConfig.
       tags:
-        - DeploymentConfigs
+      - DeploymentConfigs
       parameters:
-        - $ref: '#/components/parameters/name'
-        - $ref: '#/components/parameters/namespace'
-        - $ref: '#/components/parameters/pretty'
+      - $ref: '#/components/parameters/name'
+      - $ref: '#/components/parameters/namespace'
+      - $ref: '#/components/parameters/pretty'
       responses:
         '200':
           description: OK
@@ -1079,20 +1175,23 @@ paths:
                 $ref: '#/components/schemas/Scale'
         '401':
           description: Unauthorized
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
     put:
       operationId: replaceNamespacedDeploymentConfigScale
-      summary: OpenShift Replace scale of a deployment config
+      summary: Openshift Replace Scale of a Deployment Config
       description: >-
         Replace the scale of the specified DeploymentConfig to adjust the
         number of running replicas.
       tags:
-        - DeploymentConfigs
+      - DeploymentConfigs
       parameters:
-        - $ref: '#/components/parameters/name'
-        - $ref: '#/components/parameters/namespace'
-        - $ref: '#/components/parameters/pretty'
-        - $ref: '#/components/parameters/dryRun'
-        - $ref: '#/components/parameters/fieldManager'
+      - $ref: '#/components/parameters/name'
+      - $ref: '#/components/parameters/namespace'
+      - $ref: '#/components/parameters/pretty'
+      - $ref: '#/components/parameters/dryRun'
+      - $ref: '#/components/parameters/fieldManager'
       requestBody:
         required: true
         content:
@@ -1115,21 +1214,24 @@ paths:
         '401':
           description: Unauthorized
 
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
   /apis/apps.openshift.io/v1/namespaces/{namespace}/deploymentconfigs/{name}/rollback:
     post:
       operationId: createNamespacedDeploymentConfigRollback
-      summary: OpenShift Rollback a deployment config
+      summary: Openshift Rollback a Deployment Config
       description: >-
         Create a rollback request for the specified DeploymentConfig to revert
         to a previous deployment revision.
       tags:
-        - DeploymentConfigs
+      - DeploymentConfigs
       parameters:
-        - $ref: '#/components/parameters/name'
-        - $ref: '#/components/parameters/namespace'
-        - $ref: '#/components/parameters/pretty'
-        - $ref: '#/components/parameters/dryRun'
-        - $ref: '#/components/parameters/fieldManager'
+      - $ref: '#/components/parameters/name'
+      - $ref: '#/components/parameters/namespace'
+      - $ref: '#/components/parameters/pretty'
+      - $ref: '#/components/parameters/dryRun'
+      - $ref: '#/components/parameters/fieldManager'
       requestBody:
         required: true
         content:
@@ -1152,53 +1254,56 @@ paths:
         '401':
           description: Unauthorized
 
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
   /apis/apps.openshift.io/v1/namespaces/{namespace}/deploymentconfigs/{name}/log:
     get:
       operationId: readNamespacedDeploymentConfigLog
-      summary: OpenShift Read deployment config log
+      summary: Openshift Read Deployment Config Log
       description: >-
         Read the log output from the latest deployment of the specified
         DeploymentConfig.
       tags:
-        - DeploymentConfigs
+      - DeploymentConfigs
       parameters:
-        - $ref: '#/components/parameters/name'
-        - $ref: '#/components/parameters/namespace'
-        - name: container
-          in: query
-          description: The container for which to stream logs.
-          schema:
-            type: string
-        - name: follow
-          in: query
-          description: Follow the log stream of the deployment.
-          schema:
-            type: boolean
-        - name: sinceSeconds
-          in: query
-          description: >-
-            A relative time in seconds before the current time from which to
-            show logs.
-          schema:
-            type: integer
-            format: int64
-        - name: tailLines
-          in: query
-          description: Number of lines from the end of the log to show.
-          schema:
-            type: integer
-            format: int64
-        - name: timestamps
-          in: query
-          description: Add RFC3339 timestamps to each log line.
-          schema:
-            type: boolean
-        - name: version
-          in: query
-          description: The deployment version for which to view logs.
-          schema:
-            type: integer
-            format: int64
+      - $ref: '#/components/parameters/name'
+      - $ref: '#/components/parameters/namespace'
+      - name: container
+        in: query
+        description: The container for which to stream logs.
+        schema:
+          type: string
+      - name: follow
+        in: query
+        description: Follow the log stream of the deployment.
+        schema:
+          type: boolean
+      - name: sinceSeconds
+        in: query
+        description: >-
+          A relative time in seconds before the current time from which to
+          show logs.
+        schema:
+          type: integer
+          format: int64
+      - name: tailLines
+        in: query
+        description: Number of lines from the end of the log to show.
+        schema:
+          type: integer
+          format: int64
+      - name: timestamps
+        in: query
+        description: Add RFC3339 timestamps to each log line.
+        schema:
+          type: boolean
+      - name: version
+        in: query
+        description: The deployment version for which to view logs.
+        schema:
+          type: integer
+          format: int64
       responses:
         '200':
           description: OK
@@ -1213,24 +1318,27 @@ paths:
   # Projects - project.openshift.io/v1
   # ============================================================
 
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
   /apis/project.openshift.io/v1/projects:
     get:
       operationId: listProject
-      summary: OpenShift List projects
+      summary: Openshift List Projects
       description: >-
         List or watch Project objects. Projects are OpenShift's extension of
         Kubernetes namespaces providing multi-tenant isolation.
       tags:
-        - Projects
+      - Projects
       parameters:
-        - $ref: '#/components/parameters/allowWatchBookmarks'
-        - $ref: '#/components/parameters/continue'
-        - $ref: '#/components/parameters/fieldSelector'
-        - $ref: '#/components/parameters/labelSelector'
-        - $ref: '#/components/parameters/limit'
-        - $ref: '#/components/parameters/pretty'
-        - $ref: '#/components/parameters/resourceVersion'
-        - $ref: '#/components/parameters/watch'
+      - $ref: '#/components/parameters/allowWatchBookmarks'
+      - $ref: '#/components/parameters/continue'
+      - $ref: '#/components/parameters/fieldSelector'
+      - $ref: '#/components/parameters/labelSelector'
+      - $ref: '#/components/parameters/limit'
+      - $ref: '#/components/parameters/pretty'
+      - $ref: '#/components/parameters/resourceVersion'
+      - $ref: '#/components/parameters/watch'
       responses:
         '200':
           description: OK
@@ -1241,17 +1349,20 @@ paths:
         '401':
           description: Unauthorized
 
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
   /apis/project.openshift.io/v1/projects/{name}:
     get:
       operationId: readProject
-      summary: OpenShift Read a project
+      summary: Openshift Read a Project
       description: >-
         Read the specified Project.
       tags:
-        - Projects
+      - Projects
       parameters:
-        - $ref: '#/components/parameters/name'
-        - $ref: '#/components/parameters/pretty'
+      - $ref: '#/components/parameters/name'
+      - $ref: '#/components/parameters/pretty'
       responses:
         '200':
           description: OK
@@ -1261,18 +1372,21 @@ paths:
                 $ref: '#/components/schemas/Project'
         '401':
           description: Unauthorized
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
     put:
       operationId: replaceProject
-      summary: OpenShift Replace a project
+      summary: Openshift Replace a Project
       description: >-
         Replace the specified Project.
       tags:
-        - Projects
+      - Projects
       parameters:
-        - $ref: '#/components/parameters/name'
-        - $ref: '#/components/parameters/pretty'
-        - $ref: '#/components/parameters/dryRun'
-        - $ref: '#/components/parameters/fieldManager'
+      - $ref: '#/components/parameters/name'
+      - $ref: '#/components/parameters/pretty'
+      - $ref: '#/components/parameters/dryRun'
+      - $ref: '#/components/parameters/fieldManager'
       requestBody:
         required: true
         content:
@@ -1294,19 +1408,22 @@ paths:
                 $ref: '#/components/schemas/Project'
         '401':
           description: Unauthorized
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
     delete:
       operationId: deleteProject
-      summary: OpenShift Delete a project
+      summary: Openshift Delete a Project
       description: >-
         Delete the specified Project and all of its resources.
       tags:
-        - Projects
+      - Projects
       parameters:
-        - $ref: '#/components/parameters/name'
-        - $ref: '#/components/parameters/pretty'
-        - $ref: '#/components/parameters/dryRun'
-        - $ref: '#/components/parameters/gracePeriodSeconds'
-        - $ref: '#/components/parameters/propagationPolicy'
+      - $ref: '#/components/parameters/name'
+      - $ref: '#/components/parameters/pretty'
+      - $ref: '#/components/parameters/dryRun'
+      - $ref: '#/components/parameters/gracePeriodSeconds'
+      - $ref: '#/components/parameters/propagationPolicy'
       responses:
         '200':
           description: OK
@@ -1323,17 +1440,20 @@ paths:
         '401':
           description: Unauthorized
 
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
   /apis/project.openshift.io/v1/projectrequests:
     get:
       operationId: listProjectRequest
-      summary: OpenShift List project requests
+      summary: Openshift List Project Requests
       description: >-
         List ProjectRequest objects. Returns the project request template
         status.
       tags:
-        - ProjectRequests
+      - ProjectRequests
       parameters:
-        - $ref: '#/components/parameters/pretty'
+      - $ref: '#/components/parameters/pretty'
       responses:
         '200':
           description: OK
@@ -1343,19 +1463,22 @@ paths:
                 $ref: '#/components/schemas/Status'
         '401':
           description: Unauthorized
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
     post:
       operationId: createProjectRequest
-      summary: OpenShift Create a project request
+      summary: Openshift Create a Project Request
       description: >-
         Create a ProjectRequest to provision a new project. This is the
         preferred mechanism for project creation as it respects cluster
         project request templates and policies.
       tags:
-        - ProjectRequests
+      - ProjectRequests
       parameters:
-        - $ref: '#/components/parameters/pretty'
-        - $ref: '#/components/parameters/dryRun'
-        - $ref: '#/components/parameters/fieldManager'
+      - $ref: '#/components/parameters/pretty'
+      - $ref: '#/components/parameters/dryRun'
+      - $ref: '#/components/parameters/fieldManager'
       requestBody:
         required: true
         content:
@@ -1384,6 +1507,9 @@ paths:
         '401':
           description: Unauthorized
 
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
 components:
 
   securitySchemes:
@@ -1505,9 +1631,9 @@ components:
       schema:
         type: string
         enum:
-          - Orphan
-          - Background
-          - Foreground
+        - Orphan
+        - Background
+        - Foreground
 
   schemas:
 
@@ -1525,35 +1651,42 @@ components:
           type: string
           description: >-
             The name of the resource, unique within a namespace.
+          example: Example Title
         namespace:
           type: string
           description: >-
             The namespace in which the resource resides.
+          example: example_value
         uid:
           type: string
           format: uuid
           description: >-
             A unique identifier for the resource set by the server.
+          example: '500123'
         resourceVersion:
           type: string
           description: >-
             An opaque value representing the internal version of the object.
+          example: example_value
         generation:
           type: integer
           format: int64
           description: >-
             A sequence number representing a specific generation of the
             desired state.
+          example: 10
         creationTimestamp:
           type: string
           format: date-time
           description: >-
             Timestamp representing when the object was created.
+          example: '2026-01-15T10:30:00Z'
         deletionTimestamp:
           type: string
           format: date-time
           description: >-
             Timestamp at which the object will be deleted.
+          example: '2026-01-15T10:30:00Z'
         labels:
           type: object
           additionalProperties:
@@ -1561,6 +1694,7 @@ components:
           description: >-
             Map of string keys and values that can be used to organize and
             categorize objects.
+          example: example_value
         annotations:
           type: object
           additionalProperties:
@@ -1568,12 +1702,14 @@ components:
           description: >-
             Unstructured key-value map stored with a resource for arbitrary
             metadata.
+          example: example_value
         ownerReferences:
           type: array
           items:
             $ref: '#/components/schemas/OwnerReference'
           description: >-
             List of objects depended by this object.
+          example: []
         finalizers:
           type: array
           items:
@@ -1581,29 +1717,36 @@ components:
           description: >-
             Must be empty before the object is deleted from the registry.
 
+          example: []
     OwnerReference:
       type: object
       description: >-
         Contains information to identify an owning object.
       required:
-        - apiVersion
-        - kind
-        - name
-        - uid
+      - apiVersion
+      - kind
+      - name
+      - uid
       properties:
         apiVersion:
           type: string
+          example: example_value
         kind:
           type: string
+          example: example_value
         name:
           type: string
+          example: Example Title
         uid:
           type: string
+          example: '500123'
         controller:
           type: boolean
+          example: true
         blockOwnerDeletion:
           type: boolean
 
+          example: true
     ListMeta:
       type: object
       description: >-
@@ -1611,14 +1754,18 @@ components:
       properties:
         selfLink:
           type: string
+          example: example_value
         resourceVersion:
           type: string
+          example: example_value
         continue:
           type: string
+          example: example_value
         remainingItemCount:
           type: integer
           format: int64
 
+          example: 10
     Status:
       type: object
       description: >-
@@ -1627,20 +1774,25 @@ components:
         apiVersion:
           type: string
           default: v1
+          example: example_value
         kind:
           type: string
           default: Status
+          example: example_value
         metadata:
           $ref: '#/components/schemas/ListMeta'
         status:
           type: string
           enum:
-            - Success
-            - Failure
+          - Success
+          - Failure
+          example: Success
         message:
           type: string
+          example: example_value
         reason:
           type: string
+          example: example_value
         code:
           type: integer
           format: int32
@@ -1649,6 +1801,7 @@ components:
     # Route - route.openshift.io/v1
     # -------------------------------------------------------
 
+          example: 10
     Route:
       type: object
       description: >-
@@ -1656,14 +1809,16 @@ components:
         to applications in the cluster. Routes support TLS termination
         strategies including edge, passthrough, and re-encrypt.
       required:
-        - spec
+      - spec
       properties:
         apiVersion:
           type: string
           default: route.openshift.io/v1
+          example: example_value
         kind:
           type: string
           default: Route
+          example: example_value
         metadata:
           $ref: '#/components/schemas/ObjectMeta'
         spec:
@@ -1676,7 +1831,7 @@ components:
       description: >-
         Desired state of the Route resource.
       required:
-        - to
+      - to
       properties:
         host:
           type: string
@@ -1696,6 +1851,7 @@ components:
           description: >-
             A DNS subdomain request. If set, the route hostname is
             composed using this value and the ingress domain.
+          example: example_value
         to:
           $ref: '#/components/schemas/RouteTargetReference'
         alternateBackends:
@@ -1706,6 +1862,7 @@ components:
           items:
             $ref: '#/components/schemas/RouteTargetReference'
           maxItems: 3
+          example: []
         port:
           $ref: '#/components/schemas/RoutePort'
         tls:
@@ -1716,28 +1873,31 @@ components:
             The wildcard policy for the hostname. None disallows wildcard
             routes, Subdomain allows wildcard routes with subdomains.
           enum:
-            - None
-            - Subdomain
+          - None
+          - Subdomain
           default: None
 
+          example: None
     RouteTargetReference:
       type: object
       description: >-
         Specifies the target that traffic is routed to. Weight controls
         the proportion of traffic sent to this backend.
       required:
-        - kind
-        - name
+      - kind
+      - name
       properties:
         kind:
           type: string
           description: The kind of target, typically Service.
           enum:
-            - Service
+          - Service
           default: Service
+          example: Service
         name:
           type: string
           description: Name of the target service.
+          example: Example Title
         weight:
           type: integer
           format: int32
@@ -1748,22 +1908,24 @@ components:
           maximum: 256
           default: 100
 
+          example: 10
     RoutePort:
       type: object
       description: >-
         Route port configuration that specifies which service port the
         route points to.
       required:
-        - targetPort
+      - targetPort
       properties:
         targetPort:
           oneOf:
-            - type: string
-            - type: integer
+          - type: string
+          - type: integer
           description: >-
             The target port on pods selected by the service this route
             points to. Can be a port name or number.
 
+          example: example_value
     TLSConfig:
       type: object
       description: >-
@@ -1778,28 +1940,33 @@ components:
             re-encrypt terminates at the router and re-encrypts to the
             backend.
           enum:
-            - edge
-            - passthrough
-            - reencrypt
+          - edge
+          - passthrough
+          - reencrypt
+          example: edge
         certificate:
           type: string
           description: >-
             PEM-encoded certificate for the route. Required for edge and
             re-encrypt termination if not using a default certificate.
+          example: example_value
         key:
           type: string
           description: >-
             PEM-encoded private key for the route certificate.
+          example: example_value
         caCertificate:
           type: string
           description: >-
             PEM-encoded CA certificate chain used to verify client
             certificates.
+          example: example_value
         destinationCACertificate:
           type: string
           description: >-
             PEM-encoded CA certificate used to verify the backend server
             certificate. Only applicable for re-encrypt termination.
+          example: example_value
         insecureEdgeTerminationPolicy:
           type: string
           description: >-
@@ -1807,10 +1974,11 @@ components:
             configured. None disables insecure traffic, Allow permits it,
             Redirect sends a 301 redirect to the HTTPS URL.
           enum:
-            - None
-            - Allow
-            - Redirect
+          - None
+          - Allow
+          - Redirect
 
+          example: None
     RouteStatus:
       type: object
       description: >-
@@ -1823,6 +1991,7 @@ components:
           items:
             $ref: '#/components/schemas/RouteIngress'
 
+          example: []
     RouteIngress:
       type: object
       description: >-
@@ -1831,17 +2000,21 @@ components:
         host:
           type: string
           description: The hostname assigned to the route by the router.
+          example: example_value
         routerName:
           type: string
           description: The name of the router that admitted this route.
+          example: example_value
         conditions:
           type: array
           items:
             $ref: '#/components/schemas/RouteIngressCondition'
+          example: []
         wildcardPolicy:
           type: string
           description: The wildcard policy applied by the router.
 
+          example: example_value
     RouteIngressCondition:
       type: object
       description: >-
@@ -1850,33 +2023,40 @@ components:
         type:
           type: string
           description: The type of the condition (e.g., Admitted).
+          example: example_value
         status:
           type: string
           enum:
-            - 'True'
-            - 'False'
-            - Unknown
+          - 'True'
+          - 'False'
+          - Unknown
+          example: 'True'
         reason:
           type: string
+          example: example_value
         message:
           type: string
+          example: example_value
         lastTransitionTime:
           type: string
           format: date-time
 
+          example: '2026-01-15T10:30:00Z'
     RouteList:
       type: object
       description: >-
         A list of Route objects.
       required:
-        - items
+      - items
       properties:
         apiVersion:
           type: string
           default: route.openshift.io/v1
+          example: example_value
         kind:
           type: string
           default: RouteList
+          example: example_value
         metadata:
           $ref: '#/components/schemas/ListMeta'
         items:
@@ -1888,6 +2068,7 @@ components:
     # Build - build.openshift.io/v1
     # -------------------------------------------------------
 
+          example: []
     Build:
       type: object
       description: >-
@@ -1895,14 +2076,16 @@ components:
         transforms source code into a runnable container image. Builds
         are created from BuildConfigs or instantiated directly.
       required:
-        - spec
+      - spec
       properties:
         apiVersion:
           type: string
           default: build.openshift.io/v1
+          example: example_value
         kind:
           type: string
           default: Build
+          example: example_value
         metadata:
           $ref: '#/components/schemas/ObjectMeta'
         spec:
@@ -1920,6 +2103,7 @@ components:
           description: >-
             The name of the ServiceAccount to use to run the build pod.
           default: builder
+          example: example_value
         source:
           $ref: '#/components/schemas/BuildSource'
         strategy:
@@ -1935,6 +2119,7 @@ components:
             Optional duration in seconds the build may run before the system
             terminates it. The countdown starts from the time the build pod
             is scheduled.
+          example: 10
         nodeSelector:
           type: object
           additionalProperties:
@@ -1942,6 +2127,7 @@ components:
           description: >-
             Selector which must match a node's labels for the build pod to
             be scheduled on that node.
+          example: example_value
         triggeredBy:
           type: array
           description: >-
@@ -1949,6 +2135,7 @@ components:
           items:
             $ref: '#/components/schemas/BuildTriggerCause'
 
+          example: []
     BuildSource:
       type: object
       description: >-
@@ -1958,11 +2145,12 @@ components:
           type: string
           description: The type of source input.
           enum:
-            - Git
-            - Dockerfile
-            - Binary
-            - Image
-            - None
+          - Git
+          - Dockerfile
+          - Binary
+          - Image
+          - None
+          example: Git
         git:
           type: object
           description: Git source location.
@@ -1975,15 +2163,18 @@ components:
               type: string
               description: >-
                 The Git branch, tag, or commit to build.
+          example: example_value
         dockerfile:
           type: string
           description: >-
             The Dockerfile content used as build input.
+          example: example_value
         contextDir:
           type: string
           description: >-
             The subdirectory within the source repository used as the
             context for the build.
+          example: example_value
         sourceSecret:
           type: object
           description: >-
@@ -1992,6 +2183,7 @@ components:
             name:
               type: string
 
+          example: example_value
     BuildStrategy:
       type: object
       description: >-
@@ -2001,9 +2193,10 @@ components:
           type: string
           description: The type of build strategy.
           enum:
-            - Source
-            - Docker
-            - Custom
+          - Source
+          - Docker
+          - Custom
+          example: Source
         sourceStrategy:
           $ref: '#/components/schemas/SourceBuildStrategy'
         dockerStrategy:
@@ -2017,7 +2210,7 @@ components:
         Source-to-Image (S2I) build strategy that combines application
         source with a builder image to produce a runnable image.
       required:
-        - from
+      - from
       properties:
         from:
           $ref: '#/components/schemas/ObjectReference'
@@ -2025,21 +2218,25 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/EnvVar'
+          example: []
         scripts:
           type: string
           description: >-
             URL of S2I scripts to use instead of the ones in the builder image.
+          example: example_value
         incremental:
           type: boolean
           description: >-
             Attempt to perform an incremental build reusing artifacts
             from a prior build.
+          example: true
         forcePull:
           type: boolean
           description: >-
             Overrides the default pull behavior and forces a pull of the
             builder image before the build.
 
+          example: true
     DockerBuildStrategy:
       type: object
       description: >-
@@ -2051,18 +2248,22 @@ components:
           type: string
           description: >-
             Path of the Dockerfile relative to the context directory.
+          example: example_value
         env:
           type: array
           items:
             $ref: '#/components/schemas/EnvVar'
+          example: []
         noCache:
           type: boolean
           description: >-
             If true, Docker build caching is disabled.
+          example: true
         forcePull:
           type: boolean
           description: >-
             Forces a pull of the base image before the build.
+          example: true
         buildArgs:
           type: array
           items:
@@ -2070,13 +2271,14 @@ components:
           description: >-
             Specifies build arguments to pass to Docker.
 
+          example: []
     CustomBuildStrategy:
       type: object
       description: >-
         Custom build strategy that uses a custom builder image to execute
         an arbitrary build process.
       required:
-        - from
+      - from
       properties:
         from:
           $ref: '#/components/schemas/ObjectReference'
@@ -2084,15 +2286,18 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/EnvVar'
+          example: []
         exposeDockerSocket:
           type: boolean
           description: >-
             If true, the Docker socket is exposed inside the build container.
+          example: true
         forcePull:
           type: boolean
           description: >-
             Forces a pull of the custom builder image before the build.
 
+          example: true
     BuildOutput:
       type: object
       description: >-
@@ -2108,6 +2313,7 @@ components:
             name:
               type: string
 
+          example: example_value
     BuildTriggerCause:
       type: object
       description: >-
@@ -2117,6 +2323,7 @@ components:
           type: string
           description: Short human-readable description of the trigger.
 
+          example: example_value
     BuildStatus:
       type: object
       description: >-
@@ -2126,40 +2333,48 @@ components:
           type: string
           description: The current phase of the build.
           enum:
-            - New
-            - Pending
-            - Running
-            - Complete
-            - Failed
-            - Error
-            - Cancelled
+          - New
+          - Pending
+          - Running
+          - Complete
+          - Failed
+          - Error
+          - Cancelled
+          example: New
         cancelled:
           type: boolean
           description: Whether the build was cancelled.
+          example: true
         message:
           type: string
           description: Human-readable message about the build status.
+          example: example_value
         reason:
           type: string
           description: >-
             Brief machine-readable reason for the build status.
+          example: example_value
         startTimestamp:
           type: string
           format: date-time
           description: Timestamp when the build started running.
+          example: '2026-01-15T10:30:00Z'
         completionTimestamp:
           type: string
           format: date-time
           description: Timestamp when the build completed.
+          example: '2026-01-15T10:30:00Z'
         duration:
           type: integer
           format: int64
           description: >-
             Duration of the build in nanoseconds.
+          example: 10
         outputDockerImageReference:
           type: string
           description: >-
             The Docker image reference of the built image.
+          example: example_value
         config:
           $ref: '#/components/schemas/ObjectReference'
         output:
@@ -2173,23 +2388,27 @@ components:
                   type: string
                   description: >-
                     The image digest of the pushed image.
+          example: example_value
         logSnippet:
           type: string
           description: >-
             The last few lines of the build log for failed builds.
 
+          example: example_value
     BuildList:
       type: object
       description: A list of Build objects.
       required:
-        - items
+      - items
       properties:
         apiVersion:
           type: string
           default: build.openshift.io/v1
+          example: example_value
         kind:
           type: string
           default: BuildList
+          example: example_value
         metadata:
           $ref: '#/components/schemas/ListMeta'
         items:
@@ -2201,6 +2420,7 @@ components:
     # BuildConfig - build.openshift.io/v1
     # -------------------------------------------------------
 
+          example: []
     BuildConfig:
       type: object
       description: >-
@@ -2208,14 +2428,16 @@ components:
         new container images. Builds can be triggered automatically by
         webhooks, image changes, or configuration changes.
       required:
-        - spec
+      - spec
       properties:
         apiVersion:
           type: string
           default: build.openshift.io/v1
+          example: example_value
         kind:
           type: string
           default: BuildConfig
+          example: example_value
         metadata:
           $ref: '#/components/schemas/ObjectMeta'
         spec:
@@ -2242,41 +2464,48 @@ components:
             Triggers that cause new builds to be created.
           items:
             $ref: '#/components/schemas/BuildTriggerPolicy'
+          example: []
         runPolicy:
           type: string
           description: >-
             Controls how builds from this config run concurrently.
           enum:
-            - Serial
-            - Parallel
-            - SerialLatestOnly
+          - Serial
+          - Parallel
+          - SerialLatestOnly
           default: Serial
+          example: Serial
         serviceAccount:
           type: string
           description: >-
             The ServiceAccount to run the build pod as.
           default: builder
+          example: example_value
         completionDeadlineSeconds:
           type: integer
           format: int64
           description: >-
             Optional duration in seconds builds may be active before
             being terminated.
+          example: 10
         successfulBuildsHistoryLimit:
           type: integer
           format: int32
           description: >-
             Number of successful builds to retain.
+          example: 10
         failedBuildsHistoryLimit:
           type: integer
           format: int32
           description: >-
             Number of failed builds to retain.
+          example: 10
         nodeSelector:
           type: object
           additionalProperties:
             type: string
 
+          example: example_value
     BuildTriggerPolicy:
       type: object
       description: >-
@@ -2286,12 +2515,13 @@ components:
           type: string
           description: The type of build trigger.
           enum:
-            - GitHub
-            - GitLab
-            - Bitbucket
-            - Generic
-            - ImageChange
-            - ConfigChange
+          - GitHub
+          - GitLab
+          - Bitbucket
+          - Generic
+          - ImageChange
+          - ConfigChange
+          example: GitHub
         github:
           type: object
           properties:
@@ -2303,6 +2533,7 @@ components:
               properties:
                 name:
                   type: string
+          example: example_value
         generic:
           type: object
           properties:
@@ -2315,6 +2546,7 @@ components:
                   type: string
             allowEnv:
               type: boolean
+          example: example_value
         imageChange:
           type: object
           properties:
@@ -2323,6 +2555,7 @@ components:
             lastTriggeredImageID:
               type: string
 
+          example: example_value
     BuildConfigStatus:
       type: object
       description: >-
@@ -2333,6 +2566,7 @@ components:
           format: int64
           description: >-
             The version of the last build created from this config.
+          example: 10
         imageChangeTriggers:
           type: array
           items:
@@ -2343,18 +2577,21 @@ components:
               from:
                 $ref: '#/components/schemas/ObjectReference'
 
+          example: []
     BuildConfigList:
       type: object
       description: A list of BuildConfig objects.
       required:
-        - items
+      - items
       properties:
         apiVersion:
           type: string
           default: build.openshift.io/v1
+          example: example_value
         kind:
           type: string
           default: BuildConfigList
+          example: example_value
         metadata:
           $ref: '#/components/schemas/ListMeta'
         items:
@@ -2362,6 +2599,7 @@ components:
           items:
             $ref: '#/components/schemas/BuildConfig'
 
+          example: []
     BuildRequest:
       type: object
       description: >-
@@ -2370,15 +2608,18 @@ components:
         apiVersion:
           type: string
           default: build.openshift.io/v1
+          example: example_value
         kind:
           type: string
           default: BuildRequest
+          example: example_value
         metadata:
           $ref: '#/components/schemas/ObjectMeta'
         triggeredBy:
           type: array
           items:
             $ref: '#/components/schemas/BuildTriggerCause'
+          example: []
         env:
           type: array
           items:
@@ -2388,6 +2629,7 @@ components:
     # DeploymentConfig - apps.openshift.io/v1
     # -------------------------------------------------------
 
+          example: []
     DeploymentConfig:
       type: object
       description: >-
@@ -2396,14 +2638,16 @@ components:
         pods and supports rolling, recreate, and custom deployment strategies
         with automatic rollback.
       required:
-        - spec
+      - spec
       properties:
         apiVersion:
           type: string
           default: apps.openshift.io/v1
+          example: example_value
         kind:
           type: string
           default: DeploymentConfig
+          example: example_value
         metadata:
           $ref: '#/components/schemas/ObjectMeta'
         spec:
@@ -2422,12 +2666,14 @@ components:
           description: >-
             The desired number of pod replicas.
           default: 1
+          example: 10
         selector:
           type: object
           additionalProperties:
             type: string
           description: >-
             Label selector for pods managed by this deployment.
+          example: example_value
         template:
           $ref: '#/components/schemas/PodTemplateSpec'
         strategy:
@@ -2438,6 +2684,7 @@ components:
             Triggers that cause new deployments to be created.
           items:
             $ref: '#/components/schemas/DeploymentTriggerPolicy'
+          example: []
         minReadySeconds:
           type: integer
           format: int32
@@ -2445,22 +2692,26 @@ components:
             Minimum number of seconds a newly created pod should be ready
             without any of its containers crashing before considered
             available.
+          example: 10
         revisionHistoryLimit:
           type: integer
           format: int32
           description: >-
             Number of old ReplicationControllers to retain for rollback.
+          example: 10
         paused:
           type: boolean
           description: >-
             Indicates that the deployment config is paused and new
             deployments will not be triggered.
+          example: true
         test:
           type: boolean
           description: >-
             If true, deployments are scaled down to zero after the
             deployment completes.
 
+          example: true
     DeploymentStrategy:
       type: object
       description: >-
@@ -2470,10 +2721,11 @@ components:
           type: string
           description: The deployment strategy type.
           enum:
-            - Rolling
-            - Recreate
-            - Custom
+          - Rolling
+          - Recreate
+          - Custom
           default: Rolling
+          example: Rolling
         rollingParams:
           $ref: '#/components/schemas/RollingDeploymentStrategyParams'
         recreateParams:
@@ -2489,6 +2741,7 @@ components:
             Duration in seconds that the deployer pods may be active before
             the system retries the deployment.
 
+          example: 10
     RollingDeploymentStrategyParams:
       type: object
       description: >-
@@ -2499,35 +2752,40 @@ components:
           format: int64
           description: >-
             The time to wait between individual pod updates.
+          example: 10
         intervalSeconds:
           type: integer
           format: int64
           description: >-
             The time to wait between polling deployment status.
+          example: 10
         timeoutSeconds:
           type: integer
           format: int64
           description: >-
             The time to wait for a scaling event before giving up.
           default: 600
+          example: 10
         maxUnavailable:
           oneOf:
-            - type: string
-            - type: integer
+          - type: string
+          - type: integer
           description: >-
             The maximum number of pods that can be unavailable during
             the update. Value can be an absolute number or a percentage.
           default: '25%'
+          example: example_value
         maxSurge:
           oneOf:
-            - type: string
-            - type: integer
+          - type: string
+          - type: integer
           description: >-
             The maximum number of pods that can be scheduled above the
             desired number of pods. Value can be an absolute number or
             a percentage.
           default: '25%'
 
+          example: example_value
     RecreateDeploymentStrategyParams:
       type: object
       description: >-
@@ -2540,6 +2798,7 @@ components:
             The time to wait for pods to terminate before giving up.
           default: 600
 
+          example: 10
     CustomDeploymentStrategyParams:
       type: object
       description: >-
@@ -2549,10 +2808,12 @@ components:
           type: string
           description: >-
             The container image that runs the custom deployment logic.
+          example: example_value
         environment:
           type: array
           items:
             $ref: '#/components/schemas/EnvVar'
+          example: []
         command:
           type: array
           items:
@@ -2560,6 +2821,7 @@ components:
           description: >-
             The command to execute in the custom deployer container.
 
+          example: []
     DeploymentTriggerPolicy:
       type: object
       description: >-
@@ -2569,8 +2831,9 @@ components:
           type: string
           description: The type of deployment trigger.
           enum:
-            - ConfigChange
-            - ImageChange
+          - ConfigChange
+          - ImageChange
+          example: ConfigChange
         imageChangeParams:
           type: object
           description: >-
@@ -2594,6 +2857,7 @@ components:
               description: >-
                 The image reference that triggered the last deployment.
 
+          example: example_value
     DeploymentConfigStatus:
       type: object
       description: >-
@@ -2604,42 +2868,50 @@ components:
           format: int64
           description: >-
             The version of the most recent deployment.
+          example: 10
         observedGeneration:
           type: integer
           format: int64
           description: >-
             The most recent generation observed by the deployment controller.
+          example: 10
         replicas:
           type: integer
           format: int32
           description: >-
             Total number of non-terminated pods targeted by this deployment.
+          example: 10
         updatedReplicas:
           type: integer
           format: int32
           description: >-
             Total number of non-terminated pods that have the desired
             template spec.
+          example: 10
         availableReplicas:
           type: integer
           format: int32
           description: >-
             Total number of available pods targeted by this deployment.
+          example: 10
         unavailableReplicas:
           type: integer
           format: int32
           description: >-
             Total number of unavailable pods targeted by this deployment.
+          example: 10
         readyReplicas:
           type: integer
           format: int32
           description: >-
             Total number of ready pods targeted by this deployment.
+          example: 10
         conditions:
           type: array
           items:
             $ref: '#/components/schemas/DeploymentCondition'
 
+          example: []
     DeploymentCondition:
       type: object
       description: >-
@@ -2649,38 +2921,46 @@ components:
           type: string
           description: The type of condition.
           enum:
-            - Available
-            - Progressing
-            - ReplicaFailure
+          - Available
+          - Progressing
+          - ReplicaFailure
+          example: Available
         status:
           type: string
           enum:
-            - 'True'
-            - 'False'
-            - Unknown
+          - 'True'
+          - 'False'
+          - Unknown
+          example: 'True'
         reason:
           type: string
+          example: example_value
         message:
           type: string
+          example: example_value
         lastUpdateTime:
           type: string
           format: date-time
+          example: '2026-01-15T10:30:00Z'
         lastTransitionTime:
           type: string
           format: date-time
 
+          example: '2026-01-15T10:30:00Z'
     DeploymentConfigList:
       type: object
       description: A list of DeploymentConfig objects.
       required:
-        - items
+      - items
       properties:
         apiVersion:
           type: string
           default: apps.openshift.io/v1
+          example: example_value
         kind:
           type: string
           default: DeploymentConfigList
+          example: example_value
         metadata:
           $ref: '#/components/schemas/ListMeta'
         items:
@@ -2688,28 +2968,32 @@ components:
           items:
             $ref: '#/components/schemas/DeploymentConfig'
 
+          example: []
     DeploymentConfigRollback:
       type: object
       description: >-
         A request to roll back a deployment to a previous version.
       required:
-        - name
-        - spec
+      - name
+      - spec
       properties:
         apiVersion:
           type: string
           default: apps.openshift.io/v1
+          example: example_value
         kind:
           type: string
           default: DeploymentConfigRollback
+          example: example_value
         name:
           type: string
           description: >-
             Name of the deployment config to roll back.
+          example: Example Title
         spec:
           type: object
           required:
-            - from
+          - from
           properties:
             from:
               $ref: '#/components/schemas/ObjectReference'
@@ -2731,6 +3015,7 @@ components:
             includeTriggers:
               type: boolean
 
+          example: example_value
     Scale:
       type: object
       description: >-
@@ -2739,9 +3024,11 @@ components:
         apiVersion:
           type: string
           default: autoscaling/v1
+          example: example_value
         kind:
           type: string
           default: Scale
+          example: example_value
         metadata:
           $ref: '#/components/schemas/ObjectMeta'
         spec:
@@ -2752,6 +3039,7 @@ components:
               format: int32
               description: >-
                 The desired number of replicas.
+          example: example_value
         status:
           type: object
           properties:
@@ -2769,6 +3057,7 @@ components:
     # Project - project.openshift.io/v1
     # -------------------------------------------------------
 
+          example: example_value
     Project:
       type: object
       description: >-
@@ -2779,9 +3068,11 @@ components:
         apiVersion:
           type: string
           default: project.openshift.io/v1
+          example: example_value
         kind:
           type: string
           default: Project
+          example: example_value
         metadata:
           $ref: '#/components/schemas/ObjectMeta'
         spec:
@@ -2801,6 +3092,7 @@ components:
           description: >-
             Finalizers that must complete before the project is deleted.
 
+          example: []
     ProjectStatus:
       type: object
       description: >-
@@ -2810,8 +3102,9 @@ components:
           type: string
           description: The lifecycle phase of the project.
           enum:
-            - Active
-            - Terminating
+          - Active
+          - Terminating
+          example: Active
         conditions:
           type: array
           items:
@@ -2829,18 +3122,21 @@ components:
                 type: string
                 format: date-time
 
+          example: []
     ProjectList:
       type: object
       description: A list of Project objects.
       required:
-        - items
+      - items
       properties:
         apiVersion:
           type: string
           default: project.openshift.io/v1
+          example: example_value
         kind:
           type: string
           default: ProjectList
+          example: example_value
         metadata:
           $ref: '#/components/schemas/ListMeta'
         items:
@@ -2848,6 +3144,7 @@ components:
           items:
             $ref: '#/components/schemas/Project'
 
+          example: []
     ProjectRequest:
       type: object
       description: >-
@@ -2855,20 +3152,23 @@ components:
         according to the cluster project request template and may include
         default resource quotas, limit ranges, and role bindings.
       required:
-        - metadata
+      - metadata
       properties:
         apiVersion:
           type: string
           default: project.openshift.io/v1
+          example: example_value
         kind:
           type: string
           default: ProjectRequest
+          example: example_value
         metadata:
           $ref: '#/components/schemas/ObjectMeta'
         displayName:
           type: string
           description: >-
             A human-readable name for the project, used in the web console.
+          example: example_value
         description:
           type: string
           description: >-
@@ -2878,6 +3178,7 @@ components:
     # Shared / Common schemas
     # -------------------------------------------------------
 
+          example: A sample description.
     ObjectReference:
       type: object
       description: >-
@@ -2885,27 +3186,33 @@ components:
       properties:
         apiVersion:
           type: string
+          example: example_value
         kind:
           type: string
+          example: example_value
         name:
           type: string
+          example: Example Title
         namespace:
           type: string
 
+          example: example_value
     EnvVar:
       type: object
       description: >-
         An environment variable to set in a container.
       required:
-        - name
+      - name
       properties:
         name:
           type: string
           description: The environment variable name.
+          example: Example Title
         value:
           type: string
           description: The environment variable value.
 
+          example: example_value
     ResourceRequirements:
       type: object
       description: >-
@@ -2917,6 +3224,7 @@ components:
             type: string
           description: >-
             Maximum compute resources allowed (e.g., cpu, memory).
+          example: example_value
         requests:
           type: object
           additionalProperties:
@@ -2924,6 +3232,7 @@ components:
           description: >-
             Minimum compute resources required (e.g., cpu, memory).
 
+          example: example_value
     PodTemplateSpec:
       type: object
       description: >-
@@ -2944,26 +3253,31 @@ components:
           description: List of containers in the pod.
           items:
             $ref: '#/components/schemas/Container'
+          example: []
         initContainers:
           type: array
           description: List of initialization containers.
           items:
             $ref: '#/components/schemas/Container'
+          example: []
         restartPolicy:
           type: string
           enum:
-            - Always
-            - OnFailure
-            - Never
+          - Always
+          - OnFailure
+          - Never
           default: Always
+          example: Always
         serviceAccountName:
           type: string
           description: >-
             Name of the ServiceAccount to use for the pod.
+          example: example_value
         nodeSelector:
           type: object
           additionalProperties:
             type: string
+          example: example_value
         volumes:
           type: array
           items:
@@ -2989,34 +3303,40 @@ components:
               emptyDir:
                 type: object
 
+          example: []
     Container:
       type: object
       description: >-
         A single application container running within a pod.
       required:
-        - name
-        - image
+      - name
+      - image
       properties:
         name:
           type: string
           description: Name of the container.
+          example: Example Title
         image:
           type: string
           description: Container image name.
+          example: example_value
         command:
           type: array
           items:
             type: string
           description: Entrypoint array.
+          example: []
         args:
           type: array
           items:
             type: string
           description: Arguments to the entrypoint.
+          example: []
         env:
           type: array
           items:
             $ref: '#/components/schemas/EnvVar'
+          example: []
         ports:
           type: array
           items:
@@ -3030,10 +3350,11 @@ components:
               protocol:
                 type: string
                 enum:
-                  - TCP
-                  - UDP
-                  - SCTP
+                - TCP
+                - UDP
+                - SCTP
                 default: TCP
+          example: []
         resources:
           $ref: '#/components/schemas/ResourceRequirements'
         volumeMounts:
@@ -3047,6 +3368,7 @@ components:
                 type: string
               readOnly:
                 type: boolean
+          example: []
         livenessProbe:
           $ref: '#/components/schemas/Probe'
         readinessProbe:
@@ -3054,10 +3376,11 @@ components:
         imagePullPolicy:
           type: string
           enum:
-            - Always
-            - Never
-            - IfNotPresent
+          - Always
+          - Never
+          - IfNotPresent
 
+          example: Always
     Probe:
       type: object
       description: >-
@@ -3070,20 +3393,22 @@ components:
               type: string
             port:
               oneOf:
-                - type: string
-                - type: integer
+              - type: string
+              - type: integer
             scheme:
               type: string
               enum:
-                - HTTP
-                - HTTPS
+              - HTTP
+              - HTTPS
+          example: example_value
         tcpSocket:
           type: object
           properties:
             port:
               oneOf:
-                - type: string
-                - type: integer
+              - type: string
+              - type: integer
+          example: example_value
         exec:
           type: object
           properties:
@@ -3091,21 +3416,27 @@ components:
               type: array
               items:
                 type: string
+          example: example_value
         initialDelaySeconds:
           type: integer
           format: int32
+          example: 10
         periodSeconds:
           type: integer
           format: int32
+          example: 10
         timeoutSeconds:
           type: integer
           format: int32
+          example: 10
         successThreshold:
           type: integer
           format: int32
+          example: 10
         failureThreshold:
           type: integer
           format: int32
 
+          example: 10
 security:
-  - BearerToken: []
+- BearerToken: []

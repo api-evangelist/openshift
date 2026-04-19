@@ -1,0 +1,7 @@
+{
+  "dockerfilePath": "example_value",
+  "env": [],
+  "noCache": true,
+  "forcePull": true,
+  "buildArgs": []
+}

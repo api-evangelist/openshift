@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Container",
+  "type": "object",
+  "description": "A single application container running within a pod.",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Name of the container."
+    },
+    "image": {
+      "type": "string",
+      "description": "Container image name."
+    },
+    "command": {
+      "type": "array",
+      "description": "Entrypoint array."
+    },
+    "args": {
+      "type": "array",
+      "description": "Arguments to the entrypoint."
+    },
+    "env": {
+      "type": "array"
+    },
+    "ports": {
+      "type": "array"
+    },
+    "volumeMounts": {
+      "type": "array"
+    },
+    "imagePullPolicy": {
+      "type": "string"
+    }
+  }
+}

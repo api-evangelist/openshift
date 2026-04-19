@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-structure.org/draft/2020-12/schema",
+  "name": "Container",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "image": {
+      "type": "string"
+    },
+    "command": {
+      "type": "array"
+    },
+    "args": {
+      "type": "array"
+    },
+    "env": {
+      "type": "array"
+    },
+    "ports": {
+      "type": "array"
+    },
+    "volumeMounts": {
+      "type": "array"
+    },
+    "imagePullPolicy": {
+      "type": "string"
+    }
+  }
+}

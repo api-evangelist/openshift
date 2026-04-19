@@ -1,0 +1,12 @@
+{
+  "phase": "example_value",
+  "cancelled": true,
+  "message": "example_value",
+  "reason": "example_value",
+  "startTimestamp": "example_value",
+  "completionTimestamp": "example_value",
+  "duration": 10,
+  "outputDockerImageReference": "example_value",
+  "output": "example_value",
+  "logSnippet": "example_value"
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-structure.org/draft/2020-12/schema",
+  "name": "BuildSource",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string"
+    },
+    "git": {
+      "type": "object"
+    },
+    "dockerfile": {
+      "type": "string"
+    },
+    "contextDir": {
+      "type": "string"
+    },
+    "sourceSecret": {
+      "type": "object"
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "apiVersion": "example_value",
+  "kind": "example_value",
+  "name": "Example Title",
+  "uid": "500123",
+  "controller": true,
+  "blockOwnerDeletion": true
+}

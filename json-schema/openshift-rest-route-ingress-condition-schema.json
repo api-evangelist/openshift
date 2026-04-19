@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "RouteIngressCondition",
+  "type": "object",
+  "description": "Describes the state of a route at a point in time.",
+  "properties": {
+    "type": {
+      "type": "string",
+      "description": "The type of the condition (e.g., Admitted)."
+    },
+    "status": {
+      "type": "string"
+    },
+    "reason": {
+      "type": "string"
+    },
+    "message": {
+      "type": "string"
+    },
+    "lastTransitionTime": {
+      "type": "string"
+    }
+  }
+}

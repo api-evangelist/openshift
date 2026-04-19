@@ -1,0 +1,5 @@
+{
+  "env": [],
+  "exposeDockerSocket": true,
+  "forcePull": true
+}

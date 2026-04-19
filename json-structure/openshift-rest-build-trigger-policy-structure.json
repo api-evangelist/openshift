@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-structure.org/draft/2020-12/schema",
+  "name": "BuildTriggerPolicy",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string"
+    },
+    "github": {
+      "type": "object"
+    },
+    "generic": {
+      "type": "object"
+    },
+    "imageChange": {
+      "type": "object"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-structure.org/draft/2020-12/schema",
+  "name": "TLSConfig",
+  "type": "object",
+  "properties": {
+    "termination": {
+      "type": "string"
+    },
+    "certificate": {
+      "type": "string"
+    },
+    "key": {
+      "type": "string"
+    },
+    "caCertificate": {
+      "type": "string"
+    },
+    "destinationCACertificate": {
+      "type": "string"
+    },
+    "insecureEdgeTerminationPolicy": {
+      "type": "string"
+    }
+  }
+}

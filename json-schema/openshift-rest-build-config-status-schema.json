@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "BuildConfigStatus",
+  "type": "object",
+  "description": "Status of the BuildConfig.",
+  "properties": {
+    "lastVersion": {
+      "type": "integer",
+      "description": "The version of the last build created from this config."
+    },
+    "imageChangeTriggers": {
+      "type": "array"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "httpGet": "example_value",
+  "tcpSocket": "example_value",
+  "exec": "example_value",
+  "initialDelaySeconds": 10,
+  "periodSeconds": 10,
+  "timeoutSeconds": 10,
+  "successThreshold": 10,
+  "failureThreshold": 10
+}

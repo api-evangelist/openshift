@@ -1,28 +1,29 @@
 # OpenShift API (openshift)
-A comprehensive API definition for Red Hat OpenShift, the enterprise Kubernetes platform
+A comprehensive API definition for Red Hat OpenShift, the enterprise Kubernetes platform.
 
-**URL:** [Visit APIs.json URL](https://openshift.com/apis.yml)
+**URL:** [Visit APIs.json URL](https://raw.githubusercontent.com/api-evangelist/openshift/refs/heads/main/apis.yml)
+
+**Run:** [Capabilities Using Naftiko](https://github.com/naftiko/fleet?utm_source=api-evangelist&utm_medium=readme&utm_campaign=company-api-evangelist&utm_content=repo)
 
 ## Tags:
 
- - Kubernetes, Containers, PaaS, Cloud Native, DevOps, CI/CD, Enterprise
+ - CI/CD, Cloud Native, Containers, DevOps, Enterprise, Kubernetes, PaaS
 
 ## Timestamps
 
-- **Created:** 2024-01-01 
-- **Modified:** 2024-01-01 
+- **Created:** 2024-01-01
+- **Modified:** 2026-04-18
 
 ## APIs
 
 ### OpenShift REST API
-Main REST API for managing OpenShift clusters, projects, and resources
+Main REST API for managing OpenShift clusters, projects, and resources.
 
 **Human URL:** [https://docs.openshift.com/](https://docs.openshift.com/)
 
-
 #### Tags:
 
- - Kubernetes, Containers, Platform, Cloud
+ - Cloud, Containers, Kubernetes, Platform
 
 #### Properties
 
@@ -31,86 +32,72 @@ Main REST API for managing OpenShift clusters, projects, and resources
 - [Authentication](https://docs.openshift.com/container-platform/latest/authentication/index.html)
 - [Pricing](https://www.redhat.com/en/technologies/cloud-computing/openshift/pricing)
 - [Support](https://access.redhat.com/support)
-- [Status](https://status.openshift.com/)
-- [SDKs](https://github.com/openshift/client-go)
+- [StatusPage](https://status.openshift.com/)
+- [SDK](https://github.com/openshift/client-go)
 - [RateLimits](https://docs.openshift.com/container-platform/latest/rest_api/understanding-api-support-tiers.html)
-
-### OpenShift OAuth API
-OAuth authentication and authorization API for OpenShift
-
-
-#### Tags:
-
- - Authentication, OAuth, Security
-
-#### Properties
-
-- [Documentation](https://docs.openshift.com/container-platform/latest/authentication/understanding-authentication.html)
-- [OpenAPI](https://oauth-openshift.apps.openshift.com/swagger.json)
-
-### OpenShift Routes API
-API for managing application routes and ingress
-
-
-#### Tags:
-
- - Routing, Networking, Ingress
-
-#### Properties
-
-- [Documentation](https://docs.openshift.com/container-platform/latest/networking/routes/route-configuration.html)
-
-### OpenShift Build API
-API for managing application builds and build configurations
-
-
-#### Tags:
-
- - CI/CD, Builds, Source-to-Image
-
-#### Properties
-
-- [Documentation](https://docs.openshift.com/container-platform/latest/cicd/builds/understanding-builds.html)
-
-### OpenShift Image API
-API for managing container images and image streams
-
-
-#### Tags:
-
- - Images, Registry, Containers
-
-#### Properties
-
-- [Documentation](https://docs.openshift.com/container-platform/latest/openshift_images/index.html)
-
-### OpenShift Project API
-API for managing OpenShift projects (namespace extensions)
-
-
-#### Tags:
-
- - Projects, Namespaces, Multi-tenancy
-
-#### Properties
-
-- [Documentation](https://docs.openshift.com/container-platform/latest/applications/projects/working-with-projects.html)
+- [GettingStarted](https://docs.redhat.com/en/documentation/openshift_container_platform/4.17/html/release_notes/index)
 
 ## Common Properties
 
 - [GettingStarted](https://www.openshift.com/try)
 - [Blog](https://www.openshift.com/blog)
-- [GitHub](https://github.com/openshift)
-- [Learning](https://learn.openshift.com/)
-- [Forum](https://developers.redhat.com/products/openshift/overview)
-- [YouTube](https://www.youtube.com/c/OpenShift)
-- [Twitter](https://twitter.com/openshift)
-- [Security](https://access.redhat.com/security/team/contact/)
-- [Terms](https://www.redhat.com/en/about/terms-use)
-- [Privacy](https://www.redhat.com/en/about/privacy-policy)
+- [GitHubOrganization](https://github.com/openshift)
+- [TermsOfService](https://www.redhat.com/en/about/terms-use)
+- [PrivacyPolicy](https://www.redhat.com/en/about/privacy-policy)
+- [ChangeLog](https://docs.redhat.com/en/documentation/openshift_container_platform/4.17/html/release_notes/ocp-4-17-release-notes)
+- [Login](https://console.redhat.com/openshift)
+
+## Features
+
+| Name | Description |
+|------|-------------|
+| Enterprise Kubernetes | Production-grade Kubernetes platform with built-in security, monitoring, and lifecycle management. |
+| Source-to-Image Builds | Automated container image builds directly from source code repositories. |
+| Operator Framework | Lifecycle management for complex applications through Kubernetes Operators and OperatorHub. |
+| Multi-Cluster Management | Centralized management of multiple OpenShift clusters across cloud providers. |
+| Built-in Monitoring | Integrated Prometheus, Alertmanager, and Grafana for cluster and application observability. |
+
+## Use Cases
+
+| Name | Description |
+|------|-------------|
+| Application Modernization | Migrate monolithic applications to containerized microservices on Kubernetes. |
+| CI/CD Pipelines | Automate build, test, and deployment workflows with integrated pipeline capabilities. |
+| Edge Computing | Deploy and manage applications at edge locations with lightweight OpenShift deployments. |
+| Hybrid Cloud Deployment | Run consistent workloads across on-premise, public cloud, and edge environments. |
+
+## Integrations
+
+| Name | Description |
+|------|-------------|
+| Cloud Providers | Native integration with AWS (ROSA), Azure (ARO), GCP, and IBM Cloud for managed deployments. |
+| CI/CD Tools | Integration with Jenkins, Tekton, GitLab CI, and GitHub Actions for automated pipelines. |
+| Service Mesh | Integration with Istio-based service mesh for traffic management, security, and observability. |
+
+## Artifacts
+
+Machine-readable API specifications organized by format.
+
+### OpenAPI
+
+- [OpenShift REST API](openapi/openshift-rest-api-openapi.yml)
+
+## Capabilities
+
+Naftiko capabilities organized as shared per-API definitions composed into customer-facing workflows.
+
+### Shared Per-API Definitions
+
+- [REST API](capabilities/shared/rest-api.yaml) -- 13 operations for project, build, deployment, pod, and cluster resource management
+
+### Workflow Capabilities
+
+| Workflow | APIs Combined | Tools | Persona |
+|----------|--------------|-------|---------|
+| [Platform Management](capabilities/platform-management.yaml) | REST API | 13 | Platform Engineer |
 
 ## Maintainers
 
-**FN:** Red Hat
+**FN:** Kin Lane
 
-**Email:** openshift-dev@redhat.com
+**Email:** kin@apievangelist.com

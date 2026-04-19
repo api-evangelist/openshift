@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-structure.org/draft/2020-12/schema",
+  "name": "BuildSpec",
+  "type": "object",
+  "properties": {
+    "serviceAccount": {
+      "type": "string"
+    },
+    "completionDeadlineSeconds": {
+      "type": "integer"
+    },
+    "nodeSelector": {
+      "type": "object"
+    },
+    "triggeredBy": {
+      "type": "array"
+    }
+  }
+}

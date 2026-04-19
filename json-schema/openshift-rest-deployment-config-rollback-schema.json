@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "DeploymentConfigRollback",
+  "type": "object",
+  "description": "A request to roll back a deployment to a previous version.",
+  "properties": {
+    "apiVersion": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string",
+      "description": "Name of the deployment config to roll back."
+    },
+    "spec": {
+      "type": "object"
+    }
+  }
+}

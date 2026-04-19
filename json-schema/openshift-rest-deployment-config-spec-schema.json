@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "DeploymentConfigSpec",
+  "type": "object",
+  "description": "Specification for the desired deployment behavior.",
+  "properties": {
+    "replicas": {
+      "type": "integer",
+      "description": "The desired number of pod replicas."
+    },
+    "selector": {
+      "type": "object",
+      "description": "Label selector for pods managed by this deployment."
+    },
+    "triggers": {
+      "type": "array",
+      "description": "Triggers that cause new deployments to be created."
+    },
+    "minReadySeconds": {
+      "type": "integer",
+      "description": "Minimum number of seconds a newly created pod should be ready without any of its containers crashing before considered available."
+    },
+    "revisionHistoryLimit": {
+      "type": "integer",
+      "description": "Number of old ReplicationControllers to retain for rollback."
+    },
+    "paused": {
+      "type": "boolean",
+      "description": "Indicates that the deployment config is paused and new deployments will not be triggered."
+    },
+    "test": {
+      "type": "boolean",
+      "description": "If true, deployments are scaled down to zero after the deployment completes."
+    }
+  }
+}

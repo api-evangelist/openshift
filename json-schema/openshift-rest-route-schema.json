@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Route",
+  "type": "object",
+  "description": "A Route exposes a service at a hostname, enabling external access to applications in the cluster. Routes support TLS termination strategies including edge, passthrough, and re-encrypt.",
+  "properties": {
+    "apiVersion": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string"
+    }
+  }
+}

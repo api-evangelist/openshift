@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "BuildTriggerPolicy",
+  "type": "object",
+  "description": "A policy that causes a new build to be created.",
+  "properties": {
+    "type": {
+      "type": "string",
+      "description": "The type of build trigger."
+    },
+    "github": {
+      "type": "object"
+    },
+    "generic": {
+      "type": "object"
+    },
+    "imageChange": {
+      "type": "object"
+    }
+  }
+}

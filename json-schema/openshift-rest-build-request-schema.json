@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "BuildRequest",
+  "type": "object",
+  "description": "A request to instantiate a new build from a BuildConfig.",
+  "properties": {
+    "apiVersion": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string"
+    },
+    "triggeredBy": {
+      "type": "array"
+    },
+    "env": {
+      "type": "array"
+    }
+  }
+}

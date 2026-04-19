@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PodSpec",
+  "type": "object",
+  "description": "Specification of the desired behavior of a pod.",
+  "properties": {
+    "containers": {
+      "type": "array",
+      "description": "List of containers in the pod."
+    },
+    "initContainers": {
+      "type": "array",
+      "description": "List of initialization containers."
+    },
+    "restartPolicy": {
+      "type": "string"
+    },
+    "serviceAccountName": {
+      "type": "string",
+      "description": "Name of the ServiceAccount to use for the pod."
+    },
+    "nodeSelector": {
+      "type": "object"
+    },
+    "volumes": {
+      "type": "array"
+    }
+  }
+}

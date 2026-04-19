@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "DeploymentCondition",
+  "type": "object",
+  "description": "Describes the state of a deployment at a point in time.",
+  "properties": {
+    "type": {
+      "type": "string",
+      "description": "The type of condition."
+    },
+    "status": {
+      "type": "string"
+    },
+    "reason": {
+      "type": "string"
+    },
+    "message": {
+      "type": "string"
+    },
+    "lastUpdateTime": {
+      "type": "string"
+    },
+    "lastTransitionTime": {
+      "type": "string"
+    }
+  }
+}

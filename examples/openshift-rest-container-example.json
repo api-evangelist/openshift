@@ -1,0 +1,10 @@
+{
+  "name": "Example Title",
+  "image": "example_value",
+  "command": [],
+  "args": [],
+  "env": [],
+  "ports": [],
+  "volumeMounts": [],
+  "imagePullPolicy": "example_value"
+}

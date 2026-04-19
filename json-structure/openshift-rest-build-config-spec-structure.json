@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-structure.org/draft/2020-12/schema",
+  "name": "BuildConfigSpec",
+  "type": "object",
+  "properties": {
+    "triggers": {
+      "type": "array"
+    },
+    "runPolicy": {
+      "type": "string"
+    },
+    "serviceAccount": {
+      "type": "string"
+    },
+    "completionDeadlineSeconds": {
+      "type": "integer"
+    },
+    "successfulBuildsHistoryLimit": {
+      "type": "integer"
+    },
+    "failedBuildsHistoryLimit": {
+      "type": "integer"
+    },
+    "nodeSelector": {
+      "type": "object"
+    }
+  }
+}
