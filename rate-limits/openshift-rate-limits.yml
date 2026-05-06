@@ -4,213 +4,57 @@ schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main
 provider: OpenShift
 providerId: openshift
 created: '2026-05-04'
-modified: '2026-05-04'
+modified: '2026-05-05'
+reconciled: false
 tags:
-  - CI/CD
-  - Cloud Native
   - Containers
-  - DevOps
-  - Enterprise
   - Kubernetes
-  - PaaS
   - Rate Limiting
-  - Quotas
-  - Throttling
-description: Machine-readable rate limit definitions for the OpenShift API surface. Captures per-tier
-  quotas, burst behavior, response signaling, and recovery semantics. Defaults are scaffold values to
-  be replaced with published provider limits.
-headers:
-  limit: X-RateLimit-Limit
-  remaining: X-RateLimit-Remaining
-  reset: X-RateLimit-Reset
-  retryAfter: Retry-After
-  policy: RateLimit-Policy
+notes: OpenShift exposes the upstream Kubernetes API. Rate limits are not centrally published as a per-customer
+  table because they are enforced by the cluster's own kube-apiserver flow control (APF / Priority and
+  Fairness). The Red Hat managed-service control planes (api.openshift.com, OpenShift Cluster Manager
+  API) apply provider-side throttling but do not publish numeric quotas; they emit standard 429s with
+  Retry-After.
+description: OpenShift inherits Kubernetes API Priority and Fairness (APF) flow control on the cluster
+  kube-apiserver. The hosted Red Hat services (Cluster Manager / OCM API) enforce account-scoped throttling
+  but do not publish numeric per-second limits; clients should honor 429 + Retry-After. Concurrent operations
+  on the same resource use optimistic concurrency (resourceVersion); conflict surfaces as HTTP 409.
+sources:
+  - https://kubernetes.io/docs/concepts/cluster-administration/flow-control/
+  - https://docs.openshift.com/
+  - https://api.openshift.com/
 responseCodes:
   throttled: 429
-  quotaExceeded: 429
-  serviceUnavailable: 503
+  conflict: 409
+  unavailable: 503
 limits:
-  - tier: free
-    name: Free Tier Default
-    scope: api-key
-    metric: requests_per_minute
-    limit: 10
-    burst: 20
-    timeFrame: minute
-    applies:
-      - OpenShift REST API
-      - OpenShift OAuth API
-      - OpenShift Routes API
-      - OpenShift Build API
-      - OpenShift Image API
-      - OpenShift Project API
-      - OpenShift Workloads API
-      - OpenShift Network API
-      - OpenShift Storage API
-      - OpenShift Authorization API
-      - OpenShift Autoscale API
-      - OpenShift Config API
-      - OpenShift Console API
-      - OpenShift Cluster API
-      - OpenShift Machine API
-      - OpenShift Operator API
-      - OpenShift OperatorHub API
-      - OpenShift Template API
-      - OpenShift Security API
-      - OpenShift RBAC API
-      - OpenShift Node API
-      - OpenShift Monitoring API
-      - OpenShift Provisioning API
-      - OpenShift Schedule and Quota API
-      - OpenShift Metadata API
-      - OpenShift Cluster Manager API
-  - tier: free
-    name: Free Tier Monthly Quota
-    scope: api-key
-    metric: requests_per_month
-    limit: 1000
-    timeFrame: month
-    applies:
-      - OpenShift REST API
-      - OpenShift OAuth API
-      - OpenShift Routes API
-      - OpenShift Build API
-      - OpenShift Image API
-      - OpenShift Project API
-      - OpenShift Workloads API
-      - OpenShift Network API
-      - OpenShift Storage API
-      - OpenShift Authorization API
-      - OpenShift Autoscale API
-      - OpenShift Config API
-      - OpenShift Console API
-      - OpenShift Cluster API
-      - OpenShift Machine API
-      - OpenShift Operator API
-      - OpenShift OperatorHub API
-      - OpenShift Template API
-      - OpenShift Security API
-      - OpenShift RBAC API
-      - OpenShift Node API
-      - OpenShift Monitoring API
-      - OpenShift Provisioning API
-      - OpenShift Schedule and Quota API
-      - OpenShift Metadata API
-      - OpenShift Cluster Manager API
-  - tier: professional
-    name: Professional Tier Default
-    scope: api-key
-    metric: requests_per_minute
-    limit: 100
-    burst: 200
-    timeFrame: minute
-    applies:
-      - OpenShift REST API
-      - OpenShift OAuth API
-      - OpenShift Routes API
-      - OpenShift Build API
-      - OpenShift Image API
-      - OpenShift Project API
-      - OpenShift Workloads API
-      - OpenShift Network API
-      - OpenShift Storage API
-      - OpenShift Authorization API
-      - OpenShift Autoscale API
-      - OpenShift Config API
-      - OpenShift Console API
-      - OpenShift Cluster API
-      - OpenShift Machine API
-      - OpenShift Operator API
-      - OpenShift OperatorHub API
-      - OpenShift Template API
-      - OpenShift Security API
-      - OpenShift RBAC API
-      - OpenShift Node API
-      - OpenShift Monitoring API
-      - OpenShift Provisioning API
-      - OpenShift Schedule and Quota API
-      - OpenShift Metadata API
-      - OpenShift Cluster Manager API
-  - tier: professional
-    name: Professional Tier Monthly Quota
-    scope: api-key
-    metric: requests_per_month
-    limit: 100000
-    timeFrame: month
-    applies:
-      - OpenShift REST API
-      - OpenShift OAuth API
-      - OpenShift Routes API
-      - OpenShift Build API
-      - OpenShift Image API
-      - OpenShift Project API
-      - OpenShift Workloads API
-      - OpenShift Network API
-      - OpenShift Storage API
-      - OpenShift Authorization API
-      - OpenShift Autoscale API
-      - OpenShift Config API
-      - OpenShift Console API
-      - OpenShift Cluster API
-      - OpenShift Machine API
-      - OpenShift Operator API
-      - OpenShift OperatorHub API
-      - OpenShift Template API
-      - OpenShift Security API
-      - OpenShift RBAC API
-      - OpenShift Node API
-      - OpenShift Monitoring API
-      - OpenShift Provisioning API
-      - OpenShift Schedule and Quota API
-      - OpenShift Metadata API
-      - OpenShift Cluster Manager API
-  - tier: enterprise
-    name: Enterprise Negotiated Limit
-    scope: contract
-    metric: requests_per_minute
-    limit: 1000
-    burst: 5000
-    timeFrame: minute
-    applies:
-      - OpenShift REST API
-      - OpenShift OAuth API
-      - OpenShift Routes API
-      - OpenShift Build API
-      - OpenShift Image API
-      - OpenShift Project API
-      - OpenShift Workloads API
-      - OpenShift Network API
-      - OpenShift Storage API
-      - OpenShift Authorization API
-      - OpenShift Autoscale API
-      - OpenShift Config API
-      - OpenShift Console API
-      - OpenShift Cluster API
-      - OpenShift Machine API
-      - OpenShift Operator API
-      - OpenShift OperatorHub API
-      - OpenShift Template API
-      - OpenShift Security API
-      - OpenShift RBAC API
-      - OpenShift Node API
-      - OpenShift Monitoring API
-      - OpenShift Provisioning API
-      - OpenShift Schedule and Quota API
-      - OpenShift Metadata API
-      - OpenShift Cluster Manager API
+  - name: kube-apiserver flow control (per cluster)
+    scope: cluster
+    metric: varies
+    limit: configured by APF FlowSchemas / PriorityLevelConfigurations on the cluster
+    notes: Operators can tune APF; defaults reserve capacity for system components and rate-limit other
+      flows.
+  - name: OpenShift Cluster Manager API (api.openshift.com)
+    scope: account
+    metric: requests_per_second
+    limit: see Red Hat Cluster Manager docs
+    notes: Provider-side throttling on the hosted control plane; not published per-tier.
+  - name: OAuth token endpoint
+    scope: client
+    metric: varies
+    limit: see oauth-openshift cluster operator config
 policies:
-  - name: Backoff Strategy
-    description: Clients should implement exponential backoff with jitter, honoring the Retry-After header
-      when present.
-  - name: Burst Handling
-    description: Short bursts above the steady-state limit are tolerated up to the documented burst ceiling
-      before throttling engages.
-  - name: Quota Reset
-    description: Monthly quotas reset at the start of each calendar month in UTC. Per-minute and per-second
-      windows reset on a sliding-window basis.
-  - name: Fair Use
-    description: Even on uncapped enterprise tiers, sustained usage that materially impacts shared infrastructure
-      may be subject to fair-use throttling.
+  - name: APF fairness
+    description: kube-apiserver flow control fairly schedules requests across configured priority levels;
+      excess requests beyond a level's concurrency get queued or rejected with 429.
+  - name: Backoff
+    description: Honor Retry-After on 429 responses; for 409 conflicts, refetch the resourceVersion and
+      retry the update with optimistic concurrency.
+  - name: Watch and informers
+    description: Prefer watch-based informers over polling to avoid API server pressure.
+  - name: Quota objects
+    description: Namespace ResourceQuota and LimitRange objects are admission-time controls, not rate
+      limits — they bound resource consumption, not request frequency.
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
