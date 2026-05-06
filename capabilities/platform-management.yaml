@@ -1,45 +1,262 @@
-naftiko: "1.0.0-alpha1"
+naftiko: 1.0.0-alpha2
 info:
-  label: "OpenShift Platform Management"
-  description: "Unified platform management capability for OpenShift clusters including projects, builds, deployments, routes, and monitoring. Used by platform engineers and cluster administrators."
-  tags: [OpenShift, Kubernetes, Platform, DevOps]
-  created: "2026-04-18"
-  modified: "2026-04-18"
+  label: OpenShift Platform Management
+  description: Unified platform management capability for OpenShift clusters including projects, builds, deployments, routes,
+    and monitoring. Used by platform engineers and cluster administrators.
+  tags:
+  - OpenShift
+  - Kubernetes
+  - Platform
+  - DevOps
+  created: '2026-04-18'
+  modified: '2026-05-06'
 binds:
-  - namespace: env
-    keys:
-      OPENSHIFT_TOKEN: OPENSHIFT_TOKEN
+- namespace: env
+  keys:
+    OPENSHIFT_TOKEN: OPENSHIFT_TOKEN
 capability:
   consumes:
-    - import: rest-api
-      location: ./shared/rest-api.yaml
+  - type: http
+    namespace: rest-api
+    baseUri: https://api.openshift.com
+    description: OpenShift REST API for cluster and resource management.
+    authentication:
+      type: bearer
+      token: '{{OPENSHIFT_TOKEN}}'
+    resources:
+    - name: platform
+      path: /
+      description: OpenShift platform resources
+      operations:
+      - name: list-projects
+        method: GET
+        description: List OpenShift projects
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: get-project
+        method: GET
+        description: Get project details
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: list-builds
+        method: GET
+        description: List builds
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: list-routes
+        method: GET
+        description: List routes
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: list-deployments
+        method: GET
+        description: List deployments
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: list-pods
+        method: GET
+        description: List pods
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: get-pod
+        method: GET
+        description: Get pod details
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: list-services
+        method: GET
+        description: List services
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: list-configmaps
+        method: GET
+        description: List config maps
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: list-nodes
+        method: GET
+        description: List nodes
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: list-operators
+        method: GET
+        description: List operators
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: list-images
+        method: GET
+        description: List image streams
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: list-storage
+        method: GET
+        description: List persistent volumes
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
   exposes:
-    - type: rest
-      port: 8080
-      namespace: platform-management-api
-      description: "Unified REST API for OpenShift platform management."
-      resources:
-        - path: /v1/projects
-          name: projects
-          description: "Project management"
-          operations:
-            - { method: GET, name: list-projects, description: "List projects", call: "rest-api.list-projects", outputParameters: [{ type: object, mapping: "$." }] }
-    - type: mcp
-      port: 9090
-      namespace: platform-management-mcp
-      transport: http
-      description: "MCP server for AI-assisted OpenShift platform management."
-      tools:
-        - { name: list-projects, description: "List OpenShift projects", hints: { readOnly: true, openWorld: true }, call: "rest-api.list-projects", outputParameters: [{ type: object, mapping: "$." }] }
-        - { name: get-project, description: "Get project details", hints: { readOnly: true }, call: "rest-api.get-project", outputParameters: [{ type: object, mapping: "$." }] }
-        - { name: list-builds, description: "List builds", hints: { readOnly: true }, call: "rest-api.list-builds", outputParameters: [{ type: object, mapping: "$." }] }
-        - { name: list-routes, description: "List routes", hints: { readOnly: true }, call: "rest-api.list-routes", outputParameters: [{ type: object, mapping: "$." }] }
-        - { name: list-deployments, description: "List deployments", hints: { readOnly: true }, call: "rest-api.list-deployments", outputParameters: [{ type: object, mapping: "$." }] }
-        - { name: list-pods, description: "List pods", hints: { readOnly: true }, call: "rest-api.list-pods", outputParameters: [{ type: object, mapping: "$." }] }
-        - { name: get-pod, description: "Get pod details", hints: { readOnly: true }, call: "rest-api.get-pod", outputParameters: [{ type: object, mapping: "$." }] }
-        - { name: list-services, description: "List services", hints: { readOnly: true }, call: "rest-api.list-services", outputParameters: [{ type: object, mapping: "$." }] }
-        - { name: list-configmaps, description: "List config maps", hints: { readOnly: true }, call: "rest-api.list-configmaps", outputParameters: [{ type: object, mapping: "$." }] }
-        - { name: list-nodes, description: "List cluster nodes", hints: { readOnly: true }, call: "rest-api.list-nodes", outputParameters: [{ type: object, mapping: "$." }] }
-        - { name: list-operators, description: "List installed operators", hints: { readOnly: true }, call: "rest-api.list-operators", outputParameters: [{ type: object, mapping: "$." }] }
-        - { name: list-images, description: "List image streams", hints: { readOnly: true }, call: "rest-api.list-images", outputParameters: [{ type: object, mapping: "$." }] }
-        - { name: list-storage, description: "List persistent volumes", hints: { readOnly: true }, call: "rest-api.list-storage", outputParameters: [{ type: object, mapping: "$." }] }
+  - type: rest
+    port: 8080
+    namespace: platform-management-api
+    description: Unified REST API for OpenShift platform management.
+    resources:
+    - path: /v1/projects
+      name: projects
+      description: Project management
+      operations:
+      - method: GET
+        name: list-projects
+        description: List projects
+        call: rest-api.list-projects
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    port: 9090
+    namespace: platform-management-mcp
+    transport: http
+    description: MCP server for AI-assisted OpenShift platform management.
+    tools:
+    - name: list-projects
+      description: List OpenShift projects
+      hints:
+        readOnly: true
+        openWorld: true
+      call: rest-api.list-projects
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-project
+      description: Get project details
+      hints:
+        readOnly: true
+      call: rest-api.get-project
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-builds
+      description: List builds
+      hints:
+        readOnly: true
+      call: rest-api.list-builds
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-routes
+      description: List routes
+      hints:
+        readOnly: true
+      call: rest-api.list-routes
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-deployments
+      description: List deployments
+      hints:
+        readOnly: true
+      call: rest-api.list-deployments
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-pods
+      description: List pods
+      hints:
+        readOnly: true
+      call: rest-api.list-pods
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-pod
+      description: Get pod details
+      hints:
+        readOnly: true
+      call: rest-api.get-pod
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-services
+      description: List services
+      hints:
+        readOnly: true
+      call: rest-api.list-services
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-configmaps
+      description: List config maps
+      hints:
+        readOnly: true
+      call: rest-api.list-configmaps
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-nodes
+      description: List cluster nodes
+      hints:
+        readOnly: true
+      call: rest-api.list-nodes
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-operators
+      description: List installed operators
+      hints:
+        readOnly: true
+      call: rest-api.list-operators
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-images
+      description: List image streams
+      hints:
+        readOnly: true
+      call: rest-api.list-images
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-storage
+      description: List persistent volumes
+      hints:
+        readOnly: true
+      call: rest-api.list-storage
+      outputParameters:
+      - type: object
+        mapping: $.
