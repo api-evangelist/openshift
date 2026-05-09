@@ -1,0 +1,13 @@
+{
+  "repo": "openshift",
+  "feeds": [
+    {
+      "source": "https://www.openshift.com/blog",
+      "feed_url": "https://www.openshift.com/blog/rss.xml",
+      "title": "Red Hat Blog",
+      "saved": 10
+    }
+  ],
+  "fetched": "2026-05-09T20:17:51Z",
+  "post_count": 10
+}
