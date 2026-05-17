@@ -43,7 +43,7 @@ apis:
         url: https://www.redhat.com/en/technologies/cloud-computing/openshift/pricing
       - type: Support
         url: https://access.redhat.com/support
-      - type: Status
+      - type: StatusPage
         url: https://status.openshift.com/
       - type: SDK
         url: https://github.com/openshift/client-go
