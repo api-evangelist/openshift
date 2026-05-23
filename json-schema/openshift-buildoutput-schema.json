@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/BuildOutput",
+  "title": "BuildOutput",
+  "type": "object",
+  "description": "Specifies where the resulting container image is pushed.",
+  "properties": {
+    "to": {
+      "$ref": "#/components/schemas/ObjectReference"
+    },
+    "pushSecret": {
+      "type": "object",
+      "description": "Secret holding credentials for pushing to the output registry.",
+      "properties": {
+        "name": {
+          "type": "string"
+        }
+      },
+      "example": "example_value"
+    }
+  }
+}

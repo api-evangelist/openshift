@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/BuildTriggerPolicy",
+  "title": "BuildTriggerPolicy",
+  "type": "object",
+  "description": "A policy that causes a new build to be created.",
+  "properties": {
+    "type": {
+      "type": "string",
+      "description": "The type of build trigger.",
+      "enum": [
+        "GitHub",
+        "GitLab",
+        "Bitbucket",
+        "Generic",
+        "ImageChange",
+        "ConfigChange"
+      ],
+      "example": "GitHub"
+    },
+    "github": {
+      "type": "object",
+      "properties": {
+        "secret": {
+          "type": "string",
+          "description": "Secret value for the webhook URL."
+        },
+        "secretReference": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "example": "example_value"
+    },
+    "generic": {
+      "type": "object",
+      "properties": {
+        "secret": {
+          "type": "string"
+        },
+        "secretReference": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            }
+          }
+        },
+        "allowEnv": {
+          "type": "boolean"
+        }
+      },
+      "example": "example_value"
+    },
+    "imageChange": {
+      "type": "object",
+      "properties": {
+        "from": {
+          "$ref": "#/components/schemas/ObjectReference"
+        },
+        "lastTriggeredImageID": {
+          "type": "string"
+        }
+      },
+      "example": "example_value"
+    }
+  }
+}

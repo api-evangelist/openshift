@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/BuildConfigSpec",
+  "title": "BuildConfigSpec",
+  "type": "object",
+  "description": "Specification of the desired BuildConfig behavior.",
+  "properties": {
+    "source": {
+      "$ref": "#/components/schemas/BuildSource"
+    },
+    "strategy": {
+      "$ref": "#/components/schemas/BuildStrategy"
+    },
+    "output": {
+      "$ref": "#/components/schemas/BuildOutput"
+    },
+    "resources": {
+      "$ref": "#/components/schemas/ResourceRequirements"
+    },
+    "triggers": {
+      "type": "array",
+      "description": "Triggers that cause new builds to be created.",
+      "items": {
+        "$ref": "#/components/schemas/BuildTriggerPolicy"
+      },
+      "example": []
+    },
+    "runPolicy": {
+      "type": "string",
+      "description": "Controls how builds from this config run concurrently.",
+      "enum": [
+        "Serial",
+        "Parallel",
+        "SerialLatestOnly"
+      ],
+      "default": "Serial",
+      "example": "Serial"
+    },
+    "serviceAccount": {
+      "type": "string",
+      "description": "The ServiceAccount to run the build pod as.",
+      "default": "builder",
+      "example": "example_value"
+    },
+    "completionDeadlineSeconds": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Optional duration in seconds builds may be active before being terminated.",
+      "example": 10
+    },
+    "successfulBuildsHistoryLimit": {
+      "type": "integer",
+      "format": "int32",
+      "description": "Number of successful builds to retain.",
+      "example": 10
+    },
+    "failedBuildsHistoryLimit": {
+      "type": "integer",
+      "format": "int32",
+      "description": "Number of failed builds to retain.",
+      "example": 10
+    },
+    "nodeSelector": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "example": "example_value"
+    }
+  }
+}

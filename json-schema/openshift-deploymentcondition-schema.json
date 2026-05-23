@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/DeploymentCondition",
+  "title": "DeploymentCondition",
+  "type": "object",
+  "description": "Describes the state of a deployment at a point in time.",
+  "properties": {
+    "type": {
+      "type": "string",
+      "description": "The type of condition.",
+      "enum": [
+        "Available",
+        "Progressing",
+        "ReplicaFailure"
+      ],
+      "example": "Available"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "True",
+        "False",
+        "Unknown"
+      ],
+      "example": "True"
+    },
+    "reason": {
+      "type": "string",
+      "example": "example_value"
+    },
+    "message": {
+      "type": "string",
+      "example": "example_value"
+    },
+    "lastUpdateTime": {
+      "type": "string",
+      "format": "date-time",
+      "example": "2026-01-15T10:30:00Z"
+    },
+    "lastTransitionTime": {
+      "type": "string",
+      "format": "date-time",
+      "example": "2026-01-15T10:30:00Z"
+    }
+  }
+}

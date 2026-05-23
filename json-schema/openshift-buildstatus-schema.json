@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/BuildStatus",
+  "title": "BuildStatus",
+  "type": "object",
+  "description": "Status of the build execution.",
+  "properties": {
+    "phase": {
+      "type": "string",
+      "description": "The current phase of the build.",
+      "enum": [
+        "New",
+        "Pending",
+        "Running",
+        "Complete",
+        "Failed",
+        "Error",
+        "Cancelled"
+      ],
+      "example": "New"
+    },
+    "cancelled": {
+      "type": "boolean",
+      "description": "Whether the build was cancelled.",
+      "example": true
+    },
+    "message": {
+      "type": "string",
+      "description": "Human-readable message about the build status.",
+      "example": "example_value"
+    },
+    "reason": {
+      "type": "string",
+      "description": "Brief machine-readable reason for the build status.",
+      "example": "example_value"
+    },
+    "startTimestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp when the build started running.",
+      "example": "2026-01-15T10:30:00Z"
+    },
+    "completionTimestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp when the build completed.",
+      "example": "2026-01-15T10:30:00Z"
+    },
+    "duration": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Duration of the build in nanoseconds.",
+      "example": 10
+    },
+    "outputDockerImageReference": {
+      "type": "string",
+      "description": "The Docker image reference of the built image.",
+      "example": "example_value"
+    },
+    "config": {
+      "$ref": "#/components/schemas/ObjectReference"
+    },
+    "output": {
+      "type": "object",
+      "description": "Build output details.",
+      "properties": {
+        "to": {
+          "type": "object",
+          "properties": {
+            "imageDigest": {
+              "type": "string",
+              "description": "The image digest of the pushed image."
+            }
+          }
+        }
+      },
+      "example": "example_value"
+    },
+    "logSnippet": {
+      "type": "string",
+      "description": "The last few lines of the build log for failed builds.",
+      "example": "example_value"
+    }
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Container",
+  "title": "Container",
+  "type": "object",
+  "description": "A single application container running within a pod.",
+  "required": [
+    "name",
+    "image"
+  ],
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Name of the container.",
+      "example": "Example Title"
+    },
+    "image": {
+      "type": "string",
+      "description": "Container image name.",
+      "example": "example_value"
+    },
+    "command": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Entrypoint array.",
+      "example": []
+    },
+    "args": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Arguments to the entrypoint.",
+      "example": []
+    },
+    "env": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/EnvVar"
+      },
+      "example": []
+    },
+    "ports": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "containerPort": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "protocol": {
+            "type": "string",
+            "enum": [
+              "TCP",
+              "UDP",
+              "SCTP"
+            ],
+            "default": "TCP"
+          }
+        }
+      },
+      "example": []
+    },
+    "resources": {
+      "$ref": "#/components/schemas/ResourceRequirements"
+    },
+    "volumeMounts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "mountPath": {
+            "type": "string"
+          },
+          "readOnly": {
+            "type": "boolean"
+          }
+        }
+      },
+      "example": []
+    },
+    "livenessProbe": {
+      "$ref": "#/components/schemas/Probe"
+    },
+    "readinessProbe": {
+      "$ref": "#/components/schemas/Probe"
+    },
+    "imagePullPolicy": {
+      "type": "string",
+      "enum": [
+        "Always",
+        "Never",
+        "IfNotPresent"
+      ],
+      "example": "Always"
+    }
+  }
+}

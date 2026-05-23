@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Probe",
+  "title": "Probe",
+  "type": "object",
+  "description": "Describes a health check to be performed against a container.",
+  "properties": {
+    "httpGet": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "string"
+        },
+        "port": {
+          "oneOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "integer"
+            }
+          ]
+        },
+        "scheme": {
+          "type": "string",
+          "enum": [
+            "HTTP",
+            "HTTPS"
+          ]
+        }
+      },
+      "example": "example_value"
+    },
+    "tcpSocket": {
+      "type": "object",
+      "properties": {
+        "port": {
+          "oneOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "integer"
+            }
+          ]
+        }
+      },
+      "example": "example_value"
+    },
+    "exec": {
+      "type": "object",
+      "properties": {
+        "command": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "example": "example_value"
+    },
+    "initialDelaySeconds": {
+      "type": "integer",
+      "format": "int32",
+      "example": 10
+    },
+    "periodSeconds": {
+      "type": "integer",
+      "format": "int32",
+      "example": 10
+    },
+    "timeoutSeconds": {
+      "type": "integer",
+      "format": "int32",
+      "example": 10
+    },
+    "successThreshold": {
+      "type": "integer",
+      "format": "int32",
+      "example": 10
+    },
+    "failureThreshold": {
+      "type": "integer",
+      "format": "int32",
+      "example": 10
+    }
+  }
+}

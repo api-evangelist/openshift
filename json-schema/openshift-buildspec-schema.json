@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/BuildSpec",
+  "title": "BuildSpec",
+  "type": "object",
+  "description": "Specification of the desired build behavior.",
+  "properties": {
+    "serviceAccount": {
+      "type": "string",
+      "description": "The name of the ServiceAccount to use to run the build pod.",
+      "default": "builder",
+      "example": "example_value"
+    },
+    "source": {
+      "$ref": "#/components/schemas/BuildSource"
+    },
+    "strategy": {
+      "$ref": "#/components/schemas/BuildStrategy"
+    },
+    "output": {
+      "$ref": "#/components/schemas/BuildOutput"
+    },
+    "resources": {
+      "$ref": "#/components/schemas/ResourceRequirements"
+    },
+    "completionDeadlineSeconds": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Optional duration in seconds the build may run before the system terminates it. The countdown starts from the time the build pod is scheduled.",
+      "example": 10
+    },
+    "nodeSelector": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "Selector which must match a node's labels for the build pod to be scheduled on that node.",
+      "example": "example_value"
+    },
+    "triggeredBy": {
+      "type": "array",
+      "description": "Describes which triggers started the most recent build.",
+      "items": {
+        "$ref": "#/components/schemas/BuildTriggerCause"
+      },
+      "example": []
+    }
+  }
+}

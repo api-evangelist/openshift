@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Status",
+  "title": "Status",
+  "type": "object",
+  "description": "Status is a return value for calls that do not return other objects.",
+  "properties": {
+    "apiVersion": {
+      "type": "string",
+      "default": "v1",
+      "example": "example_value"
+    },
+    "kind": {
+      "type": "string",
+      "default": "Status",
+      "example": "example_value"
+    },
+    "metadata": {
+      "$ref": "#/components/schemas/ListMeta"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "Success",
+        "Failure"
+      ],
+      "example": "Success"
+    },
+    "message": {
+      "type": "string",
+      "example": "example_value"
+    },
+    "reason": {
+      "type": "string",
+      "example": "example_value"
+    },
+    "code": {
+      "type": "integer",
+      "format": "int32",
+      "example": 10
+    }
+  }
+}

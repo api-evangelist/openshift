@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ObjectMeta",
+  "title": "ObjectMeta",
+  "type": "object",
+  "description": "Standard Kubernetes object metadata. Every resource includes metadata such as name, namespace, labels, and annotations.",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "The name of the resource, unique within a namespace.",
+      "example": "Example Title"
+    },
+    "namespace": {
+      "type": "string",
+      "description": "The namespace in which the resource resides.",
+      "example": "example_value"
+    },
+    "uid": {
+      "type": "string",
+      "format": "uuid",
+      "description": "A unique identifier for the resource set by the server.",
+      "example": "500123"
+    },
+    "resourceVersion": {
+      "type": "string",
+      "description": "An opaque value representing the internal version of the object.",
+      "example": "example_value"
+    },
+    "generation": {
+      "type": "integer",
+      "format": "int64",
+      "description": "A sequence number representing a specific generation of the desired state.",
+      "example": 10
+    },
+    "creationTimestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp representing when the object was created.",
+      "example": "2026-01-15T10:30:00Z"
+    },
+    "deletionTimestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp at which the object will be deleted.",
+      "example": "2026-01-15T10:30:00Z"
+    },
+    "labels": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "Map of string keys and values that can be used to organize and categorize objects.",
+      "example": "example_value"
+    },
+    "annotations": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "Unstructured key-value map stored with a resource for arbitrary metadata.",
+      "example": "example_value"
+    },
+    "ownerReferences": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/OwnerReference"
+      },
+      "description": "List of objects depended by this object.",
+      "example": []
+    },
+    "finalizers": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Must be empty before the object is deleted from the registry.",
+      "example": []
+    }
+  }
+}

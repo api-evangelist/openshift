@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ResourceRequirements",
+  "title": "ResourceRequirements",
+  "type": "object",
+  "description": "Compute resource requirements for a container.",
+  "properties": {
+    "limits": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "Maximum compute resources allowed (e.g., cpu, memory).",
+      "example": "example_value"
+    },
+    "requests": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "Minimum compute resources required (e.g., cpu, memory).",
+      "example": "example_value"
+    }
+  }
+}

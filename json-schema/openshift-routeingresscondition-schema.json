@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/RouteIngressCondition",
+  "title": "RouteIngressCondition",
+  "type": "object",
+  "description": "Describes the state of a route at a point in time.",
+  "properties": {
+    "type": {
+      "type": "string",
+      "description": "The type of the condition (e.g., Admitted).",
+      "example": "example_value"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "True",
+        "False",
+        "Unknown"
+      ],
+      "example": "True"
+    },
+    "reason": {
+      "type": "string",
+      "example": "example_value"
+    },
+    "message": {
+      "type": "string",
+      "example": "example_value"
+    },
+    "lastTransitionTime": {
+      "type": "string",
+      "format": "date-time",
+      "example": "2026-01-15T10:30:00Z"
+    }
+  }
+}

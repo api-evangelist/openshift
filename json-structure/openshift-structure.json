@@ -1,0 +1,758 @@
+{
+  "provider": "OpenShift",
+  "providerId": "openshift",
+  "kind": "json-structure",
+  "description": "Structural overview of the OpenShift API surface; extracted from openapi/.",
+  "schemaCount": 54,
+  "operationCount": 42,
+  "schemas": [
+    {
+      "name": "ObjectMeta",
+      "type": "object",
+      "propertyCount": 11,
+      "required": []
+    },
+    {
+      "name": "OwnerReference",
+      "type": "object",
+      "propertyCount": 6,
+      "required": [
+        "apiVersion",
+        "kind",
+        "name",
+        "uid"
+      ]
+    },
+    {
+      "name": "ListMeta",
+      "type": "object",
+      "propertyCount": 4,
+      "required": []
+    },
+    {
+      "name": "Status",
+      "type": "object",
+      "propertyCount": 7,
+      "required": []
+    },
+    {
+      "name": "Route",
+      "type": "object",
+      "propertyCount": 5,
+      "required": [
+        "spec"
+      ]
+    },
+    {
+      "name": "RouteSpec",
+      "type": "object",
+      "propertyCount": 8,
+      "required": [
+        "to"
+      ]
+    },
+    {
+      "name": "RouteTargetReference",
+      "type": "object",
+      "propertyCount": 3,
+      "required": [
+        "kind",
+        "name"
+      ]
+    },
+    {
+      "name": "RoutePort",
+      "type": "object",
+      "propertyCount": 1,
+      "required": [
+        "targetPort"
+      ]
+    },
+    {
+      "name": "TLSConfig",
+      "type": "object",
+      "propertyCount": 6,
+      "required": []
+    },
+    {
+      "name": "RouteStatus",
+      "type": "object",
+      "propertyCount": 1,
+      "required": []
+    },
+    {
+      "name": "RouteIngress",
+      "type": "object",
+      "propertyCount": 4,
+      "required": []
+    },
+    {
+      "name": "RouteIngressCondition",
+      "type": "object",
+      "propertyCount": 5,
+      "required": []
+    },
+    {
+      "name": "RouteList",
+      "type": "object",
+      "propertyCount": 4,
+      "required": [
+        "items"
+      ]
+    },
+    {
+      "name": "Build",
+      "type": "object",
+      "propertyCount": 5,
+      "required": [
+        "spec"
+      ]
+    },
+    {
+      "name": "BuildSpec",
+      "type": "object",
+      "propertyCount": 8,
+      "required": []
+    },
+    {
+      "name": "BuildSource",
+      "type": "object",
+      "propertyCount": 5,
+      "required": []
+    },
+    {
+      "name": "BuildStrategy",
+      "type": "object",
+      "propertyCount": 4,
+      "required": []
+    },
+    {
+      "name": "SourceBuildStrategy",
+      "type": "object",
+      "propertyCount": 5,
+      "required": [
+        "from"
+      ]
+    },
+    {
+      "name": "DockerBuildStrategy",
+      "type": "object",
+      "propertyCount": 6,
+      "required": []
+    },
+    {
+      "name": "CustomBuildStrategy",
+      "type": "object",
+      "propertyCount": 4,
+      "required": [
+        "from"
+      ]
+    },
+    {
+      "name": "BuildOutput",
+      "type": "object",
+      "propertyCount": 2,
+      "required": []
+    },
+    {
+      "name": "BuildTriggerCause",
+      "type": "object",
+      "propertyCount": 1,
+      "required": []
+    },
+    {
+      "name": "BuildStatus",
+      "type": "object",
+      "propertyCount": 11,
+      "required": []
+    },
+    {
+      "name": "BuildList",
+      "type": "object",
+      "propertyCount": 4,
+      "required": [
+        "items"
+      ]
+    },
+    {
+      "name": "BuildConfig",
+      "type": "object",
+      "propertyCount": 5,
+      "required": [
+        "spec"
+      ]
+    },
+    {
+      "name": "BuildConfigSpec",
+      "type": "object",
+      "propertyCount": 11,
+      "required": []
+    },
+    {
+      "name": "BuildTriggerPolicy",
+      "type": "object",
+      "propertyCount": 4,
+      "required": []
+    },
+    {
+      "name": "BuildConfigStatus",
+      "type": "object",
+      "propertyCount": 2,
+      "required": []
+    },
+    {
+      "name": "BuildConfigList",
+      "type": "object",
+      "propertyCount": 4,
+      "required": [
+        "items"
+      ]
+    },
+    {
+      "name": "BuildRequest",
+      "type": "object",
+      "propertyCount": 5,
+      "required": []
+    },
+    {
+      "name": "DeploymentConfig",
+      "type": "object",
+      "propertyCount": 5,
+      "required": [
+        "spec"
+      ]
+    },
+    {
+      "name": "DeploymentConfigSpec",
+      "type": "object",
+      "propertyCount": 9,
+      "required": []
+    },
+    {
+      "name": "DeploymentStrategy",
+      "type": "object",
+      "propertyCount": 6,
+      "required": []
+    },
+    {
+      "name": "RollingDeploymentStrategyParams",
+      "type": "object",
+      "propertyCount": 5,
+      "required": []
+    },
+    {
+      "name": "RecreateDeploymentStrategyParams",
+      "type": "object",
+      "propertyCount": 1,
+      "required": []
+    },
+    {
+      "name": "CustomDeploymentStrategyParams",
+      "type": "object",
+      "propertyCount": 3,
+      "required": []
+    },
+    {
+      "name": "DeploymentTriggerPolicy",
+      "type": "object",
+      "propertyCount": 2,
+      "required": []
+    },
+    {
+      "name": "DeploymentConfigStatus",
+      "type": "object",
+      "propertyCount": 8,
+      "required": []
+    },
+    {
+      "name": "DeploymentCondition",
+      "type": "object",
+      "propertyCount": 6,
+      "required": []
+    },
+    {
+      "name": "DeploymentConfigList",
+      "type": "object",
+      "propertyCount": 4,
+      "required": [
+        "items"
+      ]
+    },
+    {
+      "name": "DeploymentConfigRollback",
+      "type": "object",
+      "propertyCount": 4,
+      "required": [
+        "name",
+        "spec"
+      ]
+    },
+    {
+      "name": "Scale",
+      "type": "object",
+      "propertyCount": 5,
+      "required": []
+    },
+    {
+      "name": "Project",
+      "type": "object",
+      "propertyCount": 5,
+      "required": []
+    },
+    {
+      "name": "ProjectSpec",
+      "type": "object",
+      "propertyCount": 1,
+      "required": []
+    },
+    {
+      "name": "ProjectStatus",
+      "type": "object",
+      "propertyCount": 2,
+      "required": []
+    },
+    {
+      "name": "ProjectList",
+      "type": "object",
+      "propertyCount": 4,
+      "required": [
+        "items"
+      ]
+    },
+    {
+      "name": "ProjectRequest",
+      "type": "object",
+      "propertyCount": 5,
+      "required": [
+        "metadata"
+      ]
+    },
+    {
+      "name": "ObjectReference",
+      "type": "object",
+      "propertyCount": 4,
+      "required": []
+    },
+    {
+      "name": "EnvVar",
+      "type": "object",
+      "propertyCount": 2,
+      "required": [
+        "name"
+      ]
+    },
+    {
+      "name": "ResourceRequirements",
+      "type": "object",
+      "propertyCount": 2,
+      "required": []
+    },
+    {
+      "name": "PodTemplateSpec",
+      "type": "object",
+      "propertyCount": 2,
+      "required": []
+    },
+    {
+      "name": "PodSpec",
+      "type": "object",
+      "propertyCount": 6,
+      "required": []
+    },
+    {
+      "name": "Container",
+      "type": "object",
+      "propertyCount": 11,
+      "required": [
+        "name",
+        "image"
+      ]
+    },
+    {
+      "name": "Probe",
+      "type": "object",
+      "propertyCount": 8,
+      "required": []
+    }
+  ],
+  "operations": [
+    {
+      "method": "GET",
+      "path": "/apis/route.openshift.io/v1/routes",
+      "operationId": "listRouteForAllNamespaces",
+      "summary": "Openshift List Routes Across All Namespaces",
+      "tags": [
+        "Routes"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/apis/route.openshift.io/v1/namespaces/{namespace}/routes",
+      "operationId": "listNamespacedRoute",
+      "summary": "Openshift List Routes in a Namespace",
+      "tags": [
+        "Routes"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/apis/route.openshift.io/v1/namespaces/{namespace}/routes",
+      "operationId": "createNamespacedRoute",
+      "summary": "Openshift Create a Route",
+      "tags": [
+        "Routes"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/apis/route.openshift.io/v1/namespaces/{namespace}/routes/{name}",
+      "operationId": "readNamespacedRoute",
+      "summary": "Openshift Read a Route",
+      "tags": [
+        "Routes"
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/apis/route.openshift.io/v1/namespaces/{namespace}/routes/{name}",
+      "operationId": "replaceNamespacedRoute",
+      "summary": "Openshift Replace a Route",
+      "tags": [
+        "Routes"
+      ]
+    },
+    {
+      "method": "DELETE",
+      "path": "/apis/route.openshift.io/v1/namespaces/{namespace}/routes/{name}",
+      "operationId": "deleteNamespacedRoute",
+      "summary": "Openshift Delete a Route",
+      "tags": [
+        "Routes"
+      ]
+    },
+    {
+      "method": "PATCH",
+      "path": "/apis/route.openshift.io/v1/namespaces/{namespace}/routes/{name}",
+      "operationId": "patchNamespacedRoute",
+      "summary": "Openshift Patch a Route",
+      "tags": [
+        "Routes"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/apis/route.openshift.io/v1/namespaces/{namespace}/routes/{name}/status",
+      "operationId": "readNamespacedRouteStatus",
+      "summary": "Openshift Read Status of a Route",
+      "tags": [
+        "Routes"
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/apis/route.openshift.io/v1/namespaces/{namespace}/routes/{name}/status",
+      "operationId": "replaceNamespacedRouteStatus",
+      "summary": "Openshift Replace Status of a Route",
+      "tags": [
+        "Routes"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/apis/build.openshift.io/v1/builds",
+      "operationId": "listBuildForAllNamespaces",
+      "summary": "Openshift List Builds Across All Namespaces",
+      "tags": [
+        "Builds"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/apis/build.openshift.io/v1/namespaces/{namespace}/builds",
+      "operationId": "listNamespacedBuild",
+      "summary": "Openshift List Builds in a Namespace",
+      "tags": [
+        "Builds"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/apis/build.openshift.io/v1/namespaces/{namespace}/builds",
+      "operationId": "createNamespacedBuild",
+      "summary": "Openshift Create a Build",
+      "tags": [
+        "Builds"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/apis/build.openshift.io/v1/namespaces/{namespace}/builds/{name}",
+      "operationId": "readNamespacedBuild",
+      "summary": "Openshift Read a Build",
+      "tags": [
+        "Builds"
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/apis/build.openshift.io/v1/namespaces/{namespace}/builds/{name}",
+      "operationId": "replaceNamespacedBuild",
+      "summary": "Openshift Replace a Build",
+      "tags": [
+        "Builds"
+      ]
+    },
+    {
+      "method": "DELETE",
+      "path": "/apis/build.openshift.io/v1/namespaces/{namespace}/builds/{name}",
+      "operationId": "deleteNamespacedBuild",
+      "summary": "Openshift Delete a Build",
+      "tags": [
+        "Builds"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/apis/build.openshift.io/v1/namespaces/{namespace}/builds/{name}/log",
+      "operationId": "readNamespacedBuildLog",
+      "summary": "Openshift Read Build Log",
+      "tags": [
+        "Builds"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/apis/build.openshift.io/v1/buildconfigs",
+      "operationId": "listBuildConfigForAllNamespaces",
+      "summary": "Openshift List Build Configs Across All Namespaces",
+      "tags": [
+        "BuildConfigs"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/apis/build.openshift.io/v1/namespaces/{namespace}/buildconfigs",
+      "operationId": "listNamespacedBuildConfig",
+      "summary": "Openshift List Build Configs in a Namespace",
+      "tags": [
+        "BuildConfigs"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/apis/build.openshift.io/v1/namespaces/{namespace}/buildconfigs",
+      "operationId": "createNamespacedBuildConfig",
+      "summary": "Openshift Create a Build Config",
+      "tags": [
+        "BuildConfigs"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/apis/build.openshift.io/v1/namespaces/{namespace}/buildconfigs/{name}",
+      "operationId": "readNamespacedBuildConfig",
+      "summary": "Openshift Read a Build Config",
+      "tags": [
+        "BuildConfigs"
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/apis/build.openshift.io/v1/namespaces/{namespace}/buildconfigs/{name}",
+      "operationId": "replaceNamespacedBuildConfig",
+      "summary": "Openshift Replace a Build Config",
+      "tags": [
+        "BuildConfigs"
+      ]
+    },
+    {
+      "method": "DELETE",
+      "path": "/apis/build.openshift.io/v1/namespaces/{namespace}/buildconfigs/{name}",
+      "operationId": "deleteNamespacedBuildConfig",
+      "summary": "Openshift Delete a Build Config",
+      "tags": [
+        "BuildConfigs"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/apis/build.openshift.io/v1/namespaces/{namespace}/buildconfigs/{name}/instantiate",
+      "operationId": "createNamespacedBuildConfigInstantiate",
+      "summary": "Openshift Instantiate a Build From a Build Config",
+      "tags": [
+        "BuildConfigs"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/apis/apps.openshift.io/v1/deploymentconfigs",
+      "operationId": "listDeploymentConfigForAllNamespaces",
+      "summary": "Openshift List Deployment Configs Across All Namespaces",
+      "tags": [
+        "DeploymentConfigs"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/apis/apps.openshift.io/v1/namespaces/{namespace}/deploymentconfigs",
+      "operationId": "listNamespacedDeploymentConfig",
+      "summary": "Openshift List Deployment Configs in a Namespace",
+      "tags": [
+        "DeploymentConfigs"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/apis/apps.openshift.io/v1/namespaces/{namespace}/deploymentconfigs",
+      "operationId": "createNamespacedDeploymentConfig",
+      "summary": "Openshift Create a Deployment Config",
+      "tags": [
+        "DeploymentConfigs"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/apis/apps.openshift.io/v1/namespaces/{namespace}/deploymentconfigs/{name}",
+      "operationId": "readNamespacedDeploymentConfig",
+      "summary": "Openshift Read a Deployment Config",
+      "tags": [
+        "DeploymentConfigs"
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/apis/apps.openshift.io/v1/namespaces/{namespace}/deploymentconfigs/{name}",
+      "operationId": "replaceNamespacedDeploymentConfig",
+      "summary": "Openshift Replace a Deployment Config",
+      "tags": [
+        "DeploymentConfigs"
+      ]
+    },
+    {
+      "method": "DELETE",
+      "path": "/apis/apps.openshift.io/v1/namespaces/{namespace}/deploymentconfigs/{name}",
+      "operationId": "deleteNamespacedDeploymentConfig",
+      "summary": "Openshift Delete a Deployment Config",
+      "tags": [
+        "DeploymentConfigs"
+      ]
+    },
+    {
+      "method": "PATCH",
+      "path": "/apis/apps.openshift.io/v1/namespaces/{namespace}/deploymentconfigs/{name}",
+      "operationId": "patchNamespacedDeploymentConfig",
+      "summary": "Openshift Patch a Deployment Config",
+      "tags": [
+        "DeploymentConfigs"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/apis/apps.openshift.io/v1/namespaces/{namespace}/deploymentconfigs/{name}/status",
+      "operationId": "readNamespacedDeploymentConfigStatus",
+      "summary": "Openshift Read Status of a Deployment Config",
+      "tags": [
+        "DeploymentConfigs"
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/apis/apps.openshift.io/v1/namespaces/{namespace}/deploymentconfigs/{name}/status",
+      "operationId": "replaceNamespacedDeploymentConfigStatus",
+      "summary": "Openshift Replace Status of a Deployment Config",
+      "tags": [
+        "DeploymentConfigs"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/apis/apps.openshift.io/v1/namespaces/{namespace}/deploymentconfigs/{name}/scale",
+      "operationId": "readNamespacedDeploymentConfigScale",
+      "summary": "Openshift Read Scale of a Deployment Config",
+      "tags": [
+        "DeploymentConfigs"
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/apis/apps.openshift.io/v1/namespaces/{namespace}/deploymentconfigs/{name}/scale",
+      "operationId": "replaceNamespacedDeploymentConfigScale",
+      "summary": "Openshift Replace Scale of a Deployment Config",
+      "tags": [
+        "DeploymentConfigs"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/apis/apps.openshift.io/v1/namespaces/{namespace}/deploymentconfigs/{name}/rollback",
+      "operationId": "createNamespacedDeploymentConfigRollback",
+      "summary": "Openshift Rollback a Deployment Config",
+      "tags": [
+        "DeploymentConfigs"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/apis/apps.openshift.io/v1/namespaces/{namespace}/deploymentconfigs/{name}/log",
+      "operationId": "readNamespacedDeploymentConfigLog",
+      "summary": "Openshift Read Deployment Config Log",
+      "tags": [
+        "DeploymentConfigs"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/apis/project.openshift.io/v1/projects",
+      "operationId": "listProject",
+      "summary": "Openshift List Projects",
+      "tags": [
+        "Projects"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/apis/project.openshift.io/v1/projects/{name}",
+      "operationId": "readProject",
+      "summary": "Openshift Read a Project",
+      "tags": [
+        "Projects"
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/apis/project.openshift.io/v1/projects/{name}",
+      "operationId": "replaceProject",
+      "summary": "Openshift Replace a Project",
+      "tags": [
+        "Projects"
+      ]
+    },
+    {
+      "method": "DELETE",
+      "path": "/apis/project.openshift.io/v1/projects/{name}",
+      "operationId": "deleteProject",
+      "summary": "Openshift Delete a Project",
+      "tags": [
+        "Projects"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/apis/project.openshift.io/v1/projectrequests",
+      "operationId": "listProjectRequest",
+      "summary": "Openshift List Project Requests",
+      "tags": [
+        "ProjectRequests"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/apis/project.openshift.io/v1/projectrequests",
+      "operationId": "createProjectRequest",
+      "summary": "Openshift Create a Project Request",
+      "tags": [
+        "ProjectRequests"
+      ]
+    }
+  ]
+}

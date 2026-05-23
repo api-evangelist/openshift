@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/BuildConfig",
+  "title": "BuildConfig",
+  "type": "object",
+  "description": "A BuildConfig defines the build strategy and source used to produce new container images. Builds can be triggered automatically by webhooks, image changes, or configuration changes.",
+  "required": [
+    "spec"
+  ],
+  "properties": {
+    "apiVersion": {
+      "type": "string",
+      "default": "build.openshift.io/v1",
+      "example": "example_value"
+    },
+    "kind": {
+      "type": "string",
+      "default": "BuildConfig",
+      "example": "example_value"
+    },
+    "metadata": {
+      "$ref": "#/components/schemas/ObjectMeta"
+    },
+    "spec": {
+      "$ref": "#/components/schemas/BuildConfigSpec"
+    },
+    "status": {
+      "$ref": "#/components/schemas/BuildConfigStatus"
+    }
+  }
+}

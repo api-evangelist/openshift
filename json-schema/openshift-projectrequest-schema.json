@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ProjectRequest",
+  "title": "ProjectRequest",
+  "type": "object",
+  "description": "A request to create a new project. ProjectRequests are processed according to the cluster project request template and may include default resource quotas, limit ranges, and role bindings.",
+  "required": [
+    "metadata"
+  ],
+  "properties": {
+    "apiVersion": {
+      "type": "string",
+      "default": "project.openshift.io/v1",
+      "example": "example_value"
+    },
+    "kind": {
+      "type": "string",
+      "default": "ProjectRequest",
+      "example": "example_value"
+    },
+    "metadata": {
+      "$ref": "#/components/schemas/ObjectMeta"
+    },
+    "displayName": {
+      "type": "string",
+      "description": "A human-readable name for the project, used in the web console.",
+      "example": "example_value"
+    },
+    "description": {
+      "type": "string",
+      "description": "A longer description of the project purpose.",
+      "example": "A sample description."
+    }
+  }
+}

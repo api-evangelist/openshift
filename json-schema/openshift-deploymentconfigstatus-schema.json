@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/DeploymentConfigStatus",
+  "title": "DeploymentConfigStatus",
+  "type": "object",
+  "description": "Status of the DeploymentConfig.",
+  "properties": {
+    "latestVersion": {
+      "type": "integer",
+      "format": "int64",
+      "description": "The version of the most recent deployment.",
+      "example": 10
+    },
+    "observedGeneration": {
+      "type": "integer",
+      "format": "int64",
+      "description": "The most recent generation observed by the deployment controller.",
+      "example": 10
+    },
+    "replicas": {
+      "type": "integer",
+      "format": "int32",
+      "description": "Total number of non-terminated pods targeted by this deployment.",
+      "example": 10
+    },
+    "updatedReplicas": {
+      "type": "integer",
+      "format": "int32",
+      "description": "Total number of non-terminated pods that have the desired template spec.",
+      "example": 10
+    },
+    "availableReplicas": {
+      "type": "integer",
+      "format": "int32",
+      "description": "Total number of available pods targeted by this deployment.",
+      "example": 10
+    },
+    "unavailableReplicas": {
+      "type": "integer",
+      "format": "int32",
+      "description": "Total number of unavailable pods targeted by this deployment.",
+      "example": 10
+    },
+    "readyReplicas": {
+      "type": "integer",
+      "format": "int32",
+      "description": "Total number of ready pods targeted by this deployment.",
+      "example": 10
+    },
+    "conditions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/DeploymentCondition"
+      },
+      "example": []
+    }
+  }
+}

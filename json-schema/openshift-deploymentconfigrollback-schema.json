@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/DeploymentConfigRollback",
+  "title": "DeploymentConfigRollback",
+  "type": "object",
+  "description": "A request to roll back a deployment to a previous version.",
+  "required": [
+    "name",
+    "spec"
+  ],
+  "properties": {
+    "apiVersion": {
+      "type": "string",
+      "default": "apps.openshift.io/v1",
+      "example": "example_value"
+    },
+    "kind": {
+      "type": "string",
+      "default": "DeploymentConfigRollback",
+      "example": "example_value"
+    },
+    "name": {
+      "type": "string",
+      "description": "Name of the deployment config to roll back.",
+      "example": "Example Title"
+    },
+    "spec": {
+      "type": "object",
+      "required": [
+        "from"
+      ],
+      "properties": {
+        "from": {
+          "$ref": "#/components/schemas/ObjectReference"
+        },
+        "revision": {
+          "type": "integer",
+          "format": "int64",
+          "description": "The revision to rollback to. If 0, the rollback target is the last successful deployment."
+        },
+        "includeTemplate": {
+          "type": "boolean",
+          "description": "If true, the rollback response includes the template of the rolled-back deployment."
+        },
+        "includeReplicationMeta": {
+          "type": "boolean"
+        },
+        "includeStrategy": {
+          "type": "boolean"
+        },
+        "includeTriggers": {
+          "type": "boolean"
+        }
+      },
+      "example": "example_value"
+    }
+  }
+}

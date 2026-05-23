@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/PodSpec",
+  "title": "PodSpec",
+  "type": "object",
+  "description": "Specification of the desired behavior of a pod.",
+  "properties": {
+    "containers": {
+      "type": "array",
+      "description": "List of containers in the pod.",
+      "items": {
+        "$ref": "#/components/schemas/Container"
+      },
+      "example": []
+    },
+    "initContainers": {
+      "type": "array",
+      "description": "List of initialization containers.",
+      "items": {
+        "$ref": "#/components/schemas/Container"
+      },
+      "example": []
+    },
+    "restartPolicy": {
+      "type": "string",
+      "enum": [
+        "Always",
+        "OnFailure",
+        "Never"
+      ],
+      "default": "Always",
+      "example": "Always"
+    },
+    "serviceAccountName": {
+      "type": "string",
+      "description": "Name of the ServiceAccount to use for the pod.",
+      "example": "example_value"
+    },
+    "nodeSelector": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "example": "example_value"
+    },
+    "volumes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "configMap": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              }
+            }
+          },
+          "secret": {
+            "type": "object",
+            "properties": {
+              "secretName": {
+                "type": "string"
+              }
+            }
+          },
+          "persistentVolumeClaim": {
+            "type": "object",
+            "properties": {
+              "claimName": {
+                "type": "string"
+              }
+            }
+          },
+          "emptyDir": {
+            "type": "object"
+          }
+        }
+      },
+      "example": []
+    }
+  }
+}

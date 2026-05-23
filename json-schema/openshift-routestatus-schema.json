@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/RouteStatus",
+  "title": "RouteStatus",
+  "type": "object",
+  "description": "Current state of the Route.",
+  "properties": {
+    "ingress": {
+      "type": "array",
+      "description": "Status entries for each router that has admitted the route.",
+      "items": {
+        "$ref": "#/components/schemas/RouteIngress"
+      },
+      "example": []
+    }
+  }
+}

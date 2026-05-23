@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Scale",
+  "title": "Scale",
+  "type": "object",
+  "description": "Represents a scaling request for a resource.",
+  "properties": {
+    "apiVersion": {
+      "type": "string",
+      "default": "autoscaling/v1",
+      "example": "example_value"
+    },
+    "kind": {
+      "type": "string",
+      "default": "Scale",
+      "example": "example_value"
+    },
+    "metadata": {
+      "$ref": "#/components/schemas/ObjectMeta"
+    },
+    "spec": {
+      "type": "object",
+      "properties": {
+        "replicas": {
+          "type": "integer",
+          "format": "int32",
+          "description": "The desired number of replicas."
+        }
+      },
+      "example": "example_value"
+    },
+    "status": {
+      "type": "object",
+      "properties": {
+        "replicas": {
+          "type": "integer",
+          "format": "int32",
+          "description": "The actual number of replicas."
+        },
+        "selector": {
+          "type": "string",
+          "description": "Label selector matching the pods managed by this deployment."
+        }
+      },
+      "example": "example_value"
+    }
+  }
+}

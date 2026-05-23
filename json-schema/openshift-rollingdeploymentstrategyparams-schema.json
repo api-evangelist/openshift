@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/RollingDeploymentStrategyParams",
+  "title": "RollingDeploymentStrategyParams",
+  "type": "object",
+  "description": "Parameters for a rolling deployment strategy.",
+  "properties": {
+    "updatePeriodSeconds": {
+      "type": "integer",
+      "format": "int64",
+      "description": "The time to wait between individual pod updates.",
+      "example": 10
+    },
+    "intervalSeconds": {
+      "type": "integer",
+      "format": "int64",
+      "description": "The time to wait between polling deployment status.",
+      "example": 10
+    },
+    "timeoutSeconds": {
+      "type": "integer",
+      "format": "int64",
+      "description": "The time to wait for a scaling event before giving up.",
+      "default": 600,
+      "example": 10
+    },
+    "maxUnavailable": {
+      "oneOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "integer"
+        }
+      ],
+      "description": "The maximum number of pods that can be unavailable during the update. Value can be an absolute number or a percentage.",
+      "default": "25%",
+      "example": "example_value"
+    },
+    "maxSurge": {
+      "oneOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "integer"
+        }
+      ],
+      "description": "The maximum number of pods that can be scheduled above the desired number of pods. Value can be an absolute number or a percentage.",
+      "default": "25%",
+      "example": "example_value"
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/BuildRequest",
+  "title": "BuildRequest",
+  "type": "object",
+  "description": "A request to instantiate a new build from a BuildConfig.",
+  "properties": {
+    "apiVersion": {
+      "type": "string",
+      "default": "build.openshift.io/v1",
+      "example": "example_value"
+    },
+    "kind": {
+      "type": "string",
+      "default": "BuildRequest",
+      "example": "example_value"
+    },
+    "metadata": {
+      "$ref": "#/components/schemas/ObjectMeta"
+    },
+    "triggeredBy": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/BuildTriggerCause"
+      },
+      "example": []
+    },
+    "env": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/EnvVar"
+      },
+      "example": []
+    }
+  }
+}

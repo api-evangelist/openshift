@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ListMeta",
+  "title": "ListMeta",
+  "type": "object",
+  "description": "Metadata for list responses including pagination tokens.",
+  "properties": {
+    "selfLink": {
+      "type": "string",
+      "example": "example_value"
+    },
+    "resourceVersion": {
+      "type": "string",
+      "example": "example_value"
+    },
+    "continue": {
+      "type": "string",
+      "example": "example_value"
+    },
+    "remainingItemCount": {
+      "type": "integer",
+      "format": "int64",
+      "example": 10
+    }
+  }
+}

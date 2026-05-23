@@ -1,0 +1,23 @@
+name: OpenShift Domain Vocabulary
+provider: OpenShift
+providerId: openshift
+description: Tag-derived vocabulary for the OpenShift API surface; sourced from openapi/ tags.
+terms:
+- term: BuildConfigs
+  description: Manage build configuration templates that define how to transform source code into container images using Source,
+    Docker, or Custom build strategies with configurable triggers.
+- term: Builds
+  description: Manage builds and build configurations for source-to-image, Docker, and custom build strategies. Builds compile
+    source code into runnable container images.
+- term: DeploymentConfigs
+  description: Manage OpenShift DeploymentConfigs which provide declarative deployment lifecycle management with rolling,
+    recreate, and custom strategies, plus automatic rollback and deployment triggers.
+- term: ProjectRequests
+  description: Request creation of new projects. ProjectRequests are the mechanism through which users provision new projects
+    subject to cluster policy.
+- term: Projects
+  description: Manage OpenShift projects which extend Kubernetes namespaces with additional metadata, access controls, and
+    resource isolation for multi-tenant environments.
+- term: Routes
+  description: Manage application routes that expose services at a hostname. Routes provide external access to services via
+    HTTP/HTTPS, with support for TLS termination strategies including edge, passthrough, and re-encrypt.

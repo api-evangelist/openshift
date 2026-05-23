@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/PodTemplateSpec",
+  "title": "PodTemplateSpec",
+  "type": "object",
+  "description": "Describes the data a pod should have when created from a template.",
+  "properties": {
+    "metadata": {
+      "$ref": "#/components/schemas/ObjectMeta"
+    },
+    "spec": {
+      "$ref": "#/components/schemas/PodSpec"
+    }
+  }
+}

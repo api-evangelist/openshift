@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/RouteTargetReference",
+  "title": "RouteTargetReference",
+  "type": "object",
+  "description": "Specifies the target that traffic is routed to. Weight controls the proportion of traffic sent to this backend.",
+  "required": [
+    "kind",
+    "name"
+  ],
+  "properties": {
+    "kind": {
+      "type": "string",
+      "description": "The kind of target, typically Service.",
+      "enum": [
+        "Service"
+      ],
+      "default": "Service",
+      "example": "Service"
+    },
+    "name": {
+      "type": "string",
+      "description": "Name of the target service.",
+      "example": "Example Title"
+    },
+    "weight": {
+      "type": "integer",
+      "format": "int32",
+      "description": "Relative weight for traffic distribution (0-256). A zero weight causes no traffic to be sent to this backend.",
+      "minimum": 0,
+      "maximum": 256,
+      "default": 100,
+      "example": 10
+    }
+  }
+}

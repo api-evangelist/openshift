@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/DeploymentStrategy",
+  "title": "DeploymentStrategy",
+  "type": "object",
+  "description": "Describes how to perform a deployment.",
+  "properties": {
+    "type": {
+      "type": "string",
+      "description": "The deployment strategy type.",
+      "enum": [
+        "Rolling",
+        "Recreate",
+        "Custom"
+      ],
+      "default": "Rolling",
+      "example": "Rolling"
+    },
+    "rollingParams": {
+      "$ref": "#/components/schemas/RollingDeploymentStrategyParams"
+    },
+    "recreateParams": {
+      "$ref": "#/components/schemas/RecreateDeploymentStrategyParams"
+    },
+    "customParams": {
+      "$ref": "#/components/schemas/CustomDeploymentStrategyParams"
+    },
+    "resources": {
+      "$ref": "#/components/schemas/ResourceRequirements"
+    },
+    "activeDeadlineSeconds": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Duration in seconds that the deployer pods may be active before the system retries the deployment.",
+      "example": 10
+    }
+  }
+}

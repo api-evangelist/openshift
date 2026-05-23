@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/DeploymentConfigSpec",
+  "title": "DeploymentConfigSpec",
+  "type": "object",
+  "description": "Specification for the desired deployment behavior.",
+  "properties": {
+    "replicas": {
+      "type": "integer",
+      "format": "int32",
+      "description": "The desired number of pod replicas.",
+      "default": 1,
+      "example": 10
+    },
+    "selector": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "Label selector for pods managed by this deployment.",
+      "example": "example_value"
+    },
+    "template": {
+      "$ref": "#/components/schemas/PodTemplateSpec"
+    },
+    "strategy": {
+      "$ref": "#/components/schemas/DeploymentStrategy"
+    },
+    "triggers": {
+      "type": "array",
+      "description": "Triggers that cause new deployments to be created.",
+      "items": {
+        "$ref": "#/components/schemas/DeploymentTriggerPolicy"
+      },
+      "example": []
+    },
+    "minReadySeconds": {
+      "type": "integer",
+      "format": "int32",
+      "description": "Minimum number of seconds a newly created pod should be ready without any of its containers crashing before considered available.",
+      "example": 10
+    },
+    "revisionHistoryLimit": {
+      "type": "integer",
+      "format": "int32",
+      "description": "Number of old ReplicationControllers to retain for rollback.",
+      "example": 10
+    },
+    "paused": {
+      "type": "boolean",
+      "description": "Indicates that the deployment config is paused and new deployments will not be triggered.",
+      "example": true
+    },
+    "test": {
+      "type": "boolean",
+      "description": "If true, deployments are scaled down to zero after the deployment completes.",
+      "example": true
+    }
+  }
+}

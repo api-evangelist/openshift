@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/DeploymentTriggerPolicy",
+  "title": "DeploymentTriggerPolicy",
+  "type": "object",
+  "description": "A policy that triggers new deployments.",
+  "properties": {
+    "type": {
+      "type": "string",
+      "description": "The type of deployment trigger.",
+      "enum": [
+        "ConfigChange",
+        "ImageChange"
+      ],
+      "example": "ConfigChange"
+    },
+    "imageChangeParams": {
+      "type": "object",
+      "description": "Parameters for an ImageChange trigger.",
+      "properties": {
+        "automatic": {
+          "type": "boolean",
+          "description": "If true, deployments are automatically triggered when a new image is available."
+        },
+        "containerNames": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Names of the containers to update when the image changes."
+        },
+        "from": {
+          "$ref": "#/components/schemas/ObjectReference"
+        },
+        "lastTriggeredImage": {
+          "type": "string",
+          "description": "The image reference that triggered the last deployment."
+        }
+      },
+      "example": "example_value"
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/BuildList",
+  "title": "BuildList",
+  "type": "object",
+  "description": "A list of Build objects.",
+  "required": [
+    "items"
+  ],
+  "properties": {
+    "apiVersion": {
+      "type": "string",
+      "default": "build.openshift.io/v1",
+      "example": "example_value"
+    },
+    "kind": {
+      "type": "string",
+      "default": "BuildList",
+      "example": "example_value"
+    },
+    "metadata": {
+      "$ref": "#/components/schemas/ListMeta"
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Build"
+      },
+      "example": []
+    }
+  }
+}

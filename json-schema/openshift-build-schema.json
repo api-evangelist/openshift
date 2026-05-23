@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Build",
+  "title": "Build",
+  "type": "object",
+  "description": "A Build represents a single execution of a build process that transforms source code into a runnable container image. Builds are created from BuildConfigs or instantiated directly.",
+  "required": [
+    "spec"
+  ],
+  "properties": {
+    "apiVersion": {
+      "type": "string",
+      "default": "build.openshift.io/v1",
+      "example": "example_value"
+    },
+    "kind": {
+      "type": "string",
+      "default": "Build",
+      "example": "example_value"
+    },
+    "metadata": {
+      "$ref": "#/components/schemas/ObjectMeta"
+    },
+    "spec": {
+      "$ref": "#/components/schemas/BuildSpec"
+    },
+    "status": {
+      "$ref": "#/components/schemas/BuildStatus"
+    }
+  }
+}

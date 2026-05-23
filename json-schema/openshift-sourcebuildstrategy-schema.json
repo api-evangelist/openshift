@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/SourceBuildStrategy",
+  "title": "SourceBuildStrategy",
+  "type": "object",
+  "description": "Source-to-Image (S2I) build strategy that combines application source with a builder image to produce a runnable image.",
+  "required": [
+    "from"
+  ],
+  "properties": {
+    "from": {
+      "$ref": "#/components/schemas/ObjectReference"
+    },
+    "env": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/EnvVar"
+      },
+      "example": []
+    },
+    "scripts": {
+      "type": "string",
+      "description": "URL of S2I scripts to use instead of the ones in the builder image.",
+      "example": "example_value"
+    },
+    "incremental": {
+      "type": "boolean",
+      "description": "Attempt to perform an incremental build reusing artifacts from a prior build.",
+      "example": true
+    },
+    "forcePull": {
+      "type": "boolean",
+      "description": "Overrides the default pull behavior and forces a pull of the builder image before the build.",
+      "example": true
+    }
+  }
+}

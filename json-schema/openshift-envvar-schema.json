@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/EnvVar",
+  "title": "EnvVar",
+  "type": "object",
+  "description": "An environment variable to set in a container.",
+  "required": [
+    "name"
+  ],
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "The environment variable name.",
+      "example": "Example Title"
+    },
+    "value": {
+      "type": "string",
+      "description": "The environment variable value.",
+      "example": "example_value"
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/RouteIngress",
+  "title": "RouteIngress",
+  "type": "object",
+  "description": "Holds information about the places where a route is exposed.",
+  "properties": {
+    "host": {
+      "type": "string",
+      "description": "The hostname assigned to the route by the router.",
+      "example": "example_value"
+    },
+    "routerName": {
+      "type": "string",
+      "description": "The name of the router that admitted this route.",
+      "example": "example_value"
+    },
+    "conditions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/RouteIngressCondition"
+      },
+      "example": []
+    },
+    "wildcardPolicy": {
+      "type": "string",
+      "description": "The wildcard policy applied by the router.",
+      "example": "example_value"
+    }
+  }
+}

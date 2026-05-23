@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/BuildSource",
+  "title": "BuildSource",
+  "type": "object",
+  "description": "Specifies the source code location and type for the build input.",
+  "properties": {
+    "type": {
+      "type": "string",
+      "description": "The type of source input.",
+      "enum": [
+        "Git",
+        "Dockerfile",
+        "Binary",
+        "Image",
+        "None"
+      ],
+      "example": "Git"
+    },
+    "git": {
+      "type": "object",
+      "description": "Git source location.",
+      "properties": {
+        "uri": {
+          "type": "string",
+          "format": "uri",
+          "description": "The URL of the Git repository."
+        },
+        "ref": {
+          "type": "string",
+          "description": "The Git branch, tag, or commit to build."
+        }
+      },
+      "example": "example_value"
+    },
+    "dockerfile": {
+      "type": "string",
+      "description": "The Dockerfile content used as build input.",
+      "example": "example_value"
+    },
+    "contextDir": {
+      "type": "string",
+      "description": "The subdirectory within the source repository used as the context for the build.",
+      "example": "example_value"
+    },
+    "sourceSecret": {
+      "type": "object",
+      "description": "Secret holding credentials for accessing the source repository.",
+      "properties": {
+        "name": {
+          "type": "string"
+        }
+      },
+      "example": "example_value"
+    }
+  }
+}

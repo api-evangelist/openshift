@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/BuildConfigStatus",
+  "title": "BuildConfigStatus",
+  "type": "object",
+  "description": "Status of the BuildConfig.",
+  "properties": {
+    "lastVersion": {
+      "type": "integer",
+      "format": "int64",
+      "description": "The version of the last build created from this config.",
+      "example": 10
+    },
+    "imageChangeTriggers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "lastTriggeredImageID": {
+            "type": "string"
+          },
+          "from": {
+            "$ref": "#/components/schemas/ObjectReference"
+          }
+        }
+      },
+      "example": []
+    }
+  }
+}

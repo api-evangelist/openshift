@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ProjectStatus",
+  "title": "ProjectStatus",
+  "type": "object",
+  "description": "Current state of the project.",
+  "properties": {
+    "phase": {
+      "type": "string",
+      "description": "The lifecycle phase of the project.",
+      "enum": [
+        "Active",
+        "Terminating"
+      ],
+      "example": "Active"
+    },
+    "conditions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "lastTransitionTime": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "example": []
+    }
+  }
+}

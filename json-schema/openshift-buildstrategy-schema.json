@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/BuildStrategy",
+  "title": "BuildStrategy",
+  "type": "object",
+  "description": "Describes how to perform the build.",
+  "properties": {
+    "type": {
+      "type": "string",
+      "description": "The type of build strategy.",
+      "enum": [
+        "Source",
+        "Docker",
+        "Custom"
+      ],
+      "example": "Source"
+    },
+    "sourceStrategy": {
+      "$ref": "#/components/schemas/SourceBuildStrategy"
+    },
+    "dockerStrategy": {
+      "$ref": "#/components/schemas/DockerBuildStrategy"
+    },
+    "customStrategy": {
+      "$ref": "#/components/schemas/CustomBuildStrategy"
+    }
+  }
+}

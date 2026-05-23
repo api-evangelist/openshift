@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/DeploymentConfig",
+  "title": "DeploymentConfig",
+  "type": "object",
+  "description": "A DeploymentConfig describes the desired state of a particular application deployment. It creates ReplicationControllers to manage pods and supports rolling, recreate, and custom deployment strategies with automatic rollback.",
+  "required": [
+    "spec"
+  ],
+  "properties": {
+    "apiVersion": {
+      "type": "string",
+      "default": "apps.openshift.io/v1",
+      "example": "example_value"
+    },
+    "kind": {
+      "type": "string",
+      "default": "DeploymentConfig",
+      "example": "example_value"
+    },
+    "metadata": {
+      "$ref": "#/components/schemas/ObjectMeta"
+    },
+    "spec": {
+      "$ref": "#/components/schemas/DeploymentConfigSpec"
+    },
+    "status": {
+      "$ref": "#/components/schemas/DeploymentConfigStatus"
+    }
+  }
+}

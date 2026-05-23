@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/RouteList",
+  "title": "RouteList",
+  "type": "object",
+  "description": "A list of Route objects.",
+  "required": [
+    "items"
+  ],
+  "properties": {
+    "apiVersion": {
+      "type": "string",
+      "default": "route.openshift.io/v1",
+      "example": "example_value"
+    },
+    "kind": {
+      "type": "string",
+      "default": "RouteList",
+      "example": "example_value"
+    },
+    "metadata": {
+      "$ref": "#/components/schemas/ListMeta"
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Route"
+      },
+      "example": []
+    }
+  }
+}
