@@ -5,8 +5,15 @@
       "source": "https://www.openshift.com/blog/rss.xml",
       "feed_url": "https://www.openshift.com/blog/rss.xml",
       "title": "",
-      "saved": 0,
+      "saved": 10,
       "method": "feed"
+    },
+    {
+      "source": "https://www.redhat.com/en/blog/channel/red-hat-openshift",
+      "feed_url": "https://www.redhat.com/en/blog/channel/red-hat-openshift",
+      "title": "",
+      "saved": 0,
+      "method": "none"
     },
     {
       "source": "https://www.openshift.com/try",
@@ -16,6 +23,6 @@
       "method": "none"
     }
   ],
-  "fetched": "2026-06-01T23:35:02Z",
-  "post_count": 30
+  "post_count": 42,
+  "fetched": "2026-06-14T20:42:17Z"
 }
