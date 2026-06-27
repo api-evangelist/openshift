@@ -2,18 +2,11 @@
   "repo": "openshift",
   "feeds": [
     {
-      "source": "https://www.openshift.com/blog/rss.xml",
-      "feed_url": "https://www.openshift.com/blog/rss.xml",
+      "source": "https://www.redhat.com/en/blog/rss.xml",
+      "feed_url": "https://www.redhat.com/en/blog/rss.xml",
       "title": "",
       "saved": 10,
       "method": "feed"
-    },
-    {
-      "source": "https://www.redhat.com/en/blog/channel/red-hat-openshift",
-      "feed_url": "https://www.redhat.com/en/blog/channel/red-hat-openshift",
-      "title": "",
-      "saved": 0,
-      "method": "none"
     },
     {
       "source": "https://www.openshift.com/try",
@@ -23,6 +16,6 @@
       "method": "none"
     }
   ],
-  "post_count": 42,
-  "fetched": "2026-06-14T20:42:17Z"
+  "post_count": 61,
+  "fetched": "2026-06-27T12:03:07Z"
 }

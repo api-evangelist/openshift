@@ -41,7 +41,7 @@ apis:
         url: https://access.redhat.com/support
       - type: StatusPage
         url: https://status.openshift.com/
-      - type: SDK
+      - type: SDKs
         url: https://github.com/openshift/client-go
       - type: RateLimits
         url: https://docs.openshift.com/container-platform/latest/rest_api/understanding-api-support-tiers.html
