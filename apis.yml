@@ -412,6 +412,10 @@ apis:
       - type: GitHubOrganization
         url: https://github.com/openshift-online/ocm-api-model
 common:
+  - type: DomainSecurity
+    url: security/openshift-domain-security.yml
+  - type: Authentication
+    url: authentication/openshift-authentication.yml
   - type: LinkedIn
     url: https://www.linkedin.com/showcase/red-hat-openshift
   - type: GettingStarted

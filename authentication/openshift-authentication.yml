@@ -1,0 +1,15 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/openshift-rest-api-openapi.yml
+summary:
+  types:
+  - http
+schemes:
+- name: BearerToken
+  type: http
+  scheme: bearer
+  bearerFormat: JWT
+  description: OAuth bearer token obtained from the OpenShift OAuth server. Use 'oc whoami -t'
+    to retrieve a token, or configure an OAuth client for programmatic access.
+  sources:
+  - openapi/openshift-rest-api-openapi.yml
