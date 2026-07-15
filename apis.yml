@@ -412,6 +412,8 @@ apis:
       - type: GitHubOrganization
         url: https://github.com/openshift-online/ocm-api-model
 common:
+  - type: AgenticAccess
+    url: agentic-access/openshift-agentic-access.yml
   - type: DomainSecurity
     url: security/openshift-domain-security.yml
   - type: Authentication

@@ -1,0 +1,583 @@
+generated: '2026-07-15'
+method: generated
+source: openapi/openshift-rest-api-openapi.yml
+description: Recommended x-agentic-access execution contracts, classified heuristically from
+  the OpenAPI. A governance starting point for exposing this API to AI agents — review and bind
+  audience per deployment. See research/curity/agentic-governance/.
+summary:
+  operations: 42
+  by_action_class:
+    connected: 20
+    acting: 22
+  by_consequence:
+    read: 20
+    write: 15
+    physical: 7
+  human_in_the_loop_required: 0
+operations:
+- path: /apis/route.openshift.io/v1/routes
+  method: get
+  operationId: listRouteForAllNamespaces
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /apis/route.openshift.io/v1/namespaces/{namespace}/routes
+  method: get
+  operationId: listNamespacedRoute
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /apis/route.openshift.io/v1/namespaces/{namespace}/routes
+  method: post
+  operationId: createNamespacedRoute
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /apis/route.openshift.io/v1/namespaces/{namespace}/routes/{name}
+  method: get
+  operationId: readNamespacedRoute
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /apis/route.openshift.io/v1/namespaces/{namespace}/routes/{name}
+  method: put
+  operationId: replaceNamespacedRoute
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /apis/route.openshift.io/v1/namespaces/{namespace}/routes/{name}
+  method: patch
+  operationId: patchNamespacedRoute
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /apis/route.openshift.io/v1/namespaces/{namespace}/routes/{name}
+  method: delete
+  operationId: deleteNamespacedRoute
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /apis/route.openshift.io/v1/namespaces/{namespace}/routes/{name}/status
+  method: get
+  operationId: readNamespacedRouteStatus
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /apis/route.openshift.io/v1/namespaces/{namespace}/routes/{name}/status
+  method: put
+  operationId: replaceNamespacedRouteStatus
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /apis/build.openshift.io/v1/builds
+  method: get
+  operationId: listBuildForAllNamespaces
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /apis/build.openshift.io/v1/namespaces/{namespace}/builds
+  method: get
+  operationId: listNamespacedBuild
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /apis/build.openshift.io/v1/namespaces/{namespace}/builds
+  method: post
+  operationId: createNamespacedBuild
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /apis/build.openshift.io/v1/namespaces/{namespace}/builds/{name}
+  method: get
+  operationId: readNamespacedBuild
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /apis/build.openshift.io/v1/namespaces/{namespace}/builds/{name}
+  method: put
+  operationId: replaceNamespacedBuild
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /apis/build.openshift.io/v1/namespaces/{namespace}/builds/{name}
+  method: delete
+  operationId: deleteNamespacedBuild
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /apis/build.openshift.io/v1/namespaces/{namespace}/builds/{name}/log
+  method: get
+  operationId: readNamespacedBuildLog
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /apis/build.openshift.io/v1/buildconfigs
+  method: get
+  operationId: listBuildConfigForAllNamespaces
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /apis/build.openshift.io/v1/namespaces/{namespace}/buildconfigs
+  method: get
+  operationId: listNamespacedBuildConfig
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /apis/build.openshift.io/v1/namespaces/{namespace}/buildconfigs
+  method: post
+  operationId: createNamespacedBuildConfig
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /apis/build.openshift.io/v1/namespaces/{namespace}/buildconfigs/{name}
+  method: get
+  operationId: readNamespacedBuildConfig
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /apis/build.openshift.io/v1/namespaces/{namespace}/buildconfigs/{name}
+  method: put
+  operationId: replaceNamespacedBuildConfig
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /apis/build.openshift.io/v1/namespaces/{namespace}/buildconfigs/{name}
+  method: delete
+  operationId: deleteNamespacedBuildConfig
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /apis/build.openshift.io/v1/namespaces/{namespace}/buildconfigs/{name}/instantiate
+  method: post
+  operationId: createNamespacedBuildConfigInstantiate
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /apis/apps.openshift.io/v1/deploymentconfigs
+  method: get
+  operationId: listDeploymentConfigForAllNamespaces
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /apis/apps.openshift.io/v1/namespaces/{namespace}/deploymentconfigs
+  method: get
+  operationId: listNamespacedDeploymentConfig
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /apis/apps.openshift.io/v1/namespaces/{namespace}/deploymentconfigs
+  method: post
+  operationId: createNamespacedDeploymentConfig
+  x-agentic-access:
+    action-class: acting
+    consequence: physical
+    subject: required
+    audience: null
+    token:
+      max-ttl: 300
+      exchange: true
+      purpose-required: true
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /apis/apps.openshift.io/v1/namespaces/{namespace}/deploymentconfigs/{name}
+  method: get
+  operationId: readNamespacedDeploymentConfig
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /apis/apps.openshift.io/v1/namespaces/{namespace}/deploymentconfigs/{name}
+  method: put
+  operationId: replaceNamespacedDeploymentConfig
+  x-agentic-access:
+    action-class: acting
+    consequence: physical
+    subject: required
+    audience: null
+    token:
+      max-ttl: 300
+      exchange: true
+      purpose-required: true
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /apis/apps.openshift.io/v1/namespaces/{namespace}/deploymentconfigs/{name}
+  method: patch
+  operationId: patchNamespacedDeploymentConfig
+  x-agentic-access:
+    action-class: acting
+    consequence: physical
+    subject: required
+    audience: null
+    token:
+      max-ttl: 300
+      exchange: true
+      purpose-required: true
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /apis/apps.openshift.io/v1/namespaces/{namespace}/deploymentconfigs/{name}
+  method: delete
+  operationId: deleteNamespacedDeploymentConfig
+  x-agentic-access:
+    action-class: acting
+    consequence: physical
+    subject: required
+    audience: null
+    token:
+      max-ttl: 300
+      exchange: true
+      purpose-required: true
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /apis/apps.openshift.io/v1/namespaces/{namespace}/deploymentconfigs/{name}/status
+  method: get
+  operationId: readNamespacedDeploymentConfigStatus
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /apis/apps.openshift.io/v1/namespaces/{namespace}/deploymentconfigs/{name}/status
+  method: put
+  operationId: replaceNamespacedDeploymentConfigStatus
+  x-agentic-access:
+    action-class: acting
+    consequence: physical
+    subject: required
+    audience: null
+    token:
+      max-ttl: 300
+      exchange: true
+      purpose-required: true
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /apis/apps.openshift.io/v1/namespaces/{namespace}/deploymentconfigs/{name}/scale
+  method: get
+  operationId: readNamespacedDeploymentConfigScale
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /apis/apps.openshift.io/v1/namespaces/{namespace}/deploymentconfigs/{name}/scale
+  method: put
+  operationId: replaceNamespacedDeploymentConfigScale
+  x-agentic-access:
+    action-class: acting
+    consequence: physical
+    subject: required
+    audience: null
+    token:
+      max-ttl: 300
+      exchange: true
+      purpose-required: true
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /apis/apps.openshift.io/v1/namespaces/{namespace}/deploymentconfigs/{name}/rollback
+  method: post
+  operationId: createNamespacedDeploymentConfigRollback
+  x-agentic-access:
+    action-class: acting
+    consequence: physical
+    subject: required
+    audience: null
+    token:
+      max-ttl: 300
+      exchange: true
+      purpose-required: true
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /apis/apps.openshift.io/v1/namespaces/{namespace}/deploymentconfigs/{name}/log
+  method: get
+  operationId: readNamespacedDeploymentConfigLog
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /apis/project.openshift.io/v1/projects
+  method: get
+  operationId: listProject
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /apis/project.openshift.io/v1/projects/{name}
+  method: get
+  operationId: readProject
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /apis/project.openshift.io/v1/projects/{name}
+  method: put
+  operationId: replaceProject
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /apis/project.openshift.io/v1/projects/{name}
+  method: delete
+  operationId: deleteProject
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /apis/project.openshift.io/v1/projectrequests
+  method: get
+  operationId: listProjectRequest
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /apis/project.openshift.io/v1/projectrequests
+  method: post
+  operationId: createProjectRequest
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
