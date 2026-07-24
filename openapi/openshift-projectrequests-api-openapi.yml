@@ -1,0 +1,339 @@
+openapi: 3.1.0
+info:
+  version: 4.17.0
+  title: openshift-rest-api BuildConfigs ProjectRequests API
+  description: 'The OpenShift REST API provides programmatic access to Red Hat OpenShift
+
+    Container Platform resources. This specification covers the core
+
+    OpenShift-specific API groups including Routes (route.openshift.io/v1),
+
+    Builds (build.openshift.io/v1), DeploymentConfigs (apps.openshift.io/v1),
+
+    and Projects (project.openshift.io/v1). These APIs extend the Kubernetes
+
+    API with capabilities for application routing, source-to-image builds,
+
+    deployment strategies, and multi-tenant project management.'
+  license:
+    name: Apache-2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+  termsOfService: https://www.redhat.com/en/about/terms-use
+  contact:
+    name: Red Hat OpenShift Support
+    url: https://access.redhat.com/support
+    email: openshift-dev@redhat.com
+servers:
+- url: https://api.openshift.com
+  description: OpenShift API Server
+security:
+- BearerToken: []
+tags:
+- name: ProjectRequests
+  description: Request creation of new projects. ProjectRequests are the mechanism through which users provision new projects subject to cluster policy.
+paths:
+  /apis/project.openshift.io/v1/projectrequests:
+    get:
+      operationId: listProjectRequest
+      summary: Openshift List Project Requests
+      description: List ProjectRequest objects. Returns the project request template status.
+      tags:
+      - ProjectRequests
+      parameters:
+      - $ref: '#/components/parameters/pretty'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Status'
+        '401':
+          description: Unauthorized
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+    post:
+      operationId: createProjectRequest
+      summary: Openshift Create a Project Request
+      description: Create a ProjectRequest to provision a new project. This is the preferred mechanism for project creation as it respects cluster project request templates and policies.
+      tags:
+      - ProjectRequests
+      parameters:
+      - $ref: '#/components/parameters/pretty'
+      - $ref: '#/components/parameters/dryRun'
+      - $ref: '#/components/parameters/fieldManager'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProjectRequest'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Project'
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Project'
+        '202':
+          description: Accepted
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Project'
+        '401':
+          description: Unauthorized
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  parameters:
+    fieldManager:
+      name: fieldManager
+      in: query
+      description: A name associated with the actor or entity making the change. Used for server-side apply to track field ownership.
+      schema:
+        type: string
+    dryRun:
+      name: dryRun
+      in: query
+      description: When present, indicates that modifications should not be persisted. Valid values are All (all dry run stages will be processed).
+      schema:
+        type: string
+    pretty:
+      name: pretty
+      in: query
+      description: If true, the output is pretty-printed.
+      schema:
+        type: string
+  schemas:
+    ProjectStatus:
+      type: object
+      description: Current state of the project.
+      properties:
+        phase:
+          type: string
+          description: The lifecycle phase of the project.
+          enum:
+          - Active
+          - Terminating
+          example: Active
+        conditions:
+          type: array
+          items:
+            type: object
+            properties:
+              type:
+                type: string
+              status:
+                type: string
+              reason:
+                type: string
+              message:
+                type: string
+              lastTransitionTime:
+                type: string
+                format: date-time
+          example: []
+    Status:
+      type: object
+      description: Status is a return value for calls that do not return other objects.
+      properties:
+        apiVersion:
+          type: string
+          default: v1
+          example: example_value
+        kind:
+          type: string
+          default: Status
+          example: example_value
+        metadata:
+          $ref: '#/components/schemas/ListMeta'
+        status:
+          type: string
+          enum:
+          - Success
+          - Failure
+          example: Success
+        message:
+          type: string
+          example: example_value
+        reason:
+          type: string
+          example: example_value
+        code:
+          type: integer
+          format: int32
+          example: 10
+    Project:
+      type: object
+      description: A Project provides a scope for Kubernetes resources, extending namespaces with additional metadata and access controls for multi-tenant environments.
+      properties:
+        apiVersion:
+          type: string
+          default: project.openshift.io/v1
+          example: example_value
+        kind:
+          type: string
+          default: Project
+          example: example_value
+        metadata:
+          $ref: '#/components/schemas/ObjectMeta'
+        spec:
+          $ref: '#/components/schemas/ProjectSpec'
+        status:
+          $ref: '#/components/schemas/ProjectStatus'
+    OwnerReference:
+      type: object
+      description: Contains information to identify an owning object.
+      required:
+      - apiVersion
+      - kind
+      - name
+      - uid
+      properties:
+        apiVersion:
+          type: string
+          example: example_value
+        kind:
+          type: string
+          example: example_value
+        name:
+          type: string
+          example: Example Title
+        uid:
+          type: string
+          example: '500123'
+        controller:
+          type: boolean
+          example: true
+        blockOwnerDeletion:
+          type: boolean
+          example: true
+    ProjectSpec:
+      type: object
+      description: Specification for the desired project state.
+      properties:
+        finalizers:
+          type: array
+          items:
+            type: string
+          description: Finalizers that must complete before the project is deleted.
+          example: []
+    ListMeta:
+      type: object
+      description: Metadata for list responses including pagination tokens.
+      properties:
+        selfLink:
+          type: string
+          example: example_value
+        resourceVersion:
+          type: string
+          example: example_value
+        continue:
+          type: string
+          example: example_value
+        remainingItemCount:
+          type: integer
+          format: int64
+          example: 10
+    ProjectRequest:
+      type: object
+      description: A request to create a new project. ProjectRequests are processed according to the cluster project request template and may include default resource quotas, limit ranges, and role bindings.
+      required:
+      - metadata
+      properties:
+        apiVersion:
+          type: string
+          default: project.openshift.io/v1
+          example: example_value
+        kind:
+          type: string
+          default: ProjectRequest
+          example: example_value
+        metadata:
+          $ref: '#/components/schemas/ObjectMeta'
+        displayName:
+          type: string
+          description: A human-readable name for the project, used in the web console.
+          example: example_value
+        description:
+          type: string
+          description: A longer description of the project purpose.
+          example: A sample description.
+    ObjectMeta:
+      type: object
+      description: Standard Kubernetes object metadata. Every resource includes metadata such as name, namespace, labels, and annotations.
+      properties:
+        name:
+          type: string
+          description: The name of the resource, unique within a namespace.
+          example: Example Title
+        namespace:
+          type: string
+          description: The namespace in which the resource resides.
+          example: example_value
+        uid:
+          type: string
+          format: uuid
+          description: A unique identifier for the resource set by the server.
+          example: '500123'
+        resourceVersion:
+          type: string
+          description: An opaque value representing the internal version of the object.
+          example: example_value
+        generation:
+          type: integer
+          format: int64
+          description: A sequence number representing a specific generation of the desired state.
+          example: 10
+        creationTimestamp:
+          type: string
+          format: date-time
+          description: Timestamp representing when the object was created.
+          example: '2026-01-15T10:30:00Z'
+        deletionTimestamp:
+          type: string
+          format: date-time
+          description: Timestamp at which the object will be deleted.
+          example: '2026-01-15T10:30:00Z'
+        labels:
+          type: object
+          additionalProperties:
+            type: string
+          description: Map of string keys and values that can be used to organize and categorize objects.
+          example: example_value
+        annotations:
+          type: object
+          additionalProperties:
+            type: string
+          description: Unstructured key-value map stored with a resource for arbitrary metadata.
+          example: example_value
+        ownerReferences:
+          type: array
+          items:
+            $ref: '#/components/schemas/OwnerReference'
+          description: List of objects depended by this object.
+          example: []
+        finalizers:
+          type: array
+          items:
+            type: string
+          description: Must be empty before the object is deleted from the registry.
+          example: []
+  securitySchemes:
+    BearerToken:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: OAuth bearer token obtained from the OpenShift OAuth server. Use 'oc whoami -t' to retrieve a token, or configure an OAuth client for programmatic access.
+externalDocs:
+  description: OpenShift Container Platform REST API Reference
+  url: https://docs.openshift.com/container-platform/4.17/rest_api/index.html

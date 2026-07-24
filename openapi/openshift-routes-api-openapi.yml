@@ -1,0 +1,762 @@
+openapi: 3.1.0
+info:
+  version: 4.17.0
+  title: openshift-rest-api BuildConfigs Routes API
+  description: 'The OpenShift REST API provides programmatic access to Red Hat OpenShift
+
+    Container Platform resources. This specification covers the core
+
+    OpenShift-specific API groups including Routes (route.openshift.io/v1),
+
+    Builds (build.openshift.io/v1), DeploymentConfigs (apps.openshift.io/v1),
+
+    and Projects (project.openshift.io/v1). These APIs extend the Kubernetes
+
+    API with capabilities for application routing, source-to-image builds,
+
+    deployment strategies, and multi-tenant project management.'
+  license:
+    name: Apache-2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+  termsOfService: https://www.redhat.com/en/about/terms-use
+  contact:
+    name: Red Hat OpenShift Support
+    url: https://access.redhat.com/support
+    email: openshift-dev@redhat.com
+servers:
+- url: https://api.openshift.com
+  description: OpenShift API Server
+security:
+- BearerToken: []
+tags:
+- name: Routes
+  description: Manage application routes that expose services at a hostname. Routes provide external access to services via HTTP/HTTPS, with support for TLS termination strategies including edge, passthrough, and re-encrypt.
+paths:
+  /apis/route.openshift.io/v1/routes:
+    get:
+      operationId: listRouteForAllNamespaces
+      summary: Openshift List Routes Across All Namespaces
+      description: List or watch Route objects across all namespaces. Requires cluster-level read access to routes.
+      tags:
+      - Routes
+      parameters:
+      - $ref: '#/components/parameters/allowWatchBookmarks'
+      - $ref: '#/components/parameters/continue'
+      - $ref: '#/components/parameters/fieldSelector'
+      - $ref: '#/components/parameters/labelSelector'
+      - $ref: '#/components/parameters/limit'
+      - $ref: '#/components/parameters/pretty'
+      - $ref: '#/components/parameters/resourceVersion'
+      - $ref: '#/components/parameters/watch'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RouteList'
+        '401':
+          description: Unauthorized
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /apis/route.openshift.io/v1/namespaces/{namespace}/routes:
+    get:
+      operationId: listNamespacedRoute
+      summary: Openshift List Routes in a Namespace
+      description: List or watch Route objects in the specified namespace.
+      tags:
+      - Routes
+      parameters:
+      - $ref: '#/components/parameters/namespace'
+      - $ref: '#/components/parameters/allowWatchBookmarks'
+      - $ref: '#/components/parameters/continue'
+      - $ref: '#/components/parameters/fieldSelector'
+      - $ref: '#/components/parameters/labelSelector'
+      - $ref: '#/components/parameters/limit'
+      - $ref: '#/components/parameters/pretty'
+      - $ref: '#/components/parameters/resourceVersion'
+      - $ref: '#/components/parameters/watch'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RouteList'
+        '401':
+          description: Unauthorized
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+    post:
+      operationId: createNamespacedRoute
+      summary: Openshift Create a Route
+      description: Create a Route in the specified namespace. A route exposes a service at an externally reachable hostname.
+      tags:
+      - Routes
+      parameters:
+      - $ref: '#/components/parameters/namespace'
+      - $ref: '#/components/parameters/pretty'
+      - $ref: '#/components/parameters/dryRun'
+      - $ref: '#/components/parameters/fieldManager'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Route'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Route'
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Route'
+        '202':
+          description: Accepted
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Route'
+        '401':
+          description: Unauthorized
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /apis/route.openshift.io/v1/namespaces/{namespace}/routes/{name}:
+    get:
+      operationId: readNamespacedRoute
+      summary: Openshift Read a Route
+      description: Read the specified Route in the given namespace.
+      tags:
+      - Routes
+      parameters:
+      - $ref: '#/components/parameters/name'
+      - $ref: '#/components/parameters/namespace'
+      - $ref: '#/components/parameters/pretty'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Route'
+        '401':
+          description: Unauthorized
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+    put:
+      operationId: replaceNamespacedRoute
+      summary: Openshift Replace a Route
+      description: Replace the specified Route in the given namespace.
+      tags:
+      - Routes
+      parameters:
+      - $ref: '#/components/parameters/name'
+      - $ref: '#/components/parameters/namespace'
+      - $ref: '#/components/parameters/pretty'
+      - $ref: '#/components/parameters/dryRun'
+      - $ref: '#/components/parameters/fieldManager'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Route'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Route'
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Route'
+        '401':
+          description: Unauthorized
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+    patch:
+      operationId: patchNamespacedRoute
+      summary: Openshift Patch a Route
+      description: Partially update the specified Route in the given namespace.
+      tags:
+      - Routes
+      parameters:
+      - $ref: '#/components/parameters/name'
+      - $ref: '#/components/parameters/namespace'
+      - $ref: '#/components/parameters/pretty'
+      - $ref: '#/components/parameters/dryRun'
+      - $ref: '#/components/parameters/fieldManager'
+      requestBody:
+        required: true
+        content:
+          application/merge-patch+json:
+            schema:
+              $ref: '#/components/schemas/Route'
+          application/strategic-merge-patch+json:
+            schema:
+              $ref: '#/components/schemas/Route'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Route'
+        '401':
+          description: Unauthorized
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+    delete:
+      operationId: deleteNamespacedRoute
+      summary: Openshift Delete a Route
+      description: Delete the specified Route from the given namespace.
+      tags:
+      - Routes
+      parameters:
+      - $ref: '#/components/parameters/name'
+      - $ref: '#/components/parameters/namespace'
+      - $ref: '#/components/parameters/pretty'
+      - $ref: '#/components/parameters/dryRun'
+      - $ref: '#/components/parameters/gracePeriodSeconds'
+      - $ref: '#/components/parameters/propagationPolicy'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Status'
+        '202':
+          description: Accepted
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Status'
+        '401':
+          description: Unauthorized
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /apis/route.openshift.io/v1/namespaces/{namespace}/routes/{name}/status:
+    get:
+      operationId: readNamespacedRouteStatus
+      summary: Openshift Read Status of a Route
+      description: Read the status of the specified Route.
+      tags:
+      - Routes
+      parameters:
+      - $ref: '#/components/parameters/name'
+      - $ref: '#/components/parameters/namespace'
+      - $ref: '#/components/parameters/pretty'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Route'
+        '401':
+          description: Unauthorized
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+    put:
+      operationId: replaceNamespacedRouteStatus
+      summary: Openshift Replace Status of a Route
+      description: Replace the status of the specified Route.
+      tags:
+      - Routes
+      parameters:
+      - $ref: '#/components/parameters/name'
+      - $ref: '#/components/parameters/namespace'
+      - $ref: '#/components/parameters/pretty'
+      - $ref: '#/components/parameters/dryRun'
+      - $ref: '#/components/parameters/fieldManager'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Route'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Route'
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Route'
+        '401':
+          description: Unauthorized
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  parameters:
+    gracePeriodSeconds:
+      name: gracePeriodSeconds
+      in: query
+      description: The duration in seconds before the object should be deleted. The value zero indicates delete immediately.
+      schema:
+        type: integer
+        format: int64
+    name:
+      name: name
+      in: path
+      required: true
+      description: Name of the resource.
+      schema:
+        type: string
+    allowWatchBookmarks:
+      name: allowWatchBookmarks
+      in: query
+      description: Allow watch bookmarks. Bookmarks report the resourceVersion to which the set of watched resources is synced.
+      schema:
+        type: boolean
+    watch:
+      name: watch
+      in: query
+      description: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications.
+      schema:
+        type: boolean
+    continue:
+      name: continue
+      in: query
+      description: The continue token for paging through large result sets.
+      schema:
+        type: string
+    pretty:
+      name: pretty
+      in: query
+      description: If true, the output is pretty-printed.
+      schema:
+        type: string
+    namespace:
+      name: namespace
+      in: path
+      required: true
+      description: The namespace (project) scope for the resource.
+      schema:
+        type: string
+    propagationPolicy:
+      name: propagationPolicy
+      in: query
+      description: Whether and how garbage collection will be performed. Either Orphan, Background, or Foreground.
+      schema:
+        type: string
+        enum:
+        - Orphan
+        - Background
+        - Foreground
+    fieldManager:
+      name: fieldManager
+      in: query
+      description: A name associated with the actor or entity making the change. Used for server-side apply to track field ownership.
+      schema:
+        type: string
+    labelSelector:
+      name: labelSelector
+      in: query
+      description: A selector to restrict the list of returned objects by their labels.
+      schema:
+        type: string
+    dryRun:
+      name: dryRun
+      in: query
+      description: When present, indicates that modifications should not be persisted. Valid values are All (all dry run stages will be processed).
+      schema:
+        type: string
+    resourceVersion:
+      name: resourceVersion
+      in: query
+      description: Specifies the resource version to match or list from.
+      schema:
+        type: string
+    fieldSelector:
+      name: fieldSelector
+      in: query
+      description: A selector to restrict the list of returned objects by their fields.
+      schema:
+        type: string
+    limit:
+      name: limit
+      in: query
+      description: Maximum number of responses to return for a list call.
+      schema:
+        type: integer
+        format: int64
+  schemas:
+    RouteTargetReference:
+      type: object
+      description: Specifies the target that traffic is routed to. Weight controls the proportion of traffic sent to this backend.
+      required:
+      - kind
+      - name
+      properties:
+        kind:
+          type: string
+          description: The kind of target, typically Service.
+          enum:
+          - Service
+          default: Service
+          example: Service
+        name:
+          type: string
+          description: Name of the target service.
+          example: Example Title
+        weight:
+          type: integer
+          format: int32
+          description: Relative weight for traffic distribution (0-256). A zero weight causes no traffic to be sent to this backend.
+          minimum: 0
+          maximum: 256
+          default: 100
+          example: 10
+    Route:
+      type: object
+      description: A Route exposes a service at a hostname, enabling external access to applications in the cluster. Routes support TLS termination strategies including edge, passthrough, and re-encrypt.
+      required:
+      - spec
+      properties:
+        apiVersion:
+          type: string
+          default: route.openshift.io/v1
+          example: example_value
+        kind:
+          type: string
+          default: Route
+          example: example_value
+        metadata:
+          $ref: '#/components/schemas/ObjectMeta'
+        spec:
+          $ref: '#/components/schemas/RouteSpec'
+        status:
+          $ref: '#/components/schemas/RouteStatus'
+    TLSConfig:
+      type: object
+      description: TLS configuration for the route. Determines how TLS connections are handled at the router.
+      properties:
+        termination:
+          type: string
+          description: Indicates termination type. Edge terminates TLS at the router, passthrough forwards encrypted traffic to the backend, and re-encrypt terminates at the router and re-encrypts to the backend.
+          enum:
+          - edge
+          - passthrough
+          - reencrypt
+          example: edge
+        certificate:
+          type: string
+          description: PEM-encoded certificate for the route. Required for edge and re-encrypt termination if not using a default certificate.
+          example: example_value
+        key:
+          type: string
+          description: PEM-encoded private key for the route certificate.
+          example: example_value
+        caCertificate:
+          type: string
+          description: PEM-encoded CA certificate chain used to verify client certificates.
+          example: example_value
+        destinationCACertificate:
+          type: string
+          description: PEM-encoded CA certificate used to verify the backend server certificate. Only applicable for re-encrypt termination.
+          example: example_value
+        insecureEdgeTerminationPolicy:
+          type: string
+          description: Policy for handling insecure (HTTP) traffic when TLS is configured. None disables insecure traffic, Allow permits it, Redirect sends a 301 redirect to the HTTPS URL.
+          enum:
+          - None
+          - Allow
+          - Redirect
+          example: None
+    RouteSpec:
+      type: object
+      description: Desired state of the Route resource.
+      required:
+      - to
+      properties:
+        host:
+          type: string
+          description: The desired hostname for the route. If not specified, a hostname is generated by the router.
+          example: myapp.apps.openshift.example.com
+        path:
+          type: string
+          description: The path that the router watches to route traffic to the service. Only used for path-based routing with edge or re-encrypt TLS termination.
+          example: /api
+        subdomain:
+          type: string
+          description: A DNS subdomain request. If set, the route hostname is composed using this value and the ingress domain.
+          example: example_value
+        to:
+          $ref: '#/components/schemas/RouteTargetReference'
+        alternateBackends:
+          type: array
+          description: Up to 3 additional backends for A/B testing. Traffic is split among the backends according to their weights.
+          items:
+            $ref: '#/components/schemas/RouteTargetReference'
+          maxItems: 3
+          example: []
+        port:
+          $ref: '#/components/schemas/RoutePort'
+        tls:
+          $ref: '#/components/schemas/TLSConfig'
+        wildcardPolicy:
+          type: string
+          description: The wildcard policy for the hostname. None disallows wildcard routes, Subdomain allows wildcard routes with subdomains.
+          enum:
+          - None
+          - Subdomain
+          default: None
+          example: None
+    OwnerReference:
+      type: object
+      description: Contains information to identify an owning object.
+      required:
+      - apiVersion
+      - kind
+      - name
+      - uid
+      properties:
+        apiVersion:
+          type: string
+          example: example_value
+        kind:
+          type: string
+          example: example_value
+        name:
+          type: string
+          example: Example Title
+        uid:
+          type: string
+          example: '500123'
+        controller:
+          type: boolean
+          example: true
+        blockOwnerDeletion:
+          type: boolean
+          example: true
+    Status:
+      type: object
+      description: Status is a return value for calls that do not return other objects.
+      properties:
+        apiVersion:
+          type: string
+          default: v1
+          example: example_value
+        kind:
+          type: string
+          default: Status
+          example: example_value
+        metadata:
+          $ref: '#/components/schemas/ListMeta'
+        status:
+          type: string
+          enum:
+          - Success
+          - Failure
+          example: Success
+        message:
+          type: string
+          example: example_value
+        reason:
+          type: string
+          example: example_value
+        code:
+          type: integer
+          format: int32
+          example: 10
+    RoutePort:
+      type: object
+      description: Route port configuration that specifies which service port the route points to.
+      required:
+      - targetPort
+      properties:
+        targetPort:
+          oneOf:
+          - type: string
+          - type: integer
+          description: The target port on pods selected by the service this route points to. Can be a port name or number.
+          example: example_value
+    RouteIngressCondition:
+      type: object
+      description: Describes the state of a route at a point in time.
+      properties:
+        type:
+          type: string
+          description: The type of the condition (e.g., Admitted).
+          example: example_value
+        status:
+          type: string
+          enum:
+          - 'True'
+          - 'False'
+          - Unknown
+          example: 'True'
+        reason:
+          type: string
+          example: example_value
+        message:
+          type: string
+          example: example_value
+        lastTransitionTime:
+          type: string
+          format: date-time
+          example: '2026-01-15T10:30:00Z'
+    ListMeta:
+      type: object
+      description: Metadata for list responses including pagination tokens.
+      properties:
+        selfLink:
+          type: string
+          example: example_value
+        resourceVersion:
+          type: string
+          example: example_value
+        continue:
+          type: string
+          example: example_value
+        remainingItemCount:
+          type: integer
+          format: int64
+          example: 10
+    RouteList:
+      type: object
+      description: A list of Route objects.
+      required:
+      - items
+      properties:
+        apiVersion:
+          type: string
+          default: route.openshift.io/v1
+          example: example_value
+        kind:
+          type: string
+          default: RouteList
+          example: example_value
+        metadata:
+          $ref: '#/components/schemas/ListMeta'
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/Route'
+          example: []
+    RouteStatus:
+      type: object
+      description: Current state of the Route.
+      properties:
+        ingress:
+          type: array
+          description: Status entries for each router that has admitted the route.
+          items:
+            $ref: '#/components/schemas/RouteIngress'
+          example: []
+    RouteIngress:
+      type: object
+      description: Holds information about the places where a route is exposed.
+      properties:
+        host:
+          type: string
+          description: The hostname assigned to the route by the router.
+          example: example_value
+        routerName:
+          type: string
+          description: The name of the router that admitted this route.
+          example: example_value
+        conditions:
+          type: array
+          items:
+            $ref: '#/components/schemas/RouteIngressCondition'
+          example: []
+        wildcardPolicy:
+          type: string
+          description: The wildcard policy applied by the router.
+          example: example_value
+    ObjectMeta:
+      type: object
+      description: Standard Kubernetes object metadata. Every resource includes metadata such as name, namespace, labels, and annotations.
+      properties:
+        name:
+          type: string
+          description: The name of the resource, unique within a namespace.
+          example: Example Title
+        namespace:
+          type: string
+          description: The namespace in which the resource resides.
+          example: example_value
+        uid:
+          type: string
+          format: uuid
+          description: A unique identifier for the resource set by the server.
+          example: '500123'
+        resourceVersion:
+          type: string
+          description: An opaque value representing the internal version of the object.
+          example: example_value
+        generation:
+          type: integer
+          format: int64
+          description: A sequence number representing a specific generation of the desired state.
+          example: 10
+        creationTimestamp:
+          type: string
+          format: date-time
+          description: Timestamp representing when the object was created.
+          example: '2026-01-15T10:30:00Z'
+        deletionTimestamp:
+          type: string
+          format: date-time
+          description: Timestamp at which the object will be deleted.
+          example: '2026-01-15T10:30:00Z'
+        labels:
+          type: object
+          additionalProperties:
+            type: string
+          description: Map of string keys and values that can be used to organize and categorize objects.
+          example: example_value
+        annotations:
+          type: object
+          additionalProperties:
+            type: string
+          description: Unstructured key-value map stored with a resource for arbitrary metadata.
+          example: example_value
+        ownerReferences:
+          type: array
+          items:
+            $ref: '#/components/schemas/OwnerReference'
+          description: List of objects depended by this object.
+          example: []
+        finalizers:
+          type: array
+          items:
+            type: string
+          description: Must be empty before the object is deleted from the registry.
+          example: []
+  securitySchemes:
+    BearerToken:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: OAuth bearer token obtained from the OpenShift OAuth server. Use 'oc whoami -t' to retrieve a token, or configure an OAuth client for programmatic access.
+externalDocs:
+  description: OpenShift Container Platform REST API Reference
+  url: https://docs.openshift.com/container-platform/4.17/rest_api/index.html

@@ -1,0 +1,849 @@
+openapi: 3.1.0
+info:
+  version: 4.17.0
+  title: openshift-rest-api BuildConfigs Builds API
+  description: 'The OpenShift REST API provides programmatic access to Red Hat OpenShift
+
+    Container Platform resources. This specification covers the core
+
+    OpenShift-specific API groups including Routes (route.openshift.io/v1),
+
+    Builds (build.openshift.io/v1), DeploymentConfigs (apps.openshift.io/v1),
+
+    and Projects (project.openshift.io/v1). These APIs extend the Kubernetes
+
+    API with capabilities for application routing, source-to-image builds,
+
+    deployment strategies, and multi-tenant project management.'
+  license:
+    name: Apache-2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+  termsOfService: https://www.redhat.com/en/about/terms-use
+  contact:
+    name: Red Hat OpenShift Support
+    url: https://access.redhat.com/support
+    email: openshift-dev@redhat.com
+servers:
+- url: https://api.openshift.com
+  description: OpenShift API Server
+security:
+- BearerToken: []
+tags:
+- name: Builds
+  description: Manage builds and build configurations for source-to-image, Docker, and custom build strategies. Builds compile source code into runnable container images.
+paths:
+  /apis/build.openshift.io/v1/builds:
+    get:
+      operationId: listBuildForAllNamespaces
+      summary: Openshift List Builds Across All Namespaces
+      description: List or watch Build objects across all namespaces.
+      tags:
+      - Builds
+      parameters:
+      - $ref: '#/components/parameters/allowWatchBookmarks'
+      - $ref: '#/components/parameters/continue'
+      - $ref: '#/components/parameters/fieldSelector'
+      - $ref: '#/components/parameters/labelSelector'
+      - $ref: '#/components/parameters/limit'
+      - $ref: '#/components/parameters/pretty'
+      - $ref: '#/components/parameters/resourceVersion'
+      - $ref: '#/components/parameters/watch'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BuildList'
+        '401':
+          description: Unauthorized
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /apis/build.openshift.io/v1/namespaces/{namespace}/builds:
+    get:
+      operationId: listNamespacedBuild
+      summary: Openshift List Builds in a Namespace
+      description: List or watch Build objects in the specified namespace.
+      tags:
+      - Builds
+      parameters:
+      - $ref: '#/components/parameters/namespace'
+      - $ref: '#/components/parameters/allowWatchBookmarks'
+      - $ref: '#/components/parameters/continue'
+      - $ref: '#/components/parameters/fieldSelector'
+      - $ref: '#/components/parameters/labelSelector'
+      - $ref: '#/components/parameters/limit'
+      - $ref: '#/components/parameters/pretty'
+      - $ref: '#/components/parameters/resourceVersion'
+      - $ref: '#/components/parameters/watch'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BuildList'
+        '401':
+          description: Unauthorized
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+    post:
+      operationId: createNamespacedBuild
+      summary: Openshift Create a Build
+      description: Create a Build in the specified namespace. A Build represents a single execution of a build process that transforms source into a container image.
+      tags:
+      - Builds
+      parameters:
+      - $ref: '#/components/parameters/namespace'
+      - $ref: '#/components/parameters/pretty'
+      - $ref: '#/components/parameters/dryRun'
+      - $ref: '#/components/parameters/fieldManager'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Build'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Build'
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Build'
+        '202':
+          description: Accepted
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Build'
+        '401':
+          description: Unauthorized
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /apis/build.openshift.io/v1/namespaces/{namespace}/builds/{name}:
+    get:
+      operationId: readNamespacedBuild
+      summary: Openshift Read a Build
+      description: Read the specified Build in the given namespace.
+      tags:
+      - Builds
+      parameters:
+      - $ref: '#/components/parameters/name'
+      - $ref: '#/components/parameters/namespace'
+      - $ref: '#/components/parameters/pretty'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Build'
+        '401':
+          description: Unauthorized
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+    put:
+      operationId: replaceNamespacedBuild
+      summary: Openshift Replace a Build
+      description: Replace the specified Build in the given namespace.
+      tags:
+      - Builds
+      parameters:
+      - $ref: '#/components/parameters/name'
+      - $ref: '#/components/parameters/namespace'
+      - $ref: '#/components/parameters/pretty'
+      - $ref: '#/components/parameters/dryRun'
+      - $ref: '#/components/parameters/fieldManager'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Build'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Build'
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Build'
+        '401':
+          description: Unauthorized
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+    delete:
+      operationId: deleteNamespacedBuild
+      summary: Openshift Delete a Build
+      description: Delete the specified Build from the given namespace.
+      tags:
+      - Builds
+      parameters:
+      - $ref: '#/components/parameters/name'
+      - $ref: '#/components/parameters/namespace'
+      - $ref: '#/components/parameters/pretty'
+      - $ref: '#/components/parameters/dryRun'
+      - $ref: '#/components/parameters/gracePeriodSeconds'
+      - $ref: '#/components/parameters/propagationPolicy'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Status'
+        '202':
+          description: Accepted
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Status'
+        '401':
+          description: Unauthorized
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /apis/build.openshift.io/v1/namespaces/{namespace}/builds/{name}/log:
+    get:
+      operationId: readNamespacedBuildLog
+      summary: Openshift Read Build Log
+      description: Read the log output from the specified Build.
+      tags:
+      - Builds
+      parameters:
+      - $ref: '#/components/parameters/name'
+      - $ref: '#/components/parameters/namespace'
+      - name: container
+        in: query
+        description: The container for which to stream logs.
+        schema:
+          type: string
+      - name: follow
+        in: query
+        description: Follow the log stream of the build.
+        schema:
+          type: boolean
+      - name: sinceSeconds
+        in: query
+        description: A relative time in seconds before the current time from which to show logs.
+        schema:
+          type: integer
+          format: int64
+      - name: tailLines
+        in: query
+        description: Number of lines from the end of the log to show.
+        schema:
+          type: integer
+          format: int64
+      - name: timestamps
+        in: query
+        description: Add RFC3339 timestamps to each log line.
+        schema:
+          type: boolean
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: string
+        '401':
+          description: Unauthorized
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  parameters:
+    name:
+      name: name
+      in: path
+      required: true
+      description: Name of the resource.
+      schema:
+        type: string
+    allowWatchBookmarks:
+      name: allowWatchBookmarks
+      in: query
+      description: Allow watch bookmarks. Bookmarks report the resourceVersion to which the set of watched resources is synced.
+      schema:
+        type: boolean
+    watch:
+      name: watch
+      in: query
+      description: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications.
+      schema:
+        type: boolean
+    continue:
+      name: continue
+      in: query
+      description: The continue token for paging through large result sets.
+      schema:
+        type: string
+    pretty:
+      name: pretty
+      in: query
+      description: If true, the output is pretty-printed.
+      schema:
+        type: string
+    namespace:
+      name: namespace
+      in: path
+      required: true
+      description: The namespace (project) scope for the resource.
+      schema:
+        type: string
+    propagationPolicy:
+      name: propagationPolicy
+      in: query
+      description: Whether and how garbage collection will be performed. Either Orphan, Background, or Foreground.
+      schema:
+        type: string
+        enum:
+        - Orphan
+        - Background
+        - Foreground
+    fieldManager:
+      name: fieldManager
+      in: query
+      description: A name associated with the actor or entity making the change. Used for server-side apply to track field ownership.
+      schema:
+        type: string
+    labelSelector:
+      name: labelSelector
+      in: query
+      description: A selector to restrict the list of returned objects by their labels.
+      schema:
+        type: string
+    dryRun:
+      name: dryRun
+      in: query
+      description: When present, indicates that modifications should not be persisted. Valid values are All (all dry run stages will be processed).
+      schema:
+        type: string
+    fieldSelector:
+      name: fieldSelector
+      in: query
+      description: A selector to restrict the list of returned objects by their fields.
+      schema:
+        type: string
+    resourceVersion:
+      name: resourceVersion
+      in: query
+      description: Specifies the resource version to match or list from.
+      schema:
+        type: string
+    gracePeriodSeconds:
+      name: gracePeriodSeconds
+      in: query
+      description: The duration in seconds before the object should be deleted. The value zero indicates delete immediately.
+      schema:
+        type: integer
+        format: int64
+    limit:
+      name: limit
+      in: query
+      description: Maximum number of responses to return for a list call.
+      schema:
+        type: integer
+        format: int64
+  schemas:
+    DockerBuildStrategy:
+      type: object
+      description: Docker build strategy that uses a Dockerfile to build images.
+      properties:
+        from:
+          $ref: '#/components/schemas/ObjectReference'
+        dockerfilePath:
+          type: string
+          description: Path of the Dockerfile relative to the context directory.
+          example: example_value
+        env:
+          type: array
+          items:
+            $ref: '#/components/schemas/EnvVar'
+          example: []
+        noCache:
+          type: boolean
+          description: If true, Docker build caching is disabled.
+          example: true
+        forcePull:
+          type: boolean
+          description: Forces a pull of the base image before the build.
+          example: true
+        buildArgs:
+          type: array
+          items:
+            $ref: '#/components/schemas/EnvVar'
+          description: Specifies build arguments to pass to Docker.
+          example: []
+    ObjectReference:
+      type: object
+      description: A reference to a Kubernetes object.
+      properties:
+        apiVersion:
+          type: string
+          example: example_value
+        kind:
+          type: string
+          example: example_value
+        name:
+          type: string
+          example: Example Title
+        namespace:
+          type: string
+          example: example_value
+    BuildSource:
+      type: object
+      description: Specifies the source code location and type for the build input.
+      properties:
+        type:
+          type: string
+          description: The type of source input.
+          enum:
+          - Git
+          - Dockerfile
+          - Binary
+          - Image
+          - None
+          example: Git
+        git:
+          type: object
+          description: Git source location.
+          properties:
+            uri:
+              type: string
+              format: uri
+              description: The URL of the Git repository.
+            ref:
+              type: string
+              description: The Git branch, tag, or commit to build.
+          example: example_value
+        dockerfile:
+          type: string
+          description: The Dockerfile content used as build input.
+          example: example_value
+        contextDir:
+          type: string
+          description: The subdirectory within the source repository used as the context for the build.
+          example: example_value
+        sourceSecret:
+          type: object
+          description: Secret holding credentials for accessing the source repository.
+          properties:
+            name:
+              type: string
+          example: example_value
+    BuildOutput:
+      type: object
+      description: Specifies where the resulting container image is pushed.
+      properties:
+        to:
+          $ref: '#/components/schemas/ObjectReference'
+        pushSecret:
+          type: object
+          description: Secret holding credentials for pushing to the output registry.
+          properties:
+            name:
+              type: string
+          example: example_value
+    BuildSpec:
+      type: object
+      description: Specification of the desired build behavior.
+      properties:
+        serviceAccount:
+          type: string
+          description: The name of the ServiceAccount to use to run the build pod.
+          default: builder
+          example: example_value
+        source:
+          $ref: '#/components/schemas/BuildSource'
+        strategy:
+          $ref: '#/components/schemas/BuildStrategy'
+        output:
+          $ref: '#/components/schemas/BuildOutput'
+        resources:
+          $ref: '#/components/schemas/ResourceRequirements'
+        completionDeadlineSeconds:
+          type: integer
+          format: int64
+          description: Optional duration in seconds the build may run before the system terminates it. The countdown starts from the time the build pod is scheduled.
+          example: 10
+        nodeSelector:
+          type: object
+          additionalProperties:
+            type: string
+          description: Selector which must match a node's labels for the build pod to be scheduled on that node.
+          example: example_value
+        triggeredBy:
+          type: array
+          description: Describes which triggers started the most recent build.
+          items:
+            $ref: '#/components/schemas/BuildTriggerCause'
+          example: []
+    ResourceRequirements:
+      type: object
+      description: Compute resource requirements for a container.
+      properties:
+        limits:
+          type: object
+          additionalProperties:
+            type: string
+          description: Maximum compute resources allowed (e.g., cpu, memory).
+          example: example_value
+        requests:
+          type: object
+          additionalProperties:
+            type: string
+          description: Minimum compute resources required (e.g., cpu, memory).
+          example: example_value
+    OwnerReference:
+      type: object
+      description: Contains information to identify an owning object.
+      required:
+      - apiVersion
+      - kind
+      - name
+      - uid
+      properties:
+        apiVersion:
+          type: string
+          example: example_value
+        kind:
+          type: string
+          example: example_value
+        name:
+          type: string
+          example: Example Title
+        uid:
+          type: string
+          example: '500123'
+        controller:
+          type: boolean
+          example: true
+        blockOwnerDeletion:
+          type: boolean
+          example: true
+    EnvVar:
+      type: object
+      description: An environment variable to set in a container.
+      required:
+      - name
+      properties:
+        name:
+          type: string
+          description: The environment variable name.
+          example: Example Title
+        value:
+          type: string
+          description: The environment variable value.
+          example: example_value
+    Status:
+      type: object
+      description: Status is a return value for calls that do not return other objects.
+      properties:
+        apiVersion:
+          type: string
+          default: v1
+          example: example_value
+        kind:
+          type: string
+          default: Status
+          example: example_value
+        metadata:
+          $ref: '#/components/schemas/ListMeta'
+        status:
+          type: string
+          enum:
+          - Success
+          - Failure
+          example: Success
+        message:
+          type: string
+          example: example_value
+        reason:
+          type: string
+          example: example_value
+        code:
+          type: integer
+          format: int32
+          example: 10
+    ListMeta:
+      type: object
+      description: Metadata for list responses including pagination tokens.
+      properties:
+        selfLink:
+          type: string
+          example: example_value
+        resourceVersion:
+          type: string
+          example: example_value
+        continue:
+          type: string
+          example: example_value
+        remainingItemCount:
+          type: integer
+          format: int64
+          example: 10
+    CustomBuildStrategy:
+      type: object
+      description: Custom build strategy that uses a custom builder image to execute an arbitrary build process.
+      required:
+      - from
+      properties:
+        from:
+          $ref: '#/components/schemas/ObjectReference'
+        env:
+          type: array
+          items:
+            $ref: '#/components/schemas/EnvVar'
+          example: []
+        exposeDockerSocket:
+          type: boolean
+          description: If true, the Docker socket is exposed inside the build container.
+          example: true
+        forcePull:
+          type: boolean
+          description: Forces a pull of the custom builder image before the build.
+          example: true
+    BuildStrategy:
+      type: object
+      description: Describes how to perform the build.
+      properties:
+        type:
+          type: string
+          description: The type of build strategy.
+          enum:
+          - Source
+          - Docker
+          - Custom
+          example: Source
+        sourceStrategy:
+          $ref: '#/components/schemas/SourceBuildStrategy'
+        dockerStrategy:
+          $ref: '#/components/schemas/DockerBuildStrategy'
+        customStrategy:
+          $ref: '#/components/schemas/CustomBuildStrategy'
+    SourceBuildStrategy:
+      type: object
+      description: Source-to-Image (S2I) build strategy that combines application source with a builder image to produce a runnable image.
+      required:
+      - from
+      properties:
+        from:
+          $ref: '#/components/schemas/ObjectReference'
+        env:
+          type: array
+          items:
+            $ref: '#/components/schemas/EnvVar'
+          example: []
+        scripts:
+          type: string
+          description: URL of S2I scripts to use instead of the ones in the builder image.
+          example: example_value
+        incremental:
+          type: boolean
+          description: Attempt to perform an incremental build reusing artifacts from a prior build.
+          example: true
+        forcePull:
+          type: boolean
+          description: Overrides the default pull behavior and forces a pull of the builder image before the build.
+          example: true
+    BuildStatus:
+      type: object
+      description: Status of the build execution.
+      properties:
+        phase:
+          type: string
+          description: The current phase of the build.
+          enum:
+          - New
+          - Pending
+          - Running
+          - Complete
+          - Failed
+          - Error
+          - Cancelled
+          example: New
+        cancelled:
+          type: boolean
+          description: Whether the build was cancelled.
+          example: true
+        message:
+          type: string
+          description: Human-readable message about the build status.
+          example: example_value
+        reason:
+          type: string
+          description: Brief machine-readable reason for the build status.
+          example: example_value
+        startTimestamp:
+          type: string
+          format: date-time
+          description: Timestamp when the build started running.
+          example: '2026-01-15T10:30:00Z'
+        completionTimestamp:
+          type: string
+          format: date-time
+          description: Timestamp when the build completed.
+          example: '2026-01-15T10:30:00Z'
+        duration:
+          type: integer
+          format: int64
+          description: Duration of the build in nanoseconds.
+          example: 10
+        outputDockerImageReference:
+          type: string
+          description: The Docker image reference of the built image.
+          example: example_value
+        config:
+          $ref: '#/components/schemas/ObjectReference'
+        output:
+          type: object
+          description: Build output details.
+          properties:
+            to:
+              type: object
+              properties:
+                imageDigest:
+                  type: string
+                  description: The image digest of the pushed image.
+          example: example_value
+        logSnippet:
+          type: string
+          description: The last few lines of the build log for failed builds.
+          example: example_value
+    Build:
+      type: object
+      description: A Build represents a single execution of a build process that transforms source code into a runnable container image. Builds are created from BuildConfigs or instantiated directly.
+      required:
+      - spec
+      properties:
+        apiVersion:
+          type: string
+          default: build.openshift.io/v1
+          example: example_value
+        kind:
+          type: string
+          default: Build
+          example: example_value
+        metadata:
+          $ref: '#/components/schemas/ObjectMeta'
+        spec:
+          $ref: '#/components/schemas/BuildSpec'
+        status:
+          $ref: '#/components/schemas/BuildStatus'
+    BuildTriggerCause:
+      type: object
+      description: Records which event triggered the build.
+      properties:
+        message:
+          type: string
+          description: Short human-readable description of the trigger.
+          example: example_value
+    BuildList:
+      type: object
+      description: A list of Build objects.
+      required:
+      - items
+      properties:
+        apiVersion:
+          type: string
+          default: build.openshift.io/v1
+          example: example_value
+        kind:
+          type: string
+          default: BuildList
+          example: example_value
+        metadata:
+          $ref: '#/components/schemas/ListMeta'
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/Build'
+          example: []
+    ObjectMeta:
+      type: object
+      description: Standard Kubernetes object metadata. Every resource includes metadata such as name, namespace, labels, and annotations.
+      properties:
+        name:
+          type: string
+          description: The name of the resource, unique within a namespace.
+          example: Example Title
+        namespace:
+          type: string
+          description: The namespace in which the resource resides.
+          example: example_value
+        uid:
+          type: string
+          format: uuid
+          description: A unique identifier for the resource set by the server.
+          example: '500123'
+        resourceVersion:
+          type: string
+          description: An opaque value representing the internal version of the object.
+          example: example_value
+        generation:
+          type: integer
+          format: int64
+          description: A sequence number representing a specific generation of the desired state.
+          example: 10
+        creationTimestamp:
+          type: string
+          format: date-time
+          description: Timestamp representing when the object was created.
+          example: '2026-01-15T10:30:00Z'
+        deletionTimestamp:
+          type: string
+          format: date-time
+          description: Timestamp at which the object will be deleted.
+          example: '2026-01-15T10:30:00Z'
+        labels:
+          type: object
+          additionalProperties:
+            type: string
+          description: Map of string keys and values that can be used to organize and categorize objects.
+          example: example_value
+        annotations:
+          type: object
+          additionalProperties:
+            type: string
+          description: Unstructured key-value map stored with a resource for arbitrary metadata.
+          example: example_value
+        ownerReferences:
+          type: array
+          items:
+            $ref: '#/components/schemas/OwnerReference'
+          description: List of objects depended by this object.
+          example: []
+        finalizers:
+          type: array
+          items:
+            type: string
+          description: Must be empty before the object is deleted from the registry.
+          example: []
+  securitySchemes:
+    BearerToken:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: OAuth bearer token obtained from the OpenShift OAuth server. Use 'oc whoami -t' to retrieve a token, or configure an OAuth client for programmatic access.
+externalDocs:
+  description: OpenShift Container Platform REST API Reference
+  url: https://docs.openshift.com/container-platform/4.17/rest_api/index.html
