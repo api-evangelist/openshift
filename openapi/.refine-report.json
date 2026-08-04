@@ -1,0 +1,24 @@
+{
+  "provider": "openshift",
+  "sources": [
+    "openshift-buildconfigs-api-openapi.yml",
+    "openshift-builds-api-openapi.yml",
+    "openshift-deploymentconfigs-api-openapi.yml",
+    "openshift-projectrequests-api-openapi.yml",
+    "openshift-projects-api-openapi.yml",
+    "openshift-routes-api-openapi.yml"
+  ],
+  "outputs": [
+    "openshift-buildconfigs-api-openapi.yml",
+    "openshift-builds-api-openapi.yml",
+    "openshift-deploymentconfigs-api-openapi.yml",
+    "openshift-projectrequests-api-openapi.yml",
+    "openshift-projects-api-openapi.yml",
+    "openshift-routes-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

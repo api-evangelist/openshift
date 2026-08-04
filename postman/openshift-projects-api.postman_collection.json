@@ -1,0 +1,1059 @@
+{
+  "info": {
+    "_postman_id": "c7e5bbc8-9027-4ac1-a40a-d4e6f3ac3c94",
+    "name": "openshift-rest-api BuildConfigs Projects API",
+    "description": "The OpenShift REST API provides programmatic access to Red Hat OpenShift\nContainer Platform resources. This specification covers the core\nOpenShift-specific API groups including Routes (route.openshift.io/v1),\nBuilds (build.openshift.io/v1), DeploymentConfigs (apps.openshift.io/v1),\nand Projects (project.openshift.io/v1). These APIs extend the Kubernetes\nAPI with capabilities for application routing, source-to-image builds,\ndeployment strategies, and multi-tenant project management.\n\nContact Support:\n Name: Red Hat OpenShift Support\n Email: openshift-dev@redhat.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:26:46.000Z",
+    "updatedAt": "2026-07-28T02:26:47.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-c7e5bbc8-9027-4ac1-a40a-d4e6f3ac3c94"
+  },
+  "item": [
+    {
+      "name": "apis",
+      "item": [
+        {
+          "name": "project.openshift.io",
+          "item": [
+            {
+              "name": "v1",
+              "item": [
+                {
+                  "name": "projects",
+                  "item": [
+                    {
+                      "name": "{name}",
+                      "item": [
+                        {
+                          "name": "Openshift Read a Project",
+                          "id": "720389e9-2c74-4e14-a959-612ea4311b65",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/apis/project.openshift.io/v1/projects/:name?pretty=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "apis",
+                                "project.openshift.io",
+                                "v1",
+                                "projects",
+                                ":name"
+                              ],
+                              "query": [
+                                {
+                                  "description": "If true, the output is pretty-printed.",
+                                  "key": "pretty",
+                                  "value": "<string>"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "id": "49056db3-ea89-42d0-bfb0-6a94a2b752db",
+                                  "key": "name",
+                                  "value": "<string>",
+                                  "description": "(Required) Name of the resource."
+                                }
+                              ]
+                            },
+                            "description": "Read the specified Project."
+                          },
+                          "response": [
+                            {
+                              "id": "110a62a1-d21d-4c76-a0ca-4e39e5b3e3a5",
+                              "name": "OK",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/apis/project.openshift.io/v1/projects/:name?pretty=<string>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "apis",
+                                    "project.openshift.io",
+                                    "v1",
+                                    "projects",
+                                    ":name"
+                                  ],
+                                  "query": [
+                                    {
+                                      "description": "If true, the output is pretty-printed.",
+                                      "key": "pretty",
+                                      "value": "<string>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "name"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"apiVersion\": \"project.openshift.io/v1\",\n  \"kind\": \"Project\",\n  \"metadata\": {\n    \"name\": \"<string>\",\n    \"namespace\": \"<string>\",\n    \"uid\": \"<uuid>\",\n    \"resourceVersion\": \"<string>\",\n    \"generation\": \"<long>\",\n    \"creationTimestamp\": \"<dateTime>\",\n    \"deletionTimestamp\": \"<dateTime>\",\n    \"labels\": {\n      \"proident_8a\": \"<string>\"\n    },\n    \"annotations\": {\n      \"culpa90b\": \"<string>\",\n      \"qui_e1\": \"<string>\",\n      \"id_88\": \"<string>\"\n    },\n    \"ownerReferences\": [\n      {\n        \"apiVersion\": \"<string>\",\n        \"kind\": \"<string>\",\n        \"name\": \"<string>\",\n        \"uid\": \"<string>\",\n        \"controller\": \"<boolean>\",\n        \"blockOwnerDeletion\": \"<boolean>\"\n      },\n      {\n        \"apiVersion\": \"<string>\",\n        \"kind\": \"<string>\",\n        \"name\": \"<string>\",\n        \"uid\": \"<string>\",\n        \"controller\": \"<boolean>\",\n        \"blockOwnerDeletion\": \"<boolean>\"\n      }\n    ],\n    \"finalizers\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"spec\": {\n    \"finalizers\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"status\": {\n    \"phase\": \"Terminating\",\n    \"conditions\": [\n      {\n        \"type\": \"<string>\",\n        \"status\": \"<string>\",\n        \"reason\": \"<string>\",\n        \"message\": \"<string>\",\n        \"lastTransitionTime\": \"<dateTime>\"\n      },\n      {\n        \"type\": \"<string>\",\n        \"status\": \"<string>\",\n        \"reason\": \"<string>\",\n        \"message\": \"<string>\",\n        \"lastTransitionTime\": \"<dateTime>\"\n      }\n    ]\n  }\n}",
+                              "createdAt": "2026-07-28T02:26:47.000Z",
+                              "updatedAt": "2026-07-28T02:26:47.000Z",
+                              "uid": "35240-110a62a1-d21d-4c76-a0ca-4e39e5b3e3a5"
+                            },
+                            {
+                              "id": "7a90bcac-21db-441f-93ec-f5fece6d962f",
+                              "name": "Unauthorized",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/apis/project.openshift.io/v1/projects/:name?pretty=<string>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "apis",
+                                    "project.openshift.io",
+                                    "v1",
+                                    "projects",
+                                    ":name"
+                                  ],
+                                  "query": [
+                                    {
+                                      "description": "If true, the output is pretty-printed.",
+                                      "key": "pretty",
+                                      "value": "<string>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "name"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Unauthorized",
+                              "code": 401,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:26:47.000Z",
+                              "updatedAt": "2026-07-28T02:26:47.000Z",
+                              "uid": "35240-7a90bcac-21db-441f-93ec-f5fece6d962f"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:26:47.000Z",
+                          "updatedAt": "2026-07-28T02:26:47.000Z",
+                          "uid": "35240-720389e9-2c74-4e14-a959-612ea4311b65"
+                        },
+                        {
+                          "name": "Openshift Replace a Project",
+                          "id": "3ada2b44-41ae-4ef6-818f-490cb9587d82",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"apiVersion\": \"project.openshift.io/v1\",\n  \"kind\": \"Project\",\n  \"metadata\": {\n    \"name\": \"<string>\",\n    \"namespace\": \"<string>\",\n    \"uid\": \"<uuid>\",\n    \"resourceVersion\": \"<string>\",\n    \"generation\": \"<long>\",\n    \"creationTimestamp\": \"<dateTime>\",\n    \"deletionTimestamp\": \"<dateTime>\",\n    \"labels\": {\n      \"proident_8a\": \"<string>\"\n    },\n    \"annotations\": {\n      \"culpa90b\": \"<string>\",\n      \"qui_e1\": \"<string>\",\n      \"id_88\": \"<string>\"\n    },\n    \"ownerReferences\": [\n      {\n        \"apiVersion\": \"<string>\",\n        \"kind\": \"<string>\",\n        \"name\": \"<string>\",\n        \"uid\": \"<string>\",\n        \"controller\": \"<boolean>\",\n        \"blockOwnerDeletion\": \"<boolean>\"\n      },\n      {\n        \"apiVersion\": \"<string>\",\n        \"kind\": \"<string>\",\n        \"name\": \"<string>\",\n        \"uid\": \"<string>\",\n        \"controller\": \"<boolean>\",\n        \"blockOwnerDeletion\": \"<boolean>\"\n      }\n    ],\n    \"finalizers\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"spec\": {\n    \"finalizers\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"status\": {\n    \"phase\": \"Terminating\",\n    \"conditions\": [\n      {\n        \"type\": \"<string>\",\n        \"status\": \"<string>\",\n        \"reason\": \"<string>\",\n        \"message\": \"<string>\",\n        \"lastTransitionTime\": \"<dateTime>\"\n      },\n      {\n        \"type\": \"<string>\",\n        \"status\": \"<string>\",\n        \"reason\": \"<string>\",\n        \"message\": \"<string>\",\n        \"lastTransitionTime\": \"<dateTime>\"\n      }\n    ]\n  }\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/apis/project.openshift.io/v1/projects/:name?pretty=<string>&dryRun=<string>&fieldManager=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "apis",
+                                "project.openshift.io",
+                                "v1",
+                                "projects",
+                                ":name"
+                              ],
+                              "query": [
+                                {
+                                  "description": "If true, the output is pretty-printed.",
+                                  "key": "pretty",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "When present, indicates that modifications should not be persisted. Valid values are All (all dry run stages will be processed).",
+                                  "key": "dryRun",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "A name associated with the actor or entity making the change. Used for server-side apply to track field ownership.",
+                                  "key": "fieldManager",
+                                  "value": "<string>"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "id": "b65347c8-98c5-4a4a-a2f6-d4176d92d1b7",
+                                  "key": "name",
+                                  "value": "<string>",
+                                  "description": "(Required) Name of the resource."
+                                }
+                              ]
+                            },
+                            "description": "Replace the specified Project."
+                          },
+                          "response": [
+                            {
+                              "id": "ea67129d-4d19-452b-8fc7-dc9bd685fdc5",
+                              "name": "OK",
+                              "originalRequest": {
+                                "method": "PUT",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"apiVersion\": \"project.openshift.io/v1\",\n  \"kind\": \"Project\",\n  \"metadata\": {\n    \"name\": \"<string>\",\n    \"namespace\": \"<string>\",\n    \"uid\": \"<uuid>\",\n    \"resourceVersion\": \"<string>\",\n    \"generation\": \"<long>\",\n    \"creationTimestamp\": \"<dateTime>\",\n    \"deletionTimestamp\": \"<dateTime>\",\n    \"labels\": {\n      \"proident_8a\": \"<string>\"\n    },\n    \"annotations\": {\n      \"culpa90b\": \"<string>\",\n      \"qui_e1\": \"<string>\",\n      \"id_88\": \"<string>\"\n    },\n    \"ownerReferences\": [\n      {\n        \"apiVersion\": \"<string>\",\n        \"kind\": \"<string>\",\n        \"name\": \"<string>\",\n        \"uid\": \"<string>\",\n        \"controller\": \"<boolean>\",\n        \"blockOwnerDeletion\": \"<boolean>\"\n      },\n      {\n        \"apiVersion\": \"<string>\",\n        \"kind\": \"<string>\",\n        \"name\": \"<string>\",\n        \"uid\": \"<string>\",\n        \"controller\": \"<boolean>\",\n        \"blockOwnerDeletion\": \"<boolean>\"\n      }\n    ],\n    \"finalizers\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"spec\": {\n    \"finalizers\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"status\": {\n    \"phase\": \"Terminating\",\n    \"conditions\": [\n      {\n        \"type\": \"<string>\",\n        \"status\": \"<string>\",\n        \"reason\": \"<string>\",\n        \"message\": \"<string>\",\n        \"lastTransitionTime\": \"<dateTime>\"\n      },\n      {\n        \"type\": \"<string>\",\n        \"status\": \"<string>\",\n        \"reason\": \"<string>\",\n        \"message\": \"<string>\",\n        \"lastTransitionTime\": \"<dateTime>\"\n      }\n    ]\n  }\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/apis/project.openshift.io/v1/projects/:name?pretty=<string>&dryRun=<string>&fieldManager=<string>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "apis",
+                                    "project.openshift.io",
+                                    "v1",
+                                    "projects",
+                                    ":name"
+                                  ],
+                                  "query": [
+                                    {
+                                      "description": "If true, the output is pretty-printed.",
+                                      "key": "pretty",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "description": "When present, indicates that modifications should not be persisted. Valid values are All (all dry run stages will be processed).",
+                                      "key": "dryRun",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "description": "A name associated with the actor or entity making the change. Used for server-side apply to track field ownership.",
+                                      "key": "fieldManager",
+                                      "value": "<string>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "name"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"apiVersion\": \"project.openshift.io/v1\",\n  \"kind\": \"Project\",\n  \"metadata\": {\n    \"name\": \"<string>\",\n    \"namespace\": \"<string>\",\n    \"uid\": \"<uuid>\",\n    \"resourceVersion\": \"<string>\",\n    \"generation\": \"<long>\",\n    \"creationTimestamp\": \"<dateTime>\",\n    \"deletionTimestamp\": \"<dateTime>\",\n    \"labels\": {\n      \"proident_8a\": \"<string>\"\n    },\n    \"annotations\": {\n      \"culpa90b\": \"<string>\",\n      \"qui_e1\": \"<string>\",\n      \"id_88\": \"<string>\"\n    },\n    \"ownerReferences\": [\n      {\n        \"apiVersion\": \"<string>\",\n        \"kind\": \"<string>\",\n        \"name\": \"<string>\",\n        \"uid\": \"<string>\",\n        \"controller\": \"<boolean>\",\n        \"blockOwnerDeletion\": \"<boolean>\"\n      },\n      {\n        \"apiVersion\": \"<string>\",\n        \"kind\": \"<string>\",\n        \"name\": \"<string>\",\n        \"uid\": \"<string>\",\n        \"controller\": \"<boolean>\",\n        \"blockOwnerDeletion\": \"<boolean>\"\n      }\n    ],\n    \"finalizers\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"spec\": {\n    \"finalizers\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"status\": {\n    \"phase\": \"Terminating\",\n    \"conditions\": [\n      {\n        \"type\": \"<string>\",\n        \"status\": \"<string>\",\n        \"reason\": \"<string>\",\n        \"message\": \"<string>\",\n        \"lastTransitionTime\": \"<dateTime>\"\n      },\n      {\n        \"type\": \"<string>\",\n        \"status\": \"<string>\",\n        \"reason\": \"<string>\",\n        \"message\": \"<string>\",\n        \"lastTransitionTime\": \"<dateTime>\"\n      }\n    ]\n  }\n}",
+                              "createdAt": "2026-07-28T02:26:47.000Z",
+                              "updatedAt": "2026-07-28T02:26:47.000Z",
+                              "uid": "35240-ea67129d-4d19-452b-8fc7-dc9bd685fdc5"
+                            },
+                            {
+                              "id": "e990f9f6-f0e2-4933-ad56-d650072374b5",
+                              "name": "Created",
+                              "originalRequest": {
+                                "method": "PUT",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"apiVersion\": \"project.openshift.io/v1\",\n  \"kind\": \"Project\",\n  \"metadata\": {\n    \"name\": \"<string>\",\n    \"namespace\": \"<string>\",\n    \"uid\": \"<uuid>\",\n    \"resourceVersion\": \"<string>\",\n    \"generation\": \"<long>\",\n    \"creationTimestamp\": \"<dateTime>\",\n    \"deletionTimestamp\": \"<dateTime>\",\n    \"labels\": {\n      \"proident_8a\": \"<string>\"\n    },\n    \"annotations\": {\n      \"culpa90b\": \"<string>\",\n      \"qui_e1\": \"<string>\",\n      \"id_88\": \"<string>\"\n    },\n    \"ownerReferences\": [\n      {\n        \"apiVersion\": \"<string>\",\n        \"kind\": \"<string>\",\n        \"name\": \"<string>\",\n        \"uid\": \"<string>\",\n        \"controller\": \"<boolean>\",\n        \"blockOwnerDeletion\": \"<boolean>\"\n      },\n      {\n        \"apiVersion\": \"<string>\",\n        \"kind\": \"<string>\",\n        \"name\": \"<string>\",\n        \"uid\": \"<string>\",\n        \"controller\": \"<boolean>\",\n        \"blockOwnerDeletion\": \"<boolean>\"\n      }\n    ],\n    \"finalizers\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"spec\": {\n    \"finalizers\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"status\": {\n    \"phase\": \"Terminating\",\n    \"conditions\": [\n      {\n        \"type\": \"<string>\",\n        \"status\": \"<string>\",\n        \"reason\": \"<string>\",\n        \"message\": \"<string>\",\n        \"lastTransitionTime\": \"<dateTime>\"\n      },\n      {\n        \"type\": \"<string>\",\n        \"status\": \"<string>\",\n        \"reason\": \"<string>\",\n        \"message\": \"<string>\",\n        \"lastTransitionTime\": \"<dateTime>\"\n      }\n    ]\n  }\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/apis/project.openshift.io/v1/projects/:name?pretty=<string>&dryRun=<string>&fieldManager=<string>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "apis",
+                                    "project.openshift.io",
+                                    "v1",
+                                    "projects",
+                                    ":name"
+                                  ],
+                                  "query": [
+                                    {
+                                      "description": "If true, the output is pretty-printed.",
+                                      "key": "pretty",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "description": "When present, indicates that modifications should not be persisted. Valid values are All (all dry run stages will be processed).",
+                                      "key": "dryRun",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "description": "A name associated with the actor or entity making the change. Used for server-side apply to track field ownership.",
+                                      "key": "fieldManager",
+                                      "value": "<string>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "name"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Created",
+                              "code": 201,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"apiVersion\": \"project.openshift.io/v1\",\n  \"kind\": \"Project\",\n  \"metadata\": {\n    \"name\": \"<string>\",\n    \"namespace\": \"<string>\",\n    \"uid\": \"<uuid>\",\n    \"resourceVersion\": \"<string>\",\n    \"generation\": \"<long>\",\n    \"creationTimestamp\": \"<dateTime>\",\n    \"deletionTimestamp\": \"<dateTime>\",\n    \"labels\": {\n      \"proident_8a\": \"<string>\"\n    },\n    \"annotations\": {\n      \"culpa90b\": \"<string>\",\n      \"qui_e1\": \"<string>\",\n      \"id_88\": \"<string>\"\n    },\n    \"ownerReferences\": [\n      {\n        \"apiVersion\": \"<string>\",\n        \"kind\": \"<string>\",\n        \"name\": \"<string>\",\n        \"uid\": \"<string>\",\n        \"controller\": \"<boolean>\",\n        \"blockOwnerDeletion\": \"<boolean>\"\n      },\n      {\n        \"apiVersion\": \"<string>\",\n        \"kind\": \"<string>\",\n        \"name\": \"<string>\",\n        \"uid\": \"<string>\",\n        \"controller\": \"<boolean>\",\n        \"blockOwnerDeletion\": \"<boolean>\"\n      }\n    ],\n    \"finalizers\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"spec\": {\n    \"finalizers\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"status\": {\n    \"phase\": \"Terminating\",\n    \"conditions\": [\n      {\n        \"type\": \"<string>\",\n        \"status\": \"<string>\",\n        \"reason\": \"<string>\",\n        \"message\": \"<string>\",\n        \"lastTransitionTime\": \"<dateTime>\"\n      },\n      {\n        \"type\": \"<string>\",\n        \"status\": \"<string>\",\n        \"reason\": \"<string>\",\n        \"message\": \"<string>\",\n        \"lastTransitionTime\": \"<dateTime>\"\n      }\n    ]\n  }\n}",
+                              "createdAt": "2026-07-28T02:26:47.000Z",
+                              "updatedAt": "2026-07-28T02:26:47.000Z",
+                              "uid": "35240-e990f9f6-f0e2-4933-ad56-d650072374b5"
+                            },
+                            {
+                              "id": "145b750c-dab0-40ea-872e-8be928ac35ac",
+                              "name": "Unauthorized",
+                              "originalRequest": {
+                                "method": "PUT",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"apiVersion\": \"project.openshift.io/v1\",\n  \"kind\": \"Project\",\n  \"metadata\": {\n    \"name\": \"<string>\",\n    \"namespace\": \"<string>\",\n    \"uid\": \"<uuid>\",\n    \"resourceVersion\": \"<string>\",\n    \"generation\": \"<long>\",\n    \"creationTimestamp\": \"<dateTime>\",\n    \"deletionTimestamp\": \"<dateTime>\",\n    \"labels\": {\n      \"proident_8a\": \"<string>\"\n    },\n    \"annotations\": {\n      \"culpa90b\": \"<string>\",\n      \"qui_e1\": \"<string>\",\n      \"id_88\": \"<string>\"\n    },\n    \"ownerReferences\": [\n      {\n        \"apiVersion\": \"<string>\",\n        \"kind\": \"<string>\",\n        \"name\": \"<string>\",\n        \"uid\": \"<string>\",\n        \"controller\": \"<boolean>\",\n        \"blockOwnerDeletion\": \"<boolean>\"\n      },\n      {\n        \"apiVersion\": \"<string>\",\n        \"kind\": \"<string>\",\n        \"name\": \"<string>\",\n        \"uid\": \"<string>\",\n        \"controller\": \"<boolean>\",\n        \"blockOwnerDeletion\": \"<boolean>\"\n      }\n    ],\n    \"finalizers\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"spec\": {\n    \"finalizers\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"status\": {\n    \"phase\": \"Terminating\",\n    \"conditions\": [\n      {\n        \"type\": \"<string>\",\n        \"status\": \"<string>\",\n        \"reason\": \"<string>\",\n        \"message\": \"<string>\",\n        \"lastTransitionTime\": \"<dateTime>\"\n      },\n      {\n        \"type\": \"<string>\",\n        \"status\": \"<string>\",\n        \"reason\": \"<string>\",\n        \"message\": \"<string>\",\n        \"lastTransitionTime\": \"<dateTime>\"\n      }\n    ]\n  }\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/apis/project.openshift.io/v1/projects/:name?pretty=<string>&dryRun=<string>&fieldManager=<string>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "apis",
+                                    "project.openshift.io",
+                                    "v1",
+                                    "projects",
+                                    ":name"
+                                  ],
+                                  "query": [
+                                    {
+                                      "description": "If true, the output is pretty-printed.",
+                                      "key": "pretty",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "description": "When present, indicates that modifications should not be persisted. Valid values are All (all dry run stages will be processed).",
+                                      "key": "dryRun",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "description": "A name associated with the actor or entity making the change. Used for server-side apply to track field ownership.",
+                                      "key": "fieldManager",
+                                      "value": "<string>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "name"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Unauthorized",
+                              "code": 401,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:26:47.000Z",
+                              "updatedAt": "2026-07-28T02:26:47.000Z",
+                              "uid": "35240-145b750c-dab0-40ea-872e-8be928ac35ac"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:26:47.000Z",
+                          "updatedAt": "2026-07-28T02:26:47.000Z",
+                          "uid": "35240-3ada2b44-41ae-4ef6-818f-490cb9587d82"
+                        },
+                        {
+                          "name": "Openshift Delete a Project",
+                          "id": "2a0d6198-54fa-48cb-892d-ca3a969f8cdd",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/apis/project.openshift.io/v1/projects/:name?pretty=<string>&dryRun=<string>&gracePeriodSeconds=<long>&propagationPolicy=Orphan",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "apis",
+                                "project.openshift.io",
+                                "v1",
+                                "projects",
+                                ":name"
+                              ],
+                              "query": [
+                                {
+                                  "description": "If true, the output is pretty-printed.",
+                                  "key": "pretty",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "When present, indicates that modifications should not be persisted. Valid values are All (all dry run stages will be processed).",
+                                  "key": "dryRun",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "The duration in seconds before the object should be deleted. The value zero indicates delete immediately.",
+                                  "key": "gracePeriodSeconds",
+                                  "value": "<long>"
+                                },
+                                {
+                                  "description": "Whether and how garbage collection will be performed. Either Orphan, Background, or Foreground.",
+                                  "key": "propagationPolicy",
+                                  "value": "Orphan"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "id": "45266596-a0a7-47a5-96c4-bde5da53a262",
+                                  "key": "name",
+                                  "value": "<string>",
+                                  "description": "(Required) Name of the resource."
+                                }
+                              ]
+                            },
+                            "description": "Delete the specified Project and all of its resources."
+                          },
+                          "response": [
+                            {
+                              "id": "0fd40ca0-6a76-46f2-b44f-0968de3004d9",
+                              "name": "OK",
+                              "originalRequest": {
+                                "method": "DELETE",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/apis/project.openshift.io/v1/projects/:name?pretty=<string>&dryRun=<string>&gracePeriodSeconds=<long>&propagationPolicy=Orphan",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "apis",
+                                    "project.openshift.io",
+                                    "v1",
+                                    "projects",
+                                    ":name"
+                                  ],
+                                  "query": [
+                                    {
+                                      "description": "If true, the output is pretty-printed.",
+                                      "key": "pretty",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "description": "When present, indicates that modifications should not be persisted. Valid values are All (all dry run stages will be processed).",
+                                      "key": "dryRun",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "description": "The duration in seconds before the object should be deleted. The value zero indicates delete immediately.",
+                                      "key": "gracePeriodSeconds",
+                                      "value": "<long>"
+                                    },
+                                    {
+                                      "description": "Whether and how garbage collection will be performed. Either Orphan, Background, or Foreground.",
+                                      "key": "propagationPolicy",
+                                      "value": "Orphan"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "name"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"apiVersion\": \"v1\",\n  \"kind\": \"Status\",\n  \"metadata\": {\n    \"selfLink\": \"<string>\",\n    \"resourceVersion\": \"<string>\",\n    \"continue\": \"<string>\",\n    \"remainingItemCount\": \"<long>\"\n  },\n  \"status\": \"Success\",\n  \"message\": \"<string>\",\n  \"reason\": \"<string>\",\n  \"code\": \"<integer>\"\n}",
+                              "createdAt": "2026-07-28T02:26:47.000Z",
+                              "updatedAt": "2026-07-28T02:26:47.000Z",
+                              "uid": "35240-0fd40ca0-6a76-46f2-b44f-0968de3004d9"
+                            },
+                            {
+                              "id": "dfd68b13-ca9a-4a57-b149-3fa224949681",
+                              "name": "Accepted",
+                              "originalRequest": {
+                                "method": "DELETE",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/apis/project.openshift.io/v1/projects/:name?pretty=<string>&dryRun=<string>&gracePeriodSeconds=<long>&propagationPolicy=Orphan",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "apis",
+                                    "project.openshift.io",
+                                    "v1",
+                                    "projects",
+                                    ":name"
+                                  ],
+                                  "query": [
+                                    {
+                                      "description": "If true, the output is pretty-printed.",
+                                      "key": "pretty",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "description": "When present, indicates that modifications should not be persisted. Valid values are All (all dry run stages will be processed).",
+                                      "key": "dryRun",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "description": "The duration in seconds before the object should be deleted. The value zero indicates delete immediately.",
+                                      "key": "gracePeriodSeconds",
+                                      "value": "<long>"
+                                    },
+                                    {
+                                      "description": "Whether and how garbage collection will be performed. Either Orphan, Background, or Foreground.",
+                                      "key": "propagationPolicy",
+                                      "value": "Orphan"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "name"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Accepted",
+                              "code": 202,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"apiVersion\": \"v1\",\n  \"kind\": \"Status\",\n  \"metadata\": {\n    \"selfLink\": \"<string>\",\n    \"resourceVersion\": \"<string>\",\n    \"continue\": \"<string>\",\n    \"remainingItemCount\": \"<long>\"\n  },\n  \"status\": \"Success\",\n  \"message\": \"<string>\",\n  \"reason\": \"<string>\",\n  \"code\": \"<integer>\"\n}",
+                              "createdAt": "2026-07-28T02:26:47.000Z",
+                              "updatedAt": "2026-07-28T02:26:47.000Z",
+                              "uid": "35240-dfd68b13-ca9a-4a57-b149-3fa224949681"
+                            },
+                            {
+                              "id": "e22ded8f-d2f6-4ab3-8a0e-3348fae8ee78",
+                              "name": "Unauthorized",
+                              "originalRequest": {
+                                "method": "DELETE",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/apis/project.openshift.io/v1/projects/:name?pretty=<string>&dryRun=<string>&gracePeriodSeconds=<long>&propagationPolicy=Orphan",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "apis",
+                                    "project.openshift.io",
+                                    "v1",
+                                    "projects",
+                                    ":name"
+                                  ],
+                                  "query": [
+                                    {
+                                      "description": "If true, the output is pretty-printed.",
+                                      "key": "pretty",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "description": "When present, indicates that modifications should not be persisted. Valid values are All (all dry run stages will be processed).",
+                                      "key": "dryRun",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "description": "The duration in seconds before the object should be deleted. The value zero indicates delete immediately.",
+                                      "key": "gracePeriodSeconds",
+                                      "value": "<long>"
+                                    },
+                                    {
+                                      "description": "Whether and how garbage collection will be performed. Either Orphan, Background, or Foreground.",
+                                      "key": "propagationPolicy",
+                                      "value": "Orphan"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "name"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Unauthorized",
+                              "code": 401,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:26:47.000Z",
+                              "updatedAt": "2026-07-28T02:26:47.000Z",
+                              "uid": "35240-e22ded8f-d2f6-4ab3-8a0e-3348fae8ee78"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:26:47.000Z",
+                          "updatedAt": "2026-07-28T02:26:47.000Z",
+                          "uid": "35240-2a0d6198-54fa-48cb-892d-ca3a969f8cdd"
+                        }
+                      ],
+                      "id": "76de4f42-d498-4ee8-a152-e0c9ea11b2e3",
+                      "createdAt": "2026-07-28T02:26:47.000Z",
+                      "updatedAt": "2026-07-28T02:26:47.000Z",
+                      "uid": "35240-76de4f42-d498-4ee8-a152-e0c9ea11b2e3"
+                    },
+                    {
+                      "name": "Openshift List Projects",
+                      "id": "71d685d6-4490-4009-b6ca-5f7a0109c6ba",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/apis/project.openshift.io/v1/projects?allowWatchBookmarks=<boolean>&continue=<string>&fieldSelector=<string>&labelSelector=<string>&limit=<long>&pretty=<string>&resourceVersion=<string>&watch=<boolean>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "apis",
+                            "project.openshift.io",
+                            "v1",
+                            "projects"
+                          ],
+                          "query": [
+                            {
+                              "description": "Allow watch bookmarks. Bookmarks report the resourceVersion to which the set of watched resources is synced.",
+                              "key": "allowWatchBookmarks",
+                              "value": "<boolean>"
+                            },
+                            {
+                              "description": "The continue token for paging through large result sets.",
+                              "key": "continue",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "A selector to restrict the list of returned objects by their fields.",
+                              "key": "fieldSelector",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "A selector to restrict the list of returned objects by their labels.",
+                              "key": "labelSelector",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Maximum number of responses to return for a list call.",
+                              "key": "limit",
+                              "value": "<long>"
+                            },
+                            {
+                              "description": "If true, the output is pretty-printed.",
+                              "key": "pretty",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Specifies the resource version to match or list from.",
+                              "key": "resourceVersion",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Watch for changes to the described resources and return them as a stream of add, update, and remove notifications.",
+                              "key": "watch",
+                              "value": "<boolean>"
+                            }
+                          ]
+                        },
+                        "description": "List or watch Project objects. Projects are OpenShift's extension of Kubernetes namespaces providing multi-tenant isolation."
+                      },
+                      "response": [
+                        {
+                          "id": "dca85d58-6d73-4248-9042-a188f3b25263",
+                          "name": "OK",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/apis/project.openshift.io/v1/projects?allowWatchBookmarks=<boolean>&continue=<string>&fieldSelector=<string>&labelSelector=<string>&limit=<long>&pretty=<string>&resourceVersion=<string>&watch=<boolean>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "apis",
+                                "project.openshift.io",
+                                "v1",
+                                "projects"
+                              ],
+                              "query": [
+                                {
+                                  "description": "Allow watch bookmarks. Bookmarks report the resourceVersion to which the set of watched resources is synced.",
+                                  "key": "allowWatchBookmarks",
+                                  "value": "<boolean>"
+                                },
+                                {
+                                  "description": "The continue token for paging through large result sets.",
+                                  "key": "continue",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "A selector to restrict the list of returned objects by their fields.",
+                                  "key": "fieldSelector",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "A selector to restrict the list of returned objects by their labels.",
+                                  "key": "labelSelector",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Maximum number of responses to return for a list call.",
+                                  "key": "limit",
+                                  "value": "<long>"
+                                },
+                                {
+                                  "description": "If true, the output is pretty-printed.",
+                                  "key": "pretty",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Specifies the resource version to match or list from.",
+                                  "key": "resourceVersion",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Watch for changes to the described resources and return them as a stream of add, update, and remove notifications.",
+                                  "key": "watch",
+                                  "value": "<boolean>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"items\": [\n    {\n      \"apiVersion\": \"project.openshift.io/v1\",\n      \"kind\": \"Project\",\n      \"metadata\": {\n        \"name\": \"<string>\",\n        \"namespace\": \"<string>\",\n        \"uid\": \"<uuid>\",\n        \"resourceVersion\": \"<string>\",\n        \"generation\": \"<long>\",\n        \"creationTimestamp\": \"<dateTime>\",\n        \"deletionTimestamp\": \"<dateTime>\",\n        \"labels\": {\n          \"dolore8\": \"<string>\"\n        },\n        \"annotations\": {\n          \"nisic2\": \"<string>\",\n          \"in41\": \"<string>\",\n          \"laboris2\": \"<string>\"\n        },\n        \"ownerReferences\": [\n          {\n            \"apiVersion\": \"<string>\",\n            \"kind\": \"<string>\",\n            \"name\": \"<string>\",\n            \"uid\": \"<string>\",\n            \"controller\": \"<boolean>\",\n            \"blockOwnerDeletion\": \"<boolean>\"\n          },\n          {\n            \"apiVersion\": \"<string>\",\n            \"kind\": \"<string>\",\n            \"name\": \"<string>\",\n            \"uid\": \"<string>\",\n            \"controller\": \"<boolean>\",\n            \"blockOwnerDeletion\": \"<boolean>\"\n          }\n        ],\n        \"finalizers\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      },\n      \"spec\": {\n        \"finalizers\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      },\n      \"status\": {\n        \"phase\": \"Terminating\",\n        \"conditions\": [\n          {\n            \"type\": \"<string>\",\n            \"status\": \"<string>\",\n            \"reason\": \"<string>\",\n            \"message\": \"<string>\",\n            \"lastTransitionTime\": \"<dateTime>\"\n          },\n          {\n            \"type\": \"<string>\",\n            \"status\": \"<string>\",\n            \"reason\": \"<string>\",\n            \"message\": \"<string>\",\n            \"lastTransitionTime\": \"<dateTime>\"\n          }\n        ]\n      }\n    },\n    {\n      \"apiVersion\": \"project.openshift.io/v1\",\n      \"kind\": \"Project\",\n      \"metadata\": {\n        \"name\": \"<string>\",\n        \"namespace\": \"<string>\",\n        \"uid\": \"<uuid>\",\n        \"resourceVersion\": \"<string>\",\n        \"generation\": \"<long>\",\n        \"creationTimestamp\": \"<dateTime>\",\n        \"deletionTimestamp\": \"<dateTime>\",\n        \"labels\": {\n          \"doe0\": \"<string>\",\n          \"fugiat1e1\": \"<string>\",\n          \"nostrud09\": \"<string>\",\n          \"Ute\": \"<string>\",\n          \"eiusmod28\": \"<string>\"\n        },\n        \"annotations\": {\n          \"auteb7\": \"<string>\"\n        },\n        \"ownerReferences\": [\n          {\n            \"apiVersion\": \"<string>\",\n            \"kind\": \"<string>\",\n            \"name\": \"<string>\",\n            \"uid\": \"<string>\",\n            \"controller\": \"<boolean>\",\n            \"blockOwnerDeletion\": \"<boolean>\"\n          },\n          {\n            \"apiVersion\": \"<string>\",\n            \"kind\": \"<string>\",\n            \"name\": \"<string>\",\n            \"uid\": \"<string>\",\n            \"controller\": \"<boolean>\",\n            \"blockOwnerDeletion\": \"<boolean>\"\n          }\n        ],\n        \"finalizers\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      },\n      \"spec\": {\n        \"finalizers\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      },\n      \"status\": {\n        \"phase\": \"Terminating\",\n        \"conditions\": [\n          {\n            \"type\": \"<string>\",\n            \"status\": \"<string>\",\n            \"reason\": \"<string>\",\n            \"message\": \"<string>\",\n            \"lastTransitionTime\": \"<dateTime>\"\n          },\n          {\n            \"type\": \"<string>\",\n            \"status\": \"<string>\",\n            \"reason\": \"<string>\",\n            \"message\": \"<string>\",\n            \"lastTransitionTime\": \"<dateTime>\"\n          }\n        ]\n      }\n    }\n  ],\n  \"apiVersion\": \"project.openshift.io/v1\",\n  \"kind\": \"ProjectList\",\n  \"metadata\": {\n    \"selfLink\": \"<string>\",\n    \"resourceVersion\": \"<string>\",\n    \"continue\": \"<string>\",\n    \"remainingItemCount\": \"<long>\"\n  }\n}",
+                          "createdAt": "2026-07-28T02:26:47.000Z",
+                          "updatedAt": "2026-07-28T02:26:47.000Z",
+                          "uid": "35240-dca85d58-6d73-4248-9042-a188f3b25263"
+                        },
+                        {
+                          "id": "b3e2350c-8a76-4441-8165-363d0e337913",
+                          "name": "Unauthorized",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/apis/project.openshift.io/v1/projects?allowWatchBookmarks=<boolean>&continue=<string>&fieldSelector=<string>&labelSelector=<string>&limit=<long>&pretty=<string>&resourceVersion=<string>&watch=<boolean>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "apis",
+                                "project.openshift.io",
+                                "v1",
+                                "projects"
+                              ],
+                              "query": [
+                                {
+                                  "description": "Allow watch bookmarks. Bookmarks report the resourceVersion to which the set of watched resources is synced.",
+                                  "key": "allowWatchBookmarks",
+                                  "value": "<boolean>"
+                                },
+                                {
+                                  "description": "The continue token for paging through large result sets.",
+                                  "key": "continue",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "A selector to restrict the list of returned objects by their fields.",
+                                  "key": "fieldSelector",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "A selector to restrict the list of returned objects by their labels.",
+                                  "key": "labelSelector",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Maximum number of responses to return for a list call.",
+                                  "key": "limit",
+                                  "value": "<long>"
+                                },
+                                {
+                                  "description": "If true, the output is pretty-printed.",
+                                  "key": "pretty",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Specifies the resource version to match or list from.",
+                                  "key": "resourceVersion",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Watch for changes to the described resources and return them as a stream of add, update, and remove notifications.",
+                                  "key": "watch",
+                                  "value": "<boolean>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:26:47.000Z",
+                          "updatedAt": "2026-07-28T02:26:47.000Z",
+                          "uid": "35240-b3e2350c-8a76-4441-8165-363d0e337913"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:26:47.000Z",
+                      "updatedAt": "2026-07-28T02:26:47.000Z",
+                      "uid": "35240-71d685d6-4490-4009-b6ca-5f7a0109c6ba"
+                    }
+                  ],
+                  "id": "e7552d73-0bdf-4531-82f2-b744c02cbb1d",
+                  "createdAt": "2026-07-28T02:26:47.000Z",
+                  "updatedAt": "2026-07-28T02:26:47.000Z",
+                  "uid": "35240-e7552d73-0bdf-4531-82f2-b744c02cbb1d"
+                }
+              ],
+              "id": "bebcce22-1e1d-485e-b6c8-7999e0b7a46a",
+              "createdAt": "2026-07-28T02:26:47.000Z",
+              "updatedAt": "2026-07-28T02:26:47.000Z",
+              "uid": "35240-bebcce22-1e1d-485e-b6c8-7999e0b7a46a"
+            }
+          ],
+          "id": "d8667122-6260-40d8-a79c-284b8069f5db",
+          "createdAt": "2026-07-28T02:26:47.000Z",
+          "updatedAt": "2026-07-28T02:26:47.000Z",
+          "uid": "35240-d8667122-6260-40d8-a79c-284b8069f5db"
+        }
+      ],
+      "id": "3401702e-c39b-48a3-b70a-2cfe80295d4b",
+      "createdAt": "2026-07-28T02:26:47.000Z",
+      "updatedAt": "2026-07-28T02:26:47.000Z",
+      "uid": "35240-3401702e-c39b-48a3-b70a-2cfe80295d4b"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.openshift.com"
+    }
+  ]
+}
