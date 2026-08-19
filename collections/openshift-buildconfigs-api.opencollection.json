@@ -1,0 +1,367 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "openshift-rest-api BuildConfigs API",
+    "version": "4.17.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "BuildConfigs",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Openshift List Build Configs Across All Namespaces",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.openshift.com/apis/build.openshift.io/v1/buildconfigs",
+            "params": [
+              {
+                "name": "allowWatchBookmarks",
+                "value": "",
+                "type": "query",
+                "description": "Allow watch bookmarks. Bookmarks report the resourceVersion to which the set of watched resources is synced."
+              },
+              {
+                "name": "continue",
+                "value": "",
+                "type": "query",
+                "description": "The continue token for paging through large result sets."
+              },
+              {
+                "name": "fieldSelector",
+                "value": "",
+                "type": "query",
+                "description": "A selector to restrict the list of returned objects by their fields."
+              },
+              {
+                "name": "labelSelector",
+                "value": "",
+                "type": "query",
+                "description": "A selector to restrict the list of returned objects by their labels."
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of responses to return for a list call."
+              },
+              {
+                "name": "pretty",
+                "value": "",
+                "type": "query",
+                "description": "If true, the output is pretty-printed."
+              },
+              {
+                "name": "resourceVersion",
+                "value": "",
+                "type": "query",
+                "description": "Specifies the resource version to match or list from."
+              },
+              {
+                "name": "watch",
+                "value": "",
+                "type": "query",
+                "description": "Watch for changes to the described resources and return them as a stream of add, update, and remove notifications."
+              }
+            ]
+          },
+          "docs": "List or watch BuildConfig objects across all namespaces."
+        },
+        {
+          "info": {
+            "name": "Openshift List Build Configs in a Namespace",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.openshift.com/apis/build.openshift.io/v1/namespaces/:namespace/buildconfigs",
+            "params": [
+              {
+                "name": "namespace",
+                "value": "",
+                "type": "path",
+                "description": "The namespace (project) scope for the resource."
+              },
+              {
+                "name": "allowWatchBookmarks",
+                "value": "",
+                "type": "query",
+                "description": "Allow watch bookmarks. Bookmarks report the resourceVersion to which the set of watched resources is synced."
+              },
+              {
+                "name": "continue",
+                "value": "",
+                "type": "query",
+                "description": "The continue token for paging through large result sets."
+              },
+              {
+                "name": "fieldSelector",
+                "value": "",
+                "type": "query",
+                "description": "A selector to restrict the list of returned objects by their fields."
+              },
+              {
+                "name": "labelSelector",
+                "value": "",
+                "type": "query",
+                "description": "A selector to restrict the list of returned objects by their labels."
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of responses to return for a list call."
+              },
+              {
+                "name": "pretty",
+                "value": "",
+                "type": "query",
+                "description": "If true, the output is pretty-printed."
+              },
+              {
+                "name": "resourceVersion",
+                "value": "",
+                "type": "query",
+                "description": "Specifies the resource version to match or list from."
+              },
+              {
+                "name": "watch",
+                "value": "",
+                "type": "query",
+                "description": "Watch for changes to the described resources and return them as a stream of add, update, and remove notifications."
+              }
+            ]
+          },
+          "docs": "List or watch BuildConfig objects in the specified namespace."
+        },
+        {
+          "info": {
+            "name": "Openshift Create a Build Config",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.openshift.com/apis/build.openshift.io/v1/namespaces/:namespace/buildconfigs",
+            "params": [
+              {
+                "name": "namespace",
+                "value": "",
+                "type": "path",
+                "description": "The namespace (project) scope for the resource."
+              },
+              {
+                "name": "pretty",
+                "value": "",
+                "type": "query",
+                "description": "If true, the output is pretty-printed."
+              },
+              {
+                "name": "dryRun",
+                "value": "",
+                "type": "query",
+                "description": "When present, indicates that modifications should not be persisted. Valid values are All (all dry run stages will be processed)."
+              },
+              {
+                "name": "fieldManager",
+                "value": "",
+                "type": "query",
+                "description": "A name associated with the actor or entity making the change. Used for server-side apply to track field ownership."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a BuildConfig in the specified namespace. A BuildConfig defines the build strategy and source to produce container images."
+        },
+        {
+          "info": {
+            "name": "Openshift Read a Build Config",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.openshift.com/apis/build.openshift.io/v1/namespaces/:namespace/buildconfigs/:name",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path",
+                "description": "Name of the resource."
+              },
+              {
+                "name": "namespace",
+                "value": "",
+                "type": "path",
+                "description": "The namespace (project) scope for the resource."
+              },
+              {
+                "name": "pretty",
+                "value": "",
+                "type": "query",
+                "description": "If true, the output is pretty-printed."
+              }
+            ]
+          },
+          "docs": "Read the specified BuildConfig in the given namespace."
+        },
+        {
+          "info": {
+            "name": "Openshift Replace a Build Config",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.openshift.com/apis/build.openshift.io/v1/namespaces/:namespace/buildconfigs/:name",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path",
+                "description": "Name of the resource."
+              },
+              {
+                "name": "namespace",
+                "value": "",
+                "type": "path",
+                "description": "The namespace (project) scope for the resource."
+              },
+              {
+                "name": "pretty",
+                "value": "",
+                "type": "query",
+                "description": "If true, the output is pretty-printed."
+              },
+              {
+                "name": "dryRun",
+                "value": "",
+                "type": "query",
+                "description": "When present, indicates that modifications should not be persisted. Valid values are All (all dry run stages will be processed)."
+              },
+              {
+                "name": "fieldManager",
+                "value": "",
+                "type": "query",
+                "description": "A name associated with the actor or entity making the change. Used for server-side apply to track field ownership."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Replace the specified BuildConfig in the given namespace."
+        },
+        {
+          "info": {
+            "name": "Openshift Delete a Build Config",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.openshift.com/apis/build.openshift.io/v1/namespaces/:namespace/buildconfigs/:name",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path",
+                "description": "Name of the resource."
+              },
+              {
+                "name": "namespace",
+                "value": "",
+                "type": "path",
+                "description": "The namespace (project) scope for the resource."
+              },
+              {
+                "name": "pretty",
+                "value": "",
+                "type": "query",
+                "description": "If true, the output is pretty-printed."
+              },
+              {
+                "name": "dryRun",
+                "value": "",
+                "type": "query",
+                "description": "When present, indicates that modifications should not be persisted. Valid values are All (all dry run stages will be processed)."
+              },
+              {
+                "name": "gracePeriodSeconds",
+                "value": "",
+                "type": "query",
+                "description": "The duration in seconds before the object should be deleted. The value zero indicates delete immediately."
+              },
+              {
+                "name": "propagationPolicy",
+                "value": "",
+                "type": "query",
+                "description": "Whether and how garbage collection will be performed. Either Orphan, Background, or Foreground."
+              }
+            ]
+          },
+          "docs": "Delete the specified BuildConfig from the given namespace."
+        },
+        {
+          "info": {
+            "name": "Openshift Instantiate a Build From a Build Config",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.openshift.com/apis/build.openshift.io/v1/namespaces/:namespace/buildconfigs/:name/instantiate",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path",
+                "description": "Name of the resource."
+              },
+              {
+                "name": "namespace",
+                "value": "",
+                "type": "path",
+                "description": "The namespace (project) scope for the resource."
+              },
+              {
+                "name": "pretty",
+                "value": "",
+                "type": "query",
+                "description": "If true, the output is pretty-printed."
+              },
+              {
+                "name": "dryRun",
+                "value": "",
+                "type": "query",
+                "description": "When present, indicates that modifications should not be persisted. Valid values are All (all dry run stages will be processed)."
+              },
+              {
+                "name": "fieldManager",
+                "value": "",
+                "type": "query",
+                "description": "A name associated with the actor or entity making the change. Used for server-side apply to track field ownership."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Trigger a new build from the specified BuildConfig."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

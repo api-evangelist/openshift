@@ -1,0 +1,2136 @@
+{
+  "item": [
+    {
+      "id": "fb42ee21-029d-4567-8bb8-6194a3c0490f",
+      "name": "BuildConfigs",
+      "description": {
+        "content": "Manage build configuration templates that define how to transform source code into container images using Source, Docker, or Custom build strategies with configurable triggers.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "296e8728-da5c-4ce7-8858-7a821caf41f3",
+          "name": "Openshift List Build Configs Across All Namespaces",
+          "request": {
+            "name": "Openshift List Build Configs Across All Namespaces",
+            "description": {
+              "content": "List or watch BuildConfig objects across all namespaces.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "apis",
+                "build.openshift.io",
+                "v1",
+                "buildconfigs"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "allowWatchBookmarks",
+                  "value": "<boolean>",
+                  "description": "Allow watch bookmarks. Bookmarks report the resourceVersion to which the set of watched resources is synced."
+                },
+                {
+                  "disabled": false,
+                  "key": "continue",
+                  "value": "<string>",
+                  "description": "The continue token for paging through large result sets."
+                },
+                {
+                  "disabled": false,
+                  "key": "fieldSelector",
+                  "value": "<string>",
+                  "description": "A selector to restrict the list of returned objects by their fields."
+                },
+                {
+                  "disabled": false,
+                  "key": "labelSelector",
+                  "value": "<string>",
+                  "description": "A selector to restrict the list of returned objects by their labels."
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<long>",
+                  "description": "Maximum number of responses to return for a list call."
+                },
+                {
+                  "disabled": false,
+                  "key": "pretty",
+                  "value": "<string>",
+                  "description": "If true, the output is pretty-printed."
+                },
+                {
+                  "disabled": false,
+                  "key": "resourceVersion",
+                  "value": "<string>",
+                  "description": "Specifies the resource version to match or list from."
+                },
+                {
+                  "disabled": false,
+                  "key": "watch",
+                  "value": "<boolean>",
+                  "description": "Watch for changes to the described resources and return them as a stream of add, update, and remove notifications."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a667883c-5865-41d6-9ef7-7e81cd97dfa1",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "apis",
+                    "build.openshift.io",
+                    "v1",
+                    "buildconfigs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "allowWatchBookmarks",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "continue",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fieldSelector",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "labelSelector",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<long>"
+                    },
+                    {
+                      "key": "pretty",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "resourceVersion",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "watch",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"items\": [],\n  \"apiVersion\": \"example_value\",\n  \"kind\": \"example_value\",\n  \"metadata\": {\n    \"selfLink\": \"example_value\",\n    \"resourceVersion\": \"example_value\",\n    \"continue\": \"example_value\",\n    \"remainingItemCount\": 10\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7e988415-bd2b-4f9f-b862-75a5f2adc4d2",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "apis",
+                    "build.openshift.io",
+                    "v1",
+                    "buildconfigs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "allowWatchBookmarks",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "continue",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fieldSelector",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "labelSelector",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<long>"
+                    },
+                    {
+                      "key": "pretty",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "resourceVersion",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "watch",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9c60f2ef-f0ea-4a34-9d94-4217cd818243",
+          "name": "Openshift List Build Configs in a Namespace",
+          "request": {
+            "name": "Openshift List Build Configs in a Namespace",
+            "description": {
+              "content": "List or watch BuildConfig objects in the specified namespace.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "apis",
+                "build.openshift.io",
+                "v1",
+                "namespaces",
+                ":namespace",
+                "buildconfigs"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "allowWatchBookmarks",
+                  "value": "<boolean>",
+                  "description": "Allow watch bookmarks. Bookmarks report the resourceVersion to which the set of watched resources is synced."
+                },
+                {
+                  "disabled": false,
+                  "key": "continue",
+                  "value": "<string>",
+                  "description": "The continue token for paging through large result sets."
+                },
+                {
+                  "disabled": false,
+                  "key": "fieldSelector",
+                  "value": "<string>",
+                  "description": "A selector to restrict the list of returned objects by their fields."
+                },
+                {
+                  "disabled": false,
+                  "key": "labelSelector",
+                  "value": "<string>",
+                  "description": "A selector to restrict the list of returned objects by their labels."
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<long>",
+                  "description": "Maximum number of responses to return for a list call."
+                },
+                {
+                  "disabled": false,
+                  "key": "pretty",
+                  "value": "<string>",
+                  "description": "If true, the output is pretty-printed."
+                },
+                {
+                  "disabled": false,
+                  "key": "resourceVersion",
+                  "value": "<string>",
+                  "description": "Specifies the resource version to match or list from."
+                },
+                {
+                  "disabled": false,
+                  "key": "watch",
+                  "value": "<boolean>",
+                  "description": "Watch for changes to the described resources and return them as a stream of add, update, and remove notifications."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "namespace",
+                  "description": "(Required) The namespace (project) scope for the resource."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8c0bfb62-1aea-4b4d-b469-547d6261d83d",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "apis",
+                    "build.openshift.io",
+                    "v1",
+                    "namespaces",
+                    ":namespace",
+                    "buildconfigs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "allowWatchBookmarks",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "continue",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fieldSelector",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "labelSelector",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<long>"
+                    },
+                    {
+                      "key": "pretty",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "resourceVersion",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "watch",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "namespace",
+                      "description": "(Required) The namespace (project) scope for the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"items\": [],\n  \"apiVersion\": \"example_value\",\n  \"kind\": \"example_value\",\n  \"metadata\": {\n    \"selfLink\": \"example_value\",\n    \"resourceVersion\": \"example_value\",\n    \"continue\": \"example_value\",\n    \"remainingItemCount\": 10\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3dd8efbc-7503-46c0-b189-6249a5b01cfa",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "apis",
+                    "build.openshift.io",
+                    "v1",
+                    "namespaces",
+                    ":namespace",
+                    "buildconfigs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "allowWatchBookmarks",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "continue",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fieldSelector",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "labelSelector",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<long>"
+                    },
+                    {
+                      "key": "pretty",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "resourceVersion",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "watch",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "namespace",
+                      "description": "(Required) The namespace (project) scope for the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ed07618a-03da-46c8-b431-f60f4cd33091",
+          "name": "Openshift Create a Build Config",
+          "request": {
+            "name": "Openshift Create a Build Config",
+            "description": {
+              "content": "Create a BuildConfig in the specified namespace. A BuildConfig defines the build strategy and source to produce container images.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "apis",
+                "build.openshift.io",
+                "v1",
+                "namespaces",
+                ":namespace",
+                "buildconfigs"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "pretty",
+                  "value": "<string>",
+                  "description": "If true, the output is pretty-printed."
+                },
+                {
+                  "disabled": false,
+                  "key": "dryRun",
+                  "value": "<string>",
+                  "description": "When present, indicates that modifications should not be persisted. Valid values are All (all dry run stages will be processed)."
+                },
+                {
+                  "disabled": false,
+                  "key": "fieldManager",
+                  "value": "<string>",
+                  "description": "A name associated with the actor or entity making the change. Used for server-side apply to track field ownership."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "namespace",
+                  "description": "(Required) The namespace (project) scope for the resource."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"spec\": {\n    \"source\": {\n      \"type\": \"<string>\",\n      \"git\": {\n        \"uri\": \"<uri>\",\n        \"ref\": \"<string>\"\n      },\n      \"dockerfile\": \"<string>\",\n      \"contextDir\": \"<string>\",\n      \"sourceSecret\": {\n        \"name\": \"<string>\"\n      }\n    },\n    \"strategy\": {\n      \"type\": \"<string>\",\n      \"sourceStrategy\": {\n        \"from\": {\n          \"apiVersion\": \"<string>\",\n          \"kind\": \"<string>\",\n          \"name\": \"<string>\",\n          \"namespace\": \"<string>\"\n        },\n        \"env\": [\n          {\n            \"name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"value\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          {\n            \"name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"value\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ],\n        \"scripts\": \"<string>\",\n        \"incremental\": \"<boolean>\",\n        \"forcePull\": \"<boolean>\"\n      },\n      \"dockerStrategy\": {\n        \"from\": {\n          \"apiVersion\": \"<string>\",\n          \"kind\": \"<string>\",\n          \"name\": \"<string>\",\n          \"namespace\": \"<string>\"\n        },\n        \"dockerfilePath\": \"<string>\",\n        \"env\": [\n          {\n            \"name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"value\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          {\n            \"name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"value\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ],\n        \"noCache\": \"<boolean>\",\n        \"forcePull\": \"<boolean>\",\n        \"buildArgs\": [\n          {\n            \"name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"value\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          {\n            \"name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"value\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ]\n      },\n      \"customStrategy\": {\n        \"from\": {\n          \"apiVersion\": \"<string>\",\n          \"kind\": \"<string>\",\n          \"name\": \"<string>\",\n          \"namespace\": \"<string>\"\n        },\n        \"env\": [\n          {\n            \"name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"value\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          {\n            \"name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"value\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ],\n        \"exposeDockerSocket\": \"<boolean>\",\n        \"forcePull\": \"<boolean>\"\n      }\n    },\n    \"output\": {\n      \"to\": {\n        \"apiVersion\": \"<string>\",\n        \"kind\": \"<string>\",\n        \"name\": \"<string>\",\n        \"namespace\": \"<string>\"\n      },\n      \"pushSecret\": {\n        \"name\": \"<string>\"\n      }\n    },\n    \"resources\": {\n      \"limits\": {\n        \"key_0\": \"<string>\"\n      },\n      \"requests\": {\n        \"key_0\": \"<string>\"\n      }\n    },\n    \"triggers\": [\n      {\n        \"type\": \"<string>\",\n        \"github\": {\n          \"secret\": \"<string>\",\n          \"secretReference\": {\n            \"name\": \"<string>\"\n          }\n        },\n        \"generic\": {\n          \"secret\": \"<string>\",\n          \"secretReference\": {\n            \"name\": \"<string>\"\n          },\n          \"allowEnv\": \"<boolean>\"\n        },\n        \"imageChange\": {\n          \"from\": {\n            \"apiVersion\": \"<string>\",\n            \"kind\": \"<string>\",\n            \"name\": \"<string>\",\n            \"namespace\": \"<string>\"\n          },\n          \"lastTriggeredImageID\": \"<string>\"\n        }\n      },\n      {\n        \"type\": \"<string>\",\n        \"github\": {\n          \"secret\": \"<string>\",\n          \"secretReference\": {\n            \"name\": \"<string>\"\n          }\n        },\n        \"generic\": {\n          \"secret\": \"<string>\",\n          \"secretReference\": {\n            \"name\": \"<string>\"\n          },\n          \"allowEnv\": \"<boolean>\"\n        },\n        \"imageChange\": {\n          \"from\": {\n            \"apiVersion\": \"<string>\",\n            \"kind\": \"<string>\",\n            \"name\": \"<string>\",\n            \"namespace\": \"<string>\"\n          },\n          \"lastTriggeredImageID\": \"<string>\"\n        }\n      }\n    ],\n    \"runPolicy\": \"Serial\",\n    \"serviceAccount\": \"builder\",\n    \"completionDeadlineSeconds\": \"<long>\",\n    \"successfulBuildsHistoryLimit\": \"<integer>\",\n    \"failedBuildsHistoryLimit\": \"<integer>\",\n    \"nodeSelector\": {\n      \"key_0\": \"<string>\"\n    }\n  },\n  \"apiVersion\": \"build.openshift.io/v1\",\n  \"kind\": \"BuildConfig\",\n  \"metadata\": {\n    \"name\": \"<string>\",\n    \"namespace\": \"<string>\",\n    \"uid\": \"<uuid>\",\n    \"resourceVersion\": \"<string>\",\n    \"generation\": \"<long>\",\n    \"creationTimestamp\": \"<dateTime>\",\n    \"deletionTimestamp\": \"<dateTime>\",\n    \"labels\": {\n      \"key_0\": \"<string>\",\n      \"key_1\": \"<string>\"\n    },\n    \"annotations\": {\n      \"key_0\": \"<string>\"\n    },\n    \"ownerReferences\": [\n      {\n        \"apiVersion\": \"<string>\",\n        \"kind\": \"<string>\",\n        \"name\": \"<string>\",\n        \"uid\": \"<string>\",\n        \"controller\": \"<boolean>\",\n        \"blockOwnerDeletion\": \"<boolean>\"\n      },\n      {\n        \"apiVersion\": \"<string>\",\n        \"kind\": \"<string>\",\n        \"name\": \"<string>\",\n        \"uid\": \"<string>\",\n        \"controller\": \"<boolean>\",\n        \"blockOwnerDeletion\": \"<boolean>\"\n      }\n    ],\n    \"finalizers\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"status\": {\n    \"lastVersion\": \"<long>\",\n    \"imageChangeTriggers\": [\n      {\n        \"lastTriggeredImageID\": \"<string>\",\n        \"from\": {\n          \"apiVersion\": \"<string>\",\n          \"kind\": \"<string>\",\n          \"name\": \"<string>\",\n          \"namespace\": \"<string>\"\n        }\n      },\n      {\n        \"lastTriggeredImageID\": \"<string>\",\n        \"from\": {\n          \"apiVersion\": \"<string>\",\n          \"kind\": \"<string>\",\n          \"name\": \"<string>\",\n          \"namespace\": \"<string>\"\n        }\n      }\n    ]\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "2536bb02-fcc9-4919-8044-3bfd2a4c0f05",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "apis",
+                    "build.openshift.io",
+                    "v1",
+                    "namespaces",
+                    ":namespace",
+                    "buildconfigs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pretty",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "dryRun",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fieldManager",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "namespace",
+                      "description": "(Required) The namespace (project) scope for the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"spec\": {\n    \"source\": {\n      \"type\": \"Git\",\n      \"git\": {\n        \"uri\": \"http://OYyR.cxYrhjxr-Cw\",\n        \"ref\": \"string\"\n      },\n      \"dockerfile\": \"example_value\",\n      \"contextDir\": \"example_value\",\n      \"sourceSecret\": {\n        \"name\": \"string\"\n      }\n    },\n    \"strategy\": {\n      \"type\": \"Source\",\n      \"sourceStrategy\": {\n        \"from\": {\n          \"apiVersion\": \"example_value\",\n          \"kind\": \"example_value\",\n          \"name\": \"Example Title\",\n          \"namespace\": \"example_value\"\n        },\n        \"scripts\": \"example_value\",\n        \"incremental\": true,\n        \"forcePull\": true\n      },\n      \"dockerStrategy\": {\n        \"from\": {\n          \"apiVersion\": \"example_value\",\n          \"kind\": \"example_value\",\n          \"name\": \"Example Title\",\n          \"namespace\": \"example_value\"\n        },\n        \"dockerfilePath\": \"example_value\",\n        \"noCache\": true,\n        \"forcePull\": true\n      },\n      \"customStrategy\": {\n        \"from\": {\n          \"apiVersion\": \"example_value\",\n          \"kind\": \"example_value\",\n          \"name\": \"Example Title\",\n          \"namespace\": \"example_value\"\n        },\n        \"exposeDockerSocket\": true,\n        \"forcePull\": true\n      }\n    },\n    \"output\": {\n      \"to\": {\n        \"apiVersion\": \"example_value\",\n        \"kind\": \"example_value\",\n        \"name\": \"Example Title\",\n        \"namespace\": \"example_value\"\n      },\n      \"pushSecret\": {\n        \"name\": \"string\"\n      }\n    },\n    \"resources\": {\n      \"limits\": {\n        \"key_0\": \"string\"\n      },\n      \"requests\": {\n        \"key_0\": \"string\"\n      }\n    },\n    \"runPolicy\": \"Serial\",\n    \"serviceAccount\": \"example_value\",\n    \"completionDeadlineSeconds\": 10,\n    \"successfulBuildsHistoryLimit\": 10,\n    \"failedBuildsHistoryLimit\": 10,\n    \"nodeSelector\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    }\n  },\n  \"apiVersion\": \"example_value\",\n  \"kind\": \"example_value\",\n  \"metadata\": {\n    \"name\": \"Example Title\",\n    \"namespace\": \"example_value\",\n    \"uid\": \"10a8e98c-9321-89f5-14d5-ffc0dd0c2dd7\",\n    \"resourceVersion\": \"example_value\",\n    \"generation\": 10,\n    \"creationTimestamp\": \"2026-01-15T10:30:00Z\",\n    \"deletionTimestamp\": \"2026-01-15T10:30:00Z\",\n    \"labels\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    },\n    \"annotations\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    }\n  },\n  \"status\": {\n    \"lastVersion\": 10\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"spec\": {\n    \"source\": {\n      \"type\": \"Git\",\n      \"git\": {\n        \"uri\": \"http://OYyR.cxYrhjxr-Cw\",\n        \"ref\": \"string\"\n      },\n      \"dockerfile\": \"example_value\",\n      \"contextDir\": \"example_value\",\n      \"sourceSecret\": {\n        \"name\": \"string\"\n      }\n    },\n    \"strategy\": {\n      \"type\": \"Source\",\n      \"sourceStrategy\": {\n        \"from\": {\n          \"apiVersion\": \"example_value\",\n          \"kind\": \"example_value\",\n          \"name\": \"Example Title\",\n          \"namespace\": \"example_value\"\n        },\n        \"scripts\": \"example_value\",\n        \"incremental\": true,\n        \"forcePull\": true\n      },\n      \"dockerStrategy\": {\n        \"from\": {\n          \"apiVersion\": \"example_value\",\n          \"kind\": \"example_value\",\n          \"name\": \"Example Title\",\n          \"namespace\": \"example_value\"\n        },\n        \"dockerfilePath\": \"example_value\",\n        \"noCache\": true,\n        \"forcePull\": true\n      },\n      \"customStrategy\": {\n        \"from\": {\n          \"apiVersion\": \"example_value\",\n          \"kind\": \"example_value\",\n          \"name\": \"Example Title\",\n          \"namespace\": \"example_value\"\n        },\n        \"exposeDockerSocket\": true,\n        \"forcePull\": true\n      }\n    },\n    \"output\": {\n      \"to\": {\n        \"apiVersion\": \"example_value\",\n        \"kind\": \"example_value\",\n        \"name\": \"Example Title\",\n        \"namespace\": \"example_value\"\n      },\n      \"pushSecret\": {\n        \"name\": \"string\"\n      }\n    },\n    \"resources\": {\n      \"limits\": {\n        \"key_0\": \"string\"\n      },\n      \"requests\": {\n        \"key_0\": \"string\"\n      }\n    },\n    \"runPolicy\": \"Serial\",\n    \"serviceAccount\": \"example_value\",\n    \"completionDeadlineSeconds\": 10,\n    \"successfulBuildsHistoryLimit\": 10,\n    \"failedBuildsHistoryLimit\": 10,\n    \"nodeSelector\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    }\n  },\n  \"apiVersion\": \"example_value\",\n  \"kind\": \"example_value\",\n  \"metadata\": {\n    \"name\": \"Example Title\",\n    \"namespace\": \"example_value\",\n    \"uid\": \"10a8e98c-9321-89f5-14d5-ffc0dd0c2dd7\",\n    \"resourceVersion\": \"example_value\",\n    \"generation\": 10,\n    \"creationTimestamp\": \"2026-01-15T10:30:00Z\",\n    \"deletionTimestamp\": \"2026-01-15T10:30:00Z\",\n    \"labels\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    },\n    \"annotations\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    }\n  },\n  \"status\": {\n    \"lastVersion\": 10\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f94246a3-0bc9-40ce-9332-480687bf19fe",
+              "name": "Created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "apis",
+                    "build.openshift.io",
+                    "v1",
+                    "namespaces",
+                    ":namespace",
+                    "buildconfigs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pretty",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "dryRun",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fieldManager",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "namespace",
+                      "description": "(Required) The namespace (project) scope for the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"spec\": {\n    \"source\": {\n      \"type\": \"Git\",\n      \"git\": {\n        \"uri\": \"http://OYyR.cxYrhjxr-Cw\",\n        \"ref\": \"string\"\n      },\n      \"dockerfile\": \"example_value\",\n      \"contextDir\": \"example_value\",\n      \"sourceSecret\": {\n        \"name\": \"string\"\n      }\n    },\n    \"strategy\": {\n      \"type\": \"Source\",\n      \"sourceStrategy\": {\n        \"from\": {\n          \"apiVersion\": \"example_value\",\n          \"kind\": \"example_value\",\n          \"name\": \"Example Title\",\n          \"namespace\": \"example_value\"\n        },\n        \"scripts\": \"example_value\",\n        \"incremental\": true,\n        \"forcePull\": true\n      },\n      \"dockerStrategy\": {\n        \"from\": {\n          \"apiVersion\": \"example_value\",\n          \"kind\": \"example_value\",\n          \"name\": \"Example Title\",\n          \"namespace\": \"example_value\"\n        },\n        \"dockerfilePath\": \"example_value\",\n        \"noCache\": true,\n        \"forcePull\": true\n      },\n      \"customStrategy\": {\n        \"from\": {\n          \"apiVersion\": \"example_value\",\n          \"kind\": \"example_value\",\n          \"name\": \"Example Title\",\n          \"namespace\": \"example_value\"\n        },\n        \"exposeDockerSocket\": true,\n        \"forcePull\": true\n      }\n    },\n    \"output\": {\n      \"to\": {\n        \"apiVersion\": \"example_value\",\n        \"kind\": \"example_value\",\n        \"name\": \"Example Title\",\n        \"namespace\": \"example_value\"\n      },\n      \"pushSecret\": {\n        \"name\": \"string\"\n      }\n    },\n    \"resources\": {\n      \"limits\": {\n        \"key_0\": \"string\"\n      },\n      \"requests\": {\n        \"key_0\": \"string\"\n      }\n    },\n    \"runPolicy\": \"Serial\",\n    \"serviceAccount\": \"example_value\",\n    \"completionDeadlineSeconds\": 10,\n    \"successfulBuildsHistoryLimit\": 10,\n    \"failedBuildsHistoryLimit\": 10,\n    \"nodeSelector\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    }\n  },\n  \"apiVersion\": \"example_value\",\n  \"kind\": \"example_value\",\n  \"metadata\": {\n    \"name\": \"Example Title\",\n    \"namespace\": \"example_value\",\n    \"uid\": \"10a8e98c-9321-89f5-14d5-ffc0dd0c2dd7\",\n    \"resourceVersion\": \"example_value\",\n    \"generation\": 10,\n    \"creationTimestamp\": \"2026-01-15T10:30:00Z\",\n    \"deletionTimestamp\": \"2026-01-15T10:30:00Z\",\n    \"labels\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    },\n    \"annotations\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    }\n  },\n  \"status\": {\n    \"lastVersion\": 10\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"spec\": {\n    \"source\": {\n      \"type\": \"Git\",\n      \"git\": {\n        \"uri\": \"http://OYyR.cxYrhjxr-Cw\",\n        \"ref\": \"string\"\n      },\n      \"dockerfile\": \"example_value\",\n      \"contextDir\": \"example_value\",\n      \"sourceSecret\": {\n        \"name\": \"string\"\n      }\n    },\n    \"strategy\": {\n      \"type\": \"Source\",\n      \"sourceStrategy\": {\n        \"from\": {\n          \"apiVersion\": \"example_value\",\n          \"kind\": \"example_value\",\n          \"name\": \"Example Title\",\n          \"namespace\": \"example_value\"\n        },\n        \"scripts\": \"example_value\",\n        \"incremental\": true,\n        \"forcePull\": true\n      },\n      \"dockerStrategy\": {\n        \"from\": {\n          \"apiVersion\": \"example_value\",\n          \"kind\": \"example_value\",\n          \"name\": \"Example Title\",\n          \"namespace\": \"example_value\"\n        },\n        \"dockerfilePath\": \"example_value\",\n        \"noCache\": true,\n        \"forcePull\": true\n      },\n      \"customStrategy\": {\n        \"from\": {\n          \"apiVersion\": \"example_value\",\n          \"kind\": \"example_value\",\n          \"name\": \"Example Title\",\n          \"namespace\": \"example_value\"\n        },\n        \"exposeDockerSocket\": true,\n        \"forcePull\": true\n      }\n    },\n    \"output\": {\n      \"to\": {\n        \"apiVersion\": \"example_value\",\n        \"kind\": \"example_value\",\n        \"name\": \"Example Title\",\n        \"namespace\": \"example_value\"\n      },\n      \"pushSecret\": {\n        \"name\": \"string\"\n      }\n    },\n    \"resources\": {\n      \"limits\": {\n        \"key_0\": \"string\"\n      },\n      \"requests\": {\n        \"key_0\": \"string\"\n      }\n    },\n    \"runPolicy\": \"Serial\",\n    \"serviceAccount\": \"example_value\",\n    \"completionDeadlineSeconds\": 10,\n    \"successfulBuildsHistoryLimit\": 10,\n    \"failedBuildsHistoryLimit\": 10,\n    \"nodeSelector\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    }\n  },\n  \"apiVersion\": \"example_value\",\n  \"kind\": \"example_value\",\n  \"metadata\": {\n    \"name\": \"Example Title\",\n    \"namespace\": \"example_value\",\n    \"uid\": \"10a8e98c-9321-89f5-14d5-ffc0dd0c2dd7\",\n    \"resourceVersion\": \"example_value\",\n    \"generation\": 10,\n    \"creationTimestamp\": \"2026-01-15T10:30:00Z\",\n    \"deletionTimestamp\": \"2026-01-15T10:30:00Z\",\n    \"labels\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    },\n    \"annotations\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    }\n  },\n  \"status\": {\n    \"lastVersion\": 10\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1124f7eb-31f4-4651-a952-0d84b8b2bdba",
+              "name": "Accepted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "apis",
+                    "build.openshift.io",
+                    "v1",
+                    "namespaces",
+                    ":namespace",
+                    "buildconfigs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pretty",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "dryRun",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fieldManager",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "namespace",
+                      "description": "(Required) The namespace (project) scope for the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"spec\": {\n    \"source\": {\n      \"type\": \"Git\",\n      \"git\": {\n        \"uri\": \"http://OYyR.cxYrhjxr-Cw\",\n        \"ref\": \"string\"\n      },\n      \"dockerfile\": \"example_value\",\n      \"contextDir\": \"example_value\",\n      \"sourceSecret\": {\n        \"name\": \"string\"\n      }\n    },\n    \"strategy\": {\n      \"type\": \"Source\",\n      \"sourceStrategy\": {\n        \"from\": {\n          \"apiVersion\": \"example_value\",\n          \"kind\": \"example_value\",\n          \"name\": \"Example Title\",\n          \"namespace\": \"example_value\"\n        },\n        \"scripts\": \"example_value\",\n        \"incremental\": true,\n        \"forcePull\": true\n      },\n      \"dockerStrategy\": {\n        \"from\": {\n          \"apiVersion\": \"example_value\",\n          \"kind\": \"example_value\",\n          \"name\": \"Example Title\",\n          \"namespace\": \"example_value\"\n        },\n        \"dockerfilePath\": \"example_value\",\n        \"noCache\": true,\n        \"forcePull\": true\n      },\n      \"customStrategy\": {\n        \"from\": {\n          \"apiVersion\": \"example_value\",\n          \"kind\": \"example_value\",\n          \"name\": \"Example Title\",\n          \"namespace\": \"example_value\"\n        },\n        \"exposeDockerSocket\": true,\n        \"forcePull\": true\n      }\n    },\n    \"output\": {\n      \"to\": {\n        \"apiVersion\": \"example_value\",\n        \"kind\": \"example_value\",\n        \"name\": \"Example Title\",\n        \"namespace\": \"example_value\"\n      },\n      \"pushSecret\": {\n        \"name\": \"string\"\n      }\n    },\n    \"resources\": {\n      \"limits\": {\n        \"key_0\": \"string\"\n      },\n      \"requests\": {\n        \"key_0\": \"string\"\n      }\n    },\n    \"runPolicy\": \"Serial\",\n    \"serviceAccount\": \"example_value\",\n    \"completionDeadlineSeconds\": 10,\n    \"successfulBuildsHistoryLimit\": 10,\n    \"failedBuildsHistoryLimit\": 10,\n    \"nodeSelector\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    }\n  },\n  \"apiVersion\": \"example_value\",\n  \"kind\": \"example_value\",\n  \"metadata\": {\n    \"name\": \"Example Title\",\n    \"namespace\": \"example_value\",\n    \"uid\": \"10a8e98c-9321-89f5-14d5-ffc0dd0c2dd7\",\n    \"resourceVersion\": \"example_value\",\n    \"generation\": 10,\n    \"creationTimestamp\": \"2026-01-15T10:30:00Z\",\n    \"deletionTimestamp\": \"2026-01-15T10:30:00Z\",\n    \"labels\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    },\n    \"annotations\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    }\n  },\n  \"status\": {\n    \"lastVersion\": 10\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"spec\": {\n    \"source\": {\n      \"type\": \"Git\",\n      \"git\": {\n        \"uri\": \"http://OYyR.cxYrhjxr-Cw\",\n        \"ref\": \"string\"\n      },\n      \"dockerfile\": \"example_value\",\n      \"contextDir\": \"example_value\",\n      \"sourceSecret\": {\n        \"name\": \"string\"\n      }\n    },\n    \"strategy\": {\n      \"type\": \"Source\",\n      \"sourceStrategy\": {\n        \"from\": {\n          \"apiVersion\": \"example_value\",\n          \"kind\": \"example_value\",\n          \"name\": \"Example Title\",\n          \"namespace\": \"example_value\"\n        },\n        \"scripts\": \"example_value\",\n        \"incremental\": true,\n        \"forcePull\": true\n      },\n      \"dockerStrategy\": {\n        \"from\": {\n          \"apiVersion\": \"example_value\",\n          \"kind\": \"example_value\",\n          \"name\": \"Example Title\",\n          \"namespace\": \"example_value\"\n        },\n        \"dockerfilePath\": \"example_value\",\n        \"noCache\": true,\n        \"forcePull\": true\n      },\n      \"customStrategy\": {\n        \"from\": {\n          \"apiVersion\": \"example_value\",\n          \"kind\": \"example_value\",\n          \"name\": \"Example Title\",\n          \"namespace\": \"example_value\"\n        },\n        \"exposeDockerSocket\": true,\n        \"forcePull\": true\n      }\n    },\n    \"output\": {\n      \"to\": {\n        \"apiVersion\": \"example_value\",\n        \"kind\": \"example_value\",\n        \"name\": \"Example Title\",\n        \"namespace\": \"example_value\"\n      },\n      \"pushSecret\": {\n        \"name\": \"string\"\n      }\n    },\n    \"resources\": {\n      \"limits\": {\n        \"key_0\": \"string\"\n      },\n      \"requests\": {\n        \"key_0\": \"string\"\n      }\n    },\n    \"runPolicy\": \"Serial\",\n    \"serviceAccount\": \"example_value\",\n    \"completionDeadlineSeconds\": 10,\n    \"successfulBuildsHistoryLimit\": 10,\n    \"failedBuildsHistoryLimit\": 10,\n    \"nodeSelector\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    }\n  },\n  \"apiVersion\": \"example_value\",\n  \"kind\": \"example_value\",\n  \"metadata\": {\n    \"name\": \"Example Title\",\n    \"namespace\": \"example_value\",\n    \"uid\": \"10a8e98c-9321-89f5-14d5-ffc0dd0c2dd7\",\n    \"resourceVersion\": \"example_value\",\n    \"generation\": 10,\n    \"creationTimestamp\": \"2026-01-15T10:30:00Z\",\n    \"deletionTimestamp\": \"2026-01-15T10:30:00Z\",\n    \"labels\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    },\n    \"annotations\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    }\n  },\n  \"status\": {\n    \"lastVersion\": 10\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "65bbcd18-8c25-492c-ae06-6559f40eb1ac",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "apis",
+                    "build.openshift.io",
+                    "v1",
+                    "namespaces",
+                    ":namespace",
+                    "buildconfigs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pretty",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "dryRun",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fieldManager",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "namespace",
+                      "description": "(Required) The namespace (project) scope for the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"spec\": {\n    \"source\": {\n      \"type\": \"Git\",\n      \"git\": {\n        \"uri\": \"http://OYyR.cxYrhjxr-Cw\",\n        \"ref\": \"string\"\n      },\n      \"dockerfile\": \"example_value\",\n      \"contextDir\": \"example_value\",\n      \"sourceSecret\": {\n        \"name\": \"string\"\n      }\n    },\n    \"strategy\": {\n      \"type\": \"Source\",\n      \"sourceStrategy\": {\n        \"from\": {\n          \"apiVersion\": \"example_value\",\n          \"kind\": \"example_value\",\n          \"name\": \"Example Title\",\n          \"namespace\": \"example_value\"\n        },\n        \"scripts\": \"example_value\",\n        \"incremental\": true,\n        \"forcePull\": true\n      },\n      \"dockerStrategy\": {\n        \"from\": {\n          \"apiVersion\": \"example_value\",\n          \"kind\": \"example_value\",\n          \"name\": \"Example Title\",\n          \"namespace\": \"example_value\"\n        },\n        \"dockerfilePath\": \"example_value\",\n        \"noCache\": true,\n        \"forcePull\": true\n      },\n      \"customStrategy\": {\n        \"from\": {\n          \"apiVersion\": \"example_value\",\n          \"kind\": \"example_value\",\n          \"name\": \"Example Title\",\n          \"namespace\": \"example_value\"\n        },\n        \"exposeDockerSocket\": true,\n        \"forcePull\": true\n      }\n    },\n    \"output\": {\n      \"to\": {\n        \"apiVersion\": \"example_value\",\n        \"kind\": \"example_value\",\n        \"name\": \"Example Title\",\n        \"namespace\": \"example_value\"\n      },\n      \"pushSecret\": {\n        \"name\": \"string\"\n      }\n    },\n    \"resources\": {\n      \"limits\": {\n        \"key_0\": \"string\"\n      },\n      \"requests\": {\n        \"key_0\": \"string\"\n      }\n    },\n    \"runPolicy\": \"Serial\",\n    \"serviceAccount\": \"example_value\",\n    \"completionDeadlineSeconds\": 10,\n    \"successfulBuildsHistoryLimit\": 10,\n    \"failedBuildsHistoryLimit\": 10,\n    \"nodeSelector\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    }\n  },\n  \"apiVersion\": \"example_value\",\n  \"kind\": \"example_value\",\n  \"metadata\": {\n    \"name\": \"Example Title\",\n    \"namespace\": \"example_value\",\n    \"uid\": \"10a8e98c-9321-89f5-14d5-ffc0dd0c2dd7\",\n    \"resourceVersion\": \"example_value\",\n    \"generation\": 10,\n    \"creationTimestamp\": \"2026-01-15T10:30:00Z\",\n    \"deletionTimestamp\": \"2026-01-15T10:30:00Z\",\n    \"labels\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    },\n    \"annotations\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    }\n  },\n  \"status\": {\n    \"lastVersion\": 10\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1d11be04-6822-428a-856d-79866f55b62a",
+          "name": "Openshift Read a Build Config",
+          "request": {
+            "name": "Openshift Read a Build Config",
+            "description": {
+              "content": "Read the specified BuildConfig in the given namespace.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "apis",
+                "build.openshift.io",
+                "v1",
+                "namespaces",
+                ":namespace",
+                "buildconfigs",
+                ":name"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "pretty",
+                  "value": "<string>",
+                  "description": "If true, the output is pretty-printed."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) Name of the resource."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "namespace",
+                  "description": "(Required) The namespace (project) scope for the resource."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "40e192e7-dcf8-4602-8391-97fca41c726b",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "apis",
+                    "build.openshift.io",
+                    "v1",
+                    "namespaces",
+                    ":namespace",
+                    "buildconfigs",
+                    ":name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pretty",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) Name of the resource."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "namespace",
+                      "description": "(Required) The namespace (project) scope for the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"spec\": {\n    \"source\": {\n      \"type\": \"Git\",\n      \"git\": {\n        \"uri\": \"http://OYyR.cxYrhjxr-Cw\",\n        \"ref\": \"string\"\n      },\n      \"dockerfile\": \"example_value\",\n      \"contextDir\": \"example_value\",\n      \"sourceSecret\": {\n        \"name\": \"string\"\n      }\n    },\n    \"strategy\": {\n      \"type\": \"Source\",\n      \"sourceStrategy\": {\n        \"from\": {\n          \"apiVersion\": \"example_value\",\n          \"kind\": \"example_value\",\n          \"name\": \"Example Title\",\n          \"namespace\": \"example_value\"\n        },\n        \"scripts\": \"example_value\",\n        \"incremental\": true,\n        \"forcePull\": true\n      },\n      \"dockerStrategy\": {\n        \"from\": {\n          \"apiVersion\": \"example_value\",\n          \"kind\": \"example_value\",\n          \"name\": \"Example Title\",\n          \"namespace\": \"example_value\"\n        },\n        \"dockerfilePath\": \"example_value\",\n        \"noCache\": true,\n        \"forcePull\": true\n      },\n      \"customStrategy\": {\n        \"from\": {\n          \"apiVersion\": \"example_value\",\n          \"kind\": \"example_value\",\n          \"name\": \"Example Title\",\n          \"namespace\": \"example_value\"\n        },\n        \"exposeDockerSocket\": true,\n        \"forcePull\": true\n      }\n    },\n    \"output\": {\n      \"to\": {\n        \"apiVersion\": \"example_value\",\n        \"kind\": \"example_value\",\n        \"name\": \"Example Title\",\n        \"namespace\": \"example_value\"\n      },\n      \"pushSecret\": {\n        \"name\": \"string\"\n      }\n    },\n    \"resources\": {\n      \"limits\": {\n        \"key_0\": \"string\"\n      },\n      \"requests\": {\n        \"key_0\": \"string\"\n      }\n    },\n    \"runPolicy\": \"Serial\",\n    \"serviceAccount\": \"example_value\",\n    \"completionDeadlineSeconds\": 10,\n    \"successfulBuildsHistoryLimit\": 10,\n    \"failedBuildsHistoryLimit\": 10,\n    \"nodeSelector\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    }\n  },\n  \"apiVersion\": \"example_value\",\n  \"kind\": \"example_value\",\n  \"metadata\": {\n    \"name\": \"Example Title\",\n    \"namespace\": \"example_value\",\n    \"uid\": \"10a8e98c-9321-89f5-14d5-ffc0dd0c2dd7\",\n    \"resourceVersion\": \"example_value\",\n    \"generation\": 10,\n    \"creationTimestamp\": \"2026-01-15T10:30:00Z\",\n    \"deletionTimestamp\": \"2026-01-15T10:30:00Z\",\n    \"labels\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    },\n    \"annotations\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    }\n  },\n  \"status\": {\n    \"lastVersion\": 10\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "da16b7ca-4078-4ba0-a43f-7b2136266e02",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "apis",
+                    "build.openshift.io",
+                    "v1",
+                    "namespaces",
+                    ":namespace",
+                    "buildconfigs",
+                    ":name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pretty",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) Name of the resource."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "namespace",
+                      "description": "(Required) The namespace (project) scope for the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7c0cb875-5426-4d36-83bf-9a4a2868cadf",
+          "name": "Openshift Replace a Build Config",
+          "request": {
+            "name": "Openshift Replace a Build Config",
+            "description": {
+              "content": "Replace the specified BuildConfig in the given namespace.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "apis",
+                "build.openshift.io",
+                "v1",
+                "namespaces",
+                ":namespace",
+                "buildconfigs",
+                ":name"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "pretty",
+                  "value": "<string>",
+                  "description": "If true, the output is pretty-printed."
+                },
+                {
+                  "disabled": false,
+                  "key": "dryRun",
+                  "value": "<string>",
+                  "description": "When present, indicates that modifications should not be persisted. Valid values are All (all dry run stages will be processed)."
+                },
+                {
+                  "disabled": false,
+                  "key": "fieldManager",
+                  "value": "<string>",
+                  "description": "A name associated with the actor or entity making the change. Used for server-side apply to track field ownership."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) Name of the resource."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "namespace",
+                  "description": "(Required) The namespace (project) scope for the resource."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"spec\": {\n    \"source\": {\n      \"type\": \"<string>\",\n      \"git\": {\n        \"uri\": \"<uri>\",\n        \"ref\": \"<string>\"\n      },\n      \"dockerfile\": \"<string>\",\n      \"contextDir\": \"<string>\",\n      \"sourceSecret\": {\n        \"name\": \"<string>\"\n      }\n    },\n    \"strategy\": {\n      \"type\": \"<string>\",\n      \"sourceStrategy\": {\n        \"from\": {\n          \"apiVersion\": \"<string>\",\n          \"kind\": \"<string>\",\n          \"name\": \"<string>\",\n          \"namespace\": \"<string>\"\n        },\n        \"env\": [\n          {\n            \"name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"value\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          {\n            \"name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"value\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ],\n        \"scripts\": \"<string>\",\n        \"incremental\": \"<boolean>\",\n        \"forcePull\": \"<boolean>\"\n      },\n      \"dockerStrategy\": {\n        \"from\": {\n          \"apiVersion\": \"<string>\",\n          \"kind\": \"<string>\",\n          \"name\": \"<string>\",\n          \"namespace\": \"<string>\"\n        },\n        \"dockerfilePath\": \"<string>\",\n        \"env\": [\n          {\n            \"name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"value\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          {\n            \"name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"value\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ],\n        \"noCache\": \"<boolean>\",\n        \"forcePull\": \"<boolean>\",\n        \"buildArgs\": [\n          {\n            \"name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"value\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          {\n            \"name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"value\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ]\n      },\n      \"customStrategy\": {\n        \"from\": {\n          \"apiVersion\": \"<string>\",\n          \"kind\": \"<string>\",\n          \"name\": \"<string>\",\n          \"namespace\": \"<string>\"\n        },\n        \"env\": [\n          {\n            \"name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"value\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          {\n            \"name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"value\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ],\n        \"exposeDockerSocket\": \"<boolean>\",\n        \"forcePull\": \"<boolean>\"\n      }\n    },\n    \"output\": {\n      \"to\": {\n        \"apiVersion\": \"<string>\",\n        \"kind\": \"<string>\",\n        \"name\": \"<string>\",\n        \"namespace\": \"<string>\"\n      },\n      \"pushSecret\": {\n        \"name\": \"<string>\"\n      }\n    },\n    \"resources\": {\n      \"limits\": {\n        \"key_0\": \"<string>\"\n      },\n      \"requests\": {\n        \"key_0\": \"<string>\"\n      }\n    },\n    \"triggers\": [\n      {\n        \"type\": \"<string>\",\n        \"github\": {\n          \"secret\": \"<string>\",\n          \"secretReference\": {\n            \"name\": \"<string>\"\n          }\n        },\n        \"generic\": {\n          \"secret\": \"<string>\",\n          \"secretReference\": {\n            \"name\": \"<string>\"\n          },\n          \"allowEnv\": \"<boolean>\"\n        },\n        \"imageChange\": {\n          \"from\": {\n            \"apiVersion\": \"<string>\",\n            \"kind\": \"<string>\",\n            \"name\": \"<string>\",\n            \"namespace\": \"<string>\"\n          },\n          \"lastTriggeredImageID\": \"<string>\"\n        }\n      },\n      {\n        \"type\": \"<string>\",\n        \"github\": {\n          \"secret\": \"<string>\",\n          \"secretReference\": {\n            \"name\": \"<string>\"\n          }\n        },\n        \"generic\": {\n          \"secret\": \"<string>\",\n          \"secretReference\": {\n            \"name\": \"<string>\"\n          },\n          \"allowEnv\": \"<boolean>\"\n        },\n        \"imageChange\": {\n          \"from\": {\n            \"apiVersion\": \"<string>\",\n            \"kind\": \"<string>\",\n            \"name\": \"<string>\",\n            \"namespace\": \"<string>\"\n          },\n          \"lastTriggeredImageID\": \"<string>\"\n        }\n      }\n    ],\n    \"runPolicy\": \"Serial\",\n    \"serviceAccount\": \"builder\",\n    \"completionDeadlineSeconds\": \"<long>\",\n    \"successfulBuildsHistoryLimit\": \"<integer>\",\n    \"failedBuildsHistoryLimit\": \"<integer>\",\n    \"nodeSelector\": {\n      \"key_0\": \"<string>\"\n    }\n  },\n  \"apiVersion\": \"build.openshift.io/v1\",\n  \"kind\": \"BuildConfig\",\n  \"metadata\": {\n    \"name\": \"<string>\",\n    \"namespace\": \"<string>\",\n    \"uid\": \"<uuid>\",\n    \"resourceVersion\": \"<string>\",\n    \"generation\": \"<long>\",\n    \"creationTimestamp\": \"<dateTime>\",\n    \"deletionTimestamp\": \"<dateTime>\",\n    \"labels\": {\n      \"key_0\": \"<string>\",\n      \"key_1\": \"<string>\"\n    },\n    \"annotations\": {\n      \"key_0\": \"<string>\"\n    },\n    \"ownerReferences\": [\n      {\n        \"apiVersion\": \"<string>\",\n        \"kind\": \"<string>\",\n        \"name\": \"<string>\",\n        \"uid\": \"<string>\",\n        \"controller\": \"<boolean>\",\n        \"blockOwnerDeletion\": \"<boolean>\"\n      },\n      {\n        \"apiVersion\": \"<string>\",\n        \"kind\": \"<string>\",\n        \"name\": \"<string>\",\n        \"uid\": \"<string>\",\n        \"controller\": \"<boolean>\",\n        \"blockOwnerDeletion\": \"<boolean>\"\n      }\n    ],\n    \"finalizers\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"status\": {\n    \"lastVersion\": \"<long>\",\n    \"imageChangeTriggers\": [\n      {\n        \"lastTriggeredImageID\": \"<string>\",\n        \"from\": {\n          \"apiVersion\": \"<string>\",\n          \"kind\": \"<string>\",\n          \"name\": \"<string>\",\n          \"namespace\": \"<string>\"\n        }\n      },\n      {\n        \"lastTriggeredImageID\": \"<string>\",\n        \"from\": {\n          \"apiVersion\": \"<string>\",\n          \"kind\": \"<string>\",\n          \"name\": \"<string>\",\n          \"namespace\": \"<string>\"\n        }\n      }\n    ]\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "03dbf912-1e1b-4ac5-bcd9-3c1e267ee923",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "apis",
+                    "build.openshift.io",
+                    "v1",
+                    "namespaces",
+                    ":namespace",
+                    "buildconfigs",
+                    ":name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pretty",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "dryRun",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fieldManager",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) Name of the resource."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "namespace",
+                      "description": "(Required) The namespace (project) scope for the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"spec\": {\n    \"source\": {\n      \"type\": \"Git\",\n      \"git\": {\n        \"uri\": \"http://OYyR.cxYrhjxr-Cw\",\n        \"ref\": \"string\"\n      },\n      \"dockerfile\": \"example_value\",\n      \"contextDir\": \"example_value\",\n      \"sourceSecret\": {\n        \"name\": \"string\"\n      }\n    },\n    \"strategy\": {\n      \"type\": \"Source\",\n      \"sourceStrategy\": {\n        \"from\": {\n          \"apiVersion\": \"example_value\",\n          \"kind\": \"example_value\",\n          \"name\": \"Example Title\",\n          \"namespace\": \"example_value\"\n        },\n        \"scripts\": \"example_value\",\n        \"incremental\": true,\n        \"forcePull\": true\n      },\n      \"dockerStrategy\": {\n        \"from\": {\n          \"apiVersion\": \"example_value\",\n          \"kind\": \"example_value\",\n          \"name\": \"Example Title\",\n          \"namespace\": \"example_value\"\n        },\n        \"dockerfilePath\": \"example_value\",\n        \"noCache\": true,\n        \"forcePull\": true\n      },\n      \"customStrategy\": {\n        \"from\": {\n          \"apiVersion\": \"example_value\",\n          \"kind\": \"example_value\",\n          \"name\": \"Example Title\",\n          \"namespace\": \"example_value\"\n        },\n        \"exposeDockerSocket\": true,\n        \"forcePull\": true\n      }\n    },\n    \"output\": {\n      \"to\": {\n        \"apiVersion\": \"example_value\",\n        \"kind\": \"example_value\",\n        \"name\": \"Example Title\",\n        \"namespace\": \"example_value\"\n      },\n      \"pushSecret\": {\n        \"name\": \"string\"\n      }\n    },\n    \"resources\": {\n      \"limits\": {\n        \"key_0\": \"string\"\n      },\n      \"requests\": {\n        \"key_0\": \"string\"\n      }\n    },\n    \"runPolicy\": \"Serial\",\n    \"serviceAccount\": \"example_value\",\n    \"completionDeadlineSeconds\": 10,\n    \"successfulBuildsHistoryLimit\": 10,\n    \"failedBuildsHistoryLimit\": 10,\n    \"nodeSelector\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    }\n  },\n  \"apiVersion\": \"example_value\",\n  \"kind\": \"example_value\",\n  \"metadata\": {\n    \"name\": \"Example Title\",\n    \"namespace\": \"example_value\",\n    \"uid\": \"10a8e98c-9321-89f5-14d5-ffc0dd0c2dd7\",\n    \"resourceVersion\": \"example_value\",\n    \"generation\": 10,\n    \"creationTimestamp\": \"2026-01-15T10:30:00Z\",\n    \"deletionTimestamp\": \"2026-01-15T10:30:00Z\",\n    \"labels\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    },\n    \"annotations\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    }\n  },\n  \"status\": {\n    \"lastVersion\": 10\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"spec\": {\n    \"source\": {\n      \"type\": \"Git\",\n      \"git\": {\n        \"uri\": \"http://OYyR.cxYrhjxr-Cw\",\n        \"ref\": \"string\"\n      },\n      \"dockerfile\": \"example_value\",\n      \"contextDir\": \"example_value\",\n      \"sourceSecret\": {\n        \"name\": \"string\"\n      }\n    },\n    \"strategy\": {\n      \"type\": \"Source\",\n      \"sourceStrategy\": {\n        \"from\": {\n          \"apiVersion\": \"example_value\",\n          \"kind\": \"example_value\",\n          \"name\": \"Example Title\",\n          \"namespace\": \"example_value\"\n        },\n        \"scripts\": \"example_value\",\n        \"incremental\": true,\n        \"forcePull\": true\n      },\n      \"dockerStrategy\": {\n        \"from\": {\n          \"apiVersion\": \"example_value\",\n          \"kind\": \"example_value\",\n          \"name\": \"Example Title\",\n          \"namespace\": \"example_value\"\n        },\n        \"dockerfilePath\": \"example_value\",\n        \"noCache\": true,\n        \"forcePull\": true\n      },\n      \"customStrategy\": {\n        \"from\": {\n          \"apiVersion\": \"example_value\",\n          \"kind\": \"example_value\",\n          \"name\": \"Example Title\",\n          \"namespace\": \"example_value\"\n        },\n        \"exposeDockerSocket\": true,\n        \"forcePull\": true\n      }\n    },\n    \"output\": {\n      \"to\": {\n        \"apiVersion\": \"example_value\",\n        \"kind\": \"example_value\",\n        \"name\": \"Example Title\",\n        \"namespace\": \"example_value\"\n      },\n      \"pushSecret\": {\n        \"name\": \"string\"\n      }\n    },\n    \"resources\": {\n      \"limits\": {\n        \"key_0\": \"string\"\n      },\n      \"requests\": {\n        \"key_0\": \"string\"\n      }\n    },\n    \"runPolicy\": \"Serial\",\n    \"serviceAccount\": \"example_value\",\n    \"completionDeadlineSeconds\": 10,\n    \"successfulBuildsHistoryLimit\": 10,\n    \"failedBuildsHistoryLimit\": 10,\n    \"nodeSelector\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    }\n  },\n  \"apiVersion\": \"example_value\",\n  \"kind\": \"example_value\",\n  \"metadata\": {\n    \"name\": \"Example Title\",\n    \"namespace\": \"example_value\",\n    \"uid\": \"10a8e98c-9321-89f5-14d5-ffc0dd0c2dd7\",\n    \"resourceVersion\": \"example_value\",\n    \"generation\": 10,\n    \"creationTimestamp\": \"2026-01-15T10:30:00Z\",\n    \"deletionTimestamp\": \"2026-01-15T10:30:00Z\",\n    \"labels\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    },\n    \"annotations\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    }\n  },\n  \"status\": {\n    \"lastVersion\": 10\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5f5c1327-b8f3-4f22-95d1-f4accb66b8f2",
+              "name": "Created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "apis",
+                    "build.openshift.io",
+                    "v1",
+                    "namespaces",
+                    ":namespace",
+                    "buildconfigs",
+                    ":name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pretty",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "dryRun",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fieldManager",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) Name of the resource."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "namespace",
+                      "description": "(Required) The namespace (project) scope for the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"spec\": {\n    \"source\": {\n      \"type\": \"Git\",\n      \"git\": {\n        \"uri\": \"http://OYyR.cxYrhjxr-Cw\",\n        \"ref\": \"string\"\n      },\n      \"dockerfile\": \"example_value\",\n      \"contextDir\": \"example_value\",\n      \"sourceSecret\": {\n        \"name\": \"string\"\n      }\n    },\n    \"strategy\": {\n      \"type\": \"Source\",\n      \"sourceStrategy\": {\n        \"from\": {\n          \"apiVersion\": \"example_value\",\n          \"kind\": \"example_value\",\n          \"name\": \"Example Title\",\n          \"namespace\": \"example_value\"\n        },\n        \"scripts\": \"example_value\",\n        \"incremental\": true,\n        \"forcePull\": true\n      },\n      \"dockerStrategy\": {\n        \"from\": {\n          \"apiVersion\": \"example_value\",\n          \"kind\": \"example_value\",\n          \"name\": \"Example Title\",\n          \"namespace\": \"example_value\"\n        },\n        \"dockerfilePath\": \"example_value\",\n        \"noCache\": true,\n        \"forcePull\": true\n      },\n      \"customStrategy\": {\n        \"from\": {\n          \"apiVersion\": \"example_value\",\n          \"kind\": \"example_value\",\n          \"name\": \"Example Title\",\n          \"namespace\": \"example_value\"\n        },\n        \"exposeDockerSocket\": true,\n        \"forcePull\": true\n      }\n    },\n    \"output\": {\n      \"to\": {\n        \"apiVersion\": \"example_value\",\n        \"kind\": \"example_value\",\n        \"name\": \"Example Title\",\n        \"namespace\": \"example_value\"\n      },\n      \"pushSecret\": {\n        \"name\": \"string\"\n      }\n    },\n    \"resources\": {\n      \"limits\": {\n        \"key_0\": \"string\"\n      },\n      \"requests\": {\n        \"key_0\": \"string\"\n      }\n    },\n    \"runPolicy\": \"Serial\",\n    \"serviceAccount\": \"example_value\",\n    \"completionDeadlineSeconds\": 10,\n    \"successfulBuildsHistoryLimit\": 10,\n    \"failedBuildsHistoryLimit\": 10,\n    \"nodeSelector\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    }\n  },\n  \"apiVersion\": \"example_value\",\n  \"kind\": \"example_value\",\n  \"metadata\": {\n    \"name\": \"Example Title\",\n    \"namespace\": \"example_value\",\n    \"uid\": \"10a8e98c-9321-89f5-14d5-ffc0dd0c2dd7\",\n    \"resourceVersion\": \"example_value\",\n    \"generation\": 10,\n    \"creationTimestamp\": \"2026-01-15T10:30:00Z\",\n    \"deletionTimestamp\": \"2026-01-15T10:30:00Z\",\n    \"labels\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    },\n    \"annotations\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    }\n  },\n  \"status\": {\n    \"lastVersion\": 10\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"spec\": {\n    \"source\": {\n      \"type\": \"Git\",\n      \"git\": {\n        \"uri\": \"http://OYyR.cxYrhjxr-Cw\",\n        \"ref\": \"string\"\n      },\n      \"dockerfile\": \"example_value\",\n      \"contextDir\": \"example_value\",\n      \"sourceSecret\": {\n        \"name\": \"string\"\n      }\n    },\n    \"strategy\": {\n      \"type\": \"Source\",\n      \"sourceStrategy\": {\n        \"from\": {\n          \"apiVersion\": \"example_value\",\n          \"kind\": \"example_value\",\n          \"name\": \"Example Title\",\n          \"namespace\": \"example_value\"\n        },\n        \"scripts\": \"example_value\",\n        \"incremental\": true,\n        \"forcePull\": true\n      },\n      \"dockerStrategy\": {\n        \"from\": {\n          \"apiVersion\": \"example_value\",\n          \"kind\": \"example_value\",\n          \"name\": \"Example Title\",\n          \"namespace\": \"example_value\"\n        },\n        \"dockerfilePath\": \"example_value\",\n        \"noCache\": true,\n        \"forcePull\": true\n      },\n      \"customStrategy\": {\n        \"from\": {\n          \"apiVersion\": \"example_value\",\n          \"kind\": \"example_value\",\n          \"name\": \"Example Title\",\n          \"namespace\": \"example_value\"\n        },\n        \"exposeDockerSocket\": true,\n        \"forcePull\": true\n      }\n    },\n    \"output\": {\n      \"to\": {\n        \"apiVersion\": \"example_value\",\n        \"kind\": \"example_value\",\n        \"name\": \"Example Title\",\n        \"namespace\": \"example_value\"\n      },\n      \"pushSecret\": {\n        \"name\": \"string\"\n      }\n    },\n    \"resources\": {\n      \"limits\": {\n        \"key_0\": \"string\"\n      },\n      \"requests\": {\n        \"key_0\": \"string\"\n      }\n    },\n    \"runPolicy\": \"Serial\",\n    \"serviceAccount\": \"example_value\",\n    \"completionDeadlineSeconds\": 10,\n    \"successfulBuildsHistoryLimit\": 10,\n    \"failedBuildsHistoryLimit\": 10,\n    \"nodeSelector\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    }\n  },\n  \"apiVersion\": \"example_value\",\n  \"kind\": \"example_value\",\n  \"metadata\": {\n    \"name\": \"Example Title\",\n    \"namespace\": \"example_value\",\n    \"uid\": \"10a8e98c-9321-89f5-14d5-ffc0dd0c2dd7\",\n    \"resourceVersion\": \"example_value\",\n    \"generation\": 10,\n    \"creationTimestamp\": \"2026-01-15T10:30:00Z\",\n    \"deletionTimestamp\": \"2026-01-15T10:30:00Z\",\n    \"labels\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    },\n    \"annotations\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    }\n  },\n  \"status\": {\n    \"lastVersion\": 10\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5a44b89a-88f5-49a8-9e79-8e1d367ad2de",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "apis",
+                    "build.openshift.io",
+                    "v1",
+                    "namespaces",
+                    ":namespace",
+                    "buildconfigs",
+                    ":name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pretty",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "dryRun",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fieldManager",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) Name of the resource."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "namespace",
+                      "description": "(Required) The namespace (project) scope for the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"spec\": {\n    \"source\": {\n      \"type\": \"Git\",\n      \"git\": {\n        \"uri\": \"http://OYyR.cxYrhjxr-Cw\",\n        \"ref\": \"string\"\n      },\n      \"dockerfile\": \"example_value\",\n      \"contextDir\": \"example_value\",\n      \"sourceSecret\": {\n        \"name\": \"string\"\n      }\n    },\n    \"strategy\": {\n      \"type\": \"Source\",\n      \"sourceStrategy\": {\n        \"from\": {\n          \"apiVersion\": \"example_value\",\n          \"kind\": \"example_value\",\n          \"name\": \"Example Title\",\n          \"namespace\": \"example_value\"\n        },\n        \"scripts\": \"example_value\",\n        \"incremental\": true,\n        \"forcePull\": true\n      },\n      \"dockerStrategy\": {\n        \"from\": {\n          \"apiVersion\": \"example_value\",\n          \"kind\": \"example_value\",\n          \"name\": \"Example Title\",\n          \"namespace\": \"example_value\"\n        },\n        \"dockerfilePath\": \"example_value\",\n        \"noCache\": true,\n        \"forcePull\": true\n      },\n      \"customStrategy\": {\n        \"from\": {\n          \"apiVersion\": \"example_value\",\n          \"kind\": \"example_value\",\n          \"name\": \"Example Title\",\n          \"namespace\": \"example_value\"\n        },\n        \"exposeDockerSocket\": true,\n        \"forcePull\": true\n      }\n    },\n    \"output\": {\n      \"to\": {\n        \"apiVersion\": \"example_value\",\n        \"kind\": \"example_value\",\n        \"name\": \"Example Title\",\n        \"namespace\": \"example_value\"\n      },\n      \"pushSecret\": {\n        \"name\": \"string\"\n      }\n    },\n    \"resources\": {\n      \"limits\": {\n        \"key_0\": \"string\"\n      },\n      \"requests\": {\n        \"key_0\": \"string\"\n      }\n    },\n    \"runPolicy\": \"Serial\",\n    \"serviceAccount\": \"example_value\",\n    \"completionDeadlineSeconds\": 10,\n    \"successfulBuildsHistoryLimit\": 10,\n    \"failedBuildsHistoryLimit\": 10,\n    \"nodeSelector\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    }\n  },\n  \"apiVersion\": \"example_value\",\n  \"kind\": \"example_value\",\n  \"metadata\": {\n    \"name\": \"Example Title\",\n    \"namespace\": \"example_value\",\n    \"uid\": \"10a8e98c-9321-89f5-14d5-ffc0dd0c2dd7\",\n    \"resourceVersion\": \"example_value\",\n    \"generation\": 10,\n    \"creationTimestamp\": \"2026-01-15T10:30:00Z\",\n    \"deletionTimestamp\": \"2026-01-15T10:30:00Z\",\n    \"labels\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    },\n    \"annotations\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    }\n  },\n  \"status\": {\n    \"lastVersion\": 10\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0eaf17f4-61dc-4c73-aba6-147cdec9f157",
+          "name": "Openshift Delete a Build Config",
+          "request": {
+            "name": "Openshift Delete a Build Config",
+            "description": {
+              "content": "Delete the specified BuildConfig from the given namespace.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "apis",
+                "build.openshift.io",
+                "v1",
+                "namespaces",
+                ":namespace",
+                "buildconfigs",
+                ":name"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "pretty",
+                  "value": "<string>",
+                  "description": "If true, the output is pretty-printed."
+                },
+                {
+                  "disabled": false,
+                  "key": "dryRun",
+                  "value": "<string>",
+                  "description": "When present, indicates that modifications should not be persisted. Valid values are All (all dry run stages will be processed)."
+                },
+                {
+                  "disabled": false,
+                  "key": "gracePeriodSeconds",
+                  "value": "<long>",
+                  "description": "The duration in seconds before the object should be deleted. The value zero indicates delete immediately."
+                },
+                {
+                  "disabled": false,
+                  "key": "propagationPolicy",
+                  "value": "<string>",
+                  "description": "Whether and how garbage collection will be performed. Either Orphan, Background, or Foreground."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) Name of the resource."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "namespace",
+                  "description": "(Required) The namespace (project) scope for the resource."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "63f03287-7871-44c5-95cf-88038eeb1ffc",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "apis",
+                    "build.openshift.io",
+                    "v1",
+                    "namespaces",
+                    ":namespace",
+                    "buildconfigs",
+                    ":name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pretty",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "dryRun",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "gracePeriodSeconds",
+                      "value": "<long>"
+                    },
+                    {
+                      "key": "propagationPolicy",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) Name of the resource."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "namespace",
+                      "description": "(Required) The namespace (project) scope for the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"apiVersion\": \"example_value\",\n  \"kind\": \"example_value\",\n  \"metadata\": {\n    \"selfLink\": \"example_value\",\n    \"resourceVersion\": \"example_value\",\n    \"continue\": \"example_value\",\n    \"remainingItemCount\": 10\n  },\n  \"status\": \"Success\",\n  \"message\": \"example_value\",\n  \"reason\": \"example_value\",\n  \"code\": 10\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "82a414ea-95b3-405c-85c7-750995504402",
+              "name": "Accepted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "apis",
+                    "build.openshift.io",
+                    "v1",
+                    "namespaces",
+                    ":namespace",
+                    "buildconfigs",
+                    ":name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pretty",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "dryRun",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "gracePeriodSeconds",
+                      "value": "<long>"
+                    },
+                    {
+                      "key": "propagationPolicy",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) Name of the resource."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "namespace",
+                      "description": "(Required) The namespace (project) scope for the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"apiVersion\": \"example_value\",\n  \"kind\": \"example_value\",\n  \"metadata\": {\n    \"selfLink\": \"example_value\",\n    \"resourceVersion\": \"example_value\",\n    \"continue\": \"example_value\",\n    \"remainingItemCount\": 10\n  },\n  \"status\": \"Success\",\n  \"message\": \"example_value\",\n  \"reason\": \"example_value\",\n  \"code\": 10\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "bd91d8b3-b188-40a5-aa68-3f3e5427fb1e",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "apis",
+                    "build.openshift.io",
+                    "v1",
+                    "namespaces",
+                    ":namespace",
+                    "buildconfigs",
+                    ":name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pretty",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "dryRun",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "gracePeriodSeconds",
+                      "value": "<long>"
+                    },
+                    {
+                      "key": "propagationPolicy",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) Name of the resource."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "namespace",
+                      "description": "(Required) The namespace (project) scope for the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f444a16b-07d1-4c2d-b2fe-7e181b999976",
+          "name": "Openshift Instantiate a Build From a Build Config",
+          "request": {
+            "name": "Openshift Instantiate a Build From a Build Config",
+            "description": {
+              "content": "Trigger a new build from the specified BuildConfig.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "apis",
+                "build.openshift.io",
+                "v1",
+                "namespaces",
+                ":namespace",
+                "buildconfigs",
+                ":name",
+                "instantiate"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "pretty",
+                  "value": "<string>",
+                  "description": "If true, the output is pretty-printed."
+                },
+                {
+                  "disabled": false,
+                  "key": "dryRun",
+                  "value": "<string>",
+                  "description": "When present, indicates that modifications should not be persisted. Valid values are All (all dry run stages will be processed)."
+                },
+                {
+                  "disabled": false,
+                  "key": "fieldManager",
+                  "value": "<string>",
+                  "description": "A name associated with the actor or entity making the change. Used for server-side apply to track field ownership."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) Name of the resource."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "namespace",
+                  "description": "(Required) The namespace (project) scope for the resource."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"apiVersion\": \"build.openshift.io/v1\",\n  \"kind\": \"BuildRequest\",\n  \"metadata\": {\n    \"name\": \"<string>\",\n    \"namespace\": \"<string>\",\n    \"uid\": \"<uuid>\",\n    \"resourceVersion\": \"<string>\",\n    \"generation\": \"<long>\",\n    \"creationTimestamp\": \"<dateTime>\",\n    \"deletionTimestamp\": \"<dateTime>\",\n    \"labels\": {\n      \"key_0\": \"<string>\"\n    },\n    \"annotations\": {\n      \"key_0\": \"<string>\",\n      \"key_1\": \"<string>\"\n    },\n    \"ownerReferences\": [\n      {\n        \"apiVersion\": \"<string>\",\n        \"kind\": \"<string>\",\n        \"name\": \"<string>\",\n        \"uid\": \"<string>\",\n        \"controller\": \"<boolean>\",\n        \"blockOwnerDeletion\": \"<boolean>\"\n      },\n      {\n        \"apiVersion\": \"<string>\",\n        \"kind\": \"<string>\",\n        \"name\": \"<string>\",\n        \"uid\": \"<string>\",\n        \"controller\": \"<boolean>\",\n        \"blockOwnerDeletion\": \"<boolean>\"\n      }\n    ],\n    \"finalizers\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"triggeredBy\": [\n    {\n      \"message\": \"<string>\"\n    },\n    {\n      \"message\": \"<string>\"\n    }\n  ],\n  \"env\": [\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "93e536e4-8857-443b-92d7-c672e54d8a83",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "apis",
+                    "build.openshift.io",
+                    "v1",
+                    "namespaces",
+                    ":namespace",
+                    "buildconfigs",
+                    ":name",
+                    "instantiate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pretty",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "dryRun",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fieldManager",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) Name of the resource."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "namespace",
+                      "description": "(Required) The namespace (project) scope for the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"apiVersion\": \"example_value\",\n  \"kind\": \"example_value\",\n  \"metadata\": {\n    \"name\": \"Example Title\",\n    \"namespace\": \"example_value\",\n    \"uid\": \"10e946b5-6cf8-84e4-fc1d-56d844fd01d9\",\n    \"resourceVersion\": \"example_value\",\n    \"generation\": 10,\n    \"creationTimestamp\": \"2026-01-15T10:30:00Z\",\n    \"deletionTimestamp\": \"2026-01-15T10:30:00Z\",\n    \"labels\": {\n      \"key_0\": \"string\"\n    },\n    \"annotations\": {\n      \"key_0\": \"string\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"spec\": {\n    \"serviceAccount\": \"example_value\",\n    \"source\": {\n      \"type\": \"Git\",\n      \"git\": {\n        \"uri\": \"https://oiURUdyNGaQJFvEMZShP.kxzop5vm,wNrjncm+eAZlAsLRw27UKsuDnVx2DcbZuM\",\n        \"ref\": \"string\"\n      },\n      \"dockerfile\": \"example_value\",\n      \"contextDir\": \"example_value\",\n      \"sourceSecret\": {\n        \"name\": \"string\"\n      }\n    },\n    \"strategy\": {\n      \"type\": \"Source\",\n      \"sourceStrategy\": {\n        \"from\": {\n          \"apiVersion\": \"example_value\",\n          \"kind\": \"example_value\",\n          \"name\": \"Example Title\",\n          \"namespace\": \"example_value\"\n        },\n        \"scripts\": \"example_value\",\n        \"incremental\": true,\n        \"forcePull\": true\n      },\n      \"dockerStrategy\": {\n        \"from\": {\n          \"apiVersion\": \"example_value\",\n          \"kind\": \"example_value\",\n          \"name\": \"Example Title\",\n          \"namespace\": \"example_value\"\n        },\n        \"dockerfilePath\": \"example_value\",\n        \"noCache\": true,\n        \"forcePull\": true\n      },\n      \"customStrategy\": {\n        \"from\": {\n          \"apiVersion\": \"example_value\",\n          \"kind\": \"example_value\",\n          \"name\": \"Example Title\",\n          \"namespace\": \"example_value\"\n        },\n        \"exposeDockerSocket\": true,\n        \"forcePull\": true\n      }\n    },\n    \"output\": {\n      \"to\": {\n        \"apiVersion\": \"example_value\",\n        \"kind\": \"example_value\",\n        \"name\": \"Example Title\",\n        \"namespace\": \"example_value\"\n      },\n      \"pushSecret\": {\n        \"name\": \"string\"\n      }\n    },\n    \"resources\": {\n      \"limits\": {\n        \"key_0\": \"string\"\n      },\n      \"requests\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      }\n    },\n    \"completionDeadlineSeconds\": 10,\n    \"nodeSelector\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    }\n  },\n  \"apiVersion\": \"example_value\",\n  \"kind\": \"example_value\",\n  \"metadata\": {\n    \"name\": \"Example Title\",\n    \"namespace\": \"example_value\",\n    \"uid\": \"0bc96290-9767-bc1c-ed9b-9fa76184f206\",\n    \"resourceVersion\": \"example_value\",\n    \"generation\": 10,\n    \"creationTimestamp\": \"2026-01-15T10:30:00Z\",\n    \"deletionTimestamp\": \"2026-01-15T10:30:00Z\",\n    \"labels\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    },\n    \"annotations\": {\n      \"key_0\": \"string\"\n    }\n  },\n  \"status\": {\n    \"phase\": \"New\",\n    \"cancelled\": true,\n    \"message\": \"example_value\",\n    \"reason\": \"example_value\",\n    \"startTimestamp\": \"2026-01-15T10:30:00Z\",\n    \"completionTimestamp\": \"2026-01-15T10:30:00Z\",\n    \"duration\": 10,\n    \"outputDockerImageReference\": \"example_value\",\n    \"config\": {\n      \"apiVersion\": \"example_value\",\n      \"kind\": \"example_value\",\n      \"name\": \"Example Title\",\n      \"namespace\": \"example_value\"\n    },\n    \"output\": {\n      \"to\": {\n        \"imageDigest\": \"string\"\n      }\n    },\n    \"logSnippet\": \"example_value\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8aef4e78-e8e4-48f1-9e34-7d17769f64eb",
+              "name": "Created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "apis",
+                    "build.openshift.io",
+                    "v1",
+                    "namespaces",
+                    ":namespace",
+                    "buildconfigs",
+                    ":name",
+                    "instantiate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pretty",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "dryRun",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fieldManager",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) Name of the resource."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "namespace",
+                      "description": "(Required) The namespace (project) scope for the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"apiVersion\": \"example_value\",\n  \"kind\": \"example_value\",\n  \"metadata\": {\n    \"name\": \"Example Title\",\n    \"namespace\": \"example_value\",\n    \"uid\": \"10e946b5-6cf8-84e4-fc1d-56d844fd01d9\",\n    \"resourceVersion\": \"example_value\",\n    \"generation\": 10,\n    \"creationTimestamp\": \"2026-01-15T10:30:00Z\",\n    \"deletionTimestamp\": \"2026-01-15T10:30:00Z\",\n    \"labels\": {\n      \"key_0\": \"string\"\n    },\n    \"annotations\": {\n      \"key_0\": \"string\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"spec\": {\n    \"serviceAccount\": \"example_value\",\n    \"source\": {\n      \"type\": \"Git\",\n      \"git\": {\n        \"uri\": \"https://oiURUdyNGaQJFvEMZShP.kxzop5vm,wNrjncm+eAZlAsLRw27UKsuDnVx2DcbZuM\",\n        \"ref\": \"string\"\n      },\n      \"dockerfile\": \"example_value\",\n      \"contextDir\": \"example_value\",\n      \"sourceSecret\": {\n        \"name\": \"string\"\n      }\n    },\n    \"strategy\": {\n      \"type\": \"Source\",\n      \"sourceStrategy\": {\n        \"from\": {\n          \"apiVersion\": \"example_value\",\n          \"kind\": \"example_value\",\n          \"name\": \"Example Title\",\n          \"namespace\": \"example_value\"\n        },\n        \"scripts\": \"example_value\",\n        \"incremental\": true,\n        \"forcePull\": true\n      },\n      \"dockerStrategy\": {\n        \"from\": {\n          \"apiVersion\": \"example_value\",\n          \"kind\": \"example_value\",\n          \"name\": \"Example Title\",\n          \"namespace\": \"example_value\"\n        },\n        \"dockerfilePath\": \"example_value\",\n        \"noCache\": true,\n        \"forcePull\": true\n      },\n      \"customStrategy\": {\n        \"from\": {\n          \"apiVersion\": \"example_value\",\n          \"kind\": \"example_value\",\n          \"name\": \"Example Title\",\n          \"namespace\": \"example_value\"\n        },\n        \"exposeDockerSocket\": true,\n        \"forcePull\": true\n      }\n    },\n    \"output\": {\n      \"to\": {\n        \"apiVersion\": \"example_value\",\n        \"kind\": \"example_value\",\n        \"name\": \"Example Title\",\n        \"namespace\": \"example_value\"\n      },\n      \"pushSecret\": {\n        \"name\": \"string\"\n      }\n    },\n    \"resources\": {\n      \"limits\": {\n        \"key_0\": \"string\"\n      },\n      \"requests\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      }\n    },\n    \"completionDeadlineSeconds\": 10,\n    \"nodeSelector\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    }\n  },\n  \"apiVersion\": \"example_value\",\n  \"kind\": \"example_value\",\n  \"metadata\": {\n    \"name\": \"Example Title\",\n    \"namespace\": \"example_value\",\n    \"uid\": \"0bc96290-9767-bc1c-ed9b-9fa76184f206\",\n    \"resourceVersion\": \"example_value\",\n    \"generation\": 10,\n    \"creationTimestamp\": \"2026-01-15T10:30:00Z\",\n    \"deletionTimestamp\": \"2026-01-15T10:30:00Z\",\n    \"labels\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    },\n    \"annotations\": {\n      \"key_0\": \"string\"\n    }\n  },\n  \"status\": {\n    \"phase\": \"New\",\n    \"cancelled\": true,\n    \"message\": \"example_value\",\n    \"reason\": \"example_value\",\n    \"startTimestamp\": \"2026-01-15T10:30:00Z\",\n    \"completionTimestamp\": \"2026-01-15T10:30:00Z\",\n    \"duration\": 10,\n    \"outputDockerImageReference\": \"example_value\",\n    \"config\": {\n      \"apiVersion\": \"example_value\",\n      \"kind\": \"example_value\",\n      \"name\": \"Example Title\",\n      \"namespace\": \"example_value\"\n    },\n    \"output\": {\n      \"to\": {\n        \"imageDigest\": \"string\"\n      }\n    },\n    \"logSnippet\": \"example_value\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fd87e95c-8d5f-46b7-9633-ea5b0ce97499",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "apis",
+                    "build.openshift.io",
+                    "v1",
+                    "namespaces",
+                    ":namespace",
+                    "buildconfigs",
+                    ":name",
+                    "instantiate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pretty",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "dryRun",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fieldManager",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) Name of the resource."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "namespace",
+                      "description": "(Required) The namespace (project) scope for the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"apiVersion\": \"example_value\",\n  \"kind\": \"example_value\",\n  \"metadata\": {\n    \"name\": \"Example Title\",\n    \"namespace\": \"example_value\",\n    \"uid\": \"10e946b5-6cf8-84e4-fc1d-56d844fd01d9\",\n    \"resourceVersion\": \"example_value\",\n    \"generation\": 10,\n    \"creationTimestamp\": \"2026-01-15T10:30:00Z\",\n    \"deletionTimestamp\": \"2026-01-15T10:30:00Z\",\n    \"labels\": {\n      \"key_0\": \"string\"\n    },\n    \"annotations\": {\n      \"key_0\": \"string\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.openshift.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "0c2405b3-06d7-4efd-bd21-15d71c83a682",
+    "name": "openshift-rest-api BuildConfigs API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The OpenShift REST API provides programmatic access to Red Hat OpenShift\nContainer Platform resources. This specification covers the core\nOpenShift-specific API groups including Routes (route.openshift.io/v1),\nBuilds (build.openshift.io/v1), DeploymentConfigs (apps.openshift.io/v1),\nand Projects (project.openshift.io/v1). These APIs extend the Kubernetes\nAPI with capabilities for application routing, source-to-image builds,\ndeployment strategies, and multi-tenant project management.\n\nContact Support:\n Name: Red Hat OpenShift Support\n Email: openshift-dev@redhat.com",
+      "type": "text/plain"
+    }
+  }
+}

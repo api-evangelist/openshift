@@ -1,0 +1,2590 @@
+{
+  "item": [
+    {
+      "id": "27b639ed-b5e1-40a3-9cf8-d7a9184bd559",
+      "name": "Routes",
+      "description": {
+        "content": "Manage application routes that expose services at a hostname. Routes provide external access to services via HTTP/HTTPS, with support for TLS termination strategies including edge, passthrough, and re-encrypt.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "2e62cf92-0ec0-4ab0-9cb9-3d383881f2ca",
+          "name": "Openshift List Routes Across All Namespaces",
+          "request": {
+            "name": "Openshift List Routes Across All Namespaces",
+            "description": {
+              "content": "List or watch Route objects across all namespaces. Requires cluster-level read access to routes.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "apis",
+                "route.openshift.io",
+                "v1",
+                "routes"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "allowWatchBookmarks",
+                  "value": "<boolean>",
+                  "description": "Allow watch bookmarks. Bookmarks report the resourceVersion to which the set of watched resources is synced."
+                },
+                {
+                  "disabled": false,
+                  "key": "continue",
+                  "value": "<string>",
+                  "description": "The continue token for paging through large result sets."
+                },
+                {
+                  "disabled": false,
+                  "key": "fieldSelector",
+                  "value": "<string>",
+                  "description": "A selector to restrict the list of returned objects by their fields."
+                },
+                {
+                  "disabled": false,
+                  "key": "labelSelector",
+                  "value": "<string>",
+                  "description": "A selector to restrict the list of returned objects by their labels."
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<long>",
+                  "description": "Maximum number of responses to return for a list call."
+                },
+                {
+                  "disabled": false,
+                  "key": "pretty",
+                  "value": "<string>",
+                  "description": "If true, the output is pretty-printed."
+                },
+                {
+                  "disabled": false,
+                  "key": "resourceVersion",
+                  "value": "<string>",
+                  "description": "Specifies the resource version to match or list from."
+                },
+                {
+                  "disabled": false,
+                  "key": "watch",
+                  "value": "<boolean>",
+                  "description": "Watch for changes to the described resources and return them as a stream of add, update, and remove notifications."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0e7beb7b-b71e-443d-8f50-e9c46c65b74b",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "apis",
+                    "route.openshift.io",
+                    "v1",
+                    "routes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "allowWatchBookmarks",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "continue",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fieldSelector",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "labelSelector",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<long>"
+                    },
+                    {
+                      "key": "pretty",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "resourceVersion",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "watch",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"items\": [],\n  \"apiVersion\": \"example_value\",\n  \"kind\": \"example_value\",\n  \"metadata\": {\n    \"selfLink\": \"example_value\",\n    \"resourceVersion\": \"example_value\",\n    \"continue\": \"example_value\",\n    \"remainingItemCount\": 10\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "15ef54d3-10fa-449f-9029-b1a0ed85b5fe",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "apis",
+                    "route.openshift.io",
+                    "v1",
+                    "routes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "allowWatchBookmarks",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "continue",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fieldSelector",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "labelSelector",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<long>"
+                    },
+                    {
+                      "key": "pretty",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "resourceVersion",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "watch",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "927c18c5-643c-4f65-ac73-bde3a812cc00",
+          "name": "Openshift List Routes in a Namespace",
+          "request": {
+            "name": "Openshift List Routes in a Namespace",
+            "description": {
+              "content": "List or watch Route objects in the specified namespace.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "apis",
+                "route.openshift.io",
+                "v1",
+                "namespaces",
+                ":namespace",
+                "routes"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "allowWatchBookmarks",
+                  "value": "<boolean>",
+                  "description": "Allow watch bookmarks. Bookmarks report the resourceVersion to which the set of watched resources is synced."
+                },
+                {
+                  "disabled": false,
+                  "key": "continue",
+                  "value": "<string>",
+                  "description": "The continue token for paging through large result sets."
+                },
+                {
+                  "disabled": false,
+                  "key": "fieldSelector",
+                  "value": "<string>",
+                  "description": "A selector to restrict the list of returned objects by their fields."
+                },
+                {
+                  "disabled": false,
+                  "key": "labelSelector",
+                  "value": "<string>",
+                  "description": "A selector to restrict the list of returned objects by their labels."
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<long>",
+                  "description": "Maximum number of responses to return for a list call."
+                },
+                {
+                  "disabled": false,
+                  "key": "pretty",
+                  "value": "<string>",
+                  "description": "If true, the output is pretty-printed."
+                },
+                {
+                  "disabled": false,
+                  "key": "resourceVersion",
+                  "value": "<string>",
+                  "description": "Specifies the resource version to match or list from."
+                },
+                {
+                  "disabled": false,
+                  "key": "watch",
+                  "value": "<boolean>",
+                  "description": "Watch for changes to the described resources and return them as a stream of add, update, and remove notifications."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "namespace",
+                  "description": "(Required) The namespace (project) scope for the resource."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b4749a0c-eba9-4ed3-837d-29ed49a232ef",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "apis",
+                    "route.openshift.io",
+                    "v1",
+                    "namespaces",
+                    ":namespace",
+                    "routes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "allowWatchBookmarks",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "continue",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fieldSelector",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "labelSelector",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<long>"
+                    },
+                    {
+                      "key": "pretty",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "resourceVersion",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "watch",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "namespace",
+                      "description": "(Required) The namespace (project) scope for the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"items\": [],\n  \"apiVersion\": \"example_value\",\n  \"kind\": \"example_value\",\n  \"metadata\": {\n    \"selfLink\": \"example_value\",\n    \"resourceVersion\": \"example_value\",\n    \"continue\": \"example_value\",\n    \"remainingItemCount\": 10\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "acb65029-8aca-494f-a9f0-cdf0dd5cdf0c",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "apis",
+                    "route.openshift.io",
+                    "v1",
+                    "namespaces",
+                    ":namespace",
+                    "routes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "allowWatchBookmarks",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "continue",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fieldSelector",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "labelSelector",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<long>"
+                    },
+                    {
+                      "key": "pretty",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "resourceVersion",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "watch",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "namespace",
+                      "description": "(Required) The namespace (project) scope for the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "741f1a4b-3931-493c-be75-9fd70ea0ae87",
+          "name": "Openshift Create a Route",
+          "request": {
+            "name": "Openshift Create a Route",
+            "description": {
+              "content": "Create a Route in the specified namespace. A route exposes a service at an externally reachable hostname.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "apis",
+                "route.openshift.io",
+                "v1",
+                "namespaces",
+                ":namespace",
+                "routes"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "pretty",
+                  "value": "<string>",
+                  "description": "If true, the output is pretty-printed."
+                },
+                {
+                  "disabled": false,
+                  "key": "dryRun",
+                  "value": "<string>",
+                  "description": "When present, indicates that modifications should not be persisted. Valid values are All (all dry run stages will be processed)."
+                },
+                {
+                  "disabled": false,
+                  "key": "fieldManager",
+                  "value": "<string>",
+                  "description": "A name associated with the actor or entity making the change. Used for server-side apply to track field ownership."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "namespace",
+                  "description": "(Required) The namespace (project) scope for the resource."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"spec\": {\n    \"to\": {\n      \"kind\": \"Service\",\n      \"name\": \"<string>\",\n      \"weight\": 100\n    },\n    \"host\": \"<string>\",\n    \"path\": \"<string>\",\n    \"subdomain\": \"<string>\",\n    \"alternateBackends\": [\n      {\n        \"kind\": \"Service\",\n        \"name\": \"<string>\",\n        \"weight\": 100\n      },\n      {\n        \"kind\": \"Service\",\n        \"name\": \"<string>\",\n        \"weight\": 100\n      }\n    ],\n    \"port\": {\n      \"targetPort\": \"<string>\"\n    },\n    \"tls\": {\n      \"termination\": \"<string>\",\n      \"certificate\": \"<string>\",\n      \"key\": \"<string>\",\n      \"caCertificate\": \"<string>\",\n      \"destinationCACertificate\": \"<string>\",\n      \"insecureEdgeTerminationPolicy\": \"<string>\"\n    },\n    \"wildcardPolicy\": \"None\"\n  },\n  \"apiVersion\": \"route.openshift.io/v1\",\n  \"kind\": \"Route\",\n  \"metadata\": {\n    \"name\": \"<string>\",\n    \"namespace\": \"<string>\",\n    \"uid\": \"<uuid>\",\n    \"resourceVersion\": \"<string>\",\n    \"generation\": \"<long>\",\n    \"creationTimestamp\": \"<dateTime>\",\n    \"deletionTimestamp\": \"<dateTime>\",\n    \"labels\": {\n      \"key_0\": \"<string>\",\n      \"key_1\": \"<string>\"\n    },\n    \"annotations\": {\n      \"key_0\": \"<string>\",\n      \"key_1\": \"<string>\",\n      \"key_2\": \"<string>\"\n    },\n    \"ownerReferences\": [\n      {\n        \"apiVersion\": \"<string>\",\n        \"kind\": \"<string>\",\n        \"name\": \"<string>\",\n        \"uid\": \"<string>\",\n        \"controller\": \"<boolean>\",\n        \"blockOwnerDeletion\": \"<boolean>\"\n      },\n      {\n        \"apiVersion\": \"<string>\",\n        \"kind\": \"<string>\",\n        \"name\": \"<string>\",\n        \"uid\": \"<string>\",\n        \"controller\": \"<boolean>\",\n        \"blockOwnerDeletion\": \"<boolean>\"\n      }\n    ],\n    \"finalizers\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"status\": {\n    \"ingress\": [\n      {\n        \"host\": \"<string>\",\n        \"routerName\": \"<string>\",\n        \"conditions\": [\n          {\n            \"type\": \"<string>\",\n            \"status\": \"<string>\",\n            \"reason\": \"<string>\",\n            \"message\": \"<string>\",\n            \"lastTransitionTime\": \"<dateTime>\"\n          },\n          {\n            \"type\": \"<string>\",\n            \"status\": \"<string>\",\n            \"reason\": \"<string>\",\n            \"message\": \"<string>\",\n            \"lastTransitionTime\": \"<dateTime>\"\n          }\n        ],\n        \"wildcardPolicy\": \"<string>\"\n      },\n      {\n        \"host\": \"<string>\",\n        \"routerName\": \"<string>\",\n        \"conditions\": [\n          {\n            \"type\": \"<string>\",\n            \"status\": \"<string>\",\n            \"reason\": \"<string>\",\n            \"message\": \"<string>\",\n            \"lastTransitionTime\": \"<dateTime>\"\n          },\n          {\n            \"type\": \"<string>\",\n            \"status\": \"<string>\",\n            \"reason\": \"<string>\",\n            \"message\": \"<string>\",\n            \"lastTransitionTime\": \"<dateTime>\"\n          }\n        ],\n        \"wildcardPolicy\": \"<string>\"\n      }\n    ]\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "848420aa-23db-4096-bc59-d3d52d82796e",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "apis",
+                    "route.openshift.io",
+                    "v1",
+                    "namespaces",
+                    ":namespace",
+                    "routes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pretty",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "dryRun",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fieldManager",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "namespace",
+                      "description": "(Required) The namespace (project) scope for the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"spec\": {\n    \"to\": {\n      \"kind\": \"Service\",\n      \"name\": \"Example Title\",\n      \"weight\": 10\n    },\n    \"host\": \"myapp.apps.openshift.example.com\",\n    \"path\": \"/api\",\n    \"subdomain\": \"example_value\",\n    \"port\": {\n      \"targetPort\": \"string\"\n    },\n    \"tls\": {\n      \"termination\": \"edge\",\n      \"certificate\": \"example_value\",\n      \"key\": \"example_value\",\n      \"caCertificate\": \"example_value\",\n      \"destinationCACertificate\": \"example_value\",\n      \"insecureEdgeTerminationPolicy\": \"None\"\n    },\n    \"wildcardPolicy\": \"None\"\n  },\n  \"apiVersion\": \"example_value\",\n  \"kind\": \"example_value\",\n  \"metadata\": {\n    \"name\": \"Example Title\",\n    \"namespace\": \"example_value\",\n    \"uid\": \"a15be24d-5618-e9de-aff1-5adddf78097c\",\n    \"resourceVersion\": \"example_value\",\n    \"generation\": 10,\n    \"creationTimestamp\": \"2026-01-15T10:30:00Z\",\n    \"deletionTimestamp\": \"2026-01-15T10:30:00Z\",\n    \"labels\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    },\n    \"annotations\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\",\n      \"key_2\": \"string\",\n      \"key_3\": \"string\"\n    }\n  },\n  \"status\": {}\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"spec\": {\n    \"to\": {\n      \"kind\": \"Service\",\n      \"name\": \"Example Title\",\n      \"weight\": 10\n    },\n    \"host\": \"myapp.apps.openshift.example.com\",\n    \"path\": \"/api\",\n    \"subdomain\": \"example_value\",\n    \"port\": {\n      \"targetPort\": \"string\"\n    },\n    \"tls\": {\n      \"termination\": \"edge\",\n      \"certificate\": \"example_value\",\n      \"key\": \"example_value\",\n      \"caCertificate\": \"example_value\",\n      \"destinationCACertificate\": \"example_value\",\n      \"insecureEdgeTerminationPolicy\": \"None\"\n    },\n    \"wildcardPolicy\": \"None\"\n  },\n  \"apiVersion\": \"example_value\",\n  \"kind\": \"example_value\",\n  \"metadata\": {\n    \"name\": \"Example Title\",\n    \"namespace\": \"example_value\",\n    \"uid\": \"a15be24d-5618-e9de-aff1-5adddf78097c\",\n    \"resourceVersion\": \"example_value\",\n    \"generation\": 10,\n    \"creationTimestamp\": \"2026-01-15T10:30:00Z\",\n    \"deletionTimestamp\": \"2026-01-15T10:30:00Z\",\n    \"labels\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    },\n    \"annotations\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\",\n      \"key_2\": \"string\",\n      \"key_3\": \"string\"\n    }\n  },\n  \"status\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9a7f1639-69a1-4510-9be7-6e0a547e2da7",
+              "name": "Created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "apis",
+                    "route.openshift.io",
+                    "v1",
+                    "namespaces",
+                    ":namespace",
+                    "routes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pretty",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "dryRun",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fieldManager",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "namespace",
+                      "description": "(Required) The namespace (project) scope for the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"spec\": {\n    \"to\": {\n      \"kind\": \"Service\",\n      \"name\": \"Example Title\",\n      \"weight\": 10\n    },\n    \"host\": \"myapp.apps.openshift.example.com\",\n    \"path\": \"/api\",\n    \"subdomain\": \"example_value\",\n    \"port\": {\n      \"targetPort\": \"string\"\n    },\n    \"tls\": {\n      \"termination\": \"edge\",\n      \"certificate\": \"example_value\",\n      \"key\": \"example_value\",\n      \"caCertificate\": \"example_value\",\n      \"destinationCACertificate\": \"example_value\",\n      \"insecureEdgeTerminationPolicy\": \"None\"\n    },\n    \"wildcardPolicy\": \"None\"\n  },\n  \"apiVersion\": \"example_value\",\n  \"kind\": \"example_value\",\n  \"metadata\": {\n    \"name\": \"Example Title\",\n    \"namespace\": \"example_value\",\n    \"uid\": \"a15be24d-5618-e9de-aff1-5adddf78097c\",\n    \"resourceVersion\": \"example_value\",\n    \"generation\": 10,\n    \"creationTimestamp\": \"2026-01-15T10:30:00Z\",\n    \"deletionTimestamp\": \"2026-01-15T10:30:00Z\",\n    \"labels\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    },\n    \"annotations\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\",\n      \"key_2\": \"string\",\n      \"key_3\": \"string\"\n    }\n  },\n  \"status\": {}\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"spec\": {\n    \"to\": {\n      \"kind\": \"Service\",\n      \"name\": \"Example Title\",\n      \"weight\": 10\n    },\n    \"host\": \"myapp.apps.openshift.example.com\",\n    \"path\": \"/api\",\n    \"subdomain\": \"example_value\",\n    \"port\": {\n      \"targetPort\": \"string\"\n    },\n    \"tls\": {\n      \"termination\": \"edge\",\n      \"certificate\": \"example_value\",\n      \"key\": \"example_value\",\n      \"caCertificate\": \"example_value\",\n      \"destinationCACertificate\": \"example_value\",\n      \"insecureEdgeTerminationPolicy\": \"None\"\n    },\n    \"wildcardPolicy\": \"None\"\n  },\n  \"apiVersion\": \"example_value\",\n  \"kind\": \"example_value\",\n  \"metadata\": {\n    \"name\": \"Example Title\",\n    \"namespace\": \"example_value\",\n    \"uid\": \"a15be24d-5618-e9de-aff1-5adddf78097c\",\n    \"resourceVersion\": \"example_value\",\n    \"generation\": 10,\n    \"creationTimestamp\": \"2026-01-15T10:30:00Z\",\n    \"deletionTimestamp\": \"2026-01-15T10:30:00Z\",\n    \"labels\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    },\n    \"annotations\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\",\n      \"key_2\": \"string\",\n      \"key_3\": \"string\"\n    }\n  },\n  \"status\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "01231006-f2bd-411a-b169-28b69c6d1425",
+              "name": "Accepted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "apis",
+                    "route.openshift.io",
+                    "v1",
+                    "namespaces",
+                    ":namespace",
+                    "routes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pretty",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "dryRun",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fieldManager",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "namespace",
+                      "description": "(Required) The namespace (project) scope for the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"spec\": {\n    \"to\": {\n      \"kind\": \"Service\",\n      \"name\": \"Example Title\",\n      \"weight\": 10\n    },\n    \"host\": \"myapp.apps.openshift.example.com\",\n    \"path\": \"/api\",\n    \"subdomain\": \"example_value\",\n    \"port\": {\n      \"targetPort\": \"string\"\n    },\n    \"tls\": {\n      \"termination\": \"edge\",\n      \"certificate\": \"example_value\",\n      \"key\": \"example_value\",\n      \"caCertificate\": \"example_value\",\n      \"destinationCACertificate\": \"example_value\",\n      \"insecureEdgeTerminationPolicy\": \"None\"\n    },\n    \"wildcardPolicy\": \"None\"\n  },\n  \"apiVersion\": \"example_value\",\n  \"kind\": \"example_value\",\n  \"metadata\": {\n    \"name\": \"Example Title\",\n    \"namespace\": \"example_value\",\n    \"uid\": \"a15be24d-5618-e9de-aff1-5adddf78097c\",\n    \"resourceVersion\": \"example_value\",\n    \"generation\": 10,\n    \"creationTimestamp\": \"2026-01-15T10:30:00Z\",\n    \"deletionTimestamp\": \"2026-01-15T10:30:00Z\",\n    \"labels\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    },\n    \"annotations\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\",\n      \"key_2\": \"string\",\n      \"key_3\": \"string\"\n    }\n  },\n  \"status\": {}\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"spec\": {\n    \"to\": {\n      \"kind\": \"Service\",\n      \"name\": \"Example Title\",\n      \"weight\": 10\n    },\n    \"host\": \"myapp.apps.openshift.example.com\",\n    \"path\": \"/api\",\n    \"subdomain\": \"example_value\",\n    \"port\": {\n      \"targetPort\": \"string\"\n    },\n    \"tls\": {\n      \"termination\": \"edge\",\n      \"certificate\": \"example_value\",\n      \"key\": \"example_value\",\n      \"caCertificate\": \"example_value\",\n      \"destinationCACertificate\": \"example_value\",\n      \"insecureEdgeTerminationPolicy\": \"None\"\n    },\n    \"wildcardPolicy\": \"None\"\n  },\n  \"apiVersion\": \"example_value\",\n  \"kind\": \"example_value\",\n  \"metadata\": {\n    \"name\": \"Example Title\",\n    \"namespace\": \"example_value\",\n    \"uid\": \"a15be24d-5618-e9de-aff1-5adddf78097c\",\n    \"resourceVersion\": \"example_value\",\n    \"generation\": 10,\n    \"creationTimestamp\": \"2026-01-15T10:30:00Z\",\n    \"deletionTimestamp\": \"2026-01-15T10:30:00Z\",\n    \"labels\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    },\n    \"annotations\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\",\n      \"key_2\": \"string\",\n      \"key_3\": \"string\"\n    }\n  },\n  \"status\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b6ca3b5e-980c-40b4-b169-a5b043225d2c",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "apis",
+                    "route.openshift.io",
+                    "v1",
+                    "namespaces",
+                    ":namespace",
+                    "routes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pretty",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "dryRun",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fieldManager",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "namespace",
+                      "description": "(Required) The namespace (project) scope for the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"spec\": {\n    \"to\": {\n      \"kind\": \"Service\",\n      \"name\": \"Example Title\",\n      \"weight\": 10\n    },\n    \"host\": \"myapp.apps.openshift.example.com\",\n    \"path\": \"/api\",\n    \"subdomain\": \"example_value\",\n    \"port\": {\n      \"targetPort\": \"string\"\n    },\n    \"tls\": {\n      \"termination\": \"edge\",\n      \"certificate\": \"example_value\",\n      \"key\": \"example_value\",\n      \"caCertificate\": \"example_value\",\n      \"destinationCACertificate\": \"example_value\",\n      \"insecureEdgeTerminationPolicy\": \"None\"\n    },\n    \"wildcardPolicy\": \"None\"\n  },\n  \"apiVersion\": \"example_value\",\n  \"kind\": \"example_value\",\n  \"metadata\": {\n    \"name\": \"Example Title\",\n    \"namespace\": \"example_value\",\n    \"uid\": \"a15be24d-5618-e9de-aff1-5adddf78097c\",\n    \"resourceVersion\": \"example_value\",\n    \"generation\": 10,\n    \"creationTimestamp\": \"2026-01-15T10:30:00Z\",\n    \"deletionTimestamp\": \"2026-01-15T10:30:00Z\",\n    \"labels\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    },\n    \"annotations\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\",\n      \"key_2\": \"string\",\n      \"key_3\": \"string\"\n    }\n  },\n  \"status\": {}\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "770c322b-efad-4fdd-a29f-909bce60b7b3",
+          "name": "Openshift Read a Route",
+          "request": {
+            "name": "Openshift Read a Route",
+            "description": {
+              "content": "Read the specified Route in the given namespace.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "apis",
+                "route.openshift.io",
+                "v1",
+                "namespaces",
+                ":namespace",
+                "routes",
+                ":name"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "pretty",
+                  "value": "<string>",
+                  "description": "If true, the output is pretty-printed."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) Name of the resource."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "namespace",
+                  "description": "(Required) The namespace (project) scope for the resource."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "61b08484-6801-4318-8a49-bf41f0990c9c",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "apis",
+                    "route.openshift.io",
+                    "v1",
+                    "namespaces",
+                    ":namespace",
+                    "routes",
+                    ":name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pretty",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) Name of the resource."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "namespace",
+                      "description": "(Required) The namespace (project) scope for the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"spec\": {\n    \"to\": {\n      \"kind\": \"Service\",\n      \"name\": \"Example Title\",\n      \"weight\": 10\n    },\n    \"host\": \"myapp.apps.openshift.example.com\",\n    \"path\": \"/api\",\n    \"subdomain\": \"example_value\",\n    \"port\": {\n      \"targetPort\": \"string\"\n    },\n    \"tls\": {\n      \"termination\": \"edge\",\n      \"certificate\": \"example_value\",\n      \"key\": \"example_value\",\n      \"caCertificate\": \"example_value\",\n      \"destinationCACertificate\": \"example_value\",\n      \"insecureEdgeTerminationPolicy\": \"None\"\n    },\n    \"wildcardPolicy\": \"None\"\n  },\n  \"apiVersion\": \"example_value\",\n  \"kind\": \"example_value\",\n  \"metadata\": {\n    \"name\": \"Example Title\",\n    \"namespace\": \"example_value\",\n    \"uid\": \"a15be24d-5618-e9de-aff1-5adddf78097c\",\n    \"resourceVersion\": \"example_value\",\n    \"generation\": 10,\n    \"creationTimestamp\": \"2026-01-15T10:30:00Z\",\n    \"deletionTimestamp\": \"2026-01-15T10:30:00Z\",\n    \"labels\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    },\n    \"annotations\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\",\n      \"key_2\": \"string\",\n      \"key_3\": \"string\"\n    }\n  },\n  \"status\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "468681fd-7cac-46b9-876e-85ee9e7a42de",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "apis",
+                    "route.openshift.io",
+                    "v1",
+                    "namespaces",
+                    ":namespace",
+                    "routes",
+                    ":name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pretty",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) Name of the resource."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "namespace",
+                      "description": "(Required) The namespace (project) scope for the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "31692cb9-39ce-4dad-89fe-68a58f5df5b0",
+          "name": "Openshift Replace a Route",
+          "request": {
+            "name": "Openshift Replace a Route",
+            "description": {
+              "content": "Replace the specified Route in the given namespace.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "apis",
+                "route.openshift.io",
+                "v1",
+                "namespaces",
+                ":namespace",
+                "routes",
+                ":name"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "pretty",
+                  "value": "<string>",
+                  "description": "If true, the output is pretty-printed."
+                },
+                {
+                  "disabled": false,
+                  "key": "dryRun",
+                  "value": "<string>",
+                  "description": "When present, indicates that modifications should not be persisted. Valid values are All (all dry run stages will be processed)."
+                },
+                {
+                  "disabled": false,
+                  "key": "fieldManager",
+                  "value": "<string>",
+                  "description": "A name associated with the actor or entity making the change. Used for server-side apply to track field ownership."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) Name of the resource."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "namespace",
+                  "description": "(Required) The namespace (project) scope for the resource."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"spec\": {\n    \"to\": {\n      \"kind\": \"Service\",\n      \"name\": \"<string>\",\n      \"weight\": 100\n    },\n    \"host\": \"<string>\",\n    \"path\": \"<string>\",\n    \"subdomain\": \"<string>\",\n    \"alternateBackends\": [\n      {\n        \"kind\": \"Service\",\n        \"name\": \"<string>\",\n        \"weight\": 100\n      },\n      {\n        \"kind\": \"Service\",\n        \"name\": \"<string>\",\n        \"weight\": 100\n      }\n    ],\n    \"port\": {\n      \"targetPort\": \"<string>\"\n    },\n    \"tls\": {\n      \"termination\": \"<string>\",\n      \"certificate\": \"<string>\",\n      \"key\": \"<string>\",\n      \"caCertificate\": \"<string>\",\n      \"destinationCACertificate\": \"<string>\",\n      \"insecureEdgeTerminationPolicy\": \"<string>\"\n    },\n    \"wildcardPolicy\": \"None\"\n  },\n  \"apiVersion\": \"route.openshift.io/v1\",\n  \"kind\": \"Route\",\n  \"metadata\": {\n    \"name\": \"<string>\",\n    \"namespace\": \"<string>\",\n    \"uid\": \"<uuid>\",\n    \"resourceVersion\": \"<string>\",\n    \"generation\": \"<long>\",\n    \"creationTimestamp\": \"<dateTime>\",\n    \"deletionTimestamp\": \"<dateTime>\",\n    \"labels\": {\n      \"key_0\": \"<string>\",\n      \"key_1\": \"<string>\"\n    },\n    \"annotations\": {\n      \"key_0\": \"<string>\",\n      \"key_1\": \"<string>\",\n      \"key_2\": \"<string>\"\n    },\n    \"ownerReferences\": [\n      {\n        \"apiVersion\": \"<string>\",\n        \"kind\": \"<string>\",\n        \"name\": \"<string>\",\n        \"uid\": \"<string>\",\n        \"controller\": \"<boolean>\",\n        \"blockOwnerDeletion\": \"<boolean>\"\n      },\n      {\n        \"apiVersion\": \"<string>\",\n        \"kind\": \"<string>\",\n        \"name\": \"<string>\",\n        \"uid\": \"<string>\",\n        \"controller\": \"<boolean>\",\n        \"blockOwnerDeletion\": \"<boolean>\"\n      }\n    ],\n    \"finalizers\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"status\": {\n    \"ingress\": [\n      {\n        \"host\": \"<string>\",\n        \"routerName\": \"<string>\",\n        \"conditions\": [\n          {\n            \"type\": \"<string>\",\n            \"status\": \"<string>\",\n            \"reason\": \"<string>\",\n            \"message\": \"<string>\",\n            \"lastTransitionTime\": \"<dateTime>\"\n          },\n          {\n            \"type\": \"<string>\",\n            \"status\": \"<string>\",\n            \"reason\": \"<string>\",\n            \"message\": \"<string>\",\n            \"lastTransitionTime\": \"<dateTime>\"\n          }\n        ],\n        \"wildcardPolicy\": \"<string>\"\n      },\n      {\n        \"host\": \"<string>\",\n        \"routerName\": \"<string>\",\n        \"conditions\": [\n          {\n            \"type\": \"<string>\",\n            \"status\": \"<string>\",\n            \"reason\": \"<string>\",\n            \"message\": \"<string>\",\n            \"lastTransitionTime\": \"<dateTime>\"\n          },\n          {\n            \"type\": \"<string>\",\n            \"status\": \"<string>\",\n            \"reason\": \"<string>\",\n            \"message\": \"<string>\",\n            \"lastTransitionTime\": \"<dateTime>\"\n          }\n        ],\n        \"wildcardPolicy\": \"<string>\"\n      }\n    ]\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "742f8179-af05-4b06-8af2-9ea0abc95f45",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "apis",
+                    "route.openshift.io",
+                    "v1",
+                    "namespaces",
+                    ":namespace",
+                    "routes",
+                    ":name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pretty",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "dryRun",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fieldManager",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) Name of the resource."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "namespace",
+                      "description": "(Required) The namespace (project) scope for the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"spec\": {\n    \"to\": {\n      \"kind\": \"Service\",\n      \"name\": \"Example Title\",\n      \"weight\": 10\n    },\n    \"host\": \"myapp.apps.openshift.example.com\",\n    \"path\": \"/api\",\n    \"subdomain\": \"example_value\",\n    \"port\": {\n      \"targetPort\": \"string\"\n    },\n    \"tls\": {\n      \"termination\": \"edge\",\n      \"certificate\": \"example_value\",\n      \"key\": \"example_value\",\n      \"caCertificate\": \"example_value\",\n      \"destinationCACertificate\": \"example_value\",\n      \"insecureEdgeTerminationPolicy\": \"None\"\n    },\n    \"wildcardPolicy\": \"None\"\n  },\n  \"apiVersion\": \"example_value\",\n  \"kind\": \"example_value\",\n  \"metadata\": {\n    \"name\": \"Example Title\",\n    \"namespace\": \"example_value\",\n    \"uid\": \"a15be24d-5618-e9de-aff1-5adddf78097c\",\n    \"resourceVersion\": \"example_value\",\n    \"generation\": 10,\n    \"creationTimestamp\": \"2026-01-15T10:30:00Z\",\n    \"deletionTimestamp\": \"2026-01-15T10:30:00Z\",\n    \"labels\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    },\n    \"annotations\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\",\n      \"key_2\": \"string\",\n      \"key_3\": \"string\"\n    }\n  },\n  \"status\": {}\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"spec\": {\n    \"to\": {\n      \"kind\": \"Service\",\n      \"name\": \"Example Title\",\n      \"weight\": 10\n    },\n    \"host\": \"myapp.apps.openshift.example.com\",\n    \"path\": \"/api\",\n    \"subdomain\": \"example_value\",\n    \"port\": {\n      \"targetPort\": \"string\"\n    },\n    \"tls\": {\n      \"termination\": \"edge\",\n      \"certificate\": \"example_value\",\n      \"key\": \"example_value\",\n      \"caCertificate\": \"example_value\",\n      \"destinationCACertificate\": \"example_value\",\n      \"insecureEdgeTerminationPolicy\": \"None\"\n    },\n    \"wildcardPolicy\": \"None\"\n  },\n  \"apiVersion\": \"example_value\",\n  \"kind\": \"example_value\",\n  \"metadata\": {\n    \"name\": \"Example Title\",\n    \"namespace\": \"example_value\",\n    \"uid\": \"a15be24d-5618-e9de-aff1-5adddf78097c\",\n    \"resourceVersion\": \"example_value\",\n    \"generation\": 10,\n    \"creationTimestamp\": \"2026-01-15T10:30:00Z\",\n    \"deletionTimestamp\": \"2026-01-15T10:30:00Z\",\n    \"labels\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    },\n    \"annotations\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\",\n      \"key_2\": \"string\",\n      \"key_3\": \"string\"\n    }\n  },\n  \"status\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3d5fa889-2c02-4ef3-ad7a-86c24257d090",
+              "name": "Created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "apis",
+                    "route.openshift.io",
+                    "v1",
+                    "namespaces",
+                    ":namespace",
+                    "routes",
+                    ":name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pretty",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "dryRun",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fieldManager",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) Name of the resource."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "namespace",
+                      "description": "(Required) The namespace (project) scope for the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"spec\": {\n    \"to\": {\n      \"kind\": \"Service\",\n      \"name\": \"Example Title\",\n      \"weight\": 10\n    },\n    \"host\": \"myapp.apps.openshift.example.com\",\n    \"path\": \"/api\",\n    \"subdomain\": \"example_value\",\n    \"port\": {\n      \"targetPort\": \"string\"\n    },\n    \"tls\": {\n      \"termination\": \"edge\",\n      \"certificate\": \"example_value\",\n      \"key\": \"example_value\",\n      \"caCertificate\": \"example_value\",\n      \"destinationCACertificate\": \"example_value\",\n      \"insecureEdgeTerminationPolicy\": \"None\"\n    },\n    \"wildcardPolicy\": \"None\"\n  },\n  \"apiVersion\": \"example_value\",\n  \"kind\": \"example_value\",\n  \"metadata\": {\n    \"name\": \"Example Title\",\n    \"namespace\": \"example_value\",\n    \"uid\": \"a15be24d-5618-e9de-aff1-5adddf78097c\",\n    \"resourceVersion\": \"example_value\",\n    \"generation\": 10,\n    \"creationTimestamp\": \"2026-01-15T10:30:00Z\",\n    \"deletionTimestamp\": \"2026-01-15T10:30:00Z\",\n    \"labels\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    },\n    \"annotations\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\",\n      \"key_2\": \"string\",\n      \"key_3\": \"string\"\n    }\n  },\n  \"status\": {}\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"spec\": {\n    \"to\": {\n      \"kind\": \"Service\",\n      \"name\": \"Example Title\",\n      \"weight\": 10\n    },\n    \"host\": \"myapp.apps.openshift.example.com\",\n    \"path\": \"/api\",\n    \"subdomain\": \"example_value\",\n    \"port\": {\n      \"targetPort\": \"string\"\n    },\n    \"tls\": {\n      \"termination\": \"edge\",\n      \"certificate\": \"example_value\",\n      \"key\": \"example_value\",\n      \"caCertificate\": \"example_value\",\n      \"destinationCACertificate\": \"example_value\",\n      \"insecureEdgeTerminationPolicy\": \"None\"\n    },\n    \"wildcardPolicy\": \"None\"\n  },\n  \"apiVersion\": \"example_value\",\n  \"kind\": \"example_value\",\n  \"metadata\": {\n    \"name\": \"Example Title\",\n    \"namespace\": \"example_value\",\n    \"uid\": \"a15be24d-5618-e9de-aff1-5adddf78097c\",\n    \"resourceVersion\": \"example_value\",\n    \"generation\": 10,\n    \"creationTimestamp\": \"2026-01-15T10:30:00Z\",\n    \"deletionTimestamp\": \"2026-01-15T10:30:00Z\",\n    \"labels\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    },\n    \"annotations\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\",\n      \"key_2\": \"string\",\n      \"key_3\": \"string\"\n    }\n  },\n  \"status\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "50af59fb-caf6-40be-94fa-0ace2600dd7f",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "apis",
+                    "route.openshift.io",
+                    "v1",
+                    "namespaces",
+                    ":namespace",
+                    "routes",
+                    ":name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pretty",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "dryRun",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fieldManager",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) Name of the resource."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "namespace",
+                      "description": "(Required) The namespace (project) scope for the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"spec\": {\n    \"to\": {\n      \"kind\": \"Service\",\n      \"name\": \"Example Title\",\n      \"weight\": 10\n    },\n    \"host\": \"myapp.apps.openshift.example.com\",\n    \"path\": \"/api\",\n    \"subdomain\": \"example_value\",\n    \"port\": {\n      \"targetPort\": \"string\"\n    },\n    \"tls\": {\n      \"termination\": \"edge\",\n      \"certificate\": \"example_value\",\n      \"key\": \"example_value\",\n      \"caCertificate\": \"example_value\",\n      \"destinationCACertificate\": \"example_value\",\n      \"insecureEdgeTerminationPolicy\": \"None\"\n    },\n    \"wildcardPolicy\": \"None\"\n  },\n  \"apiVersion\": \"example_value\",\n  \"kind\": \"example_value\",\n  \"metadata\": {\n    \"name\": \"Example Title\",\n    \"namespace\": \"example_value\",\n    \"uid\": \"a15be24d-5618-e9de-aff1-5adddf78097c\",\n    \"resourceVersion\": \"example_value\",\n    \"generation\": 10,\n    \"creationTimestamp\": \"2026-01-15T10:30:00Z\",\n    \"deletionTimestamp\": \"2026-01-15T10:30:00Z\",\n    \"labels\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    },\n    \"annotations\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\",\n      \"key_2\": \"string\",\n      \"key_3\": \"string\"\n    }\n  },\n  \"status\": {}\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "dd9b1d2a-a6f6-4f31-8f88-c98fdd063912",
+          "name": "Openshift Patch a Route",
+          "request": {
+            "name": "Openshift Patch a Route",
+            "description": {
+              "content": "Partially update the specified Route in the given namespace.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "apis",
+                "route.openshift.io",
+                "v1",
+                "namespaces",
+                ":namespace",
+                "routes",
+                ":name"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "pretty",
+                  "value": "<string>",
+                  "description": "If true, the output is pretty-printed."
+                },
+                {
+                  "disabled": false,
+                  "key": "dryRun",
+                  "value": "<string>",
+                  "description": "When present, indicates that modifications should not be persisted. Valid values are All (all dry run stages will be processed)."
+                },
+                {
+                  "disabled": false,
+                  "key": "fieldManager",
+                  "value": "<string>",
+                  "description": "A name associated with the actor or entity making the change. Used for server-side apply to track field ownership."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) Name of the resource."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "namespace",
+                  "description": "(Required) The namespace (project) scope for the resource."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/merge-patch+json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"spec\": {\n    \"to\": {\n      \"kind\": \"Service\",\n      \"name\": \"<string>\",\n      \"weight\": 100\n    },\n    \"host\": \"<string>\",\n    \"path\": \"<string>\",\n    \"subdomain\": \"<string>\",\n    \"alternateBackends\": [\n      {\n        \"kind\": \"Service\",\n        \"name\": \"<string>\",\n        \"weight\": 100\n      },\n      {\n        \"kind\": \"Service\",\n        \"name\": \"<string>\",\n        \"weight\": 100\n      }\n    ],\n    \"port\": {\n      \"targetPort\": \"<string>\"\n    },\n    \"tls\": {\n      \"termination\": \"<string>\",\n      \"certificate\": \"<string>\",\n      \"key\": \"<string>\",\n      \"caCertificate\": \"<string>\",\n      \"destinationCACertificate\": \"<string>\",\n      \"insecureEdgeTerminationPolicy\": \"<string>\"\n    },\n    \"wildcardPolicy\": \"None\"\n  },\n  \"apiVersion\": \"route.openshift.io/v1\",\n  \"kind\": \"Route\",\n  \"metadata\": {\n    \"name\": \"<string>\",\n    \"namespace\": \"<string>\",\n    \"uid\": \"<uuid>\",\n    \"resourceVersion\": \"<string>\",\n    \"generation\": \"<long>\",\n    \"creationTimestamp\": \"<dateTime>\",\n    \"deletionTimestamp\": \"<dateTime>\",\n    \"labels\": {\n      \"key_0\": \"<string>\",\n      \"key_1\": \"<string>\"\n    },\n    \"annotations\": {\n      \"key_0\": \"<string>\",\n      \"key_1\": \"<string>\",\n      \"key_2\": \"<string>\"\n    },\n    \"ownerReferences\": [\n      {\n        \"apiVersion\": \"<string>\",\n        \"kind\": \"<string>\",\n        \"name\": \"<string>\",\n        \"uid\": \"<string>\",\n        \"controller\": \"<boolean>\",\n        \"blockOwnerDeletion\": \"<boolean>\"\n      },\n      {\n        \"apiVersion\": \"<string>\",\n        \"kind\": \"<string>\",\n        \"name\": \"<string>\",\n        \"uid\": \"<string>\",\n        \"controller\": \"<boolean>\",\n        \"blockOwnerDeletion\": \"<boolean>\"\n      }\n    ],\n    \"finalizers\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"status\": {\n    \"ingress\": [\n      {\n        \"host\": \"<string>\",\n        \"routerName\": \"<string>\",\n        \"conditions\": [\n          {\n            \"type\": \"<string>\",\n            \"status\": \"<string>\",\n            \"reason\": \"<string>\",\n            \"message\": \"<string>\",\n            \"lastTransitionTime\": \"<dateTime>\"\n          },\n          {\n            \"type\": \"<string>\",\n            \"status\": \"<string>\",\n            \"reason\": \"<string>\",\n            \"message\": \"<string>\",\n            \"lastTransitionTime\": \"<dateTime>\"\n          }\n        ],\n        \"wildcardPolicy\": \"<string>\"\n      },\n      {\n        \"host\": \"<string>\",\n        \"routerName\": \"<string>\",\n        \"conditions\": [\n          {\n            \"type\": \"<string>\",\n            \"status\": \"<string>\",\n            \"reason\": \"<string>\",\n            \"message\": \"<string>\",\n            \"lastTransitionTime\": \"<dateTime>\"\n          },\n          {\n            \"type\": \"<string>\",\n            \"status\": \"<string>\",\n            \"reason\": \"<string>\",\n            \"message\": \"<string>\",\n            \"lastTransitionTime\": \"<dateTime>\"\n          }\n        ],\n        \"wildcardPolicy\": \"<string>\"\n      }\n    ]\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "8279dda6-c9e8-4171-9cd5-4f040c67eb6d",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "apis",
+                    "route.openshift.io",
+                    "v1",
+                    "namespaces",
+                    ":namespace",
+                    "routes",
+                    ":name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pretty",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "dryRun",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fieldManager",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) Name of the resource."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "namespace",
+                      "description": "(Required) The namespace (project) scope for the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"spec\": {\n    \"to\": {\n      \"kind\": \"Service\",\n      \"name\": \"Example Title\",\n      \"weight\": 10\n    },\n    \"host\": \"myapp.apps.openshift.example.com\",\n    \"path\": \"/api\",\n    \"subdomain\": \"example_value\",\n    \"port\": {\n      \"targetPort\": \"string\"\n    },\n    \"tls\": {\n      \"termination\": \"edge\",\n      \"certificate\": \"example_value\",\n      \"key\": \"example_value\",\n      \"caCertificate\": \"example_value\",\n      \"destinationCACertificate\": \"example_value\",\n      \"insecureEdgeTerminationPolicy\": \"None\"\n    },\n    \"wildcardPolicy\": \"None\"\n  },\n  \"apiVersion\": \"example_value\",\n  \"kind\": \"example_value\",\n  \"metadata\": {\n    \"name\": \"Example Title\",\n    \"namespace\": \"example_value\",\n    \"uid\": \"a15be24d-5618-e9de-aff1-5adddf78097c\",\n    \"resourceVersion\": \"example_value\",\n    \"generation\": 10,\n    \"creationTimestamp\": \"2026-01-15T10:30:00Z\",\n    \"deletionTimestamp\": \"2026-01-15T10:30:00Z\",\n    \"labels\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    },\n    \"annotations\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\",\n      \"key_2\": \"string\",\n      \"key_3\": \"string\"\n    }\n  },\n  \"status\": {}\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"spec\": {\n    \"to\": {\n      \"kind\": \"Service\",\n      \"name\": \"Example Title\",\n      \"weight\": 10\n    },\n    \"host\": \"myapp.apps.openshift.example.com\",\n    \"path\": \"/api\",\n    \"subdomain\": \"example_value\",\n    \"port\": {\n      \"targetPort\": \"string\"\n    },\n    \"tls\": {\n      \"termination\": \"edge\",\n      \"certificate\": \"example_value\",\n      \"key\": \"example_value\",\n      \"caCertificate\": \"example_value\",\n      \"destinationCACertificate\": \"example_value\",\n      \"insecureEdgeTerminationPolicy\": \"None\"\n    },\n    \"wildcardPolicy\": \"None\"\n  },\n  \"apiVersion\": \"example_value\",\n  \"kind\": \"example_value\",\n  \"metadata\": {\n    \"name\": \"Example Title\",\n    \"namespace\": \"example_value\",\n    \"uid\": \"a15be24d-5618-e9de-aff1-5adddf78097c\",\n    \"resourceVersion\": \"example_value\",\n    \"generation\": 10,\n    \"creationTimestamp\": \"2026-01-15T10:30:00Z\",\n    \"deletionTimestamp\": \"2026-01-15T10:30:00Z\",\n    \"labels\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    },\n    \"annotations\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\",\n      \"key_2\": \"string\",\n      \"key_3\": \"string\"\n    }\n  },\n  \"status\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e7274eba-005e-437b-8ae1-6407a8071904",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "apis",
+                    "route.openshift.io",
+                    "v1",
+                    "namespaces",
+                    ":namespace",
+                    "routes",
+                    ":name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pretty",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "dryRun",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fieldManager",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) Name of the resource."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "namespace",
+                      "description": "(Required) The namespace (project) scope for the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"spec\": {\n    \"to\": {\n      \"kind\": \"Service\",\n      \"name\": \"Example Title\",\n      \"weight\": 10\n    },\n    \"host\": \"myapp.apps.openshift.example.com\",\n    \"path\": \"/api\",\n    \"subdomain\": \"example_value\",\n    \"port\": {\n      \"targetPort\": \"string\"\n    },\n    \"tls\": {\n      \"termination\": \"edge\",\n      \"certificate\": \"example_value\",\n      \"key\": \"example_value\",\n      \"caCertificate\": \"example_value\",\n      \"destinationCACertificate\": \"example_value\",\n      \"insecureEdgeTerminationPolicy\": \"None\"\n    },\n    \"wildcardPolicy\": \"None\"\n  },\n  \"apiVersion\": \"example_value\",\n  \"kind\": \"example_value\",\n  \"metadata\": {\n    \"name\": \"Example Title\",\n    \"namespace\": \"example_value\",\n    \"uid\": \"a15be24d-5618-e9de-aff1-5adddf78097c\",\n    \"resourceVersion\": \"example_value\",\n    \"generation\": 10,\n    \"creationTimestamp\": \"2026-01-15T10:30:00Z\",\n    \"deletionTimestamp\": \"2026-01-15T10:30:00Z\",\n    \"labels\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    },\n    \"annotations\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\",\n      \"key_2\": \"string\",\n      \"key_3\": \"string\"\n    }\n  },\n  \"status\": {}\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "13385fbc-efc2-4467-a74f-0f524579bb26",
+          "name": "Openshift Delete a Route",
+          "request": {
+            "name": "Openshift Delete a Route",
+            "description": {
+              "content": "Delete the specified Route from the given namespace.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "apis",
+                "route.openshift.io",
+                "v1",
+                "namespaces",
+                ":namespace",
+                "routes",
+                ":name"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "pretty",
+                  "value": "<string>",
+                  "description": "If true, the output is pretty-printed."
+                },
+                {
+                  "disabled": false,
+                  "key": "dryRun",
+                  "value": "<string>",
+                  "description": "When present, indicates that modifications should not be persisted. Valid values are All (all dry run stages will be processed)."
+                },
+                {
+                  "disabled": false,
+                  "key": "gracePeriodSeconds",
+                  "value": "<long>",
+                  "description": "The duration in seconds before the object should be deleted. The value zero indicates delete immediately."
+                },
+                {
+                  "disabled": false,
+                  "key": "propagationPolicy",
+                  "value": "<string>",
+                  "description": "Whether and how garbage collection will be performed. Either Orphan, Background, or Foreground."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) Name of the resource."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "namespace",
+                  "description": "(Required) The namespace (project) scope for the resource."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7b32123b-9a21-4e25-b133-09a5e936e05f",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "apis",
+                    "route.openshift.io",
+                    "v1",
+                    "namespaces",
+                    ":namespace",
+                    "routes",
+                    ":name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pretty",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "dryRun",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "gracePeriodSeconds",
+                      "value": "<long>"
+                    },
+                    {
+                      "key": "propagationPolicy",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) Name of the resource."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "namespace",
+                      "description": "(Required) The namespace (project) scope for the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"apiVersion\": \"example_value\",\n  \"kind\": \"example_value\",\n  \"metadata\": {\n    \"selfLink\": \"example_value\",\n    \"resourceVersion\": \"example_value\",\n    \"continue\": \"example_value\",\n    \"remainingItemCount\": 10\n  },\n  \"status\": \"Success\",\n  \"message\": \"example_value\",\n  \"reason\": \"example_value\",\n  \"code\": 10\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0a4d146f-b63b-48ff-b885-7d051b0809d0",
+              "name": "Accepted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "apis",
+                    "route.openshift.io",
+                    "v1",
+                    "namespaces",
+                    ":namespace",
+                    "routes",
+                    ":name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pretty",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "dryRun",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "gracePeriodSeconds",
+                      "value": "<long>"
+                    },
+                    {
+                      "key": "propagationPolicy",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) Name of the resource."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "namespace",
+                      "description": "(Required) The namespace (project) scope for the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"apiVersion\": \"example_value\",\n  \"kind\": \"example_value\",\n  \"metadata\": {\n    \"selfLink\": \"example_value\",\n    \"resourceVersion\": \"example_value\",\n    \"continue\": \"example_value\",\n    \"remainingItemCount\": 10\n  },\n  \"status\": \"Success\",\n  \"message\": \"example_value\",\n  \"reason\": \"example_value\",\n  \"code\": 10\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a8a027ee-b8d0-43f3-a84b-180b26f48692",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "apis",
+                    "route.openshift.io",
+                    "v1",
+                    "namespaces",
+                    ":namespace",
+                    "routes",
+                    ":name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pretty",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "dryRun",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "gracePeriodSeconds",
+                      "value": "<long>"
+                    },
+                    {
+                      "key": "propagationPolicy",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) Name of the resource."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "namespace",
+                      "description": "(Required) The namespace (project) scope for the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a02ee028-a51d-48c7-9c7f-8980ebd00819",
+          "name": "Openshift Read Status of a Route",
+          "request": {
+            "name": "Openshift Read Status of a Route",
+            "description": {
+              "content": "Read the status of the specified Route.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "apis",
+                "route.openshift.io",
+                "v1",
+                "namespaces",
+                ":namespace",
+                "routes",
+                ":name",
+                "status"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "pretty",
+                  "value": "<string>",
+                  "description": "If true, the output is pretty-printed."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) Name of the resource."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "namespace",
+                  "description": "(Required) The namespace (project) scope for the resource."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a3f20ca9-79b0-4a30-8605-d5a80ed56fbd",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "apis",
+                    "route.openshift.io",
+                    "v1",
+                    "namespaces",
+                    ":namespace",
+                    "routes",
+                    ":name",
+                    "status"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pretty",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) Name of the resource."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "namespace",
+                      "description": "(Required) The namespace (project) scope for the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"spec\": {\n    \"to\": {\n      \"kind\": \"Service\",\n      \"name\": \"Example Title\",\n      \"weight\": 10\n    },\n    \"host\": \"myapp.apps.openshift.example.com\",\n    \"path\": \"/api\",\n    \"subdomain\": \"example_value\",\n    \"port\": {\n      \"targetPort\": \"string\"\n    },\n    \"tls\": {\n      \"termination\": \"edge\",\n      \"certificate\": \"example_value\",\n      \"key\": \"example_value\",\n      \"caCertificate\": \"example_value\",\n      \"destinationCACertificate\": \"example_value\",\n      \"insecureEdgeTerminationPolicy\": \"None\"\n    },\n    \"wildcardPolicy\": \"None\"\n  },\n  \"apiVersion\": \"example_value\",\n  \"kind\": \"example_value\",\n  \"metadata\": {\n    \"name\": \"Example Title\",\n    \"namespace\": \"example_value\",\n    \"uid\": \"a15be24d-5618-e9de-aff1-5adddf78097c\",\n    \"resourceVersion\": \"example_value\",\n    \"generation\": 10,\n    \"creationTimestamp\": \"2026-01-15T10:30:00Z\",\n    \"deletionTimestamp\": \"2026-01-15T10:30:00Z\",\n    \"labels\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    },\n    \"annotations\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\",\n      \"key_2\": \"string\",\n      \"key_3\": \"string\"\n    }\n  },\n  \"status\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fa1d3e61-0955-4ca7-a161-736ae904b1bf",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "apis",
+                    "route.openshift.io",
+                    "v1",
+                    "namespaces",
+                    ":namespace",
+                    "routes",
+                    ":name",
+                    "status"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pretty",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) Name of the resource."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "namespace",
+                      "description": "(Required) The namespace (project) scope for the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7ded764d-25ea-496f-8952-cf85e7699d1d",
+          "name": "Openshift Replace Status of a Route",
+          "request": {
+            "name": "Openshift Replace Status of a Route",
+            "description": {
+              "content": "Replace the status of the specified Route.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "apis",
+                "route.openshift.io",
+                "v1",
+                "namespaces",
+                ":namespace",
+                "routes",
+                ":name",
+                "status"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "pretty",
+                  "value": "<string>",
+                  "description": "If true, the output is pretty-printed."
+                },
+                {
+                  "disabled": false,
+                  "key": "dryRun",
+                  "value": "<string>",
+                  "description": "When present, indicates that modifications should not be persisted. Valid values are All (all dry run stages will be processed)."
+                },
+                {
+                  "disabled": false,
+                  "key": "fieldManager",
+                  "value": "<string>",
+                  "description": "A name associated with the actor or entity making the change. Used for server-side apply to track field ownership."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) Name of the resource."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "namespace",
+                  "description": "(Required) The namespace (project) scope for the resource."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"spec\": {\n    \"to\": {\n      \"kind\": \"Service\",\n      \"name\": \"<string>\",\n      \"weight\": 100\n    },\n    \"host\": \"<string>\",\n    \"path\": \"<string>\",\n    \"subdomain\": \"<string>\",\n    \"alternateBackends\": [\n      {\n        \"kind\": \"Service\",\n        \"name\": \"<string>\",\n        \"weight\": 100\n      },\n      {\n        \"kind\": \"Service\",\n        \"name\": \"<string>\",\n        \"weight\": 100\n      }\n    ],\n    \"port\": {\n      \"targetPort\": \"<string>\"\n    },\n    \"tls\": {\n      \"termination\": \"<string>\",\n      \"certificate\": \"<string>\",\n      \"key\": \"<string>\",\n      \"caCertificate\": \"<string>\",\n      \"destinationCACertificate\": \"<string>\",\n      \"insecureEdgeTerminationPolicy\": \"<string>\"\n    },\n    \"wildcardPolicy\": \"None\"\n  },\n  \"apiVersion\": \"route.openshift.io/v1\",\n  \"kind\": \"Route\",\n  \"metadata\": {\n    \"name\": \"<string>\",\n    \"namespace\": \"<string>\",\n    \"uid\": \"<uuid>\",\n    \"resourceVersion\": \"<string>\",\n    \"generation\": \"<long>\",\n    \"creationTimestamp\": \"<dateTime>\",\n    \"deletionTimestamp\": \"<dateTime>\",\n    \"labels\": {\n      \"key_0\": \"<string>\",\n      \"key_1\": \"<string>\"\n    },\n    \"annotations\": {\n      \"key_0\": \"<string>\",\n      \"key_1\": \"<string>\",\n      \"key_2\": \"<string>\"\n    },\n    \"ownerReferences\": [\n      {\n        \"apiVersion\": \"<string>\",\n        \"kind\": \"<string>\",\n        \"name\": \"<string>\",\n        \"uid\": \"<string>\",\n        \"controller\": \"<boolean>\",\n        \"blockOwnerDeletion\": \"<boolean>\"\n      },\n      {\n        \"apiVersion\": \"<string>\",\n        \"kind\": \"<string>\",\n        \"name\": \"<string>\",\n        \"uid\": \"<string>\",\n        \"controller\": \"<boolean>\",\n        \"blockOwnerDeletion\": \"<boolean>\"\n      }\n    ],\n    \"finalizers\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"status\": {\n    \"ingress\": [\n      {\n        \"host\": \"<string>\",\n        \"routerName\": \"<string>\",\n        \"conditions\": [\n          {\n            \"type\": \"<string>\",\n            \"status\": \"<string>\",\n            \"reason\": \"<string>\",\n            \"message\": \"<string>\",\n            \"lastTransitionTime\": \"<dateTime>\"\n          },\n          {\n            \"type\": \"<string>\",\n            \"status\": \"<string>\",\n            \"reason\": \"<string>\",\n            \"message\": \"<string>\",\n            \"lastTransitionTime\": \"<dateTime>\"\n          }\n        ],\n        \"wildcardPolicy\": \"<string>\"\n      },\n      {\n        \"host\": \"<string>\",\n        \"routerName\": \"<string>\",\n        \"conditions\": [\n          {\n            \"type\": \"<string>\",\n            \"status\": \"<string>\",\n            \"reason\": \"<string>\",\n            \"message\": \"<string>\",\n            \"lastTransitionTime\": \"<dateTime>\"\n          },\n          {\n            \"type\": \"<string>\",\n            \"status\": \"<string>\",\n            \"reason\": \"<string>\",\n            \"message\": \"<string>\",\n            \"lastTransitionTime\": \"<dateTime>\"\n          }\n        ],\n        \"wildcardPolicy\": \"<string>\"\n      }\n    ]\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "4b0708f7-0185-4cd6-a430-032538ebe3dd",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "apis",
+                    "route.openshift.io",
+                    "v1",
+                    "namespaces",
+                    ":namespace",
+                    "routes",
+                    ":name",
+                    "status"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pretty",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "dryRun",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fieldManager",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) Name of the resource."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "namespace",
+                      "description": "(Required) The namespace (project) scope for the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"spec\": {\n    \"to\": {\n      \"kind\": \"Service\",\n      \"name\": \"Example Title\",\n      \"weight\": 10\n    },\n    \"host\": \"myapp.apps.openshift.example.com\",\n    \"path\": \"/api\",\n    \"subdomain\": \"example_value\",\n    \"port\": {\n      \"targetPort\": \"string\"\n    },\n    \"tls\": {\n      \"termination\": \"edge\",\n      \"certificate\": \"example_value\",\n      \"key\": \"example_value\",\n      \"caCertificate\": \"example_value\",\n      \"destinationCACertificate\": \"example_value\",\n      \"insecureEdgeTerminationPolicy\": \"None\"\n    },\n    \"wildcardPolicy\": \"None\"\n  },\n  \"apiVersion\": \"example_value\",\n  \"kind\": \"example_value\",\n  \"metadata\": {\n    \"name\": \"Example Title\",\n    \"namespace\": \"example_value\",\n    \"uid\": \"a15be24d-5618-e9de-aff1-5adddf78097c\",\n    \"resourceVersion\": \"example_value\",\n    \"generation\": 10,\n    \"creationTimestamp\": \"2026-01-15T10:30:00Z\",\n    \"deletionTimestamp\": \"2026-01-15T10:30:00Z\",\n    \"labels\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    },\n    \"annotations\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\",\n      \"key_2\": \"string\",\n      \"key_3\": \"string\"\n    }\n  },\n  \"status\": {}\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"spec\": {\n    \"to\": {\n      \"kind\": \"Service\",\n      \"name\": \"Example Title\",\n      \"weight\": 10\n    },\n    \"host\": \"myapp.apps.openshift.example.com\",\n    \"path\": \"/api\",\n    \"subdomain\": \"example_value\",\n    \"port\": {\n      \"targetPort\": \"string\"\n    },\n    \"tls\": {\n      \"termination\": \"edge\",\n      \"certificate\": \"example_value\",\n      \"key\": \"example_value\",\n      \"caCertificate\": \"example_value\",\n      \"destinationCACertificate\": \"example_value\",\n      \"insecureEdgeTerminationPolicy\": \"None\"\n    },\n    \"wildcardPolicy\": \"None\"\n  },\n  \"apiVersion\": \"example_value\",\n  \"kind\": \"example_value\",\n  \"metadata\": {\n    \"name\": \"Example Title\",\n    \"namespace\": \"example_value\",\n    \"uid\": \"a15be24d-5618-e9de-aff1-5adddf78097c\",\n    \"resourceVersion\": \"example_value\",\n    \"generation\": 10,\n    \"creationTimestamp\": \"2026-01-15T10:30:00Z\",\n    \"deletionTimestamp\": \"2026-01-15T10:30:00Z\",\n    \"labels\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    },\n    \"annotations\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\",\n      \"key_2\": \"string\",\n      \"key_3\": \"string\"\n    }\n  },\n  \"status\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "18b203d8-f67b-4319-8c84-6aab4073d43f",
+              "name": "Created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "apis",
+                    "route.openshift.io",
+                    "v1",
+                    "namespaces",
+                    ":namespace",
+                    "routes",
+                    ":name",
+                    "status"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pretty",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "dryRun",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fieldManager",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) Name of the resource."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "namespace",
+                      "description": "(Required) The namespace (project) scope for the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"spec\": {\n    \"to\": {\n      \"kind\": \"Service\",\n      \"name\": \"Example Title\",\n      \"weight\": 10\n    },\n    \"host\": \"myapp.apps.openshift.example.com\",\n    \"path\": \"/api\",\n    \"subdomain\": \"example_value\",\n    \"port\": {\n      \"targetPort\": \"string\"\n    },\n    \"tls\": {\n      \"termination\": \"edge\",\n      \"certificate\": \"example_value\",\n      \"key\": \"example_value\",\n      \"caCertificate\": \"example_value\",\n      \"destinationCACertificate\": \"example_value\",\n      \"insecureEdgeTerminationPolicy\": \"None\"\n    },\n    \"wildcardPolicy\": \"None\"\n  },\n  \"apiVersion\": \"example_value\",\n  \"kind\": \"example_value\",\n  \"metadata\": {\n    \"name\": \"Example Title\",\n    \"namespace\": \"example_value\",\n    \"uid\": \"a15be24d-5618-e9de-aff1-5adddf78097c\",\n    \"resourceVersion\": \"example_value\",\n    \"generation\": 10,\n    \"creationTimestamp\": \"2026-01-15T10:30:00Z\",\n    \"deletionTimestamp\": \"2026-01-15T10:30:00Z\",\n    \"labels\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    },\n    \"annotations\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\",\n      \"key_2\": \"string\",\n      \"key_3\": \"string\"\n    }\n  },\n  \"status\": {}\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"spec\": {\n    \"to\": {\n      \"kind\": \"Service\",\n      \"name\": \"Example Title\",\n      \"weight\": 10\n    },\n    \"host\": \"myapp.apps.openshift.example.com\",\n    \"path\": \"/api\",\n    \"subdomain\": \"example_value\",\n    \"port\": {\n      \"targetPort\": \"string\"\n    },\n    \"tls\": {\n      \"termination\": \"edge\",\n      \"certificate\": \"example_value\",\n      \"key\": \"example_value\",\n      \"caCertificate\": \"example_value\",\n      \"destinationCACertificate\": \"example_value\",\n      \"insecureEdgeTerminationPolicy\": \"None\"\n    },\n    \"wildcardPolicy\": \"None\"\n  },\n  \"apiVersion\": \"example_value\",\n  \"kind\": \"example_value\",\n  \"metadata\": {\n    \"name\": \"Example Title\",\n    \"namespace\": \"example_value\",\n    \"uid\": \"a15be24d-5618-e9de-aff1-5adddf78097c\",\n    \"resourceVersion\": \"example_value\",\n    \"generation\": 10,\n    \"creationTimestamp\": \"2026-01-15T10:30:00Z\",\n    \"deletionTimestamp\": \"2026-01-15T10:30:00Z\",\n    \"labels\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    },\n    \"annotations\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\",\n      \"key_2\": \"string\",\n      \"key_3\": \"string\"\n    }\n  },\n  \"status\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "cbd6139c-7377-4134-a232-61723d178790",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "apis",
+                    "route.openshift.io",
+                    "v1",
+                    "namespaces",
+                    ":namespace",
+                    "routes",
+                    ":name",
+                    "status"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pretty",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "dryRun",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fieldManager",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) Name of the resource."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "namespace",
+                      "description": "(Required) The namespace (project) scope for the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"spec\": {\n    \"to\": {\n      \"kind\": \"Service\",\n      \"name\": \"Example Title\",\n      \"weight\": 10\n    },\n    \"host\": \"myapp.apps.openshift.example.com\",\n    \"path\": \"/api\",\n    \"subdomain\": \"example_value\",\n    \"port\": {\n      \"targetPort\": \"string\"\n    },\n    \"tls\": {\n      \"termination\": \"edge\",\n      \"certificate\": \"example_value\",\n      \"key\": \"example_value\",\n      \"caCertificate\": \"example_value\",\n      \"destinationCACertificate\": \"example_value\",\n      \"insecureEdgeTerminationPolicy\": \"None\"\n    },\n    \"wildcardPolicy\": \"None\"\n  },\n  \"apiVersion\": \"example_value\",\n  \"kind\": \"example_value\",\n  \"metadata\": {\n    \"name\": \"Example Title\",\n    \"namespace\": \"example_value\",\n    \"uid\": \"a15be24d-5618-e9de-aff1-5adddf78097c\",\n    \"resourceVersion\": \"example_value\",\n    \"generation\": 10,\n    \"creationTimestamp\": \"2026-01-15T10:30:00Z\",\n    \"deletionTimestamp\": \"2026-01-15T10:30:00Z\",\n    \"labels\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    },\n    \"annotations\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\",\n      \"key_2\": \"string\",\n      \"key_3\": \"string\"\n    }\n  },\n  \"status\": {}\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.openshift.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "b4b33ace-9bad-4d49-b34e-bc94769c7a21",
+    "name": "openshift-rest-api BuildConfigs Routes API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The OpenShift REST API provides programmatic access to Red Hat OpenShift\nContainer Platform resources. This specification covers the core\nOpenShift-specific API groups including Routes (route.openshift.io/v1),\nBuilds (build.openshift.io/v1), DeploymentConfigs (apps.openshift.io/v1),\nand Projects (project.openshift.io/v1). These APIs extend the Kubernetes\nAPI with capabilities for application routing, source-to-image builds,\ndeployment strategies, and multi-tenant project management.\n\nContact Support:\n Name: Red Hat OpenShift Support\n Email: openshift-dev@redhat.com",
+      "type": "text/plain"
+    }
+  }
+}

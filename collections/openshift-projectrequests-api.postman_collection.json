@@ -1,0 +1,518 @@
+{
+  "item": [
+    {
+      "id": "a4ab3685-21ac-4ad8-b6f2-23c9bdea487c",
+      "name": "ProjectRequests",
+      "description": {
+        "content": "Request creation of new projects. ProjectRequests are the mechanism through which users provision new projects subject to cluster policy.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "a9503001-534d-4279-b939-b9cbb6656d92",
+          "name": "Openshift List Project Requests",
+          "request": {
+            "name": "Openshift List Project Requests",
+            "description": {
+              "content": "List ProjectRequest objects. Returns the project request template status.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "apis",
+                "project.openshift.io",
+                "v1",
+                "projectrequests"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "pretty",
+                  "value": "<string>",
+                  "description": "If true, the output is pretty-printed."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "396b1b3c-e66c-44bd-9012-44ee132eb0bf",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "apis",
+                    "project.openshift.io",
+                    "v1",
+                    "projectrequests"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pretty",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"apiVersion\": \"example_value\",\n  \"kind\": \"example_value\",\n  \"metadata\": {\n    \"selfLink\": \"example_value\",\n    \"resourceVersion\": \"example_value\",\n    \"continue\": \"example_value\",\n    \"remainingItemCount\": 10\n  },\n  \"status\": \"Success\",\n  \"message\": \"example_value\",\n  \"reason\": \"example_value\",\n  \"code\": 10\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c2ff1978-63a2-4965-868f-9be6775d6a1f",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "apis",
+                    "project.openshift.io",
+                    "v1",
+                    "projectrequests"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pretty",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4d82e524-a5f5-4813-8ee3-2c5e09c8eac8",
+          "name": "Openshift Create a Project Request",
+          "request": {
+            "name": "Openshift Create a Project Request",
+            "description": {
+              "content": "Create a ProjectRequest to provision a new project. This is the preferred mechanism for project creation as it respects cluster project request templates and policies.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "apis",
+                "project.openshift.io",
+                "v1",
+                "projectrequests"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "pretty",
+                  "value": "<string>",
+                  "description": "If true, the output is pretty-printed."
+                },
+                {
+                  "disabled": false,
+                  "key": "dryRun",
+                  "value": "<string>",
+                  "description": "When present, indicates that modifications should not be persisted. Valid values are All (all dry run stages will be processed)."
+                },
+                {
+                  "disabled": false,
+                  "key": "fieldManager",
+                  "value": "<string>",
+                  "description": "A name associated with the actor or entity making the change. Used for server-side apply to track field ownership."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"metadata\": {\n    \"name\": \"<string>\",\n    \"namespace\": \"<string>\",\n    \"uid\": \"<uuid>\",\n    \"resourceVersion\": \"<string>\",\n    \"generation\": \"<long>\",\n    \"creationTimestamp\": \"<dateTime>\",\n    \"deletionTimestamp\": \"<dateTime>\",\n    \"labels\": {\n      \"key_0\": \"<string>\",\n      \"key_1\": \"<string>\",\n      \"key_2\": \"<string>\",\n      \"key_3\": \"<string>\"\n    },\n    \"annotations\": {\n      \"key_0\": \"<string>\"\n    },\n    \"ownerReferences\": [\n      {\n        \"apiVersion\": \"<string>\",\n        \"kind\": \"<string>\",\n        \"name\": \"<string>\",\n        \"uid\": \"<string>\",\n        \"controller\": \"<boolean>\",\n        \"blockOwnerDeletion\": \"<boolean>\"\n      },\n      {\n        \"apiVersion\": \"<string>\",\n        \"kind\": \"<string>\",\n        \"name\": \"<string>\",\n        \"uid\": \"<string>\",\n        \"controller\": \"<boolean>\",\n        \"blockOwnerDeletion\": \"<boolean>\"\n      }\n    ],\n    \"finalizers\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"apiVersion\": \"project.openshift.io/v1\",\n  \"kind\": \"ProjectRequest\",\n  \"displayName\": \"<string>\",\n  \"description\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "2c07e8d0-aedf-43d7-b714-cd7e8745b803",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "apis",
+                    "project.openshift.io",
+                    "v1",
+                    "projectrequests"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pretty",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "dryRun",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fieldManager",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"metadata\": {\n    \"name\": \"Example Title\",\n    \"namespace\": \"example_value\",\n    \"uid\": \"03db0f65-ce80-e02a-b39b-e29790f575a0\",\n    \"resourceVersion\": \"example_value\",\n    \"generation\": 10,\n    \"creationTimestamp\": \"2026-01-15T10:30:00Z\",\n    \"deletionTimestamp\": \"2026-01-15T10:30:00Z\",\n    \"labels\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\",\n      \"key_2\": \"string\",\n      \"key_3\": \"string\"\n    },\n    \"annotations\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    }\n  },\n  \"apiVersion\": \"example_value\",\n  \"kind\": \"example_value\",\n  \"displayName\": \"example_value\",\n  \"description\": \"A sample description.\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"apiVersion\": \"example_value\",\n  \"kind\": \"example_value\",\n  \"metadata\": {\n    \"name\": \"Example Title\",\n    \"namespace\": \"example_value\",\n    \"uid\": \"5ec8ef97-54ef-bbb1-6ea2-917a3e8b67bf\",\n    \"resourceVersion\": \"example_value\",\n    \"generation\": 10,\n    \"creationTimestamp\": \"2026-01-15T10:30:00Z\",\n    \"deletionTimestamp\": \"2026-01-15T10:30:00Z\",\n    \"labels\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\",\n      \"key_2\": \"string\",\n      \"key_3\": \"string\"\n    },\n    \"annotations\": {\n      \"key_0\": \"string\"\n    }\n  },\n  \"spec\": {},\n  \"status\": {\n    \"phase\": \"Active\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c21798d4-4e7f-4694-b4c7-85e37330ca43",
+              "name": "Created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "apis",
+                    "project.openshift.io",
+                    "v1",
+                    "projectrequests"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pretty",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "dryRun",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fieldManager",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"metadata\": {\n    \"name\": \"Example Title\",\n    \"namespace\": \"example_value\",\n    \"uid\": \"03db0f65-ce80-e02a-b39b-e29790f575a0\",\n    \"resourceVersion\": \"example_value\",\n    \"generation\": 10,\n    \"creationTimestamp\": \"2026-01-15T10:30:00Z\",\n    \"deletionTimestamp\": \"2026-01-15T10:30:00Z\",\n    \"labels\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\",\n      \"key_2\": \"string\",\n      \"key_3\": \"string\"\n    },\n    \"annotations\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    }\n  },\n  \"apiVersion\": \"example_value\",\n  \"kind\": \"example_value\",\n  \"displayName\": \"example_value\",\n  \"description\": \"A sample description.\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"apiVersion\": \"example_value\",\n  \"kind\": \"example_value\",\n  \"metadata\": {\n    \"name\": \"Example Title\",\n    \"namespace\": \"example_value\",\n    \"uid\": \"5ec8ef97-54ef-bbb1-6ea2-917a3e8b67bf\",\n    \"resourceVersion\": \"example_value\",\n    \"generation\": 10,\n    \"creationTimestamp\": \"2026-01-15T10:30:00Z\",\n    \"deletionTimestamp\": \"2026-01-15T10:30:00Z\",\n    \"labels\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\",\n      \"key_2\": \"string\",\n      \"key_3\": \"string\"\n    },\n    \"annotations\": {\n      \"key_0\": \"string\"\n    }\n  },\n  \"spec\": {},\n  \"status\": {\n    \"phase\": \"Active\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1168fb6a-9be3-450c-902c-e9cc4328b85b",
+              "name": "Accepted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "apis",
+                    "project.openshift.io",
+                    "v1",
+                    "projectrequests"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pretty",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "dryRun",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fieldManager",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"metadata\": {\n    \"name\": \"Example Title\",\n    \"namespace\": \"example_value\",\n    \"uid\": \"03db0f65-ce80-e02a-b39b-e29790f575a0\",\n    \"resourceVersion\": \"example_value\",\n    \"generation\": 10,\n    \"creationTimestamp\": \"2026-01-15T10:30:00Z\",\n    \"deletionTimestamp\": \"2026-01-15T10:30:00Z\",\n    \"labels\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\",\n      \"key_2\": \"string\",\n      \"key_3\": \"string\"\n    },\n    \"annotations\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    }\n  },\n  \"apiVersion\": \"example_value\",\n  \"kind\": \"example_value\",\n  \"displayName\": \"example_value\",\n  \"description\": \"A sample description.\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"apiVersion\": \"example_value\",\n  \"kind\": \"example_value\",\n  \"metadata\": {\n    \"name\": \"Example Title\",\n    \"namespace\": \"example_value\",\n    \"uid\": \"5ec8ef97-54ef-bbb1-6ea2-917a3e8b67bf\",\n    \"resourceVersion\": \"example_value\",\n    \"generation\": 10,\n    \"creationTimestamp\": \"2026-01-15T10:30:00Z\",\n    \"deletionTimestamp\": \"2026-01-15T10:30:00Z\",\n    \"labels\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\",\n      \"key_2\": \"string\",\n      \"key_3\": \"string\"\n    },\n    \"annotations\": {\n      \"key_0\": \"string\"\n    }\n  },\n  \"spec\": {},\n  \"status\": {\n    \"phase\": \"Active\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "cc663aa0-4944-4535-b34e-af413622777d",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "apis",
+                    "project.openshift.io",
+                    "v1",
+                    "projectrequests"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pretty",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "dryRun",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fieldManager",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"metadata\": {\n    \"name\": \"Example Title\",\n    \"namespace\": \"example_value\",\n    \"uid\": \"03db0f65-ce80-e02a-b39b-e29790f575a0\",\n    \"resourceVersion\": \"example_value\",\n    \"generation\": 10,\n    \"creationTimestamp\": \"2026-01-15T10:30:00Z\",\n    \"deletionTimestamp\": \"2026-01-15T10:30:00Z\",\n    \"labels\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\",\n      \"key_2\": \"string\",\n      \"key_3\": \"string\"\n    },\n    \"annotations\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    }\n  },\n  \"apiVersion\": \"example_value\",\n  \"kind\": \"example_value\",\n  \"displayName\": \"example_value\",\n  \"description\": \"A sample description.\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.openshift.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "d9e51a47-dff6-45a4-b6a3-60f2b4844e73",
+    "name": "openshift-rest-api BuildConfigs ProjectRequests API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The OpenShift REST API provides programmatic access to Red Hat OpenShift\nContainer Platform resources. This specification covers the core\nOpenShift-specific API groups including Routes (route.openshift.io/v1),\nBuilds (build.openshift.io/v1), DeploymentConfigs (apps.openshift.io/v1),\nand Projects (project.openshift.io/v1). These APIs extend the Kubernetes\nAPI with capabilities for application routing, source-to-image builds,\ndeployment strategies, and multi-tenant project management.\n\nContact Support:\n Name: Red Hat OpenShift Support\n Email: openshift-dev@redhat.com",
+      "type": "text/plain"
+    }
+  }
+}

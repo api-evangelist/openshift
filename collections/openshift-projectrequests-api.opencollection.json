@@ -1,0 +1,78 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "openshift-rest-api BuildConfigs ProjectRequests API",
+    "version": "4.17.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "ProjectRequests",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Openshift List Project Requests",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.openshift.com/apis/project.openshift.io/v1/projectrequests",
+            "params": [
+              {
+                "name": "pretty",
+                "value": "",
+                "type": "query",
+                "description": "If true, the output is pretty-printed."
+              }
+            ]
+          },
+          "docs": "List ProjectRequest objects. Returns the project request template status."
+        },
+        {
+          "info": {
+            "name": "Openshift Create a Project Request",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.openshift.com/apis/project.openshift.io/v1/projectrequests",
+            "params": [
+              {
+                "name": "pretty",
+                "value": "",
+                "type": "query",
+                "description": "If true, the output is pretty-printed."
+              },
+              {
+                "name": "dryRun",
+                "value": "",
+                "type": "query",
+                "description": "When present, indicates that modifications should not be persisted. Valid values are All (all dry run stages will be processed)."
+              },
+              {
+                "name": "fieldManager",
+                "value": "",
+                "type": "query",
+                "description": "A name associated with the actor or entity making the change. Used for server-side apply to track field ownership."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a ProjectRequest to provision a new project. This is the preferred mechanism for project creation as it respects cluster project request templates and policies."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
