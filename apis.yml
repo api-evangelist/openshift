@@ -24,6 +24,14 @@ position: Consumer
 access: 3rd-Party
 tags:
   - CI/CD
+  - Cloud-Native
+  - Containers
+  - DevOps
+  - Enterprise
+  - Kubernetes
+  - Platform-as-a-Service
+tags_raw:
+  - CI/CD
   - Cloud Native
   - Containers
   - DevOps
@@ -38,6 +46,9 @@ apis:
     https://docs.openshift.com/container-platform/latest/authentication/understanding-authentication.html
   baseURL: https://oauth-openshift.apps.openshift.com
   tags:
+  - Authentication
+  - Security
+  tags_raw:
   - Authentication
   - OAuth
   - Security
@@ -80,6 +91,10 @@ apis:
   baseURL: https://api.openshift.com/apis/image.openshift.io/v1
   tags:
   - Containers
+  - Image
+  - Registry
+  tags_raw:
+  - Containers
   - Images
   - Registry
   properties:
@@ -92,6 +107,10 @@ apis:
     https://docs.openshift.com/container-platform/latest/applications/projects/working-with-projects.html
   baseURL: https://api.openshift.com/apis/project.openshift.io/v1
   tags:
+  - Multi-Tenancy
+  - Namespaces
+  - Project
+  tags_raw:
   - Multi-Tenancy
   - Namespaces
   - Projects
@@ -108,6 +127,12 @@ apis:
     https://docs.redhat.com/en/documentation/openshift_container_platform/4.17/html/workloads_apis/workloads-apis
   baseURL: https://api.openshift.com/apis/apps/v1
   tags:
+  - Deployment
+  - Job
+  - Pods
+  - StatefulSets
+  - Workloads
+  tags_raw:
   - Deployments
   - Jobs
   - Pods
@@ -128,6 +153,10 @@ apis:
   tags:
   - Ingress
   - Networking
+  - Network Policy
+  tags_raw:
+  - Ingress
+  - Networking
   - NetworkPolicy
   properties:
   - type: Documentation
@@ -142,6 +171,11 @@ apis:
     https://docs.redhat.com/en/documentation/openshift_container_platform/4.17/html/storage_apis/persistentvolume-v1
   baseURL: https://api.openshift.com/api/v1
   tags:
+  - CSI
+  - PersistentVolumes
+  - Storage
+  - Storage Classes
+  tags_raw:
   - CSI
   - PersistentVolumes
   - Storage
@@ -174,6 +208,10 @@ apis:
     https://docs.redhat.com/en/documentation/openshift_container_platform/4.17/html/autoscale_apis/horizontalpodautoscaler-autoscaling-v2
   baseURL: https://api.openshift.com/apis/autoscaling/v2
   tags:
+  - Auto-Scaling
+  - ClusterAutoscaler
+  - HPA
+  tags_raw:
   - Autoscaling
   - ClusterAutoscaler
   - HPA
@@ -239,6 +277,11 @@ apis:
     https://docs.openshift.com/container-platform/4.9/rest_api/machine_apis/machineconfig-machineconfiguration-openshift-io-v1.html
   baseURL: https://api.openshift.com/apis/machine.openshift.io/v1beta1
   tags:
+  - Auto-Scaling
+  - Infrastructure
+  - Machines
+  - Nodes
+  tags_raw:
   - Autoscaling
   - Infrastructure
   - Machines
@@ -272,6 +315,11 @@ apis:
     https://docs.redhat.com/en/documentation/openshift_container_platform/4.17/html-single/operators/index
   baseURL: https://api.openshift.com/apis/operators.coreos.com/v1alpha1
   tags:
+  - Catalog
+  - OLM
+  - OperatorHub
+  - Subscription
+  tags_raw:
   - Catalog
   - OLM
   - OperatorHub
@@ -403,6 +451,11 @@ apis:
   baseURL: https://api.openshift.com/api/v1
   tags:
   - ConfigMaps
+  - Event
+  - Metadata
+  - Secrets
+  tags_raw:
+  - ConfigMaps
   - Events
   - Metadata
   - Secrets
@@ -497,6 +550,8 @@ apis:
   humanURL: https://docs.openshift.com/
   baseURL: https://api.openshift.com
   tags:
+  - Deployment Configs
+  tags_raw:
   - DeploymentConfigs
   properties:
   - type: OpenAPI
@@ -557,6 +612,8 @@ apis:
   humanURL: https://docs.openshift.com/
   baseURL: https://api.openshift.com
   tags:
+  - Project
+  tags_raw:
   - Projects
   properties:
   - type: OpenAPI
