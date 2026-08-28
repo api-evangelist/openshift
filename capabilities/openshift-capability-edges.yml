@@ -1,0 +1,46 @@
+slug: openshift
+provider: OpenShift
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Banking & Capital Markets
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 3
+edges:
+- tag: BuildConfigs
+  spec_file: openshift-buildconfigs-api-openapi.yml
+  capability_id: BC-4210.10
+  capability_id_l1: BC-4210
+  capability_name: Continuous Integration Management
+  confidence: 0.8
+  evidence: POST /apis/build.openshift.io/v1/namespaces/{namespace}/buildconfigs/{name}/instantiate Instantiate
+    a Build From a Build Config
+  reason: Build configuration and triggering of source-to-image builds — build pipeline/artefact production,
+    i.e. continuous integration management.
+- tag: Builds
+  spec_file: openshift-builds-api-openapi.yml
+  capability_id: BC-4210.10
+  capability_id_l1: BC-4210
+  capability_name: Continuous Integration Management
+  confidence: 0.8
+  evidence: POST /apis/build.openshift.io/v1/namespaces/{namespace}/builds createNamespacedBuild Create
+    a Build; GET .../builds/{name}/log Read Build Log
+  reason: Creating, listing and inspecting logs of software builds — build/artefact production, continuous
+    integration.
+- tag: DeploymentConfigs
+  spec_file: openshift-deploymentconfigs-api-openapi.yml
+  capability_id: BC-4210.40
+  capability_id_l1: BC-4210
+  capability_name: Deployment Orchestration
+  confidence: 0.8
+  evidence: POST .../deploymentconfigs/{name}/rollback Rollback a Deployment Config; RollingDeploymentStrategyParams;
+    PUT .../scale Replace Scale of a Deployment Config
+  reason: Deployment strategies (rolling, recreate), rollback and scaling of application deployments —
+    deployment orchestration of software changes to runtime.
