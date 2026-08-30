@@ -41,7 +41,7 @@ tags:
   - DevOps
   - Enterprise
   - Kubernetes
-  - Platform-as-a-Service
+  - PaaS
 tags_raw:
   - CI/CD
   - Cloud Native
@@ -165,7 +165,7 @@ apis:
   tags:
   - Ingress
   - Networking
-  - Network Policy
+  - NetworkPolicy
   tags_raw:
   - Ingress
   - Networking
@@ -186,7 +186,7 @@ apis:
   - CSI
   - PersistentVolumes
   - Storage
-  - Storage Classes
+  - StorageClasses
   tags_raw:
   - CSI
   - PersistentVolumes
@@ -562,7 +562,7 @@ apis:
   humanURL: https://docs.openshift.com/
   baseURL: https://api.openshift.com
   tags:
-  - Deployment Configs
+  - DeploymentConfigs
   tags_raw:
   - DeploymentConfigs
   properties:
